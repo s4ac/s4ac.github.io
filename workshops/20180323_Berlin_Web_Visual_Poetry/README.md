@@ -42,9 +42,10 @@ We will cover those topics:
    ```javascript
    mouseX 
    mouseY
-   function mouseClicked(
-   	who clicked me?
-   )
+   function mouseClicked(){
+       who clicked me?
+   }
+
    function mouseDragged(){
        who clicks and moves me?
    }
