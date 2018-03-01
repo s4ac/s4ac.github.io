@@ -32,9 +32,8 @@ a {
 }
 
 #backgroundTitle {
-
     display: block;
-    margin: 70% auto 1%;
+    margin: auto;
     /* width: auto; */
     max-width: auto;
     width: min-content;
@@ -43,7 +42,7 @@ a {
     /* left: 5%; */
     /* top: 300px; */
     z-index: -1;
-    font-size: 2vw;
+    font-size: 3vh;
     /* box-shadow: 5px 10px; */
     border-left: solid 10px black;
     padding-left: 1em;
@@ -54,13 +53,15 @@ a {
     position: fixed;
     overflow-y: scroll;
     width: 50%;
-    height: 100%;
 }
 .left{
     /* background: #ff00003a; */
     left: 0px;
+    bottom: 0px;
+    height: 50%;
 }
 .right{
     /* background: #00ff003a; */
+    height: 100%;
     right: 0px;
 }
