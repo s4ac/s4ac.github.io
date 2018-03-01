@@ -1,1 +1,1 @@
-# School For Algorithmic Composition
+# [School For Algorithmic Composition](https://s4ac.github.io/SFAC/)
