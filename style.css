@@ -28,9 +28,18 @@ canvas {
 }
 
 a {
-    font-family: 'Crimson Text', serif;
+	text-decoration: none;
+	font-family: 'Crimson Text', serif;
+	font-weight: bolder;
+	/* background-color: darkmagenta; */
+	color: #00f;
+	border-bottom: solid 3px #f00;
 }
-
+a:hover{
+	font-style: italic;
+	border-bottom: none;
+	border-top: solid 3px #f00;
+}
 #backgroundTitle {
     display: block;
     margin: auto;

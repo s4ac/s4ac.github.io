@@ -6,6 +6,8 @@ The aim of the workshop is to introduce you to programming. We will cover the ba
 
 With this tool we will be able transform a webpage into our canvas and with few line of code we will make it colorful and interactive.
 
+As inspiration I suggest to take the websites made by [Rafël Rozeandaal](https://www.newrafael.com/websites/)
+
 We will cover those topics:
 
 1. variables `let something = be something`
@@ -68,3 +70,4 @@ We will cover those topics:
 * [Zach Liebermann](http://thesystemis.com/)
 * [Gene Kogan](http://genekogan.com/) AI!
 * [Pippin Barr](https://www.pippinbarr.com/category/games/) 
+* [Katie Rose Pipkin](http://katierosepipkin.com/)
