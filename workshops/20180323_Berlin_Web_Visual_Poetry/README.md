@@ -10,6 +10,8 @@ As inspiration I suggest to take the websites made by [Rafël Rozeandaal](https:
 
 We will cover those topics:
 
+0. Syntax `() [] {} , ;` 
+
 1. variables `let something = be something`
 
 2. basic shapes
