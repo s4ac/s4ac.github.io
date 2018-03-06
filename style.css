@@ -40,6 +40,9 @@ a:hover{
 	border-bottom: none;
 	border-top: solid 3px #f00;
 }
+p{
+    background-color: #fff;
+}
 #backgroundTitle {
     display: block;
     margin: auto;

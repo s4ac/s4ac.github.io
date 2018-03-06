@@ -30,4 +30,6 @@ function draw() {
 	fill(255 - colorVal, 50, 200);
 	ellipse(mouseX, mouseY, ellipseSize);
 }
-
+function windowResized(){
+	resizeCanvas(windowWidth, windowHeight);
+}
