@@ -22,13 +22,13 @@ function draw() {
 	colorVal = map(mouseX, 0, width, 0, 255);
 	let angle = map(mouseX, 0, width, 0, PI);
 	ellipseSize = abs(cos(angle) * maxBallSize) + minBallSize;
-	background(colorVal, 255, 255)
+	background(colorVal / 2, 255, 255)
 	noStroke();
-	fill(mouseX % 255, 255, 255);
-	rect(width/ 2 - rectW / 2, 0, rectW, mouseY - minBallSize / 2);
-	rect(width/ 2 - rectW / 2, (mouseY - minBallSize / 2) + minBallSize, rectW, height);
+	fill(colorVal, 155, 200);
+	rect(width/ 2 - rectW / 2, 0, rectW, mouseY - minBallSize * 0.5);
+	rect(width/ 2 - rectW / 2, (mouseY - minBallSize * 0.5) + minBallSize, rectW, height);
 	fill(255 - colorVal, 50, 200);
-	ellipse(mouseX, mouseY, ellipseSize);
+	ellipse(mouseX, mouseY, ellipseSize * 0.85);
 }
 function windowResized(){
 	resizeCanvas(windowWidth, windowHeight);
