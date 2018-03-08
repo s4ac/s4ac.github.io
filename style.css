@@ -69,8 +69,8 @@ p{
 .left{
     /* background: #ff00003a; */
     left: 0px;
-    bottom: 0px;
-    height: 50%;
+    top: 0px;
+    height: 100%;
 }
 .right{
     /* background: #00ff003a; */
