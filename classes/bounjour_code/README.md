@@ -6,11 +6,11 @@ The aim of the workshop is to introduce you to programming. We will cover the ba
 
 With this tool we will be able transform a webpage into our canvas and with few line of code we will make it colorful and interactive.
 
-As inspiration I suggest to take the websites made by [Rafël Rozeandaal](https://www.newrafael.com/websites/)
+As inspiration I suggest to take a look to the websites made by [Rafël Rozeandaal](https://www.newrafael.com/websites/)
 
 ## Schedule
 
-### 19.03.2018
+### 19.03.2018 18:00 – 22:00
 
 We will cover those topics:
 
@@ -52,7 +52,7 @@ We will cover those topics:
    }
    ```
 
-### 26.03.2018
+### 26.03.2018 19:00 – 22:00
 
 0. moving things without the mouse
 
@@ -96,26 +96,26 @@ We will cover those topics:
         do something
     }
     ```
-### 09.04.2018
+### 09.04.2018 18:00 – 22:00
 
 1. DOM events inputs buttons sliders
 2. functions
 
-### 16.04.2018
+### 16.04.2018 18:00 – 22:00
 
 1. Github
 2. Pushing Website to github pages
 3. more functions
 
-### 23.04.2018
+### 23.04.2018 18:00 – 22:00
 
 1. Array
 
-### 30.04.2018
+### 30.04.2018 18:00 – 22:00
 
 1. Objects
 
-### 05.05.2018
+### 05.05.2018 T.B.A.
 
 #### open code night
 
