@@ -43,6 +43,20 @@ a:hover{
 p{
     background-color: #fff;
 }
+button{
+	float: none;
+}
+.buttons{
+	max-width: 200px;
+	display: block;
+	float: none;
+}
+.container{
+	width: 70%;
+	display: block;
+	margin: auto;
+}
+
 #backgroundTitle {
     display: block;
     margin: auto;
