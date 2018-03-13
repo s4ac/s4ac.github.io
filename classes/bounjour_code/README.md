@@ -104,8 +104,40 @@ We will cover those topics:
 
 ### 16.04.2018 18:00 – 22:00
 
-1. Github
+0. Terminal & bash commands
+
+   ```bash
+   cd #change directory
+   pwd #prints the current directory to the terminal
+   ls #shows the content of a directory
+   mv #move something
+   mkdir #make directory
+   ```
+
+   ​
+
+1. [Git](https://git-scm.com/), [Brew](https://brew.sh/) & [Github](https://github.com/)
+
+   ```bash
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+   brew install git
+   ```
+
+   ​
+
 2. Pushing Website to github pages
+
+   ```bash
+   git add . #stage changes
+   git commit #commit changes
+   git push #pushes changes to the remote directory
+   git pull #pulls from the remote directory
+   git clone #clones a repository
+   ```
+
+   ​
+
 3. more functions
 
 ### 23.04.2018 18:00 – 22:00
