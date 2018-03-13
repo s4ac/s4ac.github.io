@@ -120,8 +120,8 @@ We will cover those topics:
 
    ```bash
    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-   brew install git
+    #install brew
+   brew install git #install git
    ```
 
    ​
