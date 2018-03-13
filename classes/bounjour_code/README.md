@@ -98,6 +98,7 @@ We will cover those topics:
     ```
 ### 09.04.2018 18:00 – 22:00
 
+0. [HTML](https://www.w3schools.com/tags/default.asp) & [CSS](https://www.w3schools.com/cssref/default.asp)
 1. DOM events inputs buttons sliders
 2. functions
 
@@ -124,7 +125,7 @@ We will cover those topics:
 1. A good code editor. I sugest either [Visual Studio Code](https://code.visualstudio.com/) (Higly Recommended),  [Sublime Text 3](https://www.sublimetext.com/) or [Atom](https://atom.io/)
 2. I know everybody hates it but we will use [Chrome](https://www.google.com/chrome/) as browser. It has good built in console for debugging, so make sure to download it.
 3. Please download [MAMP](https://www.mamp.info/de/) the free version of it.
-4. Also make sure to download this blankExample.zip [here](https://github.com/s4ac/SFAC/blob/master/classes/BlankExample.zip) by either clicking __download__ or __view raw__
+4. Also make sure to download this blankExample.zip [here](https://github.com/yanoteaching/SFAC/blob/master/classes/BlankExample.zip) by either clicking __download__ or __view raw__
 
 ## Inspirations
 
