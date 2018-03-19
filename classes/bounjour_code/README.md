@@ -54,6 +54,8 @@ We will cover those topics:
 
 ### 26.03.2018 19:00 – 22:00
 
+-1. folders etc.
+
 0. moving things without the mouse
 
 
