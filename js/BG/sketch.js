@@ -7,7 +7,7 @@ function setup() {
 	let cnv = createCanvas(windowWidth, windowHeight);
 	cnv.position(0, 0);
 	cnv.style('z-index', '-1');
-	cnv.style('position', 'fixed');
+	// cnv.style('position', 'fixed');
 	document.getElementById('defaultCanvas0').style.position = 'fixed';
 	colorz = [
 		color(255, 0, 0),
