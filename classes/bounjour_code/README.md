@@ -52,7 +52,9 @@ We will cover those topics:
    }
    ```
 
-### 26.03.2018 19:00 – 22:00
+### 26.03.2018 19:15 – 22:00
+
+-1. folders etc.
 
 0. moving things without the mouse
 
@@ -98,13 +100,46 @@ We will cover those topics:
     ```
 ### 09.04.2018 18:00 – 22:00
 
+0. [HTML](https://www.w3schools.com/tags/default.asp) & [CSS](https://www.w3schools.com/cssref/default.asp)
 1. DOM events inputs buttons sliders
 2. functions
 
 ### 16.04.2018 18:00 – 22:00
 
-1. Github
+0. Terminal & bash commands
+
+   ```bash
+   cd #change directory
+   pwd #prints the current directory to the terminal
+   ls #shows the content of a directory
+   mv #move something
+   mkdir #make directory
+   ```
+
+   ​
+
+1. [Git](https://git-scm.com/), [Brew](https://brew.sh/) & [Github](https://github.com/)
+
+   ```bash
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    #install brew
+   brew install git #install git
+   ```
+
+   ​
+
 2. Pushing Website to github pages
+
+   ```bash
+   git add . #stage changes
+   git commit #commit changes
+   git push #pushes changes to the remote directory
+   git pull #pulls from the remote directory
+   git clone #clones a repository
+   ```
+
+   ​
+
 3. more functions
 
 ### 23.04.2018 18:00 – 22:00
@@ -124,7 +159,7 @@ We will cover those topics:
 1. A good code editor. I sugest either [Visual Studio Code](https://code.visualstudio.com/) (Higly Recommended),  [Sublime Text 3](https://www.sublimetext.com/) or [Atom](https://atom.io/)
 2. I know everybody hates it but we will use [Chrome](https://www.google.com/chrome/) as browser. It has good built in console for debugging, so make sure to download it.
 3. Please download [MAMP](https://www.mamp.info/de/) the free version of it.
-4. Also make sure to download this blankExample.zip [here](https://github.com/s4ac/SFAC/blob/master/classes/BlankExample.zip) by either clicking __download__ or __view raw__
+4. Also make sure to download this blankExample.zip [here](https://github.com/yanoteaching/SFAC/blob/master/classes/BlankExample.zip) by either clicking __download__ or __view raw__
 
 ## Inspirations
 
