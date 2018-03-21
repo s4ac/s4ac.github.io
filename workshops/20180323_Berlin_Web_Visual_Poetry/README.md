@@ -10,6 +10,8 @@ As inspiration I suggest to take the websites made by [Rafël Rozeandaal](https:
 
 We will cover those topics:
 
+-1. Prepare the index.html file and all the folders
+
 0. Syntax `() [] {} , ;` 
 
 1. variables `let something = be something`
@@ -62,7 +64,8 @@ We will cover those topics:
 1. A good code editor. I sugest either [Visual Studio Code](https://code.visualstudio.com/) (Higly Recommended),  [Sublime Text 3](https://www.sublimetext.com/) or [Atom](https://atom.io/)
 2. I know everybody hates it but we will use [Chrome](https://www.google.com/chrome/) as browser. It has good built in console for debugging, so make sure to download it.
 3. Please download [MAMP](https://www.mamp.info/de/) the free version of it.
-4. Also make sure to download this blankExample.zip [here](https://github.com/yanoteaching/SFAC/blob/master/classes/blankExample.zip) by either clicking __download__ or __view raw__
+4. Make sure to download the complete [p5.js](https://p5js.org/download/) library.
+5. ~~Also make sure to download this blankExample.zip [here](https://github.com/yanoteaching/SFAC/blob/master/classes/blankExample.zip) by either clicking __download__ or __view raw__~~ NOPE!
 
 ## Inspirations
 
