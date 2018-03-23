@@ -56,8 +56,45 @@ We will cover those topics:
        who clicks and moves me?
    }
    ```
+ 6. Sound
+   ```javascript
+   let osc;
+   let env;
+   osc = new p5.Oscillator();
+	osc.setType('triangle');
+	osc2 = new p5.Oscillator();
+	osc2.setType('sawtooth');
+	env = new p5.Env();
+	osc.start();
+	osc2.start();
+	env.setADSR(0.001, 0.5, 0.1, 0.5);
+	env.setRange(1, 0);
+	initModel();
+	volume0();
 
-   ​
+   /**
+   AUDIO STUFF
+   */
+   //THE FLLOWING FUNCTIONS TURN ON AND OFF THE SOUND
+   function volume0(){
+      masterVolume(0, 0.5);
+   }
+   function volumeUp(){	
+      masterVolume(1, 0.5);
+   }
+   //improve audio!!!!
+   function playSound(num, divider){
+      let midiValue = map(num, 0, document.getElementById("size").value, 20, 100);
+      let frequency = map(num, 0, document.getElementById("size").value, 120, 660);
+       var freqValue = midiToFreq(midiValue);
+       osc.freq(freqValue);
+       // osc2.freq(frequency);
+       // env.add(osc2);
+       env.play(osc, 0, 0.1);
+       // env.play(osc2, 0, 0.1);
+       // env.add(osc2);
+   }
+```
 
 ## Dependencies a.k.a. what you need to download
 
