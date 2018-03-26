@@ -15,12 +15,13 @@ function draw() {
   background(51)
   // noStroke();
   // translate(width / 2, height / 2);
-  for (let i = 0; i < 10; i++) {
+  // for (let i = 0; i < 10; i++) {
 
-    rotateX(rot + radians(i / 10));
-    rotateY(rot + radians(i / 10));
-    ellipse(10 + i * 10, 0, 200, 200);
-  }
+    rotateX(rot);
+    rotateY(rot);
+    // ellipse(10 + i * 10, 0, 200, 200);
+    sphere(200, 3, 10)
+  // }
   rot += inc;
 }
 
