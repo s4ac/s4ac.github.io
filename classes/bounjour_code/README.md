@@ -10,7 +10,7 @@ As inspiration I suggest to take a look to the websites made by [Rafël Rozeanda
 
 ## Schedule
 
-### 19.03.2018 18:00 – 22:00
+### ~~19.03.2018 18:00 – 22:00~~
 
 We will cover those topics:
 
@@ -53,6 +53,10 @@ We will cover those topics:
    ```
 
 ### 26.03.2018 19:15 – 22:00
+
+-3. [How to disable telemetry reporting](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting)
+
+-2. NO MAMP
 
 -1. folders etc.
 
