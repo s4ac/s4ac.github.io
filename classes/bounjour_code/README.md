@@ -52,7 +52,7 @@ We will cover those topics:
    }
    ```
 
-### 26.03.2018 19:15 – 22:00
+### ~~26.03.2018 19:15 – 22:00~~
 
 -3. [How to disable telemetry reporting](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting)
 
