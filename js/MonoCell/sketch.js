@@ -23,7 +23,7 @@ function draw() {
 		fill(0, 255 , 0);
 		line(monoCell.pos.x, monoCell.pos.y,width * 0.25, height * 0.75);
 		text('W1 = ' + monoCell.brain.weights[0] +
-			'\nW2 = ' + monoCell.brain.weights[1], width * 0.25, height * 0.75 + 20);
+			'\nBIAS = ' + monoCell.brain.weights[1], width * 0.25, height * 0.75 + 20);
 	}
 }
 
