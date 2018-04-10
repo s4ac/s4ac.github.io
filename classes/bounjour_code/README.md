@@ -102,8 +102,9 @@ We will cover those topics:
         do something
     }
     ```
-### 09.04.2018 18:00 – 22:00
+### 09.04.2018 18:15 – 22:15
 
+-1. Final Presentation 05.05.2018
 0. [HTML](https://www.w3schools.com/tags/default.asp) & [CSS](https://www.w3schools.com/cssref/default.asp)
 1. DOM events inputs buttons sliders
 2. functions
