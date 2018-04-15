@@ -1,0 +1,9 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#p5Sketch {
+    position: fixed;
+    z-index: -1;
+}
