@@ -1,40 +1,54 @@
-let radius = 10;
-let vertices = 50;
-let loop = 20;//number of polygons
-let wave = 0;
-let waveHeight = 2;// height of the wave
-let waveFreq = 1;// frequency of the wave
-let period = 2;// how many time the waveFreq cycles trought two_PI
-let inc;// this regulates by how much the sinWave growsa aka speed
-let slider;
 let cnv;
+let radius = 20;
+let vertices = 4;
+let inc;
+let wave = 0;
+let waveHeight = 10;
+let waveFreq = 0;
+let period = 3;
+let polygonNum = 30;
 function setup() {
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5Sketch');
-  inc = PI / 50;// here you can change the speed
+  inc = PI / 50;// this is the speed of the wave
 }
 
 function draw() {
-  background(0);
+  background(51);
   noFill();
-  stroke(255)
+  strokeWeight(3)
+  stroke(0, 255, 255);
+  // get the values from the HTML sliders
   vertices = document.getElementById('vertices').value;
-  for (let i = 1; i < loop; i++) {
-    waveFreq = map(i, 0, loop, 0, TWO_PI * period);
-    // this part need to be explained really well!!!
-    drawPolygon(vertices, i, width / 2, height / 2 + (i * sin(wave + waveFreq) * waveHeight));// change here the posY position to make the circles mive on y axis
+  period = document.getElementById('frequency').value;
+  waveHeight = document.getElementById('height').value;
+  polygonNum = document.getElementById('number').value;
+  for (let i = 1; i <= polygonNum; i++) {
+    // here we define the wave frequency 
+    waveFreq = map(i, 0, polygonNum, 0, TWO_PI * period);
+    // here we define how the single polygons move along their y axis
+    let y = (height / 2) + (sin(wave + waveFreq) * waveHeight);
+    // here we draw the polygon
+    polygon(vertices, radius * i, 5 * i, width / 2, y);
   }
   wave += inc;
 }
-
-function drawPolygon(vertices, num, posX, posY) {
-  // how to draw a circle using sine and cosine
+/**
+ * this function draws a squished polygon
+ * @param {Number} vert number of vertices
+ * @param {Number} r radius
+ * @param {Number} offset offset of the points
+ * @param {Number} posX position on x axis
+ * @param {Number} posY position on y axis
+ */
+function polygon(vert, r, offset, posX, posY) {
   beginShape(POINTS);
-  for (let i = 0; i < vertices; i++) {
-    let angle = map(i, 0, vertices, 0, TWO_PI);
-    let x = num * radius * cos(angle) + posX;
+  // draw a polygon using sine and cosine and polar coordinate algorithm
+  for (let i = 0; i < vert; i++) {
+    let angle = map(i, 0, vert, 0 + offset, TWO_PI + offset);
+    let x = cos(angle) * r + posX;
     // we divide the radius by 2 to create a 3d effect
-    let y = num * (radius / 2) * sin(angle) + posY;// change the posY to move the single circles up and down
+    let y = sin(angle) * (r / 2) + posY;
     vertex(x, y);
   }
   endShape(CLOSE);
