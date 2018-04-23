@@ -147,7 +147,7 @@ We will cover those topics:
 
 3. more functions
 
-### 23.04.2018 18:15 – 22:00
+### ~~23.04.2018 18:15 – 22:00~~
 
 1. Array
 
@@ -173,6 +173,8 @@ We will cover those topics:
    // remove element from array
    myArrayFull.splice(2, 1);
    ```
+   
+   2. Ted Davis guest lecture on gyroscope on handheld devices
 
    ​
 
