@@ -2,7 +2,7 @@
 
 ## What will we do?
 
-The aim of the workshop is to introduce you to programming. We will cover the basic elements to build an interactive website with [p5.js](https://p5js.org/). 
+The aim of the workshop is to introduce you to programming. We will cover the basic elements to build an interactive website with [p5.js](https://p5js.org/).
 
 With this tool we will be able transform a webpage into our canvas and with few line of code we will make it colorful and interactive.
 
@@ -14,7 +14,7 @@ As inspiration I suggest to take a look to the websites made by [Rafël Rozeanda
 
 We will cover those topics:
 
-0. Syntax `() [] {} , ;` 
+0. Syntax `() [] {} , ;`
 
 1. variables `let something = be something`
 
@@ -63,7 +63,7 @@ We will cover those topics:
 0. moving things without the mouse
 
 
-1. operations `++` `+=` `--` `-=` ` %`
+1. operations `++` `+=` `--` `-=` `%`
 
 2. for loops
 
@@ -102,11 +102,14 @@ We will cover those topics:
         do something
     }
     ```
+
 ### ~~09.04.2018 18:15 – 22:15~~
 
 -1. Final Presentation 05.05.2018
 0. [HTML](https://www.w3schools.com/tags/default.asp) & [CSS](https://www.w3schools.com/cssref/default.asp)
+
 1. DOM events inputs buttons sliders
+
 2. functions
 
 ### ~~16.04.2018 18:00 – 22:00~~
@@ -121,8 +124,6 @@ We will cover those topics:
    mkdir #make directory
    ```
 
-   ​
-
 1. [Git](https://git-scm.com/), [Brew](https://brew.sh/) & [Github](https://github.com/)
 
    ```bash
@@ -130,8 +131,6 @@ We will cover those topics:
     #install brew
    brew install git #install git
    ```
-
-   ​
 
 2. Pushing Website to github pages
 
@@ -142,9 +141,7 @@ We will cover those topics:
    git pull #pulls from the remote directory
    git clone #clones a repository
    ```
-
-   ​
-
+   
 3. more functions
 
 ### ~~23.04.2018 18:15 – 22:00~~
@@ -176,6 +173,14 @@ We will cover those topics:
 
 2. Ted Davis guest lecture on gyroscope on handheld devices
 
+   ```html
+     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   ```
+
+   ​
+
    ​
 
 ### 30.04.2018 18:15 – 22:00
@@ -200,5 +205,5 @@ We will cover those topics:
 * [Daniel Shiffman](http://shiffman.net/) for some tutorials
 * [Zach Liebermann](http://thesystemis.com/)
 * [Gene Kogan](http://genekogan.com/) AI!
-* [Pippin Barr](https://www.pippinbarr.com/category/games/) 
+* [Pippin Barr](https://www.pippinbarr.com/category/games/)
 * [Katie Rose Pipkin](http://katierosepipkin.com/)
