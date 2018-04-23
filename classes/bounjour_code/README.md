@@ -175,7 +175,11 @@ We will cover those topics:
    ```
 
 2. Ted Davis guest lecture on gyroscope on handheld devices
-
+   ```HTML
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   ```
    ​
 
 ### 30.04.2018 18:15 – 22:00
