@@ -102,14 +102,14 @@ We will cover those topics:
         do something
     }
     ```
-### 09.04.2018 18:15 – 22:15
+### ~~09.04.2018 18:15 – 22:15~~
 
 -1. Final Presentation 05.05.2018
 0. [HTML](https://www.w3schools.com/tags/default.asp) & [CSS](https://www.w3schools.com/cssref/default.asp)
 1. DOM events inputs buttons sliders
 2. functions
 
-### 16.04.2018 18:00 – 22:00
+### ~~16.04.2018 18:00 – 22:00~~
 
 0. Terminal & bash commands
 
@@ -147,11 +147,36 @@ We will cover those topics:
 
 3. more functions
 
-### 23.04.2018 18:00 – 22:00
+### 23.04.2018 18:15 – 22:00
 
 1. Array
 
-### 30.04.2018 18:00 – 22:00
+   ``` javascript
+   // declare an empty array
+   let myArrayEmpty = [];
+   // declare a filled array
+   let myArrayFull = [1, 2, 3, 4, 5, 6, 7];
+   // fill an empty array
+   let numberOfElements = 100;
+   for(let i = 0; i < numberOfElements; i++){
+       myArrayEmpty.push(i);// .push(element) pushes any element at the end of the Arrray
+   }
+   // myArrayEmpty = [1, 2, 3, ..., 99]
+   // get content of an array with standard for loop
+   for(let i = 0; i < numberOfElements; i++){
+       console.log(myArrayEmpty[i]);// prints the content of the array in the console
+   }
+   // get content with for of loop
+   for(let element of myArrayEmpty){
+       console.log(element);
+   }
+   // remove element from array
+   myArrayFull.splice(2, 1);
+   ```
+
+   ​
+
+### 30.04.2018 18:15 – 22:00
 
 1. Objects
 
