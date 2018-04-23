@@ -173,8 +173,8 @@ We will cover those topics:
    // remove element from array
    myArrayFull.splice(2, 1);
    ```
-   
-   2. Ted Davis guest lecture on gyroscope on handheld devices
+
+2. Ted Davis guest lecture on gyroscope on handheld devices
 
    ​
 
