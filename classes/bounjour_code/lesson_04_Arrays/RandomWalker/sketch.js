@@ -27,22 +27,22 @@ function draw() {
 function move() {
   let probability = floor(random(4));
   if (probability == 0) {
-    posX += walkerSize;
+    posX += walkerSize * 2;
     // here we add the positions of x and y in the arrays
     positionsX.push(posX);
     positionsY.push(posY);
   } else if (probability == 1) {
-    posY += walkerSize;
+    posY += walkerSize * 2;
     // here we add the positions of x and y in the arrays
     positionsX.push(posX);
     positionsY.push(posY);
   } else if (probability == 2) {
-    posX -= walkerSize;
+    posX -= walkerSize * 2;
     // here we add the positions of x and y in the arrays
     positionsX.push(posX);
     positionsY.push(posY);
   } else if (probability == 3) {
-    posY -= walkerSize;
+    posY -= walkerSize * 2;
     // here we add the positions of x and y in the arrays
     positionsX.push(posX);
     positionsY.push(posY);
