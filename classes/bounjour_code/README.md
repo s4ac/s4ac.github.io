@@ -2,7 +2,7 @@
 
 ## What will we do?
 
-The aim of the workshop is to introduce you to programming. We will cover the basic elements to build an interactive website with [p5.js](https://p5js.org/). 
+The aim of the workshop is to introduce you to programming. We will cover the basic elements to build an interactive website with [p5.js](https://p5js.org/).
 
 With this tool we will be able transform a webpage into our canvas and with few line of code we will make it colorful and interactive.
 
@@ -14,7 +14,7 @@ As inspiration I suggest to take a look to the websites made by [Rafël Rozeanda
 
 We will cover those topics:
 
-0. Syntax `() [] {} , ;` 
+0. Syntax `() [] {} , ;`
 
 1. variables `let something = be something`
 
@@ -63,7 +63,7 @@ We will cover those topics:
 0. moving things without the mouse
 
 
-1. operations `++` `+=` `--` `-=` ` %`
+1. operations `++` `+=` `--` `-=` `%`
 
 2. for loops
 
@@ -102,14 +102,17 @@ We will cover those topics:
         do something
     }
     ```
-### 09.04.2018 18:15 – 22:15
+
+### ~~09.04.2018 18:15 – 22:15~~
 
 -1. Final Presentation 05.05.2018
 0. [HTML](https://www.w3schools.com/tags/default.asp) & [CSS](https://www.w3schools.com/cssref/default.asp)
+
 1. DOM events inputs buttons sliders
+
 2. functions
 
-### 16.04.2018 18:00 – 22:00
+### ~~16.04.2018 18:00 – 22:00~~
 
 0. Terminal & bash commands
 
@@ -121,8 +124,6 @@ We will cover those topics:
    mkdir #make directory
    ```
 
-   ​
-
 1. [Git](https://git-scm.com/), [Brew](https://brew.sh/) & [Github](https://github.com/)
 
    ```bash
@@ -130,8 +131,6 @@ We will cover those topics:
     #install brew
    brew install git #install git
    ```
-
-   ​
 
 2. Pushing Website to github pages
 
@@ -142,16 +141,45 @@ We will cover those topics:
    git pull #pulls from the remote directory
    git clone #clones a repository
    ```
-
-   ​
-
+   
 3. more functions
 
-### 23.04.2018 18:00 – 22:00
+### ~~23.04.2018 18:15 – 22:00~~
 
 1. Array
 
-### 30.04.2018 18:00 – 22:00
+   ``` javascript
+   // declare an empty array
+   let myArrayEmpty = [];
+   // declare a filled array
+   let myArrayFull = [1, 2, 3, 4, 5, 6, 7];
+   // fill an empty array
+   let numberOfElements = 100;
+   for(let i = 0; i < numberOfElements; i++){
+       myArrayEmpty.push(i);// .push(element) pushes any element at the end of the Arrray
+   }
+   // myArrayEmpty = [1, 2, 3, ..., 99]
+   // get content of an array with standard for loop
+   for(let i = 0; i < numberOfElements; i++){
+       console.log(myArrayEmpty[i]);// prints the content of the array in the console
+   }
+   // get content with for of loop
+   for(let element of myArrayEmpty){
+       console.log(element);
+   }
+   // remove element from array
+   myArrayFull.splice(2, 1);
+   ```
+
+2. Ted Davis guest lecture on gyroscope on handheld devices
+
+   ```html
+     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   ```
+
+### 30.04.2018 18:15 – 22:00
 
 1. Objects
 
@@ -173,5 +201,5 @@ We will cover those topics:
 * [Daniel Shiffman](http://shiffman.net/) for some tutorials
 * [Zach Liebermann](http://thesystemis.com/)
 * [Gene Kogan](http://genekogan.com/) AI!
-* [Pippin Barr](https://www.pippinbarr.com/category/games/) 
+* [Pippin Barr](https://www.pippinbarr.com/category/games/)
 * [Katie Rose Pipkin](http://katierosepipkin.com/)

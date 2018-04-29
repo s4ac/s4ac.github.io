@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #fff;
+}
+#debug {
+  display:none;
+  padding: 15px;
+  letter-spacing: 0.3em;
+  font-size: 2vh;
+  background: #000;
+  height: 10vh;
+  color: #fff;
+}
+#box{
+  position: fixed;
+  top: 10%;
+  left:10%;
+  background-color: chartreuse;
+}
+.db {
+  width: 50%;
+  float: left;
+}
