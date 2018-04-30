@@ -198,6 +198,9 @@ We will cover those topics:
 3. Please download [MAMP](https://www.mamp.info/de/) the free version of it.
 4. Also make sure to download this blankExample.zip [here](https://github.com/yanoteaching/SFAC/blob/master/classes/BlankExample.zip) by either clicking __download__ or __view raw__
 
+## Readings
+1. [Eloquent JavaScript](https://eloquentjavascript.net/Eloquent_JavaScript.pdf)
+
 ## Inspirations
 
 * [Rafaël Rozendaal](https://www.newrafael.com/) check his websites
