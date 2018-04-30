@@ -179,6 +179,10 @@ We will cover those topics:
      <meta name="apple-mobile-web-app-status-bar-style" content="black">
    ```
 
+   ​
+
+   ​
+
 ### 30.04.2018 18:15 – 22:00
 
 1. Objects
