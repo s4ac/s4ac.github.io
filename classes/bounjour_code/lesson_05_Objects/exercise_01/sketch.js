@@ -12,7 +12,7 @@ function draw() {
     for (let fo of fallingObject) {
       fo.show();
       fo.update();
-      if(fo.pos.y > height || fo.pos.y < 0){
+      if(fo.y > height || fo.y < 0){
         fallingObject.splice(i, 1);
       }
       i++;
