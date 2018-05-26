@@ -183,13 +183,23 @@ We will cover those topics:
 
    ​
 
-### 30.04.2018 18:15 – 22:00
+### ~~30.04.2018 18:15 – 22:00~~
 
 1. Objects
 
-### 05.05.2018 T.B.A.
+### 05.05.2018 Exhibition
 
-#### open code night
+#### Exhibition @[Bonjour Baby](http://bonjourbaby.ch/) with artworks by:
+
+ * [Haejung Paik](https://phjessi.github.io/ondevicemotion_eyes/)
+
+* [Max Frischknecht](https://maxfrischknecht.github.io/gyroColors/)
+
+* [Ted Davis](http://teddavis.org/spinningstripedsquares/)
+
+* [Anonymous Otter](https://s4ac.github.io/BallWallGame/)
+
+All the artwork are built upon the `devicemotion` feature. This means that they won't work on laptop or desktop machines, but only on hand held devices.
 
 ## Dependencies a.k.a. what you need to download
 
