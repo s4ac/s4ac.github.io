@@ -47,9 +47,8 @@
    *
    * @method select
    * @param  {String} name id, class, or tag name of element to search for
-   * @param  {String|p5.Element|HTMLElement} [container] id, p5.Element, or
-   *                                             HTML element to search within
-   * @return {Object|p5.Element|null} p5.Element containing node found
+   * @param  {String} [container] id, p5.Element, or HTML element to search within
+   * @return {Object|p5.Element|Null} p5.Element containing node found
    * @example
    * <div ><code class='norender'>
    * function setup() {
@@ -58,18 +57,13 @@
    *   select('canvas').position(100, 100);
    * }
    * </code></div>
-   * <div><code class='norender'>
+   * <div ><code class='norender'>
    * // these are all valid calls to select()
    * var a = select('#moo');
    * var b = select('#blah', '#myContainer');
-   * var c, e;
-   * if (b) {
-   *   c = select('#foo', b);
-   * }
+   * var c = select('#foo', b);
    * var d = document.getElementById('beep');
-   * if (d) {
-   *   e = select('p', d);
-   * }
+   * var e = select('p', d);
    * [a, b, c, d, e]; // unused
    * </code></div>
    *
@@ -300,7 +294,7 @@
     var method = 'create' + tag.charAt(0).toUpperCase() + tag.slice(1);
     p5.prototype[method] = function(html) {
       var elt = document.createElement(tag);
-      elt.innerHTML = typeof html === 'undefined' ? '' : html;
+      elt.innerHTML = typeof html === undefined ? '' : html;
       return addElement(elt, this);
     };
   });
@@ -1046,10 +1040,8 @@
   }
 
   /**
-   * <p>Creates a new HTML5 &lt;video&gt; element that contains the audio/video
-   * feed from a webcam. The element is separate from the canvas and is
-   * displayed by default. The element can be hidden using .hide(). The feed
-   * can be drawn onto the canvas using image().</p>
+   * <p>Creates a new &lt;video&gt; element that contains the audio/video feed
+   * from a webcam. This can be drawn onto the canvas using video().</p>
    * <p>More specific properties of the feed can be passing in a Constraints object.
    * See the
    * <a href='http://w3c.github.io/mediacapture-main/getusermedia.html#media-track-constraints'> W3C
@@ -1068,13 +1060,12 @@
    *                                   stream has loaded
    * @return {Object|p5.Element} capture video p5.Element
    * @example
-   * <div class='norender notest'><code>
+   * <div class='norender'><code>
    * var capture;
    *
    * function setup() {
-   *   createCanvas(480, 480);
+   *   createCanvas(480, 120);
    *   capture = createCapture(VIDEO);
-   *   capture.hide();
    * }
    *
    * function draw() {
@@ -1082,7 +1073,7 @@
    *   filter(INVERT);
    * }
    * </code></div>
-   * <div class='norender notest'><code>
+   * <div class='norender'><code>
    * function setup() {
    *   createCanvas(480, 120);
    *   var constraints = {
@@ -1270,7 +1261,7 @@
    * div1.id('apples');
    * div0.child('apples'); // use id
    * </code></div>
-   * <div class='norender notest'><code>
+   * <div class='norender'><code>
    * var div0 = createDiv('this is the parent');
    * var elt = document.getElementById('myChildDiv');
    * div0.child(elt); // use element from page
@@ -2306,7 +2297,7 @@
    * @param {Number} [speed]  speed multiplier for element playback
    * @return {Number|Object|p5.MediaElement} current playback speed or p5.MediaElement
    * @example
-   * <div class='norender notest'><code>
+   * <div class='norender'><code>
    * //Clicking the canvas will loop
    * //the audio sample until the user
    * //clicks again to stop it

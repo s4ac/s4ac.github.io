@@ -1,10 +1,10 @@
-/*! p5.js v0.6.1 April 27, 2018 */
+/*! p5.js v0.6.0 January 19, 2018 */
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.p5 = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 module.exports={
     "project": {
         "name": "p5",
         "description": "[![Build Status](https://travis-ci.org/processing/p5.js.svg?branch=master)](https://travis-ci.org/processing/p5.js) [![npm version](https://badge.fury.io/js/p5.svg)](https://www.npmjs.com/package/p5)",
-        "version": "0.6.1",
+        "version": "0.6.0",
         "url": "https://github.com/processing/p5.js#readme"
     },
     "files": {
@@ -973,7 +973,7 @@ module.exports={
             "namespaces": {},
             "module": "Rendering",
             "file": "src/webgl/p5.RendererGL.js",
-            "line": 439,
+            "line": 438,
             "description": "<p>Thin wrapper around a renderer, to be used for creating a\ngraphics buffer object. Use this class if you need\nto draw into an off-screen graphics buffer. The two parameters define the\nwidth and height in pixels. The fields and methods for this class are\nextensive, but mirror the normal drawing API for p5.</p>\n"
         },
         "Transform": {
@@ -1031,7 +1031,7 @@ module.exports={
             },
             "namespaces": {},
             "file": "src/data/p5.TypedDict.js",
-            "line": 407
+            "line": 397
         },
         "Dictionary": {
             "name": "Dictionary",
@@ -1051,7 +1051,7 @@ module.exports={
             "module": "Data",
             "namespace": "",
             "file": "src/data/p5.TypedDict.js",
-            "line": 407,
+            "line": 397,
             "requires": [
                 "core\n\nThis module defines the p5 methods for the p5 Dictionary classes\nthese classes StringDict and NumberDict are for storing and working\nwith key",
                 "value pairs"
@@ -1262,7 +1262,7 @@ module.exports={
             "module": "IO",
             "namespace": "",
             "file": "src/io/files.js",
-            "line": 1169,
+            "line": 1102,
             "description": "<p>This is the p5 instance constructor.</p>\n<p>A p5 instance holds all the properties and methods related to\na p5 sketch.  It expects an incoming sketch closure and it can also\ntake an optional node parameter for attaching the generated p5 canvas\nto a node.  The sketch closure takes the newly created p5 instance as\nits sole argument and may optionally set preload(), setup(), and/or\ndraw() properties on it for running a sketch.</p>\n<p>A p5 sketch can run in &quot;global&quot; or &quot;instance&quot; mode:\n&quot;global&quot;   - all properties and methods are attached to the window\n&quot;instance&quot; - all properties and methods are bound to this p5 object</p>\n"
         },
         "Table": {
@@ -1322,7 +1322,7 @@ module.exports={
             "namespaces": {},
             "module": "Math",
             "file": "src/math/p5.Vector.js",
-            "line": 12,
+            "line": 13,
             "requires": [
                 "core"
             ],
@@ -1398,6 +1398,7 @@ module.exports={
             "line": 1,
             "requires": [
                 "core",
+                "polargeometry",
                 "constants"
             ]
         },
@@ -1647,7 +1648,7 @@ module.exports={
             "namespaces": {},
             "module": "p5.dom",
             "file": "lib/addons/p5.dom.js",
-            "line": 2885,
+            "line": 2876,
             "description": "<p><p>The web is much more than just canvas and p5.dom makes it easy to interact\nwith other HTML5 objects, including text, hyperlink, image, input, video,\naudio, and webcam.</p></p>\n<p><p>There is a set of creation methods, DOM manipulation methods, and\nan extended p5.Element that supports a range of HTML elements. See the\n<a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>\nbeyond the canvas tutorial</a> for a full overview of how this addon works.</p>\n<p><p>Methods and properties shown in black are part of the p5.js core, items in\nblue are part of the p5.dom library. You will need to include an extra file\nin order to access the blue functions. See the\n<a href='http://p5js.org/libraries/#using-a-library'>using a library</a>\nsection for information on how to include this library. p5.dom comes with\n<a href='http://p5js.org/download'>p5 complete</a> or you can download the single file\n<a href='https://raw.githubusercontent.com/lmccart/p5.js/master/lib/addons/p5.dom.js'>\nhere</a>.</p></p>\n<p><p>See <a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>tutorial: beyond the canvas</a>\nfor more info on how to use this libary.</a></p>\n",
             "tag": "main",
             "itemtype": "main"
@@ -1760,7 +1761,8 @@ module.exports={
             "namespace": "",
             "file": "src/color/p5.Color.js",
             "line": 16,
-            "description": "<p>Each color stores the color mode and level maxes that applied at the\ntime of its construction. These are used to interpret the input arguments\n(at construction and later for that instance of color) and to format the\noutput e.g. when saturation() is requested.</p>\n<p>Internally we store an array representing the ideal RGBA values in floating\npoint form, normalized from 0 to 1. From this we calculate the closest\nscreen color (RGBA levels from 0 to 255) and expose this to the renderer.</p>\n<p>We also cache normalized, floating point components of the color in various\nrepresentations as they are calculated. This is done to prevent repeating a\nconversion that has already been performed.</p>\n"
+            "description": "<p>Each color stores the color mode and level maxes that applied at the\ntime of its construction. These are used to interpret the input arguments\n(at construction and later for that instance of color) and to format the\noutput e.g. when saturation() is requested.</p>\n<p>Internally we store an array representing the ideal RGBA values in floating\npoint form, normalized from 0 to 1. From this we calculate the closest\nscreen color (RGBA levels from 0 to 255) and expose this to the renderer.</p>\n<p>We also cache normalized, floating point components of the color in various\nrepresentations as they are calculated. This is done to prevent repeating a\nconversion that has already been performed.</p>\n",
+            "is_constructor": 1
         },
         "p5.Element": {
             "name": "p5.Element",
@@ -1776,6 +1778,7 @@ module.exports={
             "file": "src/core/p5.Element.js",
             "line": 11,
             "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue are\nincluded in the core functionality, methods in brown are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but p5.Element\nobjects are created by calling createCanvas, createGraphics,\nor in the p5.dom library, createDiv, createImg, createInput, etc.</p>\n",
+            "is_constructor": 1,
             "params": [
                 {
                     "name": "elt",
@@ -1804,6 +1807,7 @@ module.exports={
             "file": "src/core/p5.Graphics.js",
             "line": 12,
             "description": "<p>Thin wrapper around a renderer, to be used for creating a\ngraphics buffer object. Use this class if you need\nto draw into an off-screen graphics buffer. The two parameters define the\nwidth and height in pixels. The fields and methods for this class are\nextensive, but mirror the normal drawing API for p5.</p>\n",
+            "is_constructor": 1,
             "extends": "p5.Element",
             "params": [
                 {
@@ -1877,8 +1881,9 @@ module.exports={
             "submodule": "Dictionary",
             "namespace": "",
             "file": "src/data/p5.TypedDict.js",
-            "line": 78,
-            "description": "<p>Base class for all p5.Dictionary types. More specifically\n typed Dictionary objects inherit from this</p>\n"
+            "line": 66,
+            "description": "<p>Base class for all p5.Dictionary types. More specifically\n typed Dictionary objects inherit from this</p>\n",
+            "is_constructor": 1
         },
         "p5.StringDict": {
             "name": "p5.StringDict",
@@ -1892,8 +1897,9 @@ module.exports={
             "submodule": "Dictionary",
             "namespace": "",
             "file": "src/data/p5.TypedDict.js",
-            "line": 387,
+            "line": 376,
             "description": "<p>A  Dictionary class for Strings.</p>\n",
+            "is_constructor": 1,
             "extends": "p5.TypedDict"
         },
         "p5.NumberDict": {
@@ -1908,8 +1914,9 @@ module.exports={
             "submodule": "Dictionary",
             "namespace": "",
             "file": "src/data/p5.TypedDict.js",
-            "line": 407,
+            "line": 397,
             "description": "<p>A simple Dictionary class for Numbers.</p>\n",
+            "is_constructor": 1,
             "extends": "p5.TypedDict"
         },
         "p5.Image": {
@@ -1929,6 +1936,7 @@ module.exports={
             "example": [
                 "\n<div><code>\nfunction setup() {\n  var img = createImage(100, 100); // same as new p5.Image(100, 100);\n  img.loadPixels();\n  createCanvas(100, 100);\n  background(0);\n\n  // helper for writing color to array\n  function writeColor(image, x, y, red, green, blue, alpha) {\n    var index = (x + y * width) * 4;\n    image.pixels[index] = red;\n    image.pixels[index + 1] = green;\n    image.pixels[index + 2] = blue;\n    image.pixels[index + 3] = alpha;\n  }\n\n  var x, y;\n  // fill with random colors\n  for (y = 0; y < img.height; y++) {\n    for (x = 0; x < img.width; x++) {\n      var red = random(255);\n      var green = random(255);\n      var blue = random(255);\n      var alpha = 255;\n      writeColor(img, x, y, red, green, blue, alpha);\n    }\n  }\n\n  // draw a red line\n  y = 0;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 255, 0, 0, 255);\n  }\n\n  // draw a green line\n  y = img.height - 1;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 0, 255, 0, 255);\n  }\n\n  img.updatePixels();\n  image(img, 0, 0);\n}\n</code></div>"
             ],
+            "is_constructor": 1,
             "params": [
                 {
                     "name": "width",
@@ -1954,7 +1962,8 @@ module.exports={
             "submodule": "Output",
             "namespace": "",
             "file": "src/io/files.js",
-            "line": 1169,
+            "line": 1102,
+            "is_constructor": 1,
             "params": [
                 {
                     "name": "filename",
@@ -2055,8 +2064,9 @@ module.exports={
             "submodule": "Math",
             "namespace": "",
             "file": "src/math/p5.Vector.js",
-            "line": 12,
+            "line": 13,
             "description": "<p>A class to describe a two or three dimensional vector, specifically\na Euclidean (also known as geometric) vector. A vector is an entity\nthat has both magnitude and direction. The datatype, however, stores\nthe components of the vector (x, y for 2D, and x, y, z for 3D). The magnitude\nand direction can be accessed via the methods mag() and heading().\n<br><br>\nIn many of the p5.js examples, you will see p5.Vector used to describe a\nposition, velocity, or acceleration. For example, if you consider a rectangle\nmoving across the screen, at any given instant it has a position (a vector\nthat points from the origin to its location), a velocity (the rate at which\nthe object&#39;s position changes per time unit, expressed as a vector), and\nacceleration (the rate at which the object&#39;s velocity changes per time\nunit, expressed as a vector).\n<br><br>\nSince vectors represent groupings of values, we cannot simply use\ntraditional addition/multiplication/etc. Instead, we&#39;ll need to do some\n&quot;vector&quot; math, which is made easy by the methods inside the p5.Vector class.</p>\n",
+            "is_constructor": 1,
             "params": [
                 {
                     "name": "x",
@@ -2096,6 +2106,7 @@ module.exports={
             "file": "src/typography/p5.Font.js",
             "line": 21,
             "description": "<p>Base class for font handling</p>\n",
+            "is_constructor": 1,
             "params": [
                 {
                     "name": "pInst",
@@ -2145,6 +2156,57 @@ module.exports={
                 }
             ]
         },
+        "p5.RendererGL": {
+            "name": "fill",
+            "shortname": "p5.RendererGL",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Rendering",
+            "namespace": "",
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 438,
+            "description": "<p>Basic fill material for geometry with a given color</p>\n",
+            "is_constructor": 1,
+            "extends": "p5.Renderer",
+            "todo": [
+                "extend class to include public method for offscreen\nrendering (FBO)."
+            ],
+            "submodule": "Rendering",
+            "itemtype": "method",
+            "params": [
+                {
+                    "name": "v1",
+                    "description": "<p>gray value,\nred or hue value (depending on the current color mode),\nor color Array, or CSS color string</p>\n",
+                    "type": "Number|Number[]|String|p5.Color"
+                },
+                {
+                    "name": "v2",
+                    "description": "<p>green or saturation value</p>\n",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "v3",
+                    "description": "<p>blue or brightness value</p>\n",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "a",
+                    "description": "<p>opacity</p>\n",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "chainable": 1,
+            "example": [
+                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(200, 200, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noStroke();\n  fill(100, 100, 240);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(75, 75, 75);\n}\n</code>\n</div>"
+            ],
+            "alt": "black canvas with purple cube spinning"
+        },
         "p5.Shader": {
             "name": "p5.Shader",
             "shortname": "p5.Shader",
@@ -2159,6 +2221,7 @@ module.exports={
             "file": "src/webgl/p5.Shader.js",
             "line": 13,
             "description": "<p>Shader class for WEBGL Mode</p>\n",
+            "is_constructor": 1,
             "params": [
                 {
                     "name": "renderer",
@@ -2174,6 +2237,35 @@ module.exports={
                     "name": "fragSrc",
                     "description": "<p>source code for the fragment shader (as a string)</p>\n",
                     "type": "String"
+                }
+            ]
+        },
+        "p5.Texture": {
+            "name": "p5.Texture",
+            "shortname": "p5.Texture",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Lights, Camera",
+            "submodule": "Material",
+            "namespace": "",
+            "file": "src/webgl/p5.Texture.js",
+            "line": 13,
+            "description": "<p>Texture class for WEBGL Mode</p>\n",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "renderer",
+                    "description": "<p>an instance of p5.RendererGL that\nwill provide the GL context for this new p5.Texture</p>\n",
+                    "type": "p5.RendererGL"
+                },
+                {
+                    "name": "obj",
+                    "description": "<p>the\nobject containing the image data to store in the texture.</p>\n",
+                    "type": "p5.Image|p5.Graphics|p5.Element|p5.MediaElement",
+                    "optional": true
                 }
             ]
         },
@@ -2201,7 +2293,7 @@ module.exports={
             "submodule": "p5.dom",
             "namespace": "",
             "file": "lib/addons/p5.dom.js",
-            "line": 1829,
+            "line": 1820,
             "description": "<p>Extends p5.Element to handle audio and video. In addition to the methods\nof p5.Element, it also contains methods for controlling media. It is not\ncalled directly, but p5.MediaElements are created by calling createVideo,\ncreateAudio, and createCapture.</p>\n",
             "is_constructor": 1,
             "params": [
@@ -2224,7 +2316,7 @@ module.exports={
             "submodule": "p5.dom",
             "namespace": "",
             "file": "lib/addons/p5.dom.js",
-            "line": 2885,
+            "line": 2876,
             "description": "<p>Base class for a file\nUsing this for createFileInput</p>\n",
             "is_constructor": 1,
             "params": [
@@ -2364,7 +2456,7 @@ module.exports={
             "namespace": "",
             "file": "lib/addons/p5.sound.js",
             "line": 4828,
-            "description": "<p>p5.Signal is a constant audio-rate signal used by p5.Oscillator\nand p5.Envelope for modulation math.</p>\n\n<p>This is necessary because Web Audio is processed on a seprate clock.\nFor example, the p5 draw loop runs about 60 times per second. But\nthe audio clock must process samples 44100 times per second. If we\nwant to add a value to each of those samples, we can&#39;t do it in the\ndraw loop, but we can do it by adding a constant-rate audio signal.&lt;/p.\n\n<p>This class mostly functions behind the scenes in p5.sound, and returns\na Tone.Signal from the Tone.js library by Yotam Mann.\nIf you want to work directly with audio signals for modular\nsynthesis, check out\n<a href='http://bit.ly/1oIoEng' target=_'blank'>tone.js.</a></p>",
+            "description": "<p>p5.Signal is a constant audio-rate signal used by p5.Oscillator\nand p5.Envelope for modulation math.</p>\n\n<p>This is necessary because Web Audio is processed on a seprate clock.\nFor example, the p5 draw loop runs about 60 times per second. But\nthe audio clock must process samples 44100 times per second. If we\nwant to add a value to each of those samples, we can&#39;t do it in the\ndraw loop, but we can do it by adding a constant-rate audio signal.</p.\n\n<p>This class mostly functions behind the scenes in p5.sound, and returns\na Tone.Signal from the Tone.js library by Yotam Mann.\nIf you want to work directly with audio signals for modular\nsynthesis, check out\n<a href='http://bit.ly/1oIoEng' target=_'blank'>tone.js.</a></p>",
             "is_constructor": 1,
             "return": {
                 "description": "A Signal object from the Tone.js library",
@@ -3198,7 +3290,7 @@ module.exports={
         {
             "file": "src/color/color_conversion.js",
             "line": 10,
-            "description": "<p>Conversions adapted from <a href=\"http://www.easyrgb.com/en/math.php\">http://www.easyrgb.com/en/math.php</a>.</p>\n<p>In these functions, hue is always in the range [0,1); all other components\nare in the range [0,1]. &#39;Brightness&#39; and &#39;value&#39; are used interchangeably.</p>\n",
+            "description": "<p>Conversions adapted from <a href=\"http://www.easyrgb.com/math.html\">http://www.easyrgb.com/math.html</a>.</p>\n<p>In these functions, hue is always in the range [0,1); all other components\nare in the range [0,1]. &#39;Brightness&#39; and &#39;value&#39; are used interchangeably.</p>\n",
             "class": "p5",
             "module": "Conversion",
             "submodule": "Color Conversion"
@@ -3401,6 +3493,12 @@ module.exports={
                             "name": "value",
                             "description": "<p>a color string</p>\n",
                             "type": "String"
+                        },
+                        {
+                            "name": "alpha",
+                            "description": "",
+                            "type": "Number",
+                            "optional": true
                         }
                     ],
                     "return": {
@@ -3409,7 +3507,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 297,
+                    "line": 298,
                     "params": [
                         {
                             "name": "values",
@@ -3423,7 +3521,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 303,
+                    "line": 304,
                     "params": [
                         {
                             "name": "color",
@@ -3440,7 +3538,7 @@ module.exports={
         },
         {
             "file": "src/color/creating_reading.js",
-            "line": 319,
+            "line": 320,
             "description": "<p>Extracts the green value from a color or pixel array.</p>\n",
             "itemtype": "method",
             "name": "green",
@@ -3465,7 +3563,7 @@ module.exports={
         },
         {
             "file": "src/color/creating_reading.js",
-            "line": 350,
+            "line": 351,
             "description": "<p>Extracts the hue value from a color or pixel array.</p>\n<p>Hue exists in both HSB and HSL. This function will return the\nHSB-normalized hue when supplied with an HSB color object (or when supplied\nwith a pixel array while the color mode is HSB), but will default to the\nHSL-normalized hue otherwise. (The values will only be different if the\nmaximum hue setting for each system is different.)</p>\n",
             "itemtype": "method",
             "name": "hue",
@@ -3490,7 +3588,7 @@ module.exports={
         },
         {
             "file": "src/color/creating_reading.js",
-            "line": 387,
+            "line": 388,
             "description": "<p>Blends two colors to find a third color somewhere between them. The amt\nparameter is the amount to interpolate between the two values where 0.0\nequal to the first color, 0.1 is very near the first color, 0.5 is halfway\nin between, etc. An amount below 0 will be treated as 0. Likewise, amounts\nabove 1 will be capped at 1. This is different from the behavior of lerp(),\nbut necessary because otherwise numbers outside the range will produce\nstrange and unexpected colors.\n<br><br>\nThe way that colours are interpolated depends on the current color mode.</p>\n",
             "itemtype": "method",
             "name": "lerpColor",
@@ -3525,7 +3623,7 @@ module.exports={
         },
         {
             "file": "src/color/creating_reading.js",
-            "line": 484,
+            "line": 485,
             "description": "<p>Extracts the HSL lightness value from a color or pixel array.</p>\n",
             "itemtype": "method",
             "name": "lightness",
@@ -3550,7 +3648,7 @@ module.exports={
         },
         {
             "file": "src/color/creating_reading.js",
-            "line": 514,
+            "line": 515,
             "description": "<p>Extracts the red value from a color or pixel array.</p>\n",
             "itemtype": "method",
             "name": "red",
@@ -3575,7 +3673,7 @@ module.exports={
         },
         {
             "file": "src/color/creating_reading.js",
-            "line": 554,
+            "line": 555,
             "description": "<p>Extracts the saturation value from a color or pixel array.</p>\n<p>Saturation is scaled differently in HSB and HSL. This function will return\nthe HSB saturation when supplied with an HSB color object (or when supplied\nwith a pixel array while the color mode is HSB), but will default to the\nHSL saturation otherwise.</p>\n",
             "itemtype": "method",
             "name": "saturation",
@@ -3600,24 +3698,15 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 52,
-            "description": "<p>This function returns the color formatted as a string. This can be useful\nfor debugging, or for using p5.js with other libraries.</p>\n",
+            "line": 54,
             "itemtype": "method",
             "name": "toString",
-            "params": [
-                {
-                    "name": "format",
-                    "description": "<p>How the color string will be formatted.\nLeaving this empty formats the string as rgba(r, g, b, a).\n&#39;#rgb&#39; &#39;#rgba&#39; &#39;#rrggbb&#39; and &#39;#rrggbbaa&#39; format as hexadecimal color codes.\n&#39;rgb&#39; &#39;hsb&#39; and &#39;hsl&#39; return the color formatted in the specified color mode.\n&#39;rgba&#39; &#39;hsba&#39; and &#39;hsla&#39; are the same as above but with alpha channels.\n&#39;rgb%&#39; &#39;hsb%&#39; &#39;hsl%&#39; &#39;rgba%&#39; &#39;hsba%&#39; and &#39;hsla%&#39; format as percentages.</p>\n",
-                    "type": "String",
-                    "optional": true
-                }
-            ],
             "return": {
-                "description": "the formatted string",
+                "description": "",
                 "type": "String"
             },
             "example": [
-                "\n<div>\n<code>\nvar myColor;\nfunction setup() {\n  createCanvas(200, 200);\n  stroke(255);\n  myColor = color(100, 100, 250);\n  fill(myColor);\n}\n\nfunction draw() {\n  text(myColor.toString(), 10, 10);\n  text(myColor.toString('#rrggbb'), 10, 95);\n  text(myColor.toString('rgba%'), 10, 180);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nvar myColor;\nfunction setup() {\n  createCanvas(200, 200);\n  stroke(255);\n  myColor = color(100, 100, 250);\n  fill(myColor);\n}\n\nfunction draw() {\n  text(myColor.toString(), 10, 10);\n}\n</code>\n</div>"
             ],
             "alt": "canvas with text representation of color",
             "class": "p5.Color",
@@ -3626,7 +3715,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 247,
+            "line": 83,
             "itemtype": "method",
             "name": "setRed",
             "params": [
@@ -3646,7 +3735,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 274,
+            "line": 110,
             "itemtype": "method",
             "name": "setGreen",
             "params": [
@@ -3666,7 +3755,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 301,
+            "line": 137,
             "itemtype": "method",
             "name": "setBlue",
             "params": [
@@ -3686,7 +3775,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 328,
+            "line": 164,
             "itemtype": "method",
             "name": "setAlpha",
             "params": [
@@ -3706,7 +3795,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 406,
+            "line": 242,
             "description": "<p>Hue is the same in HSB and HSL, but the maximum value may be different.\nThis function will return the HSB-normalized saturation when supplied with\nan HSB color object, but will default to the HSL-normalized saturation\notherwise.</p>\n",
             "class": "p5.Color",
             "module": "Color",
@@ -3714,7 +3803,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 437,
+            "line": 273,
             "description": "<p>Saturation is scaled differently in HSB and HSL. This function will return\nthe HSB saturation when supplied with an HSB color object, but will default\nto the HSL saturation otherwise.</p>\n",
             "class": "p5.Color",
             "module": "Color",
@@ -3722,7 +3811,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 456,
+            "line": 292,
             "description": "<p>CSS named colors.</p>\n",
             "class": "p5.Color",
             "module": "Color",
@@ -3730,7 +3819,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 609,
+            "line": 445,
             "description": "<p>These regular expressions are used to build up the patterns for matching\nviable CSS color strings: fragmenting the regexes in this way increases the\nlegibility and comprehensibility of the code.</p>\n<p>Note that RGB values of .9 are not parsed by IE, but are supported here for\ncolor string consistency.</p>\n",
             "class": "p5.Color",
             "module": "Color",
@@ -3738,7 +3827,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 622,
+            "line": 458,
             "description": "<p>Full color string patterns. The capture groups are necessary.</p>\n",
             "class": "p5.Color",
             "module": "Color",
@@ -3746,7 +3835,7 @@ module.exports={
         },
         {
             "file": "src/color/p5.Color.js",
-            "line": 976,
+            "line": 812,
             "description": "<p>For HSB and HSL, interpret the gray level as a brightness/lightness\nvalue (they are equivalent when chroma is zero). For RGB, normalize the\ngray level according to the blue maximum.</p>\n",
             "class": "p5.Color",
             "module": "Color",
@@ -3755,7 +3844,7 @@ module.exports={
         {
             "file": "src/color/setting.js",
             "line": 15,
-            "description": "<p>The background() function sets the color used for the background of the\np5.js canvas. The default background is light gray. This function is\ntypically used within draw() to clear the display window at the beginning\nof each frame, but it can be used inside setup() to set the background on\nthe first frame of animation or if the background need only be set once.\n<br><br>\nThe color is either specified in terms of the RGB, HSB, or HSL color\ndepending on the current colorMode. (The default color space is RGB, with\neach value in the range from 0 to 255). The alpha range by default is also 0 to 255.\n<br><br>\nIf a single string argument is provided, RGB, RGBA and Hex CSS color strings\nand all named color strings are supported. In this case, an alpha number\nvalue as a second argument is not supported, the RGBA form should be used.\n<br><br>\nA p5.Color object can also be provided to set the background color.\n<br><br>\nA p5.Image can also be provided to set the background image.</p>\n",
+            "description": "<p>The background() function sets the color used for the background of the\np5.js canvas. The default background is light gray. This function is\ntypically used within draw() to clear the display window at the beginning\nof each frame, but it can be used inside setup() to set the background on\nthe first frame of animation or if the background need only be set once.\n<br><br>\nThe color is either specified in terms of the RGB, HSB, or HSL color\ndepending on the current colorMode. (The default color space is RGB, with\neach value in the range from 0 to 255). The alpha range by default is also 0 to 255.\n<br><br>\nIf a single string argument is provided, RGB, RGBA and Hex CSS color strings\nand all named color strings are supported. In this case, an alpha number\nvalue as a second argument is not supported, the RGBA form should be used.\n<br><br>\nA p5.Color object can also be provided to set the background color.\n<br><br>\nA p5.Image can also be provided to set the background iamge.</p>\n",
             "itemtype": "method",
             "name": "background",
             "chainable": 1,
@@ -3999,17 +4088,6 @@ module.exports={
                             "name": "value",
                             "description": "<p>a color string</p>\n",
                             "type": "String"
-                        }
-                    ],
-                    "chainable": 1
-                },
-                {
-                    "line": 475,
-                    "params": [
-                        {
-                            "name": "gray",
-                            "description": "<p>a gray value</p>\n",
-                            "type": "Number"
                         },
                         {
                             "name": "alpha",
@@ -4021,7 +4099,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 482,
+                    "line": 476,
                     "params": [
                         {
                             "name": "values",
@@ -4032,7 +4110,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 489,
+                    "line": 483,
                     "params": [
                         {
                             "name": "color",
@@ -4046,7 +4124,7 @@ module.exports={
         },
         {
             "file": "src/color/setting.js",
-            "line": 501,
+            "line": 495,
             "description": "<p>Disables filling geometry. If both noStroke() and noFill() are called,\nnothing will be drawn to the screen.</p>\n",
             "itemtype": "method",
             "name": "noFill",
@@ -4061,7 +4139,7 @@ module.exports={
         },
         {
             "file": "src/color/setting.js",
-            "line": 542,
+            "line": 536,
             "description": "<p>Disables drawing the stroke (outline). If both noStroke() and noFill()\nare called, nothing will be drawn to the screen.</p>\n",
             "itemtype": "method",
             "name": "noStroke",
@@ -4076,7 +4154,7 @@ module.exports={
         },
         {
             "file": "src/color/setting.js",
-            "line": 582,
+            "line": 576,
             "description": "<p>Sets the color used to draw lines and borders around shapes. This color\nis either specified in terms of the RGB or HSB color depending on the\ncurrent colorMode() (the default color space is RGB, with each value in\nthe range from 0 to 255). The alpha range by default is also 0 to 255.\n<br><br>\nIf a single string argument is provided, RGB, RGBA and Hex CSS color\nstrings and all named color strings are supported. In this case, an alpha\nnumber value as a second argument is not supported, the RGBA form should be\nused.\n<br><br>\nA p5 Color object can also be provided to set the stroke color.</p>\n",
             "itemtype": "method",
             "name": "stroke",
@@ -4090,7 +4168,7 @@ module.exports={
             "submodule": "Setting",
             "overloads": [
                 {
-                    "line": 582,
+                    "line": 576,
                     "params": [
                         {
                             "name": "v1",
@@ -4117,23 +4195,12 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 721,
+                    "line": 715,
                     "params": [
                         {
                             "name": "value",
                             "description": "<p>a color string</p>\n",
                             "type": "String"
-                        }
-                    ],
-                    "chainable": 1
-                },
-                {
-                    "line": 727,
-                    "params": [
-                        {
-                            "name": "gray",
-                            "description": "<p>a gray value</p>\n",
-                            "type": "Number"
                         },
                         {
                             "name": "alpha",
@@ -4145,7 +4212,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 734,
+                    "line": 722,
                     "params": [
                         {
                             "name": "values",
@@ -4156,7 +4223,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 741,
+                    "line": 729,
                     "params": [
                         {
                             "name": "color",
@@ -4223,7 +4290,7 @@ module.exports={
         },
         {
             "file": "src/core/2d_primitives.js",
-            "line": 133,
+            "line": 134,
             "description": "<p>Draws an ellipse (oval) to the screen. An ellipse with equal width and\nheight is a circle. By default, the first two parameters set the location,\nand the third and fourth parameters set the shape&#39;s width and height. If\nno height is specified, the value of width is used for both the width and\nheight. If a negative height or width is specified, the absolute value is taken.\nThe origin may be changed with the ellipseMode() function.</p>\n",
             "itemtype": "method",
             "name": "ellipse",
@@ -4237,7 +4304,7 @@ module.exports={
             "submodule": "2D Primitives",
             "overloads": [
                 {
-                    "line": 133,
+                    "line": 134,
                     "params": [
                         {
                             "name": "x",
@@ -4264,7 +4331,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 158,
+                    "line": 159,
                     "params": [
                         {
                             "name": "x",
@@ -4287,9 +4354,15 @@ module.exports={
                             "type": "Number"
                         },
                         {
-                            "name": "detail",
-                            "description": "<p>number of radial sectors to draw</p>\n",
+                            "name": "detailX",
+                            "description": "<p>number of segments in the x-direction</p>\n",
                             "type": "Integer"
+                        },
+                        {
+                            "name": "detailY",
+                            "description": "<p>number of segments in the y-direction</p>\n",
+                            "type": "Integer",
+                            "optional": true
                         }
                     ]
                 }
@@ -4297,7 +4370,7 @@ module.exports={
         },
         {
             "file": "src/core/2d_primitives.js",
-            "line": 188,
+            "line": 190,
             "description": "<p>Draws a line (a direct path between two points) to the screen. The version\nof line() with four parameters draws the line in 2D. To color a line, use\nthe stroke() function. A line cannot be filled, therefore the fill()\nfunction will not affect the color of a line. 2D lines are drawn with a\nwidth of one pixel by default, but this can be changed with the\nstrokeWeight() function.</p>\n",
             "itemtype": "method",
             "name": "line",
@@ -4311,7 +4384,7 @@ module.exports={
             "submodule": "2D Primitives",
             "overloads": [
                 {
-                    "line": 188,
+                    "line": 190,
                     "params": [
                         {
                             "name": "x1",
@@ -4337,7 +4410,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 224,
+                    "line": 226,
                     "params": [
                         {
                             "name": "x1",
@@ -4376,7 +4449,7 @@ module.exports={
         },
         {
             "file": "src/core/2d_primitives.js",
-            "line": 244,
+            "line": 246,
             "description": "<p>Draws a point, a coordinate in space at the dimension of one pixel.\nThe first parameter is the horizontal value for the point, the second\nvalue is the vertical value for the point. The color of the point is\ndetermined by the current stroke.</p>\n",
             "itemtype": "method",
             "name": "point",
@@ -4409,7 +4482,7 @@ module.exports={
         },
         {
             "file": "src/core/2d_primitives.js",
-            "line": 279,
+            "line": 281,
             "description": "<p>Draw a quad. A quad is a quadrilateral, a four sided polygon. It is\nsimilar to a rectangle, but the angles between its edges are not\nconstrained to ninety degrees. The first pair of parameters (x1,y1)\nsets the first vertex and the subsequent pairs should proceed\nclockwise or counter-clockwise around the defined shape.</p>\n",
             "itemtype": "method",
             "name": "quad",
@@ -4423,7 +4496,7 @@ module.exports={
             "submodule": "2D Primitives",
             "overloads": [
                 {
-                    "line": 279,
+                    "line": 281,
                     "params": [
                         {
                             "name": "x1",
@@ -4469,7 +4542,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 307,
+                    "line": 309,
                     "params": [
                         {
                             "name": "x1",
@@ -4538,7 +4611,7 @@ module.exports={
         },
         {
             "file": "src/core/2d_primitives.js",
-            "line": 333,
+            "line": 335,
             "description": "<p>Draws a rectangle to the screen. A rectangle is a four-sided shape with\nevery angle at ninety degrees. By default, the first two parameters set\nthe location of the upper-left corner, the third sets the width, and the\nfourth sets the height. The way these parameters are interpreted, however,\nmay be changed with the rectMode() function.\n<br><br>\nThe fifth, sixth, seventh and eighth parameters, if specified,\ndetermine corner radius for the top-right, top-left, lower-right and\nlower-left corners, respectively. An omitted corner radius parameter is set\nto the value of the previously specified radius value in the parameter list.</p>\n",
             "itemtype": "method",
             "name": "rect",
@@ -4552,7 +4625,7 @@ module.exports={
             "submodule": "2D Primitives",
             "overloads": [
                 {
-                    "line": 333,
+                    "line": 335,
                     "params": [
                         {
                             "name": "x",
@@ -4602,7 +4675,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 383,
+                    "line": 385,
                     "params": [
                         {
                             "name": "x",
@@ -4643,7 +4716,7 @@ module.exports={
         },
         {
             "file": "src/core/2d_primitives.js",
-            "line": 416,
+            "line": 406,
             "description": "<p>A triangle is a plane created by connecting three points. The first two\narguments specify the first point, the middle two arguments specify the\nsecond point, and the last two arguments specify the third point.</p>\n",
             "itemtype": "method",
             "name": "triangle",
@@ -5616,7 +5689,7 @@ module.exports={
         {
             "file": "src/core/core.js",
             "line": 49,
-            "description": "<p>Called directly before setup(), the preload() function is used to handle\nasynchronous loading of external files in a blocking way. If a preload \nfunction is defined, setup() will wait until any load calls within have\nfinished. Nothing besides load calls (loadImage, loadJSON, loadFont,\nloadStrings, etc.) should be inside preload function. If asynchronous\nloading is preferred, the load methods can instead be called in setup()\nor anywhere else with the use of a callback parameter.\n<br><br>\nBy default the text &quot;loading...&quot; will be displayed. To make your own\nloading page, include an HTML element with id &quot;p5_loading&quot; in your\npage. More information <a href=\"http://bit.ly/2kQ6Nio\">here</a>.</p>\n",
+            "description": "<p>Called directly before setup(), the preload() function is used to handle\nasynchronous loading of external files. If a preload function is\ndefined, setup() will wait until any load calls within have finished.\nNothing besides load calls should be inside preload (loadImage,\nloadJSON, loadFont, loadStrings, etc).<br><br>\nBy default the text &quot;loading...&quot; will be displayed. To make your own\nloading page, include an HTML element with id &quot;p5_loading&quot; in your\npage. More information <a href=\"http://bit.ly/2kQ6Nio\">here</a>.</p>\n",
             "itemtype": "method",
             "name": "preload",
             "example": [
@@ -5629,7 +5702,7 @@ module.exports={
         },
         {
             "file": "src/core/core.js",
-            "line": 90,
+            "line": 87,
             "description": "<p>The setup() function is called once when the program starts. It&#39;s used to\ndefine initial environment properties such as screen size and background\ncolor and to load media such as images and fonts as the program starts.\nThere can only be one setup() function for each program and it shouldn&#39;t\nbe called again after its initial execution.\n<br><br>\nNote: Variables declared within setup() are not accessible within other\nfunctions, including draw().</p>\n",
             "itemtype": "method",
             "name": "setup",
@@ -5643,8 +5716,8 @@ module.exports={
         },
         {
             "file": "src/core/core.js",
-            "line": 121,
-            "description": "<p>Called directly after setup(), the draw() function continuously executes\nthe lines of code contained inside its block until the program is stopped\nor noLoop() is called. Note if noLoop() is called in setup(), draw() will\nstill be executed once before stopping. draw() is called automatically and\nshould never be called explicitly.\n<br><br>\nIt should always be controlled with noLoop(), redraw() and loop(). After\nnoLoop() stops the code in draw() from executing, redraw() causes the\ncode inside draw() to execute once, and loop() will cause the code\ninside draw() to resume executing continuously.\n<br><br>\nThe number of times draw() executes in each second may be controlled with\nthe frameRate() function.\n<br><br>\nThere can only be one draw() function for each sketch, and draw() must\nexist if you want the code to run continuously, or to process events such\nas mousePressed(). Sometimes, you might have an empty call to draw() in\nyour program, as shown in the above example.\n<br><br>\nIt is important to note that the drawing coordinate system will be reset\nat the beginning of each draw() call. If any transformations are performed\nwithin draw() (ex: scale, rotate, translate), their effects will be\nundone at the beginning of draw(), so transformations will not accumulate\nover time. On the other hand, styling applied (ex: fill, stroke, etc) will\nremain in effect.</p>\n",
+            "line": 118,
+            "description": "<p>Called directly after setup(), the draw() function continuously executes\nthe lines of code contained inside its block until the program is stopped\nor noLoop() is called. Note if noLoop() is called in setup(), draw() will\nstill be executed once before stopping. draw() is called automatically and\nshould never be called explicitly.\n<br><br>\nIt should always be controlled with noLoop(), redraw() and loop(). After\nnoLoop() stops the code in draw() from executing, redraw() causes the\ncode inside draw() to execute once, and loop() will cause the code\ninside draw() to resume executing continuously.\n<br><br>\nThe number of times draw() executes in each second may be controlled with\nthe frameRate() function.\n<br><br>\nThere can only be one draw() function for each sketch, and draw() must\nexist if you want the code to run continuously, or to process events such\nas mousePressed(). Sometimes, you might have an empty call to draw() in\nyour program, as shown in the above example.\n<br><br>\nIt is important to note that the drawing coordinate system will be reset\nat the beginning of each draw() call. If any transformations are performed\nwithin draw() (ex: scale, rotate, translate, their effects will be\nundone at the beginning of draw(), so transformations will not accumulate\nover time. On the other hand, styling applied (ex: fill, stroke, etc) will\nremain in effect.</p>\n",
             "itemtype": "method",
             "name": "draw",
             "example": [
@@ -5657,7 +5730,7 @@ module.exports={
         },
         {
             "file": "src/core/core.js",
-            "line": 407,
+            "line": 401,
             "description": "<p>Removes the entire p5 sketch. This will remove the canvas and any\nelements created by p5.js. It will also stop the draw loop and unbind\nany properties or methods from the window global scope. It will\nleave a variable p5 in case you wanted to create a new p5 sketch.\nIf you like, you can set p5 = null to erase it. While all functions and\nvariables and objects created by the p5 library will be removed, any\nother global variables created by your code will remain.</p>\n",
             "itemtype": "method",
             "name": "remove",
@@ -5801,7 +5874,7 @@ module.exports={
         {
             "file": "src/core/curves.js",
             "line": 92,
-            "description": "<p>Sets the resolution at which Beziers display.</p>\n<p>The default value is 20.</p>\n<p>This function is only useful when using the WEBGL renderer\nas the default canvas renderer does not use this information.</p>\n",
+            "description": "<p>Sets the resolution at which Beziers display.</p>\n<p>The default value is 20.</p>\n",
             "itemtype": "method",
             "name": "bezierDetail",
             "params": [
@@ -5813,16 +5886,16 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  noFill();\n\n  bezierDetail(5);\n}\n\nfunction draw() {\n  background(200);\n\n  // prettier-ignore\n  bezier(-40, -40, 0,\n          90, -40, 0,\n         -90,  40, 0,\n          40,  40, 0);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nbackground(204);\nbezierDetail(50);\nbezier(85, 20, 10, 10, 90, 90, 15, 80);\n</code>\n</div>"
             ],
-            "alt": "stretched black s-shape with a low level of bezier detail",
+            "alt": "stretched black s-shape with 7 5x5 ellipses and orange lines along the shape.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Curves"
         },
         {
             "file": "src/core/curves.js",
-            "line": 135,
+            "line": 119,
             "description": "<p>Evaluates the Bezier at position t for points a, b, c, d.\nThe parameters a and d are the first and last points\non the curve, and b and c are the control points.\nThe final parameter t varies between 0 and 1.\nThis can be done once with the x coordinates and a second time\nwith the y coordinates to get the location of a bezier curve at t.</p>\n",
             "itemtype": "method",
             "name": "bezierPoint",
@@ -5867,7 +5940,7 @@ module.exports={
         },
         {
             "file": "src/core/curves.js",
-            "line": 190,
+            "line": 174,
             "description": "<p>Evaluates the tangent to the Bezier at position t for points a, b, c, d.\nThe parameters a and d are the first and last points\non the curve, and b and c are the control points.\nThe final parameter t varies between 0 and 1.</p>\n",
             "itemtype": "method",
             "name": "bezierTangent",
@@ -5912,7 +5985,7 @@ module.exports={
         },
         {
             "file": "src/core/curves.js",
-            "line": 269,
+            "line": 253,
             "description": "<p>Draws a curved line on the screen between two points, given as the\nmiddle four parameters. The first two parameters are a control point, as\nif the curve came from this point even though it&#39;s not drawn. The last\ntwo parameters similarly describe the other control point. <br /><br />\nLonger curves can be created by putting a series of curve() functions\ntogether or using curveVertex(). An additional function called\ncurveTightness() provides control for the visual quality of the curve.\nThe curve() function is an implementation of Catmull-Rom splines.</p>\n",
             "itemtype": "method",
             "name": "curve",
@@ -5926,7 +5999,7 @@ module.exports={
             "submodule": "Curves",
             "overloads": [
                 {
-                    "line": 269,
+                    "line": 253,
                     "params": [
                         {
                             "name": "x1",
@@ -5972,7 +6045,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 334,
+                    "line": 318,
                     "params": [
                         {
                             "name": "x1",
@@ -6041,8 +6114,8 @@ module.exports={
         },
         {
             "file": "src/core/curves.js",
-            "line": 360,
-            "description": "<p>Sets the resolution at which curves display.</p>\n<p>The default value is 20.</p>\n<p>This function is only useful when using the WEBGL renderer\nas the default canvas renderer does not use this\ninformation.</p>\n",
+            "line": 344,
+            "description": "<p>Sets the resolution at which curves display.</p>\n<p>The default value is 20.</p>\n",
             "itemtype": "method",
             "name": "curveDetail",
             "params": [
@@ -6054,16 +6127,16 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n\n  curveDetail(5);\n}\nfunction draw() {\n  background(200);\n\n  // prettier-ignore\n  curve( 250, 600, 0,\n         -30,  40, 0,\n          30,  30, 0,\n        -250, 600, 0);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nbackground(204);\ncurveDetail(20);\ncurve(5, 26, 5, 26, 73, 24, 73, 61);\n</code>\n</div>"
             ],
-            "alt": "white arch shape with a low level of curve detail.",
+            "alt": "white arch shape in top-mid canvas.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Curves"
         },
         {
             "file": "src/core/curves.js",
-            "line": 402,
+            "line": 371,
             "description": "<p>Modifies the quality of forms created with curve() and curveVertex().\nThe parameter tightness determines how the curve fits to the vertex\npoints. The value 0.0 is the default value for tightness (this value\ndefines the curves to be Catmull-Rom splines) and the value 1.0 connects\nall the points with straight lines. Values within the range -5.0 and 5.0\nwill deform the curves but will leave them recognizable and as values\nincrease in magnitude, they will continue to deform.</p>\n",
             "itemtype": "method",
             "name": "curveTightness",
@@ -6085,7 +6158,7 @@ module.exports={
         },
         {
             "file": "src/core/curves.js",
-            "line": 448,
+            "line": 417,
             "description": "<p>Evaluates the curve at position t for points a, b, c, d.\nThe parameter t varies between 0 and 1, a and d are points\non the curve, and b and c are the control points.\nThis can be done once with the x coordinates and a second time\nwith the y coordinates to get the location of a curve at t.</p>\n",
             "itemtype": "method",
             "name": "curvePoint",
@@ -6129,7 +6202,7 @@ module.exports={
         },
         {
             "file": "src/core/curves.js",
-            "line": 497,
+            "line": 466,
             "description": "<p>Evaluates the tangent to the curve at position t for points a, b, c, d.\nThe parameter t varies between 0 and 1, a and d are points on the curve,\nand b and c are the control points.</p>\n",
             "itemtype": "method",
             "name": "curveTangent",
@@ -6527,7 +6600,7 @@ module.exports={
                 "type": "Object"
             },
             "example": [
-                "\n<div class='norender notest'>\n<code>\n// Example: http://p5js.org?year=2014&month=May&day=15\n\nfunction setup() {\n  var params = getURLParams();\n  text(params.day, 10, 20);\n  text(params.month, 10, 40);\n  text(params.year, 10, 60);\n}\n</code>\n</div>"
+                "\n<div class='norender'>\n<code>\n// Example: http://p5js.org?year=2014&month=May&day=15\n\nfunction setup() {\n  var params = getURLParams();\n  text(params.day, 10, 20);\n  text(params.month, 10, 40);\n  text(params.year, 10, 60);\n}\n</code>\n</div>"
             ],
             "alt": "no display.",
             "class": "p5",
@@ -6545,21 +6618,21 @@ module.exports={
         },
         {
             "file": "src/core/error_helpers.js",
-            "line": 405,
+            "line": 397,
             "description": "<p>Validates parameters\nparam  {String}               func    the name of the function\nparam  {Array}                args    user input arguments</p>\n<p>example:\n var a;\n ellipse(10,10,a,5);\nconsole ouput:\n &quot;It looks like ellipse received an empty variable in spot #2.&quot;</p>\n<p>example:\n ellipse(10,&quot;foo&quot;,5,5);\nconsole output:\n &quot;ellipse was expecting a number for parameter #1,\n          received &quot;foo&quot; instead.&quot;</p>\n",
             "class": "p5",
             "module": "Environment"
         },
         {
             "file": "src/core/error_helpers.js",
-            "line": 457,
+            "line": 449,
             "description": "<p>Prints out all the colors in the color pallete with white text.\nFor color blindness testing.</p>\n",
             "class": "p5",
             "module": "Environment"
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 26,
+            "line": 27,
             "description": "<p>Underlying HTML element. All normal HTML methods can be called on this.</p>\n",
             "example": [
                 "\n<div>\n<code>\ncreateCanvas(300, 500);\nbackground(0, 0, 0, 0);\nvar input = createInput();\ninput.position(20, 225);\nvar inputElem = new p5.Element(input.elt);\ninputElem.style('width:450px;');\ninputElem.value('some string');\n</code>\n</div>"
@@ -6573,13 +6646,13 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 51,
+            "line": 53,
             "description": "<p>Attaches the element to the parent specified. A way of setting\n the container for the element. Accepts either a string ID, DOM\n node, or p5.Element. If no arguments given, parent node is returned.\n For more ways to position the canvas, see the\n <a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>\n positioning the canvas</a> wiki page.</p>\n",
             "itemtype": "method",
             "name": "parent",
             "chainable": 1,
             "example": [
-                "\n <div class=\"norender notest\"><code>\n // in the html file:\n // &lt;div id=\"myContainer\">&lt;/div>\n// in the js file:\n var cnv = createCanvas(100, 100);\n cnv.parent('myContainer');\n </code></div>\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n var div1 = createDiv('this is the child');\n div1.parent(div0); // use p5.Element\n </code></div>\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n div0.id('apples');\n var div1 = createDiv('this is the child');\n div1.parent('apples'); // use id\n </code></div>\n <div class='norender notest'><code>\n var elt = document.getElementById('myParentDiv');\n var div1 = createDiv('this is the child');\n div1.parent(elt); // use element from page\n </code></div>"
+                "\n <div class=\"norender\"><code>\n // in the html file:\n // &lt;div id=\"myContainer\">&lt;/div>\n// in the js file:\n var cnv = createCanvas(100, 100);\n cnv.parent('myContainer');\n </code></div>\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n var div1 = createDiv('this is the child');\n div1.parent(div0); // use p5.Element\n </code></div>\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n div0.id('apples');\n var div1 = createDiv('this is the child');\n div1.parent('apples'); // use id\n </code></div>\n <div class='norender'><code>\n var elt = document.getElementById('myParentDiv');\n var div1 = createDiv('this is the child');\n div1.parent(elt); // use element from page\n </code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -6587,7 +6660,7 @@ module.exports={
             "submodule": "DOM",
             "overloads": [
                 {
-                    "line": 51,
+                    "line": 53,
                     "params": [
                         {
                             "name": "parent",
@@ -6598,7 +6671,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 94,
+                    "line": 96,
                     "params": [],
                     "return": {
                         "description": "",
@@ -6609,7 +6682,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 116,
+            "line": 118,
             "description": "<p>Sets the ID of the element. If no ID argument is passed in, it instead\n returns the current ID of the element.</p>\n",
             "itemtype": "method",
             "name": "id",
@@ -6623,7 +6696,7 @@ module.exports={
             "submodule": "DOM",
             "overloads": [
                 {
-                    "line": 116,
+                    "line": 118,
                     "params": [
                         {
                             "name": "id",
@@ -6634,7 +6707,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 138,
+                    "line": 140,
                     "params": [],
                     "return": {
                         "description": "the id of the element",
@@ -6645,7 +6718,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 153,
+            "line": 155,
             "description": "<p>Adds given class to the element. If no class argument is passed in, it\n instead returns a string containing the current class(es) of the element.</p>\n",
             "itemtype": "method",
             "name": "class",
@@ -6659,7 +6732,7 @@ module.exports={
             "submodule": "DOM",
             "overloads": [
                 {
-                    "line": 153,
+                    "line": 155,
                     "params": [
                         {
                             "name": "class",
@@ -6670,7 +6743,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 175,
+                    "line": 177,
                     "params": [],
                     "return": {
                         "description": "the class of the element",
@@ -6681,7 +6754,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 188,
+            "line": 190,
             "description": "<p>The .mousePressed() function is called once after every time a\nmouse button is pressed over the element. This can be used to\nattach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "mousePressed",
@@ -6703,7 +6776,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 238,
+            "line": 240,
             "description": "<p>The .doubleClicked() function is called once after every time a\nmouse button is pressed twice over the element. This can be used to\nattach element and action specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "doubleClicked",
@@ -6728,7 +6801,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 287,
+            "line": 289,
             "description": "<p>The .mouseWheel() function is called once after every time a\nmouse wheel is scrolled over the element. This can be used to\nattach element specific event listeners.\n<br><br>\nThe function accepts a callback function as argument which will be executed\nwhen the <code>wheel</code> event is triggered on the element, the callback function is\npassed one argument <code>event</code>. The <code>event.deltaY</code> property returns negative\nvalues if the mouse wheel is rotated up or away from the user and positive\nin the other direction. The <code>event.deltaX</code> does the same as <code>event.deltaY</code>\nexcept it reads the horizontal wheel scroll of the mouse wheel.\n<br><br>\nOn OS X with &quot;natural&quot; scrolling enabled, the <code>event.deltaY</code> values are\nreversed.</p>\n",
             "itemtype": "method",
             "name": "mouseWheel",
@@ -6750,7 +6823,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 353,
+            "line": 355,
             "description": "<p>The .mouseReleased() function is called once after every time a\nmouse button is released over the element. This can be used to\nattach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "mouseReleased",
@@ -6772,7 +6845,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 406,
+            "line": 408,
             "description": "<p>The .mouseClicked() function is called once after a mouse button is\npressed and released over the element. This can be used to\nattach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "mouseClicked",
@@ -6794,7 +6867,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 460,
+            "line": 462,
             "description": "<p>The .mouseMoved() function is called once every time a\nmouse moves over the element. This can be used to attach an\nelement specific event listener.</p>\n",
             "itemtype": "method",
             "name": "mouseMoved",
@@ -6816,7 +6889,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 519,
+            "line": 521,
             "description": "<p>The .mouseOver() function is called once after every time a\nmouse moves onto the element. This can be used to attach an\nelement specific event listener.</p>\n",
             "itemtype": "method",
             "name": "mouseOver",
@@ -6838,7 +6911,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 562,
+            "line": 564,
             "description": "<p>The .changed() function is called when the value of an\nelement changes.\nThis can be used to attach an element specific event listener.</p>\n",
             "itemtype": "method",
             "name": "changed",
@@ -6860,7 +6933,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 629,
+            "line": 631,
             "description": "<p>The .input() function is called when any user input is\ndetected with an element. The input event is often used\nto detect keystrokes in a input element, or changes on a\nslider element. This can be used to attach an element specific\nevent listener.</p>\n",
             "itemtype": "method",
             "name": "input",
@@ -6882,7 +6955,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 664,
+            "line": 666,
             "description": "<p>The .mouseOut() function is called once after every time a\nmouse moves off the element. This can be used to attach an\nelement specific event listener.</p>\n",
             "itemtype": "method",
             "name": "mouseOut",
@@ -6904,7 +6977,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 706,
+            "line": 708,
             "description": "<p>The .touchStarted() function is called once after every time a touch is\nregistered. This can be used to attach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "touchStarted",
@@ -6926,7 +6999,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 755,
+            "line": 757,
             "description": "<p>The .touchMoved() function is called once after every time a touch move is\nregistered. This can be used to attach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "touchMoved",
@@ -6948,7 +7021,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 796,
+            "line": 798,
             "description": "<p>The .touchEnded() function is called once after every time a touch is\nregistered. This can be used to attach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "touchEnded",
@@ -6970,7 +7043,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 846,
+            "line": 848,
             "description": "<p>The .dragOver() function is called once after every time a\nfile is dragged over the element. This can be used to attach an\nelement specific event listener.</p>\n",
             "itemtype": "method",
             "name": "dragOver",
@@ -6992,7 +7065,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 884,
+            "line": 886,
             "description": "<p>The .dragLeave() function is called once after every time a\ndragged file leaves the element area. This can be used to attach an\nelement specific event listener.</p>\n",
             "itemtype": "method",
             "name": "dragLeave",
@@ -7014,7 +7087,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 922,
+            "line": 924,
             "description": "<p>The .drop() function is called for each file dropped on the element.\nIt requires a callback that is passed a p5.File object.  You can\noptionally pass two callbacks, the first one (required) is triggered\nfor each file dropped when the file is loaded.  The second (optional)\nis triggered just once when a file (or files) are dropped.</p>\n",
             "itemtype": "method",
             "name": "drop",
@@ -7042,7 +7115,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Element.js",
-            "line": 1057,
+            "line": 1059,
             "description": "<p>Helper fxn for sharing pixel methods</p>\n",
             "class": "p5.Element",
             "module": "DOM",
@@ -7050,21 +7123,16 @@ module.exports={
         },
         {
             "file": "src/core/p5.Graphics.js",
-            "line": 65,
-            "description": "<p>Removes a Graphics object from the page and frees any resources\nassociated with it.</p>\n",
+            "line": 68,
             "itemtype": "method",
             "name": "remove",
-            "example": [
-                "\n<div class='norender'><code>\nvar bg;\nfunction setup() {\n  bg = createCanvas(100, 100);\n  bg.background(0);\n  image(bg, 0, 0);\n  bg.remove();\n}\n</code></div>\n\n<div><code>\nvar bg;\nfunction setup() {\n  pixelDensity(1);\n  createCanvas(100, 100);\n  stroke(255);\n  fill(0);\n\n  // create and draw the background image\n  bg = createGraphics(100, 100);\n  bg.background(200);\n  bg.ellipse(50, 50, 80, 80);\n}\nfunction draw() {\n  var t = millis() / 1000;\n  // draw the background\n  if (bg) {\n    image(bg, frameCount % 100, 0);\n    image(bg, frameCount % 100 - 100, 0);\n  }\n  // draw the foreground\n  var p = p5.Vector.fromAngle(t, 35).add(50, 50);\n  ellipse(p.x, p.y, 30);\n}\nfunction mouseClicked() {\n  // remove the background\n  if (bg) {\n    bg.remove();\n    bg = null;\n  }\n}\n</code></div>"
-            ],
-            "alt": "no image\na multi-colored circle moving back and forth over a scrolling background.",
             "class": "p5.Graphics",
             "module": "Rendering",
             "submodule": "Rendering"
         },
         {
             "file": "src/core/p5.Renderer.js",
-            "line": 113,
+            "line": 63,
             "description": "<p>Resize our canvas element.</p>\n",
             "class": "p5.Renderer",
             "module": "Rendering",
@@ -7072,7 +7140,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Renderer.js",
-            "line": 182,
+            "line": 132,
             "description": "<p>Helper fxn to check font type (system or otf)</p>\n",
             "class": "p5.Renderer",
             "module": "Rendering",
@@ -7080,7 +7148,7 @@ module.exports={
         },
         {
             "file": "src/core/p5.Renderer.js",
-            "line": 235,
+            "line": 185,
             "description": "<p>Helper fxn to measure ascent and descent.\nAdapted from <a href=\"http://stackoverflow.com/a/25355178\">http://stackoverflow.com/a/25355178</a></p>\n",
             "class": "p5.Renderer",
             "module": "Rendering",
@@ -7095,14 +7163,14 @@ module.exports={
         },
         {
             "file": "src/core/p5.Renderer2D.js",
-            "line": 395,
+            "line": 404,
             "description": "<p>Generate a cubic Bezier representing an arc on the unit circle of total\nangle <code>size</code> radians, beginning <code>start</code> radians above the x-axis. Up to\nfour of these curves are combined to make a full arc.</p>\n<p>See www.joecridge.me/bezier.pdf for an explanation of the method.</p>\n",
             "class": "p5",
             "module": "Rendering"
         },
         {
             "file": "src/core/rendering.js",
-            "line": 17,
+            "line": 16,
             "description": "<p>Creates a canvas element in the document, and sets the dimensions of it\nin pixels. This method should be called only once at the start of setup.\nCalling createCanvas more than once in a sketch will result in very\nunpredictable behavior. If you want more than one drawing canvas\nyou could use createGraphics (hidden by default but it can be shown).\n<br><br>\nThe system variables width and height are set by the parameters passed\nto this function. If createCanvas() is not used, the window will be\ngiven a default size of 100x100 pixels.\n<br><br>\nFor more ways to position the canvas, see the\n<a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>\npositioning the canvas</a> wiki page.</p>\n",
             "itemtype": "method",
             "name": "createCanvas",
@@ -7125,8 +7193,8 @@ module.exports={
                 }
             ],
             "return": {
-                "description": "",
-                "type": "p5.Renderer"
+                "description": "canvas generated",
+                "type": "HTMLCanvasElement"
             },
             "example": [
                 "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 50);\n  background(153);\n  line(0, 0, width, height);\n}\n</code>\n</div>"
@@ -7138,7 +7206,7 @@ module.exports={
         },
         {
             "file": "src/core/rendering.js",
-            "line": 119,
+            "line": 116,
             "description": "<p>Resizes the canvas to given width and height. The canvas will be cleared\nand draw will be called immediately, allowing the sketch to re-render itself\nin the resized canvas.</p>\n",
             "itemtype": "method",
             "name": "resizeCanvas",
@@ -7170,7 +7238,7 @@ module.exports={
         },
         {
             "file": "src/core/rendering.js",
-            "line": 172,
+            "line": 169,
             "description": "<p>Removes the default canvas for a p5 sketch that doesn&#39;t\nrequire a canvas</p>\n",
             "itemtype": "method",
             "name": "noCanvas",
@@ -7184,7 +7252,7 @@ module.exports={
         },
         {
             "file": "src/core/rendering.js",
-            "line": 195,
+            "line": 192,
             "description": "<p>Creates and returns a new p5.Renderer object. Use this class if you need\nto draw into an off-screen graphics buffer. The two parameters define the\nwidth and height in pixels.</p>\n",
             "itemtype": "method",
             "name": "createGraphics",
@@ -7220,8 +7288,8 @@ module.exports={
         },
         {
             "file": "src/core/rendering.js",
-            "line": 234,
-            "description": "<p>Blends the pixels in the display window according to the defined mode.\nThere is a choice of the following modes to blend the source pixels (A)\nwith the ones of pixels already in the display window (B):</p>\n<ul>\n<li><code>BLEND</code> - linear interpolation of colours: C =\nA*factor + B. This is the default blending mode.</li>\n<li><code>ADD</code> - sum of A and B</li>\n<li><code>DARKEST</code> - only the darkest colour succeeds: C =\nmin(A*factor, B).</li>\n<li><code>LIGHTEST</code> - only the lightest colour succeeds: C =\nmax(A*factor, B).</li>\n<li><code>DIFFERENCE</code> - subtract colors from underlying image.</li>\n<li><code>EXCLUSION</code> - similar to <code>DIFFERENCE</code>, but less\nextreme.</li>\n<li><code>MULTIPLY</code> - multiply the colors, result will always be\ndarker.</li>\n<li><code>SCREEN</code> - opposite multiply, uses inverse values of the\ncolors.</li>\n<li><code>REPLACE</code> - the pixels entirely replace the others and\ndon&#39;t utilize alpha (transparency) values.</li>\n<li><code>OVERLAY</code> - mix of <code>MULTIPLY</code> and <code>SCREEN\n</code>. Multiplies dark values, and screens light values.</li>\n<li><code>HARD_LIGHT</code> - <code>SCREEN</code> when greater than 50%\ngray, <code>MULTIPLY</code> when lower.</li>\n<li><code>SOFT_LIGHT</code> - mix of <code>DARKEST</code> and\n<code>LIGHTEST</code>. Works like <code>OVERLAY</code>, but not as harsh.\n</li>\n<li><code>DODGE</code> - lightens light tones and increases contrast,\nignores darks.</li>\n<li><code>BURN</code> - darker areas are applied, increasing contrast,\nignores lights.</li>\n</ul>",
+            "line": 231,
+            "description": "<p>Blends the pixels in the display window according to the defined mode.\nThere is a choice of the following modes to blend the source pixels (A)\nwith the ones of pixels already in the display window (B):</p>\n<ul>\n<li><code>BLEND</code> - linear interpolation of colours: C =\nA<em>factor + B. This is the default blending mode.</li>\n<li><code>ADD</code> - sum of A and B</li>\n<li><code>DARKEST</code> - only the darkest colour succeeds: C =\nmin(A</em>factor, B).</li>\n<li><code>LIGHTEST</code> - only the lightest colour succeeds: C =\nmax(A*factor, B).</li>\n<li><code>DIFFERENCE</code> - subtract colors from underlying image.</li>\n<li><code>EXCLUSION</code> - similar to <code>DIFFERENCE</code>, but less\nextreme.</li>\n<li><code>MULTIPLY</code> - multiply the colors, result will always be\ndarker.</li>\n<li><code>SCREEN</code> - opposite multiply, uses inverse values of the\ncolors.</li>\n<li><code>REPLACE</code> - the pixels entirely replace the others and\ndon&#39;t utilize alpha (transparency) values.</li>\n<li><code>OVERLAY</code> - mix of <code>MULTIPLY</code> and <code>SCREEN\n</code>. Multiplies dark values, and screens light values.</li>\n<li><code>HARD_LIGHT</code> - <code>SCREEN</code> when greater than 50%\ngray, <code>MULTIPLY</code> when lower.</li>\n<li><code>SOFT_LIGHT</code> - mix of <code>DARKEST</code> and\n<code>LIGHTEST</code>. Works like <code>OVERLAY</code>, but not as harsh.\n</li>\n<li><code>DODGE</code> - lightens light tones and increases contrast,\nignores darks.</li>\n<li><code>BURN</code> - darker areas are applied, increasing contrast,\nignores lights.</li>\n</ul>",
             "itemtype": "method",
             "name": "blendMode",
             "params": [
@@ -7290,7 +7358,7 @@ module.exports={
         },
         {
             "file": "src/core/structure.js",
-            "line": 197,
+            "line": 211,
             "description": "<p>The push() function saves the current drawing style settings and\ntransformations, while pop() restores these settings. Note that these\nfunctions are always used together. They allow you to change the style\nand transformation settings and later return to what you had. When a new\nstate is started with push(), it builds on the current style and transform\ninformation. The push() and pop() functions can be embedded to provide\nmore control. (See the second example for a demonstration.)\n<br><br>\npush() stores information related to the current transformation state\nand style settings controlled by the following functions: fill(),\nstroke(), tint(), strokeWeight(), strokeCap(), strokeJoin(),\nimageMode(), rectMode(), ellipseMode(), colorMode(), textAlign(),\ntextFont(), textMode(), textSize(), textLeading().</p>\n",
             "itemtype": "method",
             "name": "pop",
@@ -7304,7 +7372,7 @@ module.exports={
         },
         {
             "file": "src/core/structure.js",
-            "line": 271,
+            "line": 282,
             "description": "<p>Executes the code within draw() one time. This functions allows the\n program to update the display window only when necessary, for example\n when an event registered by mousePressed() or keyPressed() occurs.\n <br><br>\n In structuring a program, it only makes sense to call redraw() within\n events such as mousePressed(). This is because redraw() does not run\n draw() immediately (it only sets a flag that indicates an update is\n needed).\n <br><br>\n The redraw() function does not work properly when called inside draw().\n To enable/disable animations, use loop() and noLoop().\n <br><br>\n In addition you can set the number of redraws per method call. Just\n add an integer as single parameter for the number of redraws.</p>\n",
             "itemtype": "method",
             "name": "redraw",
@@ -7326,7 +7394,7 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 13,
+            "line": 14,
             "description": "<p>Multiplies the current matrix by the one specified through the parameters.\nThis is a powerful operation that can perform the equivalent of translate,\nscale, shear and rotate all at once. You can learn more about transformation\nmatrices on <a href=\"https://en.wikipedia.org/wiki/Transformation_matrix\">\nWikipedia</a>.</p>\n<p>The naming of the arguments here follows the naming of the <a href=\n\"https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-transform\">\nWHATWG specification</a> and corresponds to a\ntransformation matrix of the\nform:</p>\n<blockquote>\n<p><img style=\"max-width: 150px\" src=\"assets/transformation-matrix.png\"\nalt=\"The transformation matrix used when applyMatrix is called\"/></p>\n</blockquote>\n",
             "itemtype": "method",
             "name": "applyMatrix",
@@ -7373,7 +7441,7 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 135,
+            "line": 136,
             "description": "<p>Replaces the current matrix with the identity matrix.</p>\n",
             "itemtype": "method",
             "name": "resetMatrix",
@@ -7388,7 +7456,7 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 161,
+            "line": 162,
             "description": "<p>Rotates a shape the amount specified by the angle parameter. This\nfunction accounts for angleMode, so angles can be entered in either\nRADIANS or DEGREES.\n<br><br>\nObjects are always rotated around their relative position to the\norigin and positive numbers rotate objects in a clockwise direction.\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nrotate(HALF_PI) and then rotate(HALF_PI) is the same as rotate(PI).\nAll tranformations are reset when draw() begins again.\n<br><br>\nTechnically, rotate() multiplies the current transformation matrix\nby a rotation matrix. This function can be further controlled by\nthe push() and pop().</p>\n",
             "itemtype": "method",
             "name": "rotate",
@@ -7416,14 +7484,14 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 201,
+            "line": 208,
             "description": "<p>Rotates around X axis.</p>\n",
             "itemtype": "method",
             "name": "rotateX",
             "params": [
                 {
-                    "name": "angle",
-                    "description": "<p>the angle of rotation, specified in radians\n                       or degrees, depending on current angleMode</p>\n",
+                    "name": "rad",
+                    "description": "<p>angles in radians</p>\n",
                     "type": "Number"
                 }
             ],
@@ -7438,14 +7506,14 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 231,
+            "line": 240,
             "description": "<p>Rotates around Y axis.</p>\n",
             "itemtype": "method",
             "name": "rotateY",
             "params": [
                 {
-                    "name": "angle",
-                    "description": "<p>the angle of rotation, specified in radians\n                       or degrees, depending on current angleMode</p>\n",
+                    "name": "rad",
+                    "description": "<p>angles in radians</p>\n",
                     "type": "Number"
                 }
             ],
@@ -7460,14 +7528,14 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 261,
+            "line": 272,
             "description": "<p>Rotates around Z axis. Webgl mode only.</p>\n",
             "itemtype": "method",
             "name": "rotateZ",
             "params": [
                 {
-                    "name": "angle",
-                    "description": "<p>the angle of rotation, specified in radians\n                       or degrees, depending on current angleMode</p>\n",
+                    "name": "rad",
+                    "description": "<p>angles in radians</p>\n",
                     "type": "Number"
                 }
             ],
@@ -7482,7 +7550,7 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 291,
+            "line": 304,
             "description": "<p>Increases or decreases the size of a shape by expanding and contracting\nvertices. Objects always scale from their relative origin to the\ncoordinate system. Scale values are specified as decimal percentages.\nFor example, the function call scale(2.0) increases the dimension of a\nshape by 200%.\n<br><br>\nTransformations apply to everything that happens after and subsequent\ncalls to the function multiply the effect. For example, calling scale(2.0)\nand then scale(1.5) is the same as scale(3.0). If scale() is called\nwithin draw(), the transformation is reset when the loop begins again.\n<br><br>\nUsing this function with the z parameter is only available in WEBGL mode.\nThis function can be further controlled with push() and pop().</p>\n",
             "itemtype": "method",
             "name": "scale",
@@ -7496,7 +7564,7 @@ module.exports={
             "submodule": "Transform",
             "overloads": [
                 {
-                    "line": 291,
+                    "line": 304,
                     "params": [
                         {
                             "name": "s",
@@ -7519,7 +7587,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 336,
+                    "line": 349,
                     "params": [
                         {
                             "name": "scales",
@@ -7533,7 +7601,7 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 366,
+            "line": 379,
             "description": "<p>Shears a shape around the x-axis the amount specified by the angle\nparameter. Angles should be specified in the current angleMode.\nObjects are always sheared around their relative position to the origin\nand positive numbers shear objects in a clockwise direction.\n<br><br>\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nshearX(PI/2) and then shearX(PI/2) is the same as shearX(PI).\nIf shearX() is called within the draw(), the transformation is reset when\nthe loop begins again.\n<br><br>\nTechnically, shearX() multiplies the current transformation matrix by a\nrotation matrix. This function can be further controlled by the\npush() and pop() functions.</p>\n",
             "itemtype": "method",
             "name": "shearX",
@@ -7555,7 +7623,7 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 405,
+            "line": 421,
             "description": "<p>Shears a shape around the y-axis the amount specified by the angle\nparameter. Angles should be specified in the current angleMode. Objects\nare always sheared around their relative position to the origin and\npositive numbers shear objects in a clockwise direction.\n<br><br>\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nshearY(PI/2) and then shearY(PI/2) is the same as shearY(PI). If\nshearY() is called within the draw(), the transformation is reset when\nthe loop begins again.\n<br><br>\nTechnically, shearY() multiplies the current transformation matrix by a\nrotation matrix. This function can be further controlled by the\npush() and pop() functions.</p>\n",
             "itemtype": "method",
             "name": "shearY",
@@ -7577,53 +7645,36 @@ module.exports={
         },
         {
             "file": "src/core/transform.js",
-            "line": 444,
+            "line": 463,
             "description": "<p>Specifies an amount to displace objects within the display window.\nThe x parameter specifies left/right translation, the y parameter\nspecifies up/down translation.\n<br><br>\nTransformations are cumulative and apply to everything that happens after\nand subsequent calls to the function accumulates the effect. For example,\ncalling translate(50, 0) and then translate(20, 0) is the same as\ntranslate(70, 0). If translate() is called within draw(), the\ntransformation is reset when the loop begins again. This function can be\nfurther controlled by using push() and pop().</p>\n",
             "itemtype": "method",
             "name": "translate",
-            "chainable": 1,
-            "example": [
-                "\n<div>\n<code>\ntranslate(30, 20);\nrect(0, 0, 55, 55);\n</code>\n</div>\n\n<div>\n<code>\nrect(0, 0, 55, 55); // Draw rect at original 0,0\ntranslate(30, 20);\nrect(0, 0, 55, 55); // Draw rect at new 0,0\ntranslate(14, 14);\nrect(0, 0, 55, 55); // Draw rect at new 0,0\n</code>\n</div>\n\n\n<div>\n<code>\nfunction draw() {\n  background(200);\n  rectMode(CENTER);\n  translate(width / 2, height / 2);\n  translate(p5.Vector.fromAngle(millis() / 1000, 40));\n  rect(0, 0, 20, 20);\n}\n</code>\n</div>"
-            ],
-            "alt": "white 55x55 rect with black outline at center right.\n3 white 55x55 rects with black outlines at top-l, center-r and bottom-r.\na 20x20 white rect moving in a circle around the canvas",
-            "class": "p5",
-            "module": "Transform",
-            "submodule": "Transform",
-            "overloads": [
+            "params": [
                 {
-                    "line": 444,
-                    "params": [
-                        {
-                            "name": "x",
-                            "description": "<p>left/right translation</p>\n",
-                            "type": "Number"
-                        },
-                        {
-                            "name": "y",
-                            "description": "<p>up/down translation</p>\n",
-                            "type": "Number"
-                        },
-                        {
-                            "name": "z",
-                            "description": "<p>forward/backward translation (webgl only)</p>\n",
-                            "type": "Number",
-                            "optional": true
-                        }
-                    ],
-                    "chainable": 1
+                    "name": "x",
+                    "description": "<p>left/right translation</p>\n",
+                    "type": "Number"
                 },
                 {
-                    "line": 498,
-                    "params": [
-                        {
-                            "name": "vector",
-                            "description": "<p>the vector to translate by</p>\n",
-                            "type": "p5.Vector"
-                        }
-                    ],
-                    "chainable": 1
+                    "name": "y",
+                    "description": "<p>up/down translation</p>\n",
+                    "type": "Number"
+                },
+                {
+                    "name": "z",
+                    "description": "<p>forward/backward translation (webgl only)</p>\n",
+                    "type": "Number",
+                    "optional": true
                 }
-            ]
+            ],
+            "chainable": 1,
+            "example": [
+                "\n<div>\n<code>\ntranslate(30, 20);\nrect(0, 0, 55, 55);\n</code>\n</div>\n\n<div>\n<code>\nrect(0, 0, 55, 55); // Draw rect at original 0,0\ntranslate(30, 20);\nrect(0, 0, 55, 55); // Draw rect at new 0,0\ntranslate(14, 14);\nrect(0, 0, 55, 55); // Draw rect at new 0,0\n</code>\n</div>"
+            ],
+            "alt": "white 55x55 rect with black outline at center right.\n3 white 55x55 rects with black outlines at top-l, center-r and bottom-r.",
+            "class": "p5",
+            "module": "Transform",
+            "submodule": "Transform"
         },
         {
             "file": "src/core/vertex.js",
@@ -7665,7 +7716,7 @@ module.exports={
         },
         {
             "file": "src/core/vertex.js",
-            "line": 270,
+            "line": 269,
             "description": "<p>Specifies vertex coordinates for Bezier curves. Each call to\nbezierVertex() defines the position of two control points and\none anchor point of a Bezier curve, adding a new segment to a\nline or shape.\n<br><br>\nThe first time bezierVertex() is used within a\nbeginShape() call, it must be prefaced with a call to vertex()\nto set the first anchor point. This function must be used between\nbeginShape() and endShape() and only when there is no MODE\nparameter specified to beginShape().</p>\n",
             "itemtype": "method",
             "name": "bezierVertex",
@@ -7703,7 +7754,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nstrokeWeight(5);\npoint(30, 20);\npoint(80, 20);\npoint(80, 75);\npoint(30, 75);\n\nstrokeWeight(1);\nnoFill();\nbeginShape();\nvertex(30, 20);\nbezierVertex(80, 20, 80, 75, 30, 75);\nendShape();\n</code>\n</div>\n\n<div>\n<code>\nstrokeWeight(5);\npoint(30, 20);\npoint(80, 20);\npoint(80, 75);\npoint(30, 75);\n\nstroke(244, 122, 158);\npoint(50, 80);\npoint(60, 25);\npoint(30, 20);\n\nstroke(0);\nstrokeWeight(1);\nbeginShape();\nvertex(30, 20);\nbezierVertex(80, 20, 80, 75, 30, 75);\nbezierVertex(50, 80, 60, 25, 30, 20);\nendShape();\n</code>\n</div>"
+                "\n<div>\n<code>\nnoFill();\nbeginShape();\nvertex(30, 20);\nbezierVertex(80, 0, 80, 75, 30, 75);\nendShape();\n</code>\n</div>\n\n<div>\n<code>\nbeginShape();\nvertex(30, 20);\nbezierVertex(80, 0, 80, 75, 30, 75);\nbezierVertex(50, 80, 60, 25, 30, 20);\nendShape();\n</code>\n</div>"
             ],
             "alt": "crescent-shaped line in middle of canvas. Points facing left.\nwhite crescent shape in middle of canvas. Points facing left.",
             "class": "p5",
@@ -7712,7 +7763,7 @@ module.exports={
         },
         {
             "file": "src/core/vertex.js",
-            "line": 356,
+            "line": 335,
             "description": "<p>Specifies vertex coordinates for curves. This function may only\nbe used between beginShape() and endShape() and only when there\nis no MODE parameter specified to beginShape().\n<br><br>\nThe first and last points in a series of curveVertex() lines will be used to\nguide the beginning and end of a the curve. A minimum of four\npoints is required to draw a tiny curve between the second and\nthird points. Adding a fifth point with curveVertex() will draw\nthe curve between the second, third, and fourth points. The\ncurveVertex() function is an implementation of Catmull-Rom\nsplines.</p>\n",
             "itemtype": "method",
             "name": "curveVertex",
@@ -7730,7 +7781,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nstrokeWeight(5);\npoint(84, 91);\npoint(68, 19);\npoint(21, 17);\npoint(32, 91);\nstrokeWeight(1);\n\nnoFill();\nbeginShape();\ncurveVertex(84, 91);\ncurveVertex(84, 91);\ncurveVertex(68, 19);\ncurveVertex(21, 17);\ncurveVertex(32, 91);\ncurveVertex(32, 91);\nendShape();\n</code>\n</div>"
+                "\n<div>\n<code>\nnoFill();\nbeginShape();\ncurveVertex(84, 91);\ncurveVertex(84, 91);\ncurveVertex(68, 19);\ncurveVertex(21, 17);\ncurveVertex(32, 100);\ncurveVertex(32, 100);\nendShape();\n</code>\n</div>"
             ],
             "alt": "Upside-down u-shape line, mid canvas. left point extends beyond canvas view.",
             "class": "p5",
@@ -7739,7 +7790,7 @@ module.exports={
         },
         {
             "file": "src/core/vertex.js",
-            "line": 407,
+            "line": 378,
             "description": "<p>Use the beginContour() and endContour() functions to create negative\nshapes within shapes such as the center of the letter &#39;O&#39;. beginContour()\nbegins recording vertices for the shape and endContour() stops recording.\nThe vertices that define a negative shape must &quot;wind&quot; in the opposite\ndirection from the exterior shape. First draw vertices for the exterior\nclockwise order, then for internal shapes, draw vertices\nshape in counter-clockwise.\n<br><br>\nThese functions can only be used within a beginShape()/endShape() pair and\ntransformations such as translate(), rotate(), and scale() do not work\nwithin a beginContour()/endContour() pair. It is also not possible to use\nother shapes, such as ellipse() or rect() within.</p>\n",
             "itemtype": "method",
             "name": "endContour",
@@ -7754,7 +7805,7 @@ module.exports={
         },
         {
             "file": "src/core/vertex.js",
-            "line": 467,
+            "line": 438,
             "description": "<p>The endShape() function is the companion to beginShape() and may only be\ncalled after beginShape(). When endshape() is called, all of image data\ndefined since the previous call to beginShape() is written into the image\nbuffer. The constant CLOSE as the value for the MODE parameter to close\nthe shape (to connect the beginning and the end).</p>\n",
             "itemtype": "method",
             "name": "endShape",
@@ -7777,7 +7828,7 @@ module.exports={
         },
         {
             "file": "src/core/vertex.js",
-            "line": 553,
+            "line": 523,
             "description": "<p>Specifies vertex coordinates for quadratic Bezier curves. Each call to\nquadraticVertex() defines the position of one control points and one\nanchor point of a Bezier curve, adding a new segment to a line or shape.\nThe first time quadraticVertex() is used within a beginShape() call, it\nmust be prefaced with a call to vertex() to set the first anchor point.\nThis function must be used between beginShape() and endShape() and only\nwhen there is no MODE parameter specified to beginShape().</p>\n",
             "itemtype": "method",
             "name": "quadraticVertex",
@@ -7805,7 +7856,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nstrokeWeight(5);\npoint(20, 20);\npoint(80, 20);\npoint(50, 50);\n\nnoFill();\nstrokeWeight(1);\nbeginShape();\nvertex(20, 20);\nquadraticVertex(80, 20, 50, 50);\nendShape();\n</code>\n</div>\n\n<div>\n<code>\nstrokeWeight(5);\npoint(20, 20);\npoint(80, 20);\npoint(50, 50);\n\npoint(20, 80);\npoint(80, 80);\npoint(80, 60);\n\nnoFill();\nstrokeWeight(1);\nbeginShape();\nvertex(20, 20);\nquadraticVertex(80, 20, 50, 50);\nquadraticVertex(20, 80, 80, 80);\nvertex(80, 60);\nendShape();\n</code>\n</div>"
+                "\n<div>\n<code>\nnoFill();\nstrokeWeight(4);\nbeginShape();\nvertex(20, 20);\nquadraticVertex(80, 20, 50, 50);\nendShape();\n</code>\n</div>\n\n<div>\n<code>\nnoFill();\nstrokeWeight(4);\nbeginShape();\nvertex(20, 20);\nquadraticVertex(80, 20, 50, 50);\nquadraticVertex(20, 80, 80, 80);\nvertex(80, 60);\nendShape();\n</code>\n</div>"
             ],
             "alt": "arched-shaped black line with 4 pixel thick stroke weight.\nbackwards s-shaped black line with 4 pixel thick stroke weight.",
             "class": "p5",
@@ -7814,21 +7865,21 @@ module.exports={
         },
         {
             "file": "src/core/vertex.js",
-            "line": 645,
+            "line": 601,
             "description": "<p>All shapes are constructed by connecting a series of vertices. vertex()\nis used to specify the vertex coordinates for points, lines, triangles,\nquads, and polygons. It is used exclusively within the beginShape() and\nendShape() functions.</p>\n",
             "itemtype": "method",
             "name": "vertex",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nstrokeWeight(3);\nbeginShape(POINTS);\nvertex(30, 20);\nvertex(85, 20);\nvertex(85, 75);\nvertex(30, 75);\nendShape();\n</code>\n</div>"
+                "\n<div>\n<code>\nbeginShape(POINTS);\nvertex(30, 20);\nvertex(85, 20);\nvertex(85, 75);\nvertex(30, 75);\nendShape();\n</code>\n</div>"
             ],
-            "alt": "8 points making 4 lines",
+            "alt": "4 black points in a square shape in middle-right of canvas.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Vertex",
             "overloads": [
                 {
-                    "line": 645,
+                    "line": 601,
                     "params": [
                         {
                             "name": "x",
@@ -7844,7 +7895,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 732,
+                    "line": 627,
                     "params": [
                         {
                             "name": "x",
@@ -7884,6 +7935,18 @@ module.exports={
             "description": "<p>Creates a new instance of p5.StringDict using the key, value pair\n or object you provide.</p>\n",
             "itemtype": "method",
             "name": "createStringDict",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "<p>or object</p>\n",
+                    "type": "String|Object"
+                },
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
             "return": {
                 "description": "",
                 "type": "p5.StringDict"
@@ -7893,98 +7956,40 @@ module.exports={
             ],
             "class": "p5",
             "module": "Data",
-            "submodule": "Dictionary",
-            "overloads": [
-                {
-                    "line": 16,
-                    "params": [
-                        {
-                            "name": "key",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "value",
-                            "description": "",
-                            "type": "String"
-                        }
-                    ],
-                    "return": {
-                        "description": "",
-                        "type": "p5.StringDict"
-                    }
-                },
-                {
-                    "line": 36,
-                    "params": [
-                        {
-                            "name": "object",
-                            "description": "<p>object</p>\n",
-                            "type": "Object"
-                        }
-                    ],
-                    "return": {
-                        "description": "",
-                        "type": "p5.StringDict"
-                    }
-                }
-            ]
+            "submodule": "Dictionary"
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 47,
+            "line": 41,
             "description": "<p>Creates a new instance of p5.NumberDict using the key, value pair\n or object you provide.</p>\n",
             "itemtype": "method",
             "name": "createNumberDict",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "<p>or object</p>\n",
+                    "type": "Number|Object"
+                },
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
             "return": {
                 "description": "",
                 "type": "p5.NumberDict"
             },
             "example": [
-                "\n <div class=\"norender\">\n <code>\n function setup() {\n   var myDictionary = createNumberDict(100, 42);\n   print(myDictionary.hasKey(100)); // logs true to console\n }\n </code></div>"
+                "\n <div class=\"norender\">\n <code>\n function setup() {\n   var myDictionary = createNumberDict('p5', 42);\n   print(myDictionary.hasKey('p5')); // logs true to console\n }\n </code></div>"
             ],
             "class": "p5",
             "module": "Data",
-            "submodule": "Dictionary",
-            "overloads": [
-                {
-                    "line": 47,
-                    "params": [
-                        {
-                            "name": "key",
-                            "description": "",
-                            "type": "Number"
-                        },
-                        {
-                            "name": "value",
-                            "description": "",
-                            "type": "Number"
-                        }
-                    ],
-                    "return": {
-                        "description": "",
-                        "type": "p5.NumberDict"
-                    }
-                },
-                {
-                    "line": 67,
-                    "params": [
-                        {
-                            "name": "object",
-                            "description": "<p>object</p>\n",
-                            "type": "Object"
-                        }
-                    ],
-                    "return": {
-                        "description": "",
-                        "type": "p5.NumberDict"
-                    }
-                }
-            ]
+            "submodule": "Dictionary"
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 97,
+            "line": 86,
             "description": "<p>Returns the number of key-value pairs currently in Dictionary object</p>\n",
             "itemtype": "method",
             "name": "size",
@@ -8001,7 +8006,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 119,
+            "line": 108,
             "description": "<p>Returns true if key exists in Dictionary\notherwise returns false</p>\n",
             "itemtype": "method",
             "name": "hasKey",
@@ -8025,7 +8030,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 142,
+            "line": 131,
             "description": "<p>Returns value stored at supplied key.</p>\n",
             "itemtype": "method",
             "name": "get",
@@ -8049,7 +8054,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 169,
+            "line": 158,
             "description": "<p>Changes the value of key if in it already exists in\nin the Dictionary otherwise makes a new key-value pair</p>\n",
             "itemtype": "method",
             "name": "set",
@@ -8074,7 +8079,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 198,
+            "line": 187,
             "description": "<p>private helper function to handle the user passing objects in\nduring construction or calls to create()</p>\n",
             "class": "p5.TypedDict",
             "module": "Data",
@@ -8082,7 +8087,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 209,
+            "line": 198,
             "description": "<p>Creates a key-value pair in the Dictionary</p>\n",
             "itemtype": "method",
             "name": "create",
@@ -8094,7 +8099,7 @@ module.exports={
             "submodule": "Dictionary",
             "overloads": [
                 {
-                    "line": 209,
+                    "line": 198,
                     "params": [
                         {
                             "name": "key",
@@ -8109,7 +8114,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 227,
+                    "line": 216,
                     "params": [
                         {
                             "name": "obj",
@@ -8122,7 +8127,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 245,
+            "line": 234,
             "description": "<p>Empties Dictionary of all key-value pairs</p>\n",
             "itemtype": "method",
             "name": "clear",
@@ -8135,7 +8140,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 265,
+            "line": 254,
             "description": "<p>Removes a key-value pair in the Dictionary</p>\n",
             "itemtype": "method",
             "name": "remove",
@@ -8155,7 +8160,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 295,
+            "line": 284,
             "description": "<p>Logs the list of items currently in the Dictionary to the console</p>\n",
             "itemtype": "method",
             "name": "print",
@@ -8168,12 +8173,12 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 319,
+            "line": 308,
             "description": "<p>Converts the Dictionary into a CSV file for local\nstorage.</p>\n",
             "itemtype": "method",
             "name": "saveTable",
             "example": [
-                "\n<div>\n<code>\ncreateButton('save')\n  .position(10, 10)\n  .mousePressed(function() {\n    createStringDict({\n      john: 1940,\n     paul: 1942,\n     george: 1943,\n     ringo: 1940\n    }).saveTable('beatles');\n  });\n</code>\n</div>"
+                "\n<div>\n<code>\ncreateButton('save')\n  .position(10, 10)\n  .mousePressed(function() {\n    createNumberDict({\n      john: 1940,\n     paul: 1942,\n     george: 1943,\n     ringo: 1940\n    }).saveTable('beatles');\n  });\n</code>\n</div>"
             ],
             "class": "p5.TypedDict",
             "module": "Data",
@@ -8181,12 +8186,12 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 352,
+            "line": 341,
             "description": "<p>Converts the Dictionary into a JSON file for local\nstorage.</p>\n",
             "itemtype": "method",
             "name": "saveJSON",
             "example": [
-                "\n<div>\n<code>\ncreateButton('save')\n  .position(10, 10)\n  .mousePressed(function() {\n    createStringDict({\n      john: 1940,\n     paul: 1942,\n     george: 1943,\n     ringo: 1940\n    }).saveJSON('beatles');\n  });\n</code>\n</div>"
+                "\n<div>\n<code>\ncreateButton('save')\n  .position(10, 10)\n  .mousePressed(function() {\n    createNumberDict({\n      john: 1940,\n     paul: 1942,\n     george: 1943,\n     ringo: 1940\n    }).saveJSON('beatles');\n  });\n</code>\n</div>"
             ],
             "class": "p5.TypedDict",
             "module": "Data",
@@ -8194,7 +8199,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 378,
+            "line": 367,
             "description": "<p>private helper function to ensure that the user passed in valid\nvalues for the Dictionary type</p>\n",
             "class": "p5.TypedDict",
             "module": "Data",
@@ -8202,7 +8207,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 423,
+            "line": 414,
             "description": "<p>private helper function to ensure that the user passed in valid\nvalues for the Dictionary type</p>\n",
             "class": "p5.NumberDict",
             "module": "Data",
@@ -8210,7 +8215,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 432,
+            "line": 423,
             "description": "<p>Add to a value stored at a certain key\nThe sum is stored in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "add",
@@ -8235,7 +8240,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 460,
+            "line": 451,
             "description": "<p>Subtract from a value stored at a certain key\nThe difference is stored in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "sub",
@@ -8260,7 +8265,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 484,
+            "line": 475,
             "description": "<p>Multiply a value stored at a certain key\nThe product is stored in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "mult",
@@ -8285,7 +8290,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 512,
+            "line": 503,
             "description": "<p>Divide a value stored at a certain key\nThe quotient is stored in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "div",
@@ -8310,7 +8315,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 540,
+            "line": 531,
             "description": "<p>private helper function for finding lowest or highest value\nthe argument &#39;flip&#39; is used to flip the comparison arrow\nfrom &#39;less than&#39; to &#39;greater than&#39;</p>\n",
             "class": "p5.NumberDict",
             "module": "Data",
@@ -8318,7 +8323,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 563,
+            "line": 554,
             "description": "<p>Return the lowest value.</p>\n",
             "itemtype": "method",
             "name": "minValue",
@@ -8335,7 +8340,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 584,
+            "line": 575,
             "description": "<p>Return the highest value.</p>\n",
             "itemtype": "method",
             "name": "maxValue",
@@ -8352,7 +8357,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 605,
+            "line": 596,
             "description": "<p>private helper function for finding lowest or highest key\nthe argument &#39;flip&#39; is used to flip the comparison arrow\nfrom &#39;less than&#39; to &#39;greater than&#39;</p>\n",
             "class": "p5.NumberDict",
             "module": "Data",
@@ -8360,7 +8365,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 628,
+            "line": 619,
             "description": "<p>Return the lowest key.</p>\n",
             "itemtype": "method",
             "name": "minKey",
@@ -8377,7 +8382,7 @@ module.exports={
         },
         {
             "file": "src/data/p5.TypedDict.js",
-            "line": 649,
+            "line": 640,
             "description": "<p>Return the highest key.</p>\n",
             "itemtype": "method",
             "name": "maxKey",
@@ -8602,7 +8607,7 @@ module.exports={
         },
         {
             "file": "src/events/acceleration.js",
-            "line": 362,
+            "line": 363,
             "description": "<p>The setShakeThreshold() function is used to set the movement threshold for\nthe deviceShaken() function. The default threshold is set to 30.</p>\n",
             "itemtype": "method",
             "name": "setShakeThreshold",
@@ -8619,7 +8624,7 @@ module.exports={
         },
         {
             "file": "src/events/acceleration.js",
-            "line": 374,
+            "line": 376,
             "description": "<p>The deviceMoved() function is called when the device is moved by more than\nthe threshold value along X, Y or Z axis. The default threshold is set to\n0.5.</p>\n",
             "itemtype": "method",
             "name": "deviceMoved",
@@ -8633,7 +8638,7 @@ module.exports={
         },
         {
             "file": "src/events/acceleration.js",
-            "line": 405,
+            "line": 407,
             "description": "<p>The deviceTurned() function is called when the device rotates by\nmore than 90 degrees continuously.\n<br><br>\nThe axis that triggers the deviceTurned() method is stored in the turnAxis\nvariable. The deviceTurned() method can be locked to trigger on any axis:\nX, Y or Z by comparing the turnAxis variable to &#39;X&#39;, &#39;Y&#39; or &#39;Z&#39;.</p>\n",
             "itemtype": "method",
             "name": "deviceTurned",
@@ -8647,7 +8652,7 @@ module.exports={
         },
         {
             "file": "src/events/acceleration.js",
-            "line": 464,
+            "line": 466,
             "description": "<p>The deviceShaken() function is called when the device total acceleration\nchanges of accelerationX and accelerationY values is more than\nthe threshold value. The default threshold is set to 30.</p>\n",
             "itemtype": "method",
             "name": "deviceShaken",
@@ -9146,7 +9151,7 @@ module.exports={
             "itemtype": "method",
             "name": "saveCanvas",
             "example": [
-                "\n <div class='norender notest'><code>\n function setup() {\n var c = createCanvas(100, 100);\n background(255, 0, 0);\n saveCanvas(c, 'myCanvas', 'jpg');\n }\n </code></div>\n <div class='norender notest'><code>\n // note that this example has the same result as above\n // if no canvas is specified, defaults to main canvas\n function setup() {\n var c = createCanvas(100, 100);\n background(255, 0, 0);\n saveCanvas('myCanvas', 'jpg');\n\n // all of the following are valid\n saveCanvas(c, 'myCanvas', 'jpg');\n saveCanvas(c, 'myCanvas.jpg');\n saveCanvas(c, 'myCanvas');\n saveCanvas(c);\n saveCanvas('myCanvas', 'png');\n saveCanvas('myCanvas');\n saveCanvas();\n }\n </code></div>"
+                "\n <div class='norender'><code>\n function setup() {\n var c = createCanvas(100, 100);\n background(255, 0, 0);\n saveCanvas(c, 'myCanvas', 'jpg');\n }\n </code></div>\n <div class='norender'><code>\n // note that this example has the same result as above\n // if no canvas is specified, defaults to main canvas\n function setup() {\n var c = createCanvas(100, 100);\n background(255, 0, 0);\n saveCanvas('myCanvas', 'jpg');\n\n // all of the following are valid\n saveCanvas(c, 'myCanvas', 'jpg');\n saveCanvas(c, 'myCanvas');\n saveCanvas(c);\n saveCanvas('myCanvas', 'png');\n saveCanvas('myCanvas');\n saveCanvas();\n }\n </code></div>"
             ],
             "alt": "no image displayed\n no image displayed\n no image displayed",
             "class": "p5",
@@ -9176,7 +9181,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 142,
+                    "line": 141,
                     "params": [
                         {
                             "name": "filename",
@@ -9196,7 +9201,7 @@ module.exports={
         },
         {
             "file": "src/image/image.js",
-            "line": 193,
+            "line": 178,
             "description": "<p>Capture a sequence of frames that can be used to create a movie.\nAccepts a callback. For example, you may wish to send the frames\nto a server where they can be stored or converted into a movie.\nIf no callback is provided, the browser will pop up save dialogues in an\nattempt to download all of the images that have just been created. With the\ncallback provided the image data isn&#39;t saved by default but instead passed\nas an argument to the callback function as an array of objects, with the\nsize of array equal to the total number of frames.</p>\n<p>Note that saveFrames() will only save the first 15 frames of an animation.\nTo export longer animations, you might look into a library like\n<a href=\"https://github.com/spite/ccapture.js/\">ccapture.js</a>.</p>\n",
             "itemtype": "method",
             "name": "saveFrames",
@@ -9420,16 +9425,6 @@ module.exports={
                             "name": "value",
                             "description": "<p>a color string</p>\n",
                             "type": "String"
-                        }
-                    ]
-                },
-                {
-                    "line": 374,
-                    "params": [
-                        {
-                            "name": "gray",
-                            "description": "<p>a gray value</p>\n",
-                            "type": "Number"
                         },
                         {
                             "name": "alpha",
@@ -9440,7 +9435,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 380,
+                    "line": 375,
                     "params": [
                         {
                             "name": "values",
@@ -9450,7 +9445,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 386,
+                    "line": 381,
                     "params": [
                         {
                             "name": "color",
@@ -9463,7 +9458,7 @@ module.exports={
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 396,
+            "line": 391,
             "description": "<p>Removes the current fill value for displaying images and reverts to\ndisplaying images with their original hues.</p>\n",
             "itemtype": "method",
             "name": "noTint",
@@ -9477,7 +9472,7 @@ module.exports={
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 462,
+            "line": 457,
             "description": "<p>Set image mode. Modifies the location from which images are drawn by\nchanging the way in which parameters given to image() are interpreted.\nThe default mode is imageMode(CORNER), which interprets the second and\nthird parameters of image() as the upper-left corner of the image. If\ntwo additional parameters are specified, they are used to set the image&#39;s\nwidth and height.\n<br><br>\nimageMode(CORNERS) interprets the second and third parameters of image()\nas the location of one corner, and the fourth and fifth parameters as the\nopposite corner.\n<br><br>\nimageMode(CENTER) interprets the second and third parameters of image()\nas the image&#39;s center point. If two additional parameters are specified,\nthey are used to set the image&#39;s width and height.</p>\n",
             "itemtype": "method",
             "name": "imageMode",
@@ -9506,7 +9501,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 90,
+            "line": 91,
             "description": "<p>Image width.</p>\n",
             "itemtype": "property",
             "name": "width",
@@ -9522,7 +9517,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 117,
+            "line": 118,
             "description": "<p>Image height.</p>\n",
             "itemtype": "property",
             "name": "height",
@@ -9538,7 +9533,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 151,
+            "line": 152,
             "description": "<p>Array containing the values for all the pixels in the display window.\nThese values are numbers. This array is the size (include an appropriate\nfactor for pixelDensity) of the display window x4,\nrepresenting the R, G, B, A values in order for each pixel, moving from\nleft to right across each row, then down each column. Retina and other\nhigh denisty displays may have more pixels[] (by a factor of\npixelDensity^2).\nFor example, if the image is 100x100 pixels, there will be 40,000. With\npixelDensity = 2, there will be 160,000. The first four values\n(indices 0-3) in the array will be the R, G, B, A values of the pixel at\n(0, 0). The second four values (indices 4-7) will contain the R, G, B, A\nvalues of the pixel at (1, 0). More generally, to set values for a pixel\nat (x, y):</p>\n<pre><code class=\"lang-javascript\">var d = pixelDensity();\nfor (var i = 0; i &lt; d; i++) {\n  for (var j = 0; j &lt; d; j++) {\n    // loop over\n    idx = 4 * ((y * d + j) * width * d + (x * d + i));\n    pixels[idx] = r;\n    pixels[idx+1] = g;\n    pixels[idx+2] = b;\n    pixels[idx+3] = a;\n  }\n}\n</code></pre>\n<p><br><br>\nBefore accessing this array, the data must loaded with the loadPixels()\nfunction. After the array data has been modified, the updatePixels()\nfunction must be run to update the changes.</p>\n",
             "itemtype": "property",
             "name": "pixels",
@@ -9553,7 +9548,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 221,
+            "line": 223,
             "description": "<p>Helper fxn for sharing pixel methods</p>\n",
             "class": "p5.Image",
             "module": "Image",
@@ -9561,7 +9556,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 230,
+            "line": 232,
             "description": "<p>Loads the pixels data for this image into the [pixels] attribute.</p>\n",
             "itemtype": "method",
             "name": "loadPixels",
@@ -9575,7 +9570,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 266,
+            "line": 268,
             "description": "<p>Updates the backing canvas for this image with the contents of\nthe [pixels] array.</p>\n",
             "itemtype": "method",
             "name": "updatePixels",
@@ -9588,7 +9583,7 @@ module.exports={
             "submodule": "Image",
             "overloads": [
                 {
-                    "line": 266,
+                    "line": 268,
                     "params": [
                         {
                             "name": "x",
@@ -9613,14 +9608,14 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 306,
+                    "line": 308,
                     "params": []
                 }
             ]
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 314,
+            "line": 316,
             "description": "<p>Get a region of pixels from an image.</p>\n<p>If no params are passed, those whole image is returned,\nif x and y are the only params passed a single pixel is extracted\nif all params are passed a rectangle region is extracted and a p5.Image\nis returned.</p>\n<p>Returns undefined if the region is outside the bounds of the image</p>\n",
             "itemtype": "method",
             "name": "get",
@@ -9664,7 +9659,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 359,
+            "line": 361,
             "description": "<p>Set the color of a single pixel or write an image into\nthis p5.Image.</p>\n<p>Note that for a large number of pixels this will\nbe slower than directly manipulating the pixels array\nand then calling updatePixels().</p>\n",
             "itemtype": "method",
             "name": "set",
@@ -9695,7 +9690,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 397,
+            "line": 399,
             "description": "<p>Resize the image to a new width and height. To make the image scale\nproportionally, use 0 as the value for the wide or high parameter.\nFor instance, to make the width of an image 150 pixels, and change\nthe height using the same proportion, use resize(150, 0).</p>\n",
             "itemtype": "method",
             "name": "resize",
@@ -9721,7 +9716,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 481,
+            "line": 483,
             "description": "<p>Copies a region of pixels from one image to another. If no\nsrcImage is specified this is used as the source. If the source\nand destination regions aren&#39;t the same size, it will\nautomatically resize source pixels to fit the specified\ntarget region.</p>\n",
             "itemtype": "method",
             "name": "copy",
@@ -9734,7 +9729,7 @@ module.exports={
             "submodule": "Image",
             "overloads": [
                 {
-                    "line": 481,
+                    "line": 483,
                     "params": [
                         {
                             "name": "srcImage",
@@ -9784,7 +9779,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 522,
+                    "line": 524,
                     "params": [
                         {
                             "name": "sx",
@@ -9832,7 +9827,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 561,
+            "line": 563,
             "description": "<p>Masks part of an image from displaying by loading another\nimage and using it&#39;s alpha channel as an alpha channel for\nthis image.</p>\n",
             "itemtype": "method",
             "name": "mask",
@@ -9853,7 +9848,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 624,
+            "line": 626,
             "description": "<p>Applies an image filter to a p5.Image</p>\n",
             "itemtype": "method",
             "name": "filter",
@@ -9880,7 +9875,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 660,
+            "line": 662,
             "description": "<p>Copies a region of pixels from one image to another, using a specified\nblend mode to do the operation.</p>\n",
             "itemtype": "method",
             "name": "blend",
@@ -9893,7 +9888,7 @@ module.exports={
             "submodule": "Image",
             "overloads": [
                 {
-                    "line": 660,
+                    "line": 662,
                     "params": [
                         {
                             "name": "srcImage",
@@ -9948,7 +9943,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 739,
+                    "line": 741,
                     "params": [
                         {
                             "name": "sx",
@@ -10001,7 +9996,7 @@ module.exports={
         },
         {
             "file": "src/image/p5.Image.js",
-            "line": 782,
+            "line": 784,
             "description": "<p>Saves the image to a file and force the browser to download it.\nAccepts two strings for filename and file extension\nSupports png (default) and jpg.</p>\n",
             "itemtype": "method",
             "name": "save",
@@ -10163,7 +10158,7 @@ module.exports={
         },
         {
             "file": "src/image/pixels.js",
-            "line": 177,
+            "line": 176,
             "description": "<p>Copies a region of the canvas to another region of the canvas\nand copies a region of pixels from an image used as the srcImg parameter\ninto the canvas srcImage is specified this is used as the source. If\nthe source and destination regions aren&#39;t the same size, it will\nautomatically resize source pixels to fit the specified\ntarget region.</p>\n",
             "itemtype": "method",
             "name": "copy",
@@ -10176,7 +10171,7 @@ module.exports={
             "submodule": "Pixels",
             "overloads": [
                 {
-                    "line": 177,
+                    "line": 176,
                     "params": [
                         {
                             "name": "srcImage",
@@ -10226,7 +10221,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 220,
+                    "line": 219,
                     "params": [
                         {
                             "name": "sx",
@@ -10274,7 +10269,7 @@ module.exports={
         },
         {
             "file": "src/image/pixels.js",
-            "line": 236,
+            "line": 235,
             "description": "<p>Applies a filter to the canvas.\n<br><br></p>\n<p>The presets options are:\n<br><br></p>\n<p>THRESHOLD\nConverts the image to black and white pixels depending if they are above or\nbelow the threshold defined by the level parameter. The parameter must be\nbetween 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.\n<br><br></p>\n<p>GRAY\nConverts any colors in the image to grayscale equivalents. No parameter\nis used.\n<br><br></p>\n<p>OPAQUE\nSets the alpha channel to entirely opaque. No parameter is used.\n<br><br></p>\n<p>INVERT\nSets each pixel to its inverse value. No parameter is used.\n<br><br></p>\n<p>POSTERIZE\nLimits each channel of the image to the number of colors specified as the\nparameter. The parameter can be set to values between 2 and 255, but\nresults are most noticeable in the lower ranges.\n<br><br></p>\n<p>BLUR\nExecutes a Gaussian blur with the level parameter specifying the extent\nof the blurring. If no parameter is used, the blur is equivalent to\nGaussian blur of radius 1. Larger values increase the blur.\n<br><br></p>\n<p>ERODE\nReduces the light areas. No parameter is used.\n<br><br></p>\n<p>DILATE\nIncreases the light areas. No parameter is used.</p>\n",
             "itemtype": "method",
             "name": "filter",
@@ -10301,7 +10296,7 @@ module.exports={
         },
         {
             "file": "src/image/pixels.js",
-            "line": 415,
+            "line": 413,
             "description": "<p>Returns an array of [R,G,B,A] values for any pixel or grabs a section of\nan image. If no parameters are specified, the entire image is returned.\nUse the x and y parameters to get the value of one pixel. Get a section of\nthe display window by specifying additional w and h parameters. When\ngetting an image, the x and y parameters define the coordinates for the\nupper-left corner of the image, regardless of the current imageMode().\n<br><br>\nIf the pixel requested is outside of the image window, [0,0,0,255] is\nreturned. To get the numbers scaled according to the current color ranges\nand taking into account colorMode, use getColor instead of get.\n<br><br>\nGetting the color of a single pixel with get(x, y) is easy, but not as fast\nas grabbing the data directly from pixels[]. The equivalent statement to\nget(x, y) using pixels[] with pixel density d is\n<code>\nvar x, y, d; // set these to the coordinates\nvar off = (y <em> width + x) </em> d * 4;\nvar components = [\n  pixels[off],\n  pixels[off + 1],\n  pixels[off + 2],\n  pixels[off + 3]\n];\nprint(components);\n</code>\n<br><br>\nSee the reference for pixels[] for more information.</p>\n",
             "itemtype": "method",
             "name": "get",
@@ -10345,7 +10340,7 @@ module.exports={
         },
         {
             "file": "src/image/pixels.js",
-            "line": 491,
+            "line": 489,
             "description": "<p>Loads the pixel data for the display window into the pixels[] array. This\nfunction must always be called before reading from or writing to pixels[].\nNote that only changes made with set() or direct manipulation of pixels[]\nwill occur.</p>\n",
             "itemtype": "method",
             "name": "loadPixels",
@@ -10359,7 +10354,7 @@ module.exports={
         },
         {
             "file": "src/image/pixels.js",
-            "line": 528,
+            "line": 525,
             "description": "<p>Changes the color of any pixel, or writes an image directly to the\ndisplay window.</p>\n<p>The x and y parameters specify the pixel to change and the c parameter\nspecifies the color value. This can be a p5.Color object, or [R, G, B, A]\npixel array. It can also be a single grayscale value.\nWhen setting an image, the x and y parameters define the coordinates for\nthe upper-left corner of the image, regardless of the current imageMode().\n</p>\n<p>\nAfter using set(), you must call updatePixels() for your changes to appear.\nThis should be called once all pixels have been set, and must be called before\ncalling .get() or drawing the image.\n</p>\n<p>Setting the color of a single pixel with set(x, y) is easy, but not as\nfast as putting the data directly into pixels[]. Setting the pixels[]\nvalues directly may be complicated when working with a retina display,\nbut will perform better when lots of pixels need to be set directly on\nevery loop.</p>\n<p>See the reference for pixels[] for more information.</p>",
             "itemtype": "method",
             "name": "set",
@@ -10390,7 +10385,7 @@ module.exports={
         },
         {
             "file": "src/image/pixels.js",
-            "line": 602,
+            "line": 599,
             "description": "<p>Updates the display window with the data in the pixels[] array.\nUse in conjunction with loadPixels(). If you&#39;re only reading pixels from\nthe array, there&#39;s no need to call updatePixels() — updating is only\nnecessary to apply changes. updatePixels() should be called anytime the\npixels array is manipulated or set() is called, and only changes made with\nset() or direct changes to pixels[] will occur.</p>\n",
             "itemtype": "method",
             "name": "updatePixels",
@@ -10434,6 +10429,37 @@ module.exports={
             "description": "<p>Loads a JSON file from a file or a URL, and returns an Object.\nNote that even if the JSON file contains an Array, an Object will be\nreturned with index numbers as keys.</p>\n<p>This method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed. JSONP is supported via a polyfill and you\ncan pass in as the second argument an object with definitions of the json\ncallback following the syntax specified <a href=\"https://github.com/camsong/\nfetch-jsonp\">here</a>.</p>\n",
             "itemtype": "method",
             "name": "loadJSON",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "<p>name of the file or url to load</p>\n",
+                    "type": "String"
+                },
+                {
+                    "name": "jsonpOptions",
+                    "description": "<p>options object for jsonp related settings</p>\n",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "datatype",
+                    "description": "<p>&quot;json&quot; or &quot;jsonp&quot;</p>\n",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "callback",
+                    "description": "<p>function to be executed after\n                                   loadJSON() completes, data is passed\n                                   in as first argument</p>\n",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "errorCallback",
+                    "description": "<p>function to be executed if\n                                   there is an error, response is passed\n                                   in as first argument</p>\n",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
             "return": {
                 "description": "JSON data",
                 "type": "Object|Array"
@@ -10444,107 +10470,11 @@ module.exports={
             "alt": "50x50 ellipse that changes from black to white depending on the current humidity\n50x50 ellipse that changes from black to white depending on the current humidity",
             "class": "p5",
             "module": "IO",
-            "submodule": "Input",
-            "overloads": [
-                {
-                    "line": 19,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "<p>name of the file or url to load</p>\n",
-                            "type": "String"
-                        },
-                        {
-                            "name": "jsonpOptions",
-                            "description": "<p>options object for jsonp related settings</p>\n",
-                            "type": "Object",
-                            "optional": true
-                        },
-                        {
-                            "name": "datatype",
-                            "description": "<p>&quot;json&quot; or &quot;jsonp&quot;</p>\n",
-                            "type": "String",
-                            "optional": true
-                        },
-                        {
-                            "name": "callback",
-                            "description": "<p>function to be executed after\n                                   loadJSON() completes, data is passed\n                                   in as first argument</p>\n",
-                            "type": "Function",
-                            "optional": true
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "<p>function to be executed if\n                                   there is an error, response is passed\n                                   in as first argument</p>\n",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ],
-                    "return": {
-                        "description": "JSON data",
-                        "type": "Object|Array"
-                    }
-                },
-                {
-                    "line": 104,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "datatype",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "callback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ],
-                    "return": {
-                        "description": "",
-                        "type": "Object|Array"
-                    }
-                },
-                {
-                    "line": 112,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "callback",
-                            "description": "",
-                            "type": "Function"
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ],
-                    "return": {
-                        "description": "",
-                        "type": "Object|Array"
-                    }
-                }
-            ]
+            "submodule": "Input"
         },
         {
             "file": "src/io/files.js",
-            "line": 170,
+            "line": 154,
             "description": "<p>Reads the contents of a file and creates a String array of its individual\nlines. If the name of the file is used as the parameter, as in the above\nexample, the file must be located in the sketch directory/folder.\n<br><br>\nAlternatively, the file maybe be loaded from anywhere on the local\ncomputer using an absolute path (something that starts with / on Unix and\nLinux, or a drive letter on Windows), or the filename parameter can be a\nURL for a file found on a network.\n<br><br>\nThis method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed.</p>\n",
             "itemtype": "method",
             "name": "loadStrings",
@@ -10581,7 +10511,7 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 271,
+            "line": 253,
             "description": "<p>Reads the contents of a file or URL and creates a p5.Table object with\nits values. If a file is specified, it must be located in the sketch&#39;s\n&quot;data&quot; folder. The filename parameter can also be a URL to a file found\nonline. By default, the file is assumed to be comma-separated (in CSV\nformat). Table only looks for a header row if the &#39;header&#39; option is\nincluded.</p>\n\n<p>Possible options include:\n<ul>\n<li>csv - parse the table as comma-separated values</li>\n<li>tsv - parse the table as tab-separated values</li>\n<li>header - this table has a header (title) row</li>\n</ul>\n</p>\n\n<p>When passing in multiple options, pass them in as separate parameters,\nseperated by commas. For example:\n<br><br>\n<code>\nloadTable(&#39;my_csv_file.csv&#39;, &#39;csv&#39;, &#39;header&#39;);\n</code>\n</p>\n\n<p> All files loaded and saved use UTF-8 encoding.</p>\n\n<p>This method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed. Calling loadTable() inside preload()\nguarantees to complete the operation before setup() and draw() are called.\n<p>Outside of preload(), you may supply a callback function to handle the\nobject:</p>\n</p>",
             "itemtype": "method",
             "name": "loadTable",
@@ -10598,7 +10528,7 @@ module.exports={
             "submodule": "Input",
             "overloads": [
                 {
-                    "line": 271,
+                    "line": 253,
                     "params": [
                         {
                             "name": "filename",
@@ -10629,7 +10559,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 360,
+                    "line": 342,
                     "params": [
                         {
                             "name": "filename",
@@ -10658,7 +10588,7 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 603,
+            "line": 586,
             "description": "<p>Reads the contents of a file and creates an XML object with its values.\nIf the name of the file is used as the parameter, as in the above example,\nthe file must be located in the sketch directory/folder.</p>\n<p>Alternatively, the file maybe be loaded from anywhere on the local\ncomputer using an absolute path (something that starts with / on Unix and\nLinux, or a drive letter on Windows), or the filename parameter can be a\nURL for a file found on a network.</p>\n<p>This method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed. Calling loadXML() inside preload()\nguarantees to complete the operation before setup() and draw() are called.</p>\n<p>Outside of preload(), you may supply a callback function to handle the\nobject.</p>\n",
             "itemtype": "method",
             "name": "loadXML",
@@ -10695,237 +10625,95 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 704,
+            "line": 687,
+            "description": "<p>Method for executing an HTTP GET request. If data type is not specified,\np5 will try to guess based on the URL, defaulting to text. This is equivalent to\ncalling <code>httpDo(path, &#39;GET&#39;)</code>.</p>\n",
             "itemtype": "method",
-            "name": "loadBytes",
+            "name": "httpGet",
             "params": [
                 {
-                    "name": "file",
-                    "description": "<p>name of the file or URL to load</p>\n",
+                    "name": "path",
+                    "description": "<p>name of the file or url to load</p>\n",
                     "type": "String"
                 },
                 {
+                    "name": "datatype",
+                    "description": "<p>&quot;json&quot;, &quot;jsonp&quot;, &quot;xml&quot;, or &quot;text&quot;</p>\n",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "data",
+                    "description": "<p>param data passed sent with request</p>\n",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
                     "name": "callback",
-                    "description": "<p>function to be executed after loadBytes()\n                                   completes</p>\n",
+                    "description": "<p>function to be executed after\n                                   httpGet() completes, data is passed in\n                                   as first argument</p>\n",
                     "type": "Function",
                     "optional": true
                 },
                 {
                     "name": "errorCallback",
-                    "description": "<p>function to be executed if there\n                                   is an error</p>\n",
+                    "description": "<p>function to be executed if\n                                   there is an error, response is passed\n                                   in as first argument</p>\n",
                     "type": "Function",
                     "optional": true
                 }
             ],
-            "return": {
-                "description": "an object whose 'bytes' property will be the loaded buffer",
-                "type": "Object"
-            },
             "example": [
-                "\n<div class='norender'><code>\nvar data;\n\nfunction preload() {\n  data = loadBytes('assets/mammals.xml');\n}\n\nfunction setup() {\n  for (var i = 0; i < 5; i++) {\n    console.log(data.bytes[i].toString(16));\n  }\n}\n</code></div>"
+                "\n<div class='norender'><code>\n// Examples use USGS Earthquake API:\n//   https://earthquake.usgs.gov/fdsnws/event/1/#methods\nvar earthquakes;\nfunction preload() {\n  // Get the most recent earthquake in the database\n  var url =\n   'https://earthquake.usgs.gov/fdsnws/event/1/query?' +\n    'format=geojson&limit=1&orderby=time';\n  httpGet(url, 'jsonp', false, function(response) {\n    // when the HTTP request completes, populate the variable that holds the\n    // earthquake data used in the visualization.\n    earthquakes = response;\n  });\n}\n\nfunction draw() {\n  if (!earthquakes) {\n    // Wait until the earthquake data has loaded before drawing.\n    return;\n  }\n  background(200);\n  // Get the magnitude and name of the earthquake out of the loaded JSON\n  var earthquakeMag = earthquakes.features[0].properties.mag;\n  var earthquakeName = earthquakes.features[0].properties.place;\n  ellipse(width / 2, height / 2, earthquakeMag * 10, earthquakeMag * 10);\n  textAlign(CENTER);\n  text(earthquakeName, 0, height - 30, width, 30);\n  noLoop();\n}\n</code></div>"
             ],
-            "alt": "no image displayed",
             "class": "p5",
             "module": "IO",
             "submodule": "Input"
         },
         {
             "file": "src/io/files.js",
-            "line": 754,
-            "description": "<p>Method for executing an HTTP GET request. If data type is not specified,\np5 will try to guess based on the URL, defaulting to text. This is equivalent to\ncalling <code>httpDo(path, &#39;GET&#39;)</code>. The &#39;binary&#39; datatype will return\na Blob object, and the &#39;arrayBuffer&#39; datatype will return an ArrayBuffer\nwhich can be used to initialize typed arrays (such as Uint8Array).</p>\n",
-            "itemtype": "method",
-            "name": "httpGet",
-            "example": [
-                "\n<div class='norender'><code>\n// Examples use USGS Earthquake API:\n//   https://earthquake.usgs.gov/fdsnws/event/1/#methods\nvar earthquakes;\nfunction preload() {\n  // Get the most recent earthquake in the database\n  var url =\n   'https://earthquake.usgs.gov/fdsnws/event/1/query?' +\n    'format=geojson&limit=1&orderby=time';\n  httpGet(url, 'jsonp', false, function(response) {\n    // when the HTTP request completes, populate the variable that holds the\n    // earthquake data used in the visualization.\n    earthquakes = response;\n  });\n}\n\nfunction draw() {\n  if (!earthquakes) {\n    // Wait until the earthquake data has loaded before drawing.\n    return;\n  }\n  background(200);\n  // Get the magnitude and name of the earthquake out of the loaded JSON\n  var earthquakeMag = earthquakes.features[0].properties.mag;\n  var earthquakeName = earthquakes.features[0].properties.place;\n  ellipse(width / 2, height / 2, earthquakeMag * 10, earthquakeMag * 10);\n  textAlign(CENTER);\n  text(earthquakeName, 0, height - 30, width, 30);\n  noLoop();\n}\n</code></div>"
-            ],
-            "class": "p5",
-            "module": "IO",
-            "submodule": "Input",
-            "overloads": [
-                {
-                    "line": 754,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "<p>name of the file or url to load</p>\n",
-                            "type": "String"
-                        },
-                        {
-                            "name": "datatype",
-                            "description": "<p>&quot;json&quot;, &quot;jsonp&quot;, &quot;binary&quot;, &quot;arrayBuffer&quot;,\n                                   &quot;xml&quot;, or &quot;text&quot;</p>\n",
-                            "type": "String",
-                            "optional": true
-                        },
-                        {
-                            "name": "data",
-                            "description": "<p>param data passed sent with request</p>\n",
-                            "type": "Object|Boolean",
-                            "optional": true
-                        },
-                        {
-                            "name": "callback",
-                            "description": "<p>function to be executed after\n                                   httpGet() completes, data is passed in\n                                   as first argument</p>\n",
-                            "type": "Function",
-                            "optional": true
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "<p>function to be executed if\n                                   there is an error, response is passed\n                                   in as first argument</p>\n",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ]
-                },
-                {
-                    "line": 805,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "data",
-                            "description": "",
-                            "type": "Object|Boolean"
-                        },
-                        {
-                            "name": "callback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ]
-                },
-                {
-                    "line": 812,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "callback",
-                            "description": "",
-                            "type": "Function"
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "file": "src/io/files.js",
-            "line": 826,
+            "line": 741,
             "description": "<p>Method for executing an HTTP POST request. If data type is not specified,\np5 will try to guess based on the URL, defaulting to text. This is equivalent to\ncalling <code>httpDo(path, &#39;POST&#39;)</code>.</p>\n",
             "itemtype": "method",
             "name": "httpPost",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "<p>name of the file or url to load</p>\n",
+                    "type": "String"
+                },
+                {
+                    "name": "datatype",
+                    "description": "<p>&quot;json&quot;, &quot;jsonp&quot;, &quot;xml&quot;, or &quot;text&quot;.\n                                   If omitted, httpPost() will guess.</p>\n",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "data",
+                    "description": "<p>param data passed sent with request</p>\n",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "callback",
+                    "description": "<p>function to be executed after\n                                   httpPost() completes, data is passed in\n                                   as first argument</p>\n",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "errorCallback",
+                    "description": "<p>function to be executed if\n                                   there is an error, response is passed\n                                   in as first argument</p>\n",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
             "example": [
                 "\n<div>\n<code>\n// Examples use jsonplaceholder.typicode.com for a Mock Data API\n\nvar url = 'https://jsonplaceholder.typicode.com/posts';\nvar postData = { userId: 1, title: 'p5 Clicked!', body: 'p5.js is way cool.' };\n\nfunction setup() {\n  createCanvas(800, 800);\n}\n\nfunction mousePressed() {\n  // Pick new random color values\n  var r = random(255);\n  var g = random(255);\n  var b = random(255);\n\n  httpPost(url, 'json', postData, function(result) {\n    strokeWeight(2);\n    stroke(r, g, b);\n    fill(r, g, b, 127);\n    ellipse(mouseX, mouseY, 200, 200);\n    text(result.body, mouseX, mouseY);\n  });\n}\n</code>\n</div>\n\n\n<div><code>\nvar url = 'https://invalidURL'; // A bad URL that will cause errors\nvar postData = { title: 'p5 Clicked!', body: 'p5.js is way cool.' };\n\nfunction setup() {\n  createCanvas(800, 800);\n}\n\nfunction mousePressed() {\n  // Pick new random color values\n  var r = random(255);\n  var g = random(255);\n  var b = random(255);\n\n  httpPost(\n    url,\n    'json',\n    postData,\n    function(result) {\n      // ... won't be called\n    },\n    function(error) {\n      strokeWeight(2);\n      stroke(r, g, b);\n      fill(r, g, b, 127);\n      text(error.toString(), mouseX, mouseY);\n    }\n  );\n}\n</code></div>\n"
             ],
             "class": "p5",
             "module": "IO",
-            "submodule": "Input",
-            "overloads": [
-                {
-                    "line": 826,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "<p>name of the file or url to load</p>\n",
-                            "type": "String"
-                        },
-                        {
-                            "name": "datatype",
-                            "description": "<p>&quot;json&quot;, &quot;jsonp&quot;, &quot;xml&quot;, or &quot;text&quot;.\n                                   If omitted, httpPost() will guess.</p>\n",
-                            "type": "String",
-                            "optional": true
-                        },
-                        {
-                            "name": "data",
-                            "description": "<p>param data passed sent with request</p>\n",
-                            "type": "Object|Boolean",
-                            "optional": true
-                        },
-                        {
-                            "name": "callback",
-                            "description": "<p>function to be executed after\n                                   httpPost() completes, data is passed in\n                                   as first argument</p>\n",
-                            "type": "Function",
-                            "optional": true
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "<p>function to be executed if\n                                   there is an error, response is passed\n                                   in as first argument</p>\n",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ]
-                },
-                {
-                    "line": 905,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "data",
-                            "description": "",
-                            "type": "Object|Boolean"
-                        },
-                        {
-                            "name": "callback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ]
-                },
-                {
-                    "line": 912,
-                    "params": [
-                        {
-                            "name": "path",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "callback",
-                            "description": "",
-                            "type": "Function"
-                        },
-                        {
-                            "name": "errorCallback",
-                            "description": "",
-                            "type": "Function",
-                            "optional": true
-                        }
-                    ]
-                }
-            ]
+            "submodule": "Input"
         },
         {
             "file": "src/io/files.js",
-            "line": 926,
+            "line": 826,
             "description": "<p>Method for executing an HTTP request. If data type is not specified,\np5 will try to guess based on the URL, defaulting to text.<br><br>\nFor more advanced use, you may also pass in the path as the first argument\nand a object as the second argument, the signature follows the one specified\nin the Fetch API specification.</p>\n",
             "itemtype": "method",
             "name": "httpDo",
@@ -10937,7 +10725,7 @@ module.exports={
             "submodule": "Input",
             "overloads": [
                 {
-                    "line": 926,
+                    "line": 826,
                     "params": [
                         {
                             "name": "path",
@@ -10977,7 +10765,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 994,
+                    "line": 895,
                     "params": [
                         {
                             "name": "path",
@@ -11007,7 +10795,7 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 1130,
+            "line": 1063,
             "itemtype": "method",
             "name": "createWriter",
             "params": [
@@ -11028,7 +10816,7 @@ module.exports={
                 "type": "p5.PrintWriter"
             },
             "example": [
-                "\n<div>\n<code>\ncreateButton('save')\n  .position(10, 10)\n  .mousePressed(function() {\n    var writer = createWriter('squares.txt');\n    for (var i = 0; i < 10; i++) {\n      writer.print(i * i);\n    }\n    writer.close();\n    writer.clear();\n  });\n</code>\n</div>"
+                "\n<div>\n<code>\ncreateButton('save')\n  .position(10, 10)\n  .mousePressed(function() {\n    var writer = createWriter('squares.txt');\n    for (var i = 0; i < 10; i++) {\n      writer.print(i * i);\n    }\n    writer.close();\n    writer.flush();\n  });\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "IO",
@@ -11036,19 +10824,15 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 1179,
-            "description": "<p>Writes data to the PrintWriter stream</p>\n",
+            "line": 1113,
             "itemtype": "method",
             "name": "write",
             "params": [
                 {
                     "name": "data",
-                    "description": "<p>all data to be written by the PrintWriter</p>\n",
+                    "description": "",
                     "type": "Array"
                 }
-            ],
-            "example": [
-                "\n<div class=\"norender notest\">\n<code>\n// creates a file called 'newFile.txt'\nvar writer = createWriter('newFile.txt');\n// write 'Hello world!'' to the file\nwriter.write(['Hello world!']);\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>\n<div class='norender notest'>\n<code>\n// creates a file called 'newFile2.txt'\nvar writer = createWriter('newFile2.txt');\n// write 'apples,bananas,123' to the file\nwriter.write(['apples', 'bananas', 123]);\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>\n<div class='norender notest'>\n<code>\n// creates a file called 'newFile3.txt'\nvar writer = createWriter('newFile3.txt');\n// write 'My name is: Teddy' to the file\nwriter.write('My name is:');\nwriter.write(' Teddy');\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>"
             ],
             "class": "p5.PrintWriter",
             "module": "IO",
@@ -11056,53 +10840,41 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 1219,
-            "description": "<p>Writes data to the PrintWriter stream, and adds a new line at the end</p>\n",
+            "line": 1120,
             "itemtype": "method",
             "name": "print",
             "params": [
                 {
                     "name": "data",
-                    "description": "<p>all data to be printed by the PrintWriter</p>\n",
+                    "description": "",
                     "type": "Array"
                 }
             ],
-            "example": [
-                "\n<div class='norender notest'>\n<code>\n// creates a file called 'newFile.txt'\nvar writer = createWriter('newFile.txt');\n// creates a file containing\n//  My name is:\n//  Teddy\nwriter.print('My name is:');\nwriter.print('Teddy');\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>\n<div class='norender notest'>\n<code>\nvar writer;\n\nfunction setup() {\n  createCanvas(400, 400);\n  // create a PrintWriter\n  writer = createWriter('newFile.txt');\n}\n\nfunction draw() {\n  // print all mouseX and mouseY coordinates to the stream\n  writer.print([mouseX, mouseY]);\n}\n\nfunction mouseClicked() {\n  // close the PrintWriter and save the file\n  writer.close();\n}\n</code>\n</div>"
-            ],
             "class": "p5.PrintWriter",
             "module": "IO",
             "submodule": "Output"
         },
         {
             "file": "src/io/files.js",
-            "line": 1262,
-            "description": "<p>Clears the data already written to the PrintWriter object</p>\n",
+            "line": 1127,
             "itemtype": "method",
-            "name": "clear",
-            "example": [
-                "\n<div class =\"norender notest\"><code>\n// create writer object\nvar writer = createWriter('newFile.txt');\nwriter.write(['clear me']);\n// clear writer object here\nwriter.clear();\n// close writer\nwriter.close();\n</code></div>\n"
-            ],
+            "name": "flush",
             "class": "p5.PrintWriter",
             "module": "IO",
             "submodule": "Output"
         },
         {
             "file": "src/io/files.js",
-            "line": 1280,
-            "description": "<p>Closes the PrintWriter</p>\n",
+            "line": 1133,
             "itemtype": "method",
             "name": "close",
-            "example": [
-                "\n<div class=\"norender notest\">\n<code>\n// create a file called 'newFile.txt'\nvar writer = createWriter('newFile.txt');\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>\n<div class='norender notest'>\n<code>\n// create a file called 'newFile2.txt'\nvar writer = createWriter('newFile2.txt');\n// write some data to the file\nwriter.write([100, 101, 102]);\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>"
-            ],
             "class": "p5.PrintWriter",
             "module": "IO",
             "submodule": "Output"
         },
         {
             "file": "src/io/files.js",
-            "line": 1329,
+            "line": 1162,
             "description": "<p>Save an image, text, json, csv, wav, or html. Prompts download to\nthe client&#39;s computer. <b>Note that it is not recommended to call save()\nwithin draw if it&#39;s looping, as the save() function will open a new save\ndialog every frame.</b></p>\n<p>The default behavior is to save the canvas as an image. You can\noptionally specify a filename.\nFor example:</p>\n <pre class='language-javascript'><code>\n save();\n save(&#39;myCanvas.jpg&#39;); // save a specific canvas with a filename\n </code></pre>\n\n<p>Alternately, the first parameter can be a pointer to a canvas\np5.Element, an Array of Strings,\nan Array of JSON, a JSON object, a p5.Table, a p5.Image, or a\np5.SoundFile (requires p5.sound). The second parameter is a filename\n(including extension). The third parameter is for options specific\nto this type of object. This method will save a file that fits the\ngiven paramaters. For example:</p>\n\n <pre class='language-javascript'><code>\n // Saves canvas as an image\n save('myCanvas.jpg');\n\n // Saves pImage as a png image\n var img = createImage(10, 10);\n save(img, 'my.png');\n\n // Saves canvas as an image\n var cnv = createCanvas(100, 100);\n save(cnv, 'myCanvas.jpg');\n\n // Saves p5.Renderer object as an image\n var gb = createGraphics(100, 100);\n save(gb, 'myGraphics.jpg');\n\n var myTable = new p5.Table();\n\n // Saves table as html file\n save(myTable, 'myTable.html');\n\n // Comma Separated Values\n save(myTable, 'myTable.csv');\n\n // Tab Separated Values\n save(myTable, 'myTable.tsv');\n\n var myJSON = { a: 1, b: true };\n\n // Saves pretty JSON\n save(myJSON, 'my.json');\n\n // Optimizes JSON filesize\n save(myJSON, 'my.json', true);\n\n // Saves array of strings to a text file with line breaks after each item\n var arrayOfStrings = ['a', 'b'];\n save(arrayOfStrings, 'my.txt');\n </code></pre>",
             "itemtype": "method",
             "name": "save",
@@ -11132,7 +10904,7 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 1457,
+            "line": 1290,
             "description": "<p>Writes the contents of an Array or a JSON object to a .json file.\nThe file saving process and location of the saved file will\nvary between web browsers.</p>\n",
             "itemtype": "method",
             "name": "saveJSON",
@@ -11164,7 +10936,7 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 1509,
+            "line": 1341,
             "description": "<p>Writes an array of Strings to a text file, one line per String.\nThe file saving process and location of the saved file will\nvary between web browsers.</p>\n",
             "itemtype": "method",
             "name": "saveStrings",
@@ -11196,7 +10968,7 @@ module.exports={
         },
         {
             "file": "src/io/files.js",
-            "line": 1571,
+            "line": 1402,
             "description": "<p>Writes the contents of a Table object to a file. Defaults to a\ntext file with comma-separated-values (&#39;csv&#39;) but can also\nuse tab separation (&#39;tsv&#39;), or generate an HTML table (&#39;html&#39;).\nThe file saving process and location of the saved file will\nvary between web browsers.</p>\n",
             "itemtype": "method",
             "name": "saveTable",
@@ -11222,6 +10994,35 @@ module.exports={
                 "\n<div><code>\n var table;\n\n function setup() {\n table = new p5.Table();\n\n table.addColumn('id');\n table.addColumn('species');\n table.addColumn('name');\n\n var newRow = table.addRow();\n newRow.setNum('id', table.getRowCount() - 1);\n newRow.setString('species', 'Panthera leo');\n newRow.setString('name', 'Lion');\n\n // To save, un-comment next line then click 'run'\n // saveTable(table, 'new.csv');\n }\n\n // Saves the following to a file called 'new.csv':\n // id,species,name\n // 0,Panthera leo,Lion\n </code></div>"
             ],
             "alt": "no image displayed",
+            "class": "p5",
+            "module": "IO",
+            "submodule": "Output"
+        },
+        {
+            "file": "src/io/files.js",
+            "line": 1549,
+            "description": "<p>Forces download. Accepts a url to filedata/blob, a filename,\nand an extension (optional).\nThis is a private function because it does not do any formatting,\nbut it is used by saveStrings, saveJSON, saveTable etc.</p>\n",
+            "itemtype": "method",
+            "name": "downloadFile",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>either an href generated by createObjectURL,\n                              or a Blob object containing the data</p>\n",
+                    "type": "String|Blob"
+                },
+                {
+                    "name": "filename",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "extension",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
             "class": "p5",
             "module": "IO",
             "submodule": "Output"
@@ -11256,7 +11057,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 56,
+            "line": 57,
             "description": "<p>Use addRow() to add a new row of data to a p5.Table object. By default,\nan empty row is created. Typically, you would store a reference to\nthe new row in a TableRow object (see newRow in the example above),\nand then set individual values using set().</p>\n<p>If a p5.TableRow object is included as a parameter, then that row is\nduplicated and added to the table.</p>\n",
             "itemtype": "method",
             "name": "addRow",
@@ -11278,7 +11079,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 119,
+            "line": 120,
             "description": "<p>Removes a row from the table object.</p>\n",
             "itemtype": "method",
             "name": "removeRow",
@@ -11299,7 +11100,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 167,
+            "line": 168,
             "description": "<p>Returns a reference to the specified p5.TableRow. The reference\ncan then be used to get and set values of the selected row.</p>\n",
             "itemtype": "method",
             "name": "getRow",
@@ -11324,7 +11125,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 213,
+            "line": 214,
             "description": "<p>Gets all rows from the table. Returns an array of p5.TableRows.</p>\n",
             "itemtype": "method",
             "name": "getRows",
@@ -11342,7 +11143,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 262,
+            "line": 263,
             "description": "<p>Finds the first row in the Table that contains the value\nprovided, and returns a reference to that row. Even if\nmultiple rows are possible matches, only the first matching\nrow is returned. The column to search may be specified by\neither its ID or title.</p>\n",
             "itemtype": "method",
             "name": "findRow",
@@ -11372,7 +11173,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 327,
+            "line": 328,
             "description": "<p>Finds the rows in the Table that contain the value\nprovided, and returns references to those rows. Returns an\nArray, so for must be used to iterate through all the rows,\nas shown in the example above. The column to search may be\nspecified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "findRows",
@@ -11402,7 +11203,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 396,
+            "line": 397,
             "description": "<p>Finds the first row in the Table that matches the regular\nexpression provided, and returns a reference to that row.\nEven if multiple rows are possible matches, only the first\nmatching row is returned. The column to search may be\nspecified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "matchRow",
@@ -11410,7 +11211,7 @@ module.exports={
                 {
                     "name": "regexp",
                     "description": "<p>The regular expression to match</p>\n",
-                    "type": "String|RegExp"
+                    "type": "String"
                 },
                 {
                     "name": "column",
@@ -11422,16 +11223,13 @@ module.exports={
                 "description": "TableRow object",
                 "type": "p5.TableRow"
             },
-            "example": [
-                "\n<div class=\"norender\">\n<code>\n// Given the CSV file \"mammals.csv\"\n// in the project's \"assets\" folder:\n//\n// id,species,name\n// 0,Capra hircus,Goat\n// 1,Panthera pardus,Leopard\n// 2,Equus zebra,Zebra\n\nvar table;\n\nfunction preload() {\n  //my table is comma separated value \"csv\"\n  //and has a header specifying the columns labels\n  table = loadTable('assets/mammals.csv', 'csv', 'header');\n}\n\nfunction setup() {\n  //Search using specified regex on a given column, return TableRow object\n  var mammal = table.matchRow(new RegExp('ant'), 1);\n  print(mammal.getString(1));\n  //Output \"Panthera pardus\"\n}\n</code>\n</div>\n"
-            ],
             "class": "p5.Table",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 455,
+            "line": 427,
             "description": "<p>Finds the rows in the Table that match the regular expression provided,\nand returns references to those rows. Returns an array, so for must be\nused to iterate through all the rows, as shown in the example. The\ncolumn to search may be specified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "matchRows",
@@ -11453,7 +11251,7 @@ module.exports={
                 "type": "p5.TableRow[]"
             },
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar table;\n\nfunction setup() {\n  table = new p5.Table();\n\n  table.addColumn('name');\n  table.addColumn('type');\n\n  var newRow = table.addRow();\n  newRow.setString('name', 'Lion');\n  newRow.setString('type', 'Mammal');\n\n  newRow = table.addRow();\n  newRow.setString('name', 'Snake');\n  newRow.setString('type', 'Reptile');\n\n  newRow = table.addRow();\n  newRow.setString('name', 'Mosquito');\n  newRow.setString('type', 'Insect');\n\n  newRow = table.addRow();\n  newRow.setString('name', 'Lizard');\n  newRow.setString('type', 'Reptile');\n\n  var rows = table.matchRows('R.*', 'type');\n  for (var i = 0; i < rows.length; i++) {\n    print(rows[i].getString('name') + ': ' + rows[i].getString('type'));\n  }\n}\n// Sketch prints:\n// Snake: Reptile\n// Lizard: Reptile\n</code>\n</div>"
+                "\nvar table;\n\nfunction setup() {\n\n  table = new p5.Table();\n\n  table.addColumn('name');\n  table.addColumn('type');\n\n  var newRow = table.addRow();\n  newRow.setString('name', 'Lion');\n  newRow.setString('type', 'Mammal');\n\n  newRow = table.addRow();\n  newRow.setString('name', 'Snake');\n  newRow.setString('type', 'Reptile');\n\n  newRow = table.addRow();\n  newRow.setString('name', 'Mosquito');\n  newRow.setString('type', 'Insect');\n\n  newRow = table.addRow();\n  newRow.setString('name', 'Lizard');\n  newRow.setString('type', 'Reptile');\n\n  var rows = table.matchRows('R.*', 'type');\n  for (var i = 0; i < rows.length; i++) {\n    print(rows[i].getString('name') + ': ' + rows[i].getString('type'));\n  }\n}\n// Sketch prints:\n// Snake: Reptile\n// Lizard: Reptile"
             ],
             "class": "p5.Table",
             "module": "IO",
@@ -11461,7 +11259,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 522,
+            "line": 491,
             "description": "<p>Retrieves all values in the specified column, and returns them\nas an array. The column may be specified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "getColumn",
@@ -11486,7 +11284,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 575,
+            "line": 544,
             "description": "<p>Removes all rows from a Table. While all rows are removed,\ncolumns and column titles are maintained.</p>\n",
             "itemtype": "method",
             "name": "clearRows",
@@ -11500,7 +11298,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 617,
+            "line": 586,
             "description": "<p>Use addColumn() to add a new column to a Table object.\nTypically, you will want to specify a title, so the column\nmay be easily referenced later by name. (If no title is\nspecified, the new column&#39;s title will be null.)</p>\n",
             "itemtype": "method",
             "name": "addColumn",
@@ -11522,7 +11320,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 668,
+            "line": 637,
             "description": "<p>Returns the total number of columns in a Table.</p>\n",
             "itemtype": "method",
             "name": "getColumnCount",
@@ -11530,16 +11328,13 @@ module.exports={
                 "description": "Number of columns in this table",
                 "type": "Integer"
             },
-            "example": [
-                "\n <div>\n <code>\n // given the cvs file \"blobs.csv\" in /assets directory\n // ID, Name, Flavor, Shape, Color\n // Blob1, Blobby, Sweet, Blob, Pink\n // Blob2, Saddy, Savory, Blob, Blue\n\n var table;\n\n function preload() {\n table = loadTable('assets/blobs.csv');\n }\n\n function setup() {\n createCanvas(200, 100);\n textAlign(CENTER);\n background(255);\n }\n\n function draw() {\n var numOfColumn = table.getColumnCount();\n text('There are ' + numOfColumn + ' columns in the table.', 100, 50);\n }\n </code>\n </div>"
-            ],
             "class": "p5.Table",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 704,
+            "line": 647,
             "description": "<p>Returns the total number of rows in a Table.</p>\n",
             "itemtype": "method",
             "name": "getRowCount",
@@ -11547,16 +11342,13 @@ module.exports={
                 "description": "Number of rows in this table",
                 "type": "Integer"
             },
-            "example": [
-                "\n <div>\n <code>\n // given the cvs file \"blobs.csv\" in /assets directory\n //\n // ID, Name, Flavor, Shape, Color\n // Blob1, Blobby, Sweet, Blob, Pink\n // Blob2, Saddy, Savory, Blob, Blue\n\n var table;\n\n function preload() {\n table = loadTable('assets/blobs.csv');\n }\n\n function setup() {\n createCanvas(200, 100);\n textAlign(CENTER);\n background(255);\n }\n\n function draw() {\n text('There are ' + table.getRowCount() + ' rows in the table.', 100, 50);\n }\n </code>\n </div>"
-            ],
             "class": "p5.Table",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 740,
+            "line": 657,
             "description": "<p>Removes any of the specified characters (or &quot;tokens&quot;).</p>\n\n<p>If no column is specified, then the values in all columns and\nrows are processed. A specific column may be referenced by\neither its ID or title.</p>",
             "itemtype": "method",
             "name": "removeTokens",
@@ -11573,16 +11365,13 @@ module.exports={
                     "optional": true
                 }
             ],
-            "example": [
-                "\n <div class=\"norender\"><code>\n function setup() {\n var table = new p5.Table();\n\n table.addColumn('name');\n table.addColumn('type');\n\n var newRow = table.addRow();\n newRow.setString('name', '   $Lion  ,');\n newRow.setString('type', ',,,Mammal');\n\n newRow = table.addRow();\n newRow.setString('name', '$Snake  ');\n newRow.setString('type', ',,,Reptile');\n\n table.removeTokens(',$ ');\n print(table.getArray());\n }\n\n // prints:\n //  0  \"Lion\"   \"Mamal\"\n //  1  \"Snake\"  \"Reptile\"\n </code></div>"
-            ],
             "class": "p5.Table",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 814,
+            "line": 706,
             "description": "<p>Trims leading and trailing whitespace, such as spaces and tabs,\nfrom String table values. If no column is specified, then the\nvalues in all columns and rows are trimmed. A specific column\nmay be referenced by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "trim",
@@ -11594,16 +11383,13 @@ module.exports={
                     "optional": true
                 }
             ],
-            "example": [
-                "\n <div class=\"norender\"><code>\n function setup() {\n var table = new p5.Table();\n\n table.addColumn('name');\n table.addColumn('type');\n\n var newRow = table.addRow();\n newRow.setString('name', '   Lion  ,');\n newRow.setString('type', ' Mammal  ');\n\n newRow = table.addRow();\n newRow.setString('name', '  Snake  ');\n newRow.setString('type', '  Reptile  ');\n\n table.trim();\n print(table.getArray());\n }\n\n // prints:\n //  0  \"Lion\"   \"Mamal\"\n //  1  \"Snake\"  \"Reptile\"\n </code></div>"
-            ],
             "class": "p5.Table",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 878,
+            "line": 746,
             "description": "<p>Use removeColumn() to remove an existing column from a Table\nobject. The column to be removed may be identified by either\nits title (a String) or its index value (an int).\nremoveColumn(0) would remove the first column, removeColumn(1)\nwould remove the second column, and so on.</p>\n",
             "itemtype": "method",
             "name": "removeColumn",
@@ -11624,16 +11410,11 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 944,
+            "line": 812,
             "description": "<p>Stores a value in the Table&#39;s specified row and column.\nThe row is specified by its ID, while the column may be specified\nby either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "set",
             "params": [
-                {
-                    "name": "row",
-                    "description": "<p>row ID</p>\n",
-                    "type": "Integer"
-                },
                 {
                     "name": "column",
                     "description": "<p>column ID (Number)\n                              or title (String)</p>\n",
@@ -11655,7 +11436,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 994,
+            "line": 861,
             "description": "<p>Stores a Float value in the Table&#39;s specified row and column.\nThe row is specified by its ID, while the column may be specified\nby either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "setNum",
@@ -11686,7 +11467,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 1040,
+            "line": 907,
             "description": "<p>Stores a String value in the Table&#39;s specified row and column.\nThe row is specified by its ID, while the column may be specified\nby either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "setString",
@@ -11707,17 +11488,13 @@ module.exports={
                     "type": "String"
                 }
             ],
-            "example": [
-                "\n<div class=\"norender\"><code>\n// Given the CSV file \"mammals.csv\" in the project's \"assets\" folder:\n//\n// id,species,name\n// 0,Capra hircus,Goat\n// 1,Panthera pardus,Leopard\n// 2,Equus zebra,Zebra\n\nvar table;\n\nfunction preload() {\n  //my table is comma separated value \"csv\"\n  //and has a header specifying the columns labels\n  table = loadTable('assets/mammals.csv', 'csv', 'header');\n}\n\nfunction setup() {\n  //add a row\n  var newRow = table.addRow();\n  newRow.setString('id', table.getRowCount() - 1);\n  newRow.setString('species', 'Canis Lupus');\n  newRow.setString('name', 'Wolf');\n\n  print(table.getArray());\n}\n</code></div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.Table",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 1085,
+            "line": 922,
             "description": "<p>Retrieves a value from the Table&#39;s specified row and column.\nThe row is specified by its ID, while the column may be specified by\neither its ID or title.</p>\n",
             "itemtype": "method",
             "name": "get",
@@ -11747,7 +11524,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 1132,
+            "line": 969,
             "description": "<p>Retrieves a Float value from the Table&#39;s specified row and column.\nThe row is specified by its ID, while the column may be specified by\neither its ID or title.</p>\n",
             "itemtype": "method",
             "name": "getNum",
@@ -11777,7 +11554,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 1177,
+            "line": 1014,
             "description": "<p>Retrieves a String value from the Table&#39;s specified row and column.\nThe row is specified by its ID, while the column may be specified by\neither its ID or title.</p>\n",
             "itemtype": "method",
             "name": "getString",
@@ -11798,7 +11575,7 @@ module.exports={
                 "type": "String"
             },
             "example": [
-                "\n<div class=\"norender\">\n<code>\n// Given the CSV file \"mammals.csv\"\n// in the project's \"assets\" folder:\n//\n// id,species,name\n// 0,Capra hircus,Goat\n// 1,Panthera pardus,Leopard\n// 2,Equus zebra,Zebra\n\nvar table;\n\nfunction preload() {\n  // table is comma separated value \"CSV\"\n  // and has specifiying header for column labels\n  table = loadTable('assets/mammals.csv', 'csv', 'header');\n}\n\nfunction setup() {\n  print(table.getString(0, 0)); // 0\n  print(table.getString(0, 1)); // Capra hircus\n  print(table.getString(0, 2)); // Goat\n  print(table.getString(1, 0)); // 1\n  print(table.getString(1, 1)); // Panthera pardus\n  print(table.getString(1, 2)); // Leopard\n  print(table.getString(2, 0)); // 2\n  print(table.getString(2, 1)); // Equus zebra\n  print(table.getString(2, 2)); // Zebra\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\n// Given the CSV file \"mammals.csv\"\n// in the project's \"assets\" folder:\n//\n// id,species,name\n// 0,Capra hircus,Goat\n// 1,Panthera pardus,Leopard\n// 2,Equus zebra,Zebra\n\nvar table;\n\nfunction preload() {\n  //my table is comma separated value \"csv\"\n  //and has a header specifying the columns labels\n  table = loadTable('assets/mammals.csv', 'csv', 'header');\n}\n\nfunction setup() {\n  var tableArray = table.getArray();\n\n  //output each row as array\n  for (var i = 0; i < tableArray.length; i++) {\n    print(tableArray[i]);\n  }\n}\n</code>\n</div>"
             ],
             "alt": "no image displayed",
             "class": "p5.Table",
@@ -11807,7 +11584,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 1230,
+            "line": 1063,
             "description": "<p>Retrieves all table data and returns as an object. If a column name is\npassed in, each row object will be stored with that attribute as its\ntitle.</p>\n",
             "itemtype": "method",
             "name": "getObject",
@@ -11833,7 +11610,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.Table.js",
-            "line": 1294,
+            "line": 1127,
             "description": "<p>Retrieves all table data and returns it as a multidimensional array.</p>\n",
             "itemtype": "method",
             "name": "getArray",
@@ -11841,17 +11618,13 @@ module.exports={
                 "description": "",
                 "type": "Array"
             },
-            "example": [
-                "\n<div class=\"norender\">\n<code>\n// Given the CSV file \"mammals.csv\"\n// in the project's \"assets\" folder\n//\n// id,species,name\n// 0,Capra hircus,Goat\n// 1,Panthera pardus,Leoperd\n// 2,Equus zebra,Zebra\n\nvar table;\n\nfunction preload() {\n  // table is comma separated value \"CSV\"\n  // and has specifiying header for column labels\n  table = loadTable('assets/mammals.csv', 'csv', 'header');\n}\n\nfunction setup() {\n  var tableArray = table.getArray();\n  for (var i = 0; i < tableArray.length; i++) {\n    print(tableArray[i]);\n  }\n}\n</code>\n</div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.Table",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.TableRow.js",
-            "line": 42,
+            "line": 43,
             "description": "<p>Stores a value in the TableRow&#39;s specified column.\nThe column may be specified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "set",
@@ -11867,17 +11640,13 @@ module.exports={
                     "type": "String|Number"
                 }
             ],
-            "example": [
-                "\n <div class=\"norender\"><code>\n // Given the CSV file \"mammals.csv\" in the project's \"assets\" folder:\n //\n // id,species,name\n // 0,Capra hircus,Goat\n // 1,Panthera pardus,Leopard\n // 2,Equus zebra,Zebra\n\n var table;\n\n function preload() {\n //my table is comma separated value \"csv\"\n //and has a header specifying the columns labels\n table = loadTable('assets/mammals.csv', 'csv', 'header');\n }\n\n function setup() {\n var rows = table.getRows();\n for (var r = 0; r < rows.length; r++) {\n   rows[r].set('name', 'Unicorn');\n }\n\n //print the results\n print(table.getArray());\n }\n </code></div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.TableRow",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.TableRow.js",
-            "line": 104,
+            "line": 74,
             "description": "<p>Stores a Float value in the TableRow&#39;s specified column.\nThe column may be specified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "setNum",
@@ -11890,20 +11659,16 @@ module.exports={
                 {
                     "name": "value",
                     "description": "<p>The value to be stored\n                              as a Float</p>\n",
-                    "type": "Number|String"
+                    "type": "Number"
                 }
             ],
-            "example": [
-                "\n <div class=\"norender\"><code>\n // Given the CSV file \"mammals.csv\" in the project's \"assets\" folder:\n //\n // id,species,name\n // 0,Capra hircus,Goat\n // 1,Panthera pardus,Leopard\n // 2,Equus zebra,Zebra\n\n var table;\n\n function preload() {\n //my table is comma separated value \"csv\"\n //and has a header specifying the columns labels\n table = loadTable('assets/mammals.csv', 'csv', 'header');\n }\n\n function setup() {\n var rows = table.getRows();\n for (var r = 0; r < rows.length; r++) {\n   rows[r].setNum('id', r + 10);\n }\n\n print(table.getArray());\n }\n </code></div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.TableRow",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.TableRow.js",
-            "line": 148,
+            "line": 89,
             "description": "<p>Stores a String value in the TableRow&#39;s specified column.\nThe column may be specified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "setString",
@@ -11916,20 +11681,16 @@ module.exports={
                 {
                     "name": "value",
                     "description": "<p>The value to be stored\n                              as a String</p>\n",
-                    "type": "String|Number|Boolean|Object"
+                    "type": "String"
                 }
             ],
-            "example": [
-                "\n <div class=\"norender\"><code>\n // Given the CSV file \"mammals.csv\" in the project's \"assets\" folder:\n //\n // id,species,name\n // 0,Capra hircus,Goat\n // 1,Panthera pardus,Leopard\n // 2,Equus zebra,Zebra\n\n var table;\n\n function preload() {\n //my table is comma separated value \"csv\"\n //and has a header specifying the columns labels\n table = loadTable('assets/mammals.csv', 'csv', 'header');\n }\n\n function setup() {\n var rows = table.getRows();\n for (var r = 0; r < rows.length; r++) {\n   var name = rows[r].getString('name');\n   rows[r].setString('name', 'A ' + name + ' named George');\n }\n\n print(table.getArray());\n }\n </code></div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.TableRow",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.TableRow.js",
-            "line": 193,
+            "line": 104,
             "description": "<p>Retrieves a value from the TableRow&#39;s specified column.\nThe column may be specified by either its ID or title.</p>\n",
             "itemtype": "method",
             "name": "get",
@@ -11944,17 +11705,13 @@ module.exports={
                 "description": "",
                 "type": "String|Number"
             },
-            "example": [
-                "\n <div class=\"norender\"><code>\n // Given the CSV file \"mammals.csv\" in the project's \"assets\" folder:\n //\n // id,species,name\n // 0,Capra hircus,Goat\n // 1,Panthera pardus,Leopard\n // 2,Equus zebra,Zebra\n\n var table;\n\n function preload() {\n //my table is comma separated value \"csv\"\n //and has a header specifying the columns labels\n table = loadTable('assets/mammals.csv', 'csv', 'header');\n }\n\n function setup() {\n var names = [];\n var rows = table.getRows();\n for (var r = 0; r < rows.length; r++) {\n   names.push(rows[r].get('name'));\n }\n\n print(names);\n }\n </code></div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.TableRow",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.TableRow.js",
-            "line": 241,
+            "line": 121,
             "description": "<p>Retrieves a Float value from the TableRow&#39;s specified\ncolumn. The column may be specified by either its ID or\ntitle.</p>\n",
             "itemtype": "method",
             "name": "getNum",
@@ -11969,17 +11726,13 @@ module.exports={
                 "description": "Float Floating point number",
                 "type": "Number"
             },
-            "example": [
-                "\n <div class=\"norender\"><code>\n // Given the CSV file \"mammals.csv\" in the project's \"assets\" folder:\n //\n // id,species,name\n // 0,Capra hircus,Goat\n // 1,Panthera pardus,Leopard\n // 2,Equus zebra,Zebra\n\n var table;\n\n function preload() {\n //my table is comma separated value \"csv\"\n //and has a header specifying the columns labels\n table = loadTable('assets/mammals.csv', 'csv', 'header');\n }\n\n function setup() {\n var rows = table.getRows();\n var minId = Infinity;\n var maxId = -Infinity;\n for (var r = 0; r < rows.length; r++) {\n   var id = rows[r].getNum('id');\n   minId = min(minId, id);\n   maxId = min(maxId, id);\n }\n print('minimum id = ' + minId + ', maximum id = ' + maxId);\n }\n </code></div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.TableRow",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.TableRow.js",
-            "line": 297,
+            "line": 145,
             "description": "<p>Retrieves an String value from the TableRow&#39;s specified\ncolumn. The column may be specified by either its ID or\ntitle.</p>\n",
             "itemtype": "method",
             "name": "getString",
@@ -11994,17 +11747,13 @@ module.exports={
                 "description": "String",
                 "type": "String"
             },
-            "example": [
-                "\n <div class=\"norender\"><code>\n // Given the CSV file \"mammals.csv\" in the project's \"assets\" folder:\n //\n // id,species,name\n // 0,Capra hircus,Goat\n // 1,Panthera pardus,Leopard\n // 2,Equus zebra,Zebra\n\n var table;\n\n function preload() {\n //my table is comma separated value \"csv\"\n //and has a header specifying the columns labels\n table = loadTable('assets/mammals.csv', 'csv', 'header');\n }\n\n function setup() {\n var rows = table.getRows();\n var longest = '';\n for (var r = 0; r < rows.length; r++) {\n   var species = rows[r].getString('species');\n   if (longest.length < species.length) {\n     longest = species;\n   }\n }\n\n print('longest: ' + longest);\n }\n </code></div>"
-            ],
-            "alt": "no image displayed",
             "class": "p5.TableRow",
             "module": "IO",
             "submodule": "Table"
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 64,
+            "line": 65,
             "description": "<p>Gets a copy of the element&#39;s parent. Returns the parent as another\np5.XML object.</p>\n",
             "itemtype": "method",
             "name": "getParent",
@@ -12021,7 +11770,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 102,
+            "line": 103,
             "description": "<p>Gets the element&#39;s full name, which is returned as a String.</p>\n",
             "itemtype": "method",
             "name": "getName",
@@ -12038,7 +11787,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 137,
+            "line": 138,
             "description": "<p>Sets the element&#39;s name, which is specified as a String.</p>\n",
             "itemtype": "method",
             "name": "setName",
@@ -12058,7 +11807,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 175,
+            "line": 176,
             "description": "<p>Checks whether or not the element has any children, and returns the result\nas a boolean.</p>\n",
             "itemtype": "method",
             "name": "hasChildren",
@@ -12075,7 +11824,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 211,
+            "line": 212,
             "description": "<p>Get the names of all of the element&#39;s children, and returns the names as an\narray of Strings. This is the same as looping through and calling getName()\non each child element individually.</p>\n",
             "itemtype": "method",
             "name": "listChildren",
@@ -12092,7 +11841,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 250,
+            "line": 251,
             "description": "<p>Returns all of the element&#39;s children as an array of p5.XML objects. When\nthe name parameter is specified, then it will return all children that match\nthat name.</p>\n",
             "itemtype": "method",
             "name": "getChildren",
@@ -12117,7 +11866,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 300,
+            "line": 301,
             "description": "<p>Returns the first of the element&#39;s children that matches the name parameter\nor the child of the given index.It returns undefined if no matching\nchild is found.</p>\n",
             "itemtype": "method",
             "name": "getChild",
@@ -12147,13 +11896,10 @@ module.exports={
             "name": "addChild",
             "params": [
                 {
-                    "name": "node",
-                    "description": "<p>a p5.XML Object which will be the child to be added</p>\n",
+                    "name": "a",
+                    "description": "<p>p5.XML Object which will be the child to be added</p>\n",
                     "type": "p5.XML"
                 }
-            ],
-            "example": [
-                "\n<div class='norender'><code>\n// The following short XML file called \"mammals.xml\" is parsed\n// in the code below.\n//\n// <?xml version=\"1.0\"?>\n// &lt;mammals&gt;\n//   &lt;animal id=\"0\" species=\"Capra hircus\">Goat&lt;/animal&gt;\n//   &lt;animal id=\"1\" species=\"Panthera pardus\">Leopard&lt;/animal&gt;\n//   &lt;animal id=\"2\" species=\"Equus zebra\">Zebra&lt;/animal&gt;\n// &lt;/mammals&gt;\n\nvar xml;\n\nfunction preload() {\n  xml = loadXML('assets/mammals.xml');\n}\n\nfunction setup() {\n  var child = new p5.XML();\n  child.setAttribute('id', '3');\n  child.setAttribute('species', 'Ornithorhynchus anatinus');\n  child.setContent('Platypus');\n  xml.addChild(child);\n\n  var animals = xml.getChildren('animal');\n  print(animals[animals.length - 1].getContent());\n}\n\n// Sketch prints:\n// \"Goat\"\n// \"Leopard\"\n// \"Zebra\"\n</code></div>"
             ],
             "class": "p5.XML",
             "module": "IO",
@@ -12161,7 +11907,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 412,
+            "line": 378,
             "description": "<p>Removes the element specified by name or index.</p>\n",
             "itemtype": "method",
             "name": "removeChild",
@@ -12181,7 +11927,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 484,
+            "line": 450,
             "description": "<p>Counts the specified element&#39;s number of attributes, returned as an Number.</p>\n",
             "itemtype": "method",
             "name": "getAttributeCount",
@@ -12198,7 +11944,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 520,
+            "line": 486,
             "description": "<p>Gets all of the specified element&#39;s attributes, and returns them as an\narray of Strings.</p>\n",
             "itemtype": "method",
             "name": "listAttributes",
@@ -12215,7 +11961,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 557,
+            "line": 523,
             "description": "<p>Checks whether or not an element has the specified attribute.</p>\n",
             "itemtype": "method",
             "name": "hasAttribute",
@@ -12239,7 +11985,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 596,
+            "line": 562,
             "description": "<p>Returns an attribute value of the element as an Number. If the defaultValue\nparameter is specified and the attribute doesn&#39;t exist, then defaultValue\nis returned. If no defaultValue is specified and the attribute doesn&#39;t\nexist, the value 0 is returned.</p>\n",
             "itemtype": "method",
             "name": "getNum",
@@ -12269,7 +12015,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 637,
+            "line": 603,
             "description": "<p>Returns an attribute value of the element as an String. If the defaultValue\nparameter is specified and the attribute doesn&#39;t exist, then defaultValue\nis returned. If no defaultValue is specified and the attribute doesn&#39;t\nexist, null is returned.</p>\n",
             "itemtype": "method",
             "name": "getString",
@@ -12288,7 +12034,7 @@ module.exports={
             ],
             "return": {
                 "description": "",
-                "type": "String"
+                "type": "Number"
             },
             "example": [
                 "\n<div class='norender'><code>\n// The following short XML file called \"mammals.xml\" is parsed\n// in the code below.\n//\n// <?xml version=\"1.0\"?>\n// &lt;mammals&gt;\n//   &lt;animal id=\"0\" species=\"Capra hircus\">Goat&lt;/animal&gt;\n//   &lt;animal id=\"1\" species=\"Panthera pardus\">Leopard&lt;/animal&gt;\n//   &lt;animal id=\"2\" species=\"Equus zebra\">Zebra&lt;/animal&gt;\n// &lt;/mammals&gt;\n\nvar xml;\n\nfunction preload() {\n  xml = loadXML('assets/mammals.xml');\n}\n\nfunction setup() {\n  var firstChild = xml.getChild('animal');\n  print(firstChild.getString('species'));\n}\n\n// Sketch prints:\n// \"Capra hircus\"\n</code></div>"
@@ -12299,7 +12045,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 678,
+            "line": 644,
             "description": "<p>Sets the content of an element&#39;s attribute. The first parameter specifies\nthe attribute name, while the second specifies the new content.</p>\n",
             "itemtype": "method",
             "name": "setAttribute",
@@ -12312,7 +12058,7 @@ module.exports={
                 {
                     "name": "value",
                     "description": "<p>the value of the attribute</p>\n",
-                    "type": "Number|String|Boolean"
+                    "type": "Number"
                 }
             ],
             "example": [
@@ -12324,7 +12070,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 721,
+            "line": 687,
             "description": "<p>Returns the content of an element. If there is no such content,\ndefaultValue is returned if specified, otherwise null is returned.</p>\n",
             "itemtype": "method",
             "name": "getContent",
@@ -12349,7 +12095,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 759,
+            "line": 725,
             "description": "<p>Sets the element&#39;s content.</p>\n",
             "itemtype": "method",
             "name": "setContent",
@@ -12369,7 +12115,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 801,
+            "line": 767,
             "description": "<p>This method is called while the parsing of XML (when loadXML() is\ncalled). The difference between this method and the setContent()\nmethod defined later is that this one is used to set the content\nwhen the node in question has more nodes under it and so on and\nnot directly text content. While in the other one is used when\nthe node in question directly has text inside it.</p>\n",
             "class": "p5.XML",
             "module": "IO",
@@ -12377,7 +12123,7 @@ module.exports={
         },
         {
             "file": "src/io/p5.XML.js",
-            "line": 818,
+            "line": 784,
             "description": "<p>This method is called while the parsing of XML (when loadXML() is\ncalled). The XML node is passed and its attributes are stored in the\np5.XML&#39;s attribute Object.</p>\n",
             "class": "p5.XML",
             "module": "IO",
@@ -13117,7 +12863,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 67,
+            "line": 69,
             "description": "<p>The x component of the vector</p>\n",
             "itemtype": "property",
             "name": "x",
@@ -13128,7 +12874,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 72,
+            "line": 74,
             "description": "<p>The y component of the vector</p>\n",
             "itemtype": "property",
             "name": "y",
@@ -13139,7 +12885,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 77,
+            "line": 79,
             "description": "<p>The z component of the vector</p>\n",
             "itemtype": "property",
             "name": "z",
@@ -13150,7 +12896,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 84,
+            "line": 87,
             "description": "<p>Returns a string representation of a vector v by calling String(v)\nor v.toString(). This method is useful for logging vectors in the\nconsole.</p>\n",
             "itemtype": "method",
             "name": "toString",
@@ -13159,7 +12905,7 @@ module.exports={
                 "type": "String"
             },
             "example": [
-                "\n<div class = \"norender\">\n<code>\nfunction setup() {\n  var v = createVector(20, 30);\n  print(String(v)); // prints \"p5.Vector Object : [20, 30, 0]\"\n}\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 0);\n  var v1 = createVector(mouseX, mouseY);\n  drawArrow(v0, v1, 'black');\n\n  noStroke();\n  text(v1.toString(), 10, 25, 90, 75);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class = \"norender\">\n<code>\nfunction setup() {\n  var v = createVector(20, 30);\n  print(String(v)); // prints \"p5.Vector Object : [20, 30, 0]\"\n}\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13167,20 +12913,20 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 134,
+            "line": 107,
             "description": "<p>Sets the x, y, and z component of the vector using two or three separate\nvariables, the data from a p5.Vector, or the values from a float array.</p>\n",
             "itemtype": "method",
             "name": "set",
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nfunction setup() {\n  var v = createVector(1, 2, 3);\n  v.set(4, 5, 6); // Sets vector to [4, 5, 6]\n\n  var v1 = createVector(0, 0, 0);\n  var arr = [1, 2, 3];\n  v1.set(arr); // Sets vector to [1, 2, 3]\n}\n</code>\n</div>\n\n<div>\n<code>\nvar v0, v1;\nfunction setup() {\n  createCanvas(100, 100);\n\n  v0 = createVector(0, 0);\n  v1 = createVector(50, 50);\n}\n\nfunction draw() {\n  background(240);\n\n  drawArrow(v0, v1, 'black');\n  v1.set(v1.x + random(-1, 1), v1.y + random(-1, 1));\n\n  noStroke();\n  text('x: ' + round(v1.x) + ' y: ' + round(v1.y), 20, 90);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nfunction setup() {\n  var v = createVector(1, 2, 3);\n  v.set(4, 5, 6); // Sets vector to [4, 5, 6]\n\n  var v1 = createVector(0, 0, 0);\n  var arr = [1, 2, 3];\n  v1.set(arr); // Sets vector to [1, 2, 3]\n}\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 134,
+                    "line": 107,
                     "params": [
                         {
                             "name": "x",
@@ -13204,7 +12950,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 193,
+                    "line": 129,
                     "params": [
                         {
                             "name": "value",
@@ -13218,7 +12964,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 217,
+            "line": 153,
             "description": "<p>Gets a copy of the vector, returns a p5.Vector object.</p>\n",
             "itemtype": "method",
             "name": "copy",
@@ -13235,20 +12981,20 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 240,
+            "line": 176,
             "description": "<p>Adds x, y, and z components to a vector, adds one vector to another, or\nadds two independent vectors together. The version of the method that adds\ntwo vectors together is a static method and returns a p5.Vector, the others\nacts directly on the vector. See the examples for more context.</p>\n",
             "itemtype": "method",
             "name": "add",
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(1, 2, 3);\nv.add(4, 5, 6);\n// v's components are set to [5, 7, 9]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(1, 2, 3);\nvar v2 = createVector(2, 3, 4);\n\nvar v3 = p5.Vector.add(v1, v2);\n// v3 has components [3, 5, 7]\nprint(v3);\n</code>\n</div>\n\n<div>\n<code>\n// red vector + blue vector = purple vector\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 0);\n  var v1 = createVector(mouseX, mouseY);\n  drawArrow(v0, v1, 'red');\n\n  var v2 = createVector(-30, 20);\n  drawArrow(v1, v2, 'blue');\n\n  var v3 = p5.Vector.add(v1, v2);\n  drawArrow(v0, v3, 'purple');\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(1, 2, 3);\nv.add(4, 5, 6);\n// v's components are set to [5, 7, 9]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(1, 2, 3);\nvar v2 = createVector(2, 3, 4);\n\nvar v3 = p5.Vector.add(v1, v2);\n// v3 has components [3, 5, 7]\nprint(v3);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 240,
+                    "line": 176,
                     "params": [
                         {
                             "name": "x",
@@ -13271,7 +13017,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 306,
+                    "line": 208,
                     "params": [
                         {
                             "name": "value",
@@ -13282,7 +13028,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 1556,
+                    "line": 1035,
                     "params": [
                         {
                             "name": "v1",
@@ -13303,7 +13049,7 @@ module.exports={
                     "static": 1
                 },
                 {
-                    "line": 1563,
+                    "line": 1042,
                     "params": [
                         {
                             "name": "v1",
@@ -13326,20 +13072,20 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 330,
+            "line": 232,
             "description": "<p>Subtracts x, y, and z components from a vector, subtracts one vector from\nanother, or subtracts two independent vectors. The version of the method\nthat subtracts two vectors is a static method and returns a p5.Vector, the\nother acts directly on the vector. See the examples for more context.</p>\n",
             "itemtype": "method",
             "name": "sub",
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(4, 5, 6);\nv.sub(1, 1, 1);\n// v's components are set to [3, 4, 5]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(2, 3, 4);\nvar v2 = createVector(1, 2, 3);\n\nvar v3 = p5.Vector.sub(v1, v2);\n// v3 has components [1, 1, 1]\nprint(v3);\n</code>\n</div>\n\n<div>\n<code>\n// red vector - blue vector = purple vector\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 0);\n  var v1 = createVector(70, 50);\n  drawArrow(v0, v1, 'red');\n\n  var v2 = createVector(mouseX, mouseY);\n  drawArrow(v0, v2, 'blue');\n\n  var v3 = p5.Vector.sub(v1, v2);\n  drawArrow(v2, v3, 'purple');\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(4, 5, 6);\nv.sub(1, 1, 1);\n// v's components are set to [3, 4, 5]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(2, 3, 4);\nvar v2 = createVector(1, 2, 3);\n\nvar v3 = p5.Vector.sub(v1, v2);\n// v3 has components [1, 1, 1]\nprint(v3);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 330,
+                    "line": 232,
                     "params": [
                         {
                             "name": "x",
@@ -13362,7 +13108,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 396,
+                    "line": 264,
                     "params": [
                         {
                             "name": "value",
@@ -13373,7 +13119,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 1586,
+                    "line": 1065,
                     "params": [
                         {
                             "name": "v1",
@@ -13394,7 +13140,7 @@ module.exports={
                     "static": 1
                 },
                 {
-                    "line": 1593,
+                    "line": 1072,
                     "params": [
                         {
                             "name": "v1",
@@ -13417,20 +13163,20 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 420,
+            "line": 288,
             "description": "<p>Multiply the vector by a scalar. The static version of this method\ncreates a new p5.Vector while the non static version acts on the vector\ndirectly. See the examples for more context.</p>\n",
             "itemtype": "method",
             "name": "mult",
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(1, 2, 3);\nv.mult(2);\n// v's components are set to [2, 4, 6]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(1, 2, 3);\nvar v2 = p5.Vector.mult(v1, 2);\n// v2 has components [2, 4, 6]\nprint(v2);\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(50, 50);\n  var v1 = createVector(25, -25);\n  drawArrow(v0, v1, 'red');\n\n  var num = map(mouseX, 0, width, -2, 2, true);\n  var v2 = p5.Vector.mult(v1, num);\n  drawArrow(v0, v2, 'blue');\n\n  noStroke();\n  text('multiplied by ' + num.toFixed(2), 5, 90);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(1, 2, 3);\nv.mult(2);\n// v's components are set to [2, 4, 6]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(1, 2, 3);\nvar v2 = p5.Vector.mult(v1, 2);\n// v2 has components [2, 4, 6]\nprint(v2);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 420,
+                    "line": 288,
                     "params": [
                         {
                             "name": "n",
@@ -13441,7 +13187,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 1614,
+                    "line": 1093,
                     "params": [
                         {
                             "name": "v",
@@ -13462,7 +13208,7 @@ module.exports={
                     "static": 1
                 },
                 {
-                    "line": 1621,
+                    "line": 1100,
                     "params": [
                         {
                             "name": "v",
@@ -13485,20 +13231,20 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 495,
+            "line": 329,
             "description": "<p>Divide the vector by a scalar. The static version of this method creates a\nnew p5.Vector while the non static version acts on the vector directly.\nSee the examples for more context.</p>\n",
             "itemtype": "method",
             "name": "div",
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(6, 4, 2);\nv.div(2); //v's components are set to [3, 2, 1]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(6, 4, 2);\nvar v2 = p5.Vector.div(v1, 2);\n// v2 has components [3, 2, 1]\nprint(v2);\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 100);\n  var v1 = createVector(50, -50);\n  drawArrow(v0, v1, 'red');\n\n  var num = map(mouseX, 0, width, 10, 0.5, true);\n  var v2 = p5.Vector.div(v1, num);\n  drawArrow(v0, v2, 'blue');\n\n  noStroke();\n  text('divided by ' + num.toFixed(2), 10, 90);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(6, 4, 2);\nv.div(2); //v's components are set to [3, 2, 1]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(6, 4, 2);\nvar v2 = p5.Vector.div(v1, 2);\n// v2 has components [3, 2, 1]\nprint(v2);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 495,
+                    "line": 329,
                     "params": [
                         {
                             "name": "n",
@@ -13509,7 +13255,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 1641,
+                    "line": 1120,
                     "params": [
                         {
                             "name": "v",
@@ -13530,7 +13276,7 @@ module.exports={
                     "static": 1
                 },
                 {
-                    "line": 1648,
+                    "line": 1127,
                     "params": [
                         {
                             "name": "v",
@@ -13553,7 +13299,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 573,
+            "line": 373,
             "description": "<p>Calculates the magnitude (length) of the vector and returns the result as\na float (this is simply the equation sqrt(x<em>x + y</em>y + z*z).)</p>\n",
             "itemtype": "method",
             "name": "mag",
@@ -13562,14 +13308,14 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 0);\n  var v1 = createVector(mouseX, mouseY);\n  drawArrow(v0, v1, 'black');\n\n  noStroke();\n  text('vector length: ' + v1.mag().toFixed(2), 10, 70, 90, 30);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>\n<div class=\"norender\">\n<code>\nvar v = createVector(20.0, 30.0, 40.0);\nvar m = v.mag();\nprint(m); // Prints \"53.85164807134504\"\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(20.0, 30.0, 40.0);\nvar m = v.mag();\nprint(m); // Prints \"53.85164807134504\"\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 573,
+                    "line": 373,
                     "params": [],
                     "return": {
                         "description": "magnitude of the vector",
@@ -13577,7 +13323,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 1738,
+                    "line": 1217,
                     "params": [
                         {
                             "name": "vecT",
@@ -13595,7 +13341,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 621,
+            "line": 392,
             "description": "<p>Calculates the squared magnitude of the vector and returns the result\nas a float (this is simply the equation <em>(x<em>x + y</em>y + z*z)</em>.)\nFaster if the real length is not required in the\ncase of comparing vectors, etc.</p>\n",
             "itemtype": "method",
             "name": "magSq",
@@ -13604,7 +13350,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(6, 4, 2);\nprint(v1.magSq()); // Prints \"56\"\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 0);\n  var v1 = createVector(mouseX, mouseY);\n  drawArrow(v0, v1, 'black');\n\n  noStroke();\n  text('vector length squared: ' + v1.magSq().toFixed(2), 10, 45, 90, 55);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(6, 4, 2);\nprint(v1.magSq()); // Prints \"56\"\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13612,7 +13358,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 675,
+            "line": 416,
             "description": "<p>Calculates the dot product of two vectors. The version of the method\nthat computes the dot product of two independent vectors is a static\nmethod. See the examples for more context.</p>\n",
             "itemtype": "method",
             "name": "dot",
@@ -13628,7 +13374,7 @@ module.exports={
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 675,
+                    "line": 416,
                     "params": [
                         {
                             "name": "x",
@@ -13654,7 +13400,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 706,
+                    "line": 447,
                     "params": [
                         {
                             "name": "value",
@@ -13668,7 +13414,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 1668,
+                    "line": 1147,
                     "params": [
                         {
                             "name": "v1",
@@ -13691,7 +13437,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 718,
+            "line": 459,
             "description": "<p>Calculates and returns a vector composed of the cross product between\ntwo vectors. Both the static and non static methods return a new p5.Vector.\nSee the examples for more context.</p>\n",
             "itemtype": "method",
             "name": "cross",
@@ -13707,7 +13453,7 @@ module.exports={
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 718,
+                    "line": 459,
                     "params": [
                         {
                             "name": "v",
@@ -13721,7 +13467,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 1682,
+                    "line": 1161,
                     "params": [
                         {
                             "name": "v1",
@@ -13744,7 +13490,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 759,
+            "line": 500,
             "description": "<p>Calculates the Euclidean distance between two points (considering a\npoint as a vector object).</p>\n",
             "itemtype": "method",
             "name": "dist",
@@ -13753,14 +13499,14 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v1 = createVector(1, 0, 0);\nvar v2 = createVector(0, 1, 0);\n\nvar distance = v1.dist(v2); // distance is 1.4142...\nprint(distance);\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(1, 0, 0);\nvar v2 = createVector(0, 1, 0);\n\nvar distance = p5.Vector.dist(v1, v2);\n// distance is 1.4142...\nprint(distance);\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 0);\n\n  var v1 = createVector(70, 50);\n  drawArrow(v0, v1, 'red');\n\n  var v2 = createVector(mouseX, mouseY);\n  drawArrow(v0, v2, 'blue');\n\n  noStroke();\n  text('distance between vectors: ' + v2.dist(v1).toFixed(2), 5, 50, 95, 50);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v1 = createVector(1, 0, 0);\nvar v2 = createVector(0, 1, 0);\n\nvar distance = v1.dist(v2); // distance is 1.4142...\nprint(distance);\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\n// Static method\nvar v1 = createVector(1, 0, 0);\nvar v2 = createVector(0, 1, 0);\n\nvar distance = p5.Vector.dist(v1, v2);\n// distance is 1.4142...\nprint(distance);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 759,
+                    "line": 500,
                     "params": [
                         {
                             "name": "v",
@@ -13774,7 +13520,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 1697,
+                    "line": 1176,
                     "params": [
                         {
                             "name": "v1",
@@ -13797,7 +13543,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 830,
+            "line": 537,
             "description": "<p>Normalize the vector to length 1 (make it a unit vector).</p>\n",
             "itemtype": "method",
             "name": "normalize",
@@ -13806,7 +13552,7 @@ module.exports={
                 "type": "p5.Vector"
             },
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10, 20, 2);\n// v has components [10.0, 20.0, 2.0]\nv.normalize();\n// v's components are set to\n// [0.4454354, 0.8908708, 0.089087084]\n</code>\n</div>\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(50, 50);\n  var v1 = createVector(mouseX - 50, mouseY - 50);\n\n  drawArrow(v0, v1, 'red');\n  v1.normalize();\n  drawArrow(v0, v1.mult(35), 'blue');\n\n  noFill();\n  ellipse(50, 50, 35 * 2);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10, 20, 2);\n// v has components [10.0, 20.0, 2.0]\nv.normalize();\n// v's components are set to\n// [0.4454354, 0.8908708, 0.089087084]\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13814,7 +13560,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 886,
+            "line": 557,
             "description": "<p>Limit the magnitude of this vector to the value used for the <b>max</b>\nparameter.</p>\n",
             "itemtype": "method",
             "name": "limit",
@@ -13827,7 +13573,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10, 20, 2);\n// v has components [10.0, 20.0, 2.0]\nv.limit(5);\n// v's components are set to\n// [2.2271771, 4.4543543, 0.4454354]\n</code>\n</div>\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(50, 50);\n  var v1 = createVector(mouseX - 50, mouseY - 50);\n\n  drawArrow(v0, v1, 'red');\n  drawArrow(v0, v1.limit(35), 'blue');\n\n  noFill();\n  ellipse(50, 50, 35 * 2);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10, 20, 2);\n// v has components [10.0, 20.0, 2.0]\nv.limit(5);\n// v's components are set to\n// [2.2271771, 4.4543543, 0.4454354]\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13835,7 +13581,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 944,
+            "line": 584,
             "description": "<p>Set the magnitude of this vector to the value used for the <b>len</b>\nparameter.</p>\n",
             "itemtype": "method",
             "name": "setMag",
@@ -13848,7 +13594,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10, 20, 2);\n// v has components [10.0, 20.0, 2.0]\nv.setMag(10);\n// v's components are set to [6.0, 8.0, 0.0]\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(0, 0);\n  var v1 = createVector(50, 50);\n\n  drawArrow(v0, v1, 'red');\n\n  var length = map(mouseX, 0, width, 0, 141, true);\n  v1.setMag(length);\n  drawArrow(v0, v1, 'blue');\n\n  noStroke();\n  text('magnitude set to: ' + length.toFixed(2), 10, 70, 90, 30);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10, 20, 2);\n// v has components [10.0, 20.0, 2.0]\nv.setMag(10);\n// v's components are set to [6.0, 8.0, 0.0]\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13856,7 +13602,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1000,
+            "line": 605,
             "description": "<p>Calculate the angle of rotation for this vector (only 2D vectors)</p>\n",
             "itemtype": "method",
             "name": "heading",
@@ -13865,7 +13611,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div class = \"norender\">\n<code>\nfunction setup() {\n  var v1 = createVector(30, 50);\n  print(v1.heading()); // 1.0303768265243125\n\n  v1 = createVector(40, 50);\n  print(v1.heading()); // 0.8960553845713439\n\n  v1 = createVector(30, 70);\n  print(v1.heading()); // 1.1659045405098132\n}\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(50, 50);\n  var v1 = createVector(mouseX - 50, mouseY - 50);\n\n  drawArrow(v0, v1, 'black');\n\n  var myHeading = v1.heading();\n  noStroke();\n  text(\n    'vector heading: ' +\n      myHeading.toFixed(2) +\n      ' radians or ' +\n      degrees(myHeading).toFixed(2) +\n      ' degrees',\n    10,\n    50,\n    90,\n    50\n  );\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class = \"norender\">\n<code>\nfunction setup() {\n  var v1 = createVector(30, 50);\n  print(v1.heading()); // 1.0303768265243125\n\n  v1 = createVector(40, 50);\n  print(v1.heading()); // 0.8960553845713439\n\n  v1 = createVector(30, 70);\n  print(v1.heading()); // 1.1659045405098132\n}\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13873,7 +13619,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1069,
+            "line": 637,
             "description": "<p>Rotate the vector by an angle (only 2D vectors), magnitude remains the\nsame</p>\n",
             "itemtype": "method",
             "name": "rotate",
@@ -13886,7 +13632,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10.0, 20.0);\n// v has components [10.0, 20.0, 0.0]\nv.rotate(HALF_PI);\n// v's components are set to [-20.0, 9.999999, 0.0]\n</code>\n</div>\n\n<div>\n<code>\nvar angle = 0;\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(50, 50);\n  var v1 = createVector(50, 0);\n\n  drawArrow(v0, v1.rotate(angle), 'black');\n  angle += 0.01;\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(10.0, 20.0);\n// v has components [10.0, 20.0, 0.0]\nv.rotate(HALF_PI);\n// v's components are set to [-20.0, 9.999999, 0.0]\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13894,7 +13640,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1125,
+            "line": 667,
             "description": "<p>Calculates and returns the angle (in radians) between two vectors.</p>\n",
             "itemtype": "method",
             "name": "angleBetween",
@@ -13910,7 +13656,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v1 = createVector(1, 0, 0);\nvar v2 = createVector(0, 1, 0);\n\nvar angle = v1.angleBetween(v2);\n// angle is PI/2\nprint(angle);\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(240);\n  var v0 = createVector(50, 50);\n\n  var v1 = createVector(50, 0);\n  drawArrow(v0, v1, 'red');\n\n  var v2 = createVector(mouseX - 50, mouseY - 50);\n  drawArrow(v0, v2, 'blue');\n\n  var angleBetween = v1.angleBetween(v2);\n  noStroke();\n  text(\n    'angle between: ' +\n      angleBetween.toFixed(2) +\n      ' radians or ' +\n      degrees(angleBetween).toFixed(2) +\n      ' degrees',\n    10,\n    50,\n    90,\n    50\n  );\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v1 = createVector(1, 0, 0);\nvar v2 = createVector(0, 1, 0);\n\nvar angle = v1.angleBetween(v2);\n// angle is PI/2\nprint(angle);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -13918,20 +13664,20 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1198,
+            "line": 700,
             "description": "<p>Linear interpolate the vector to another vector</p>\n",
             "itemtype": "method",
             "name": "lerp",
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = createVector(1, 1, 0);\n\nv.lerp(3, 3, 0, 0.5); // v now has components [2,2,0]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\nvar v1 = createVector(0, 0, 0);\nvar v2 = createVector(100, 100, 0);\n\nvar v3 = p5.Vector.lerp(v1, v2, 0.5);\n// v3 has components [50,50,0]\nprint(v3);\n</code>\n</div>\n\n<div>\n<code>\nvar step = 0.01;\nvar amount = 0;\n\nfunction draw() {\n  background(240);\n  var v0 = createVector(0, 0);\n\n  var v1 = createVector(mouseX, mouseY);\n  drawArrow(v0, v1, 'red');\n\n  var v2 = createVector(90, 90);\n  drawArrow(v0, v2, 'blue');\n\n  if (amount > 1 || amount < 0) {\n    step *= -1;\n  }\n  amount += step;\n  var v3 = p5.Vector.lerp(v1, v2, amount);\n\n  drawArrow(v0, v3, 'purple');\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = createVector(1, 1, 0);\n\nv.lerp(3, 3, 0, 0.5); // v now has components [2,2,0]\n</code>\n</div>\n\n<div class=\"norender\">\n<code>\nvar v1 = createVector(0, 0, 0);\nvar v2 = createVector(100, 100, 0);\n\nvar v3 = p5.Vector.lerp(v1, v2, 0.5);\n// v3 has components [50,50,0]\nprint(v3);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 1198,
+                    "line": 700,
                     "params": [
                         {
                             "name": "x",
@@ -13957,7 +13703,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 1271,
+                    "line": 732,
                     "params": [
                         {
                             "name": "v",
@@ -13973,7 +13719,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 1712,
+                    "line": 1191,
                     "params": [
                         {
                             "name": "v1",
@@ -13999,7 +13745,7 @@ module.exports={
                     "static": 1
                 },
                 {
-                    "line": 1720,
+                    "line": 1199,
                     "params": [
                         {
                             "name": "v1",
@@ -14027,7 +13773,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1287,
+            "line": 748,
             "description": "<p>Return a representation of this vector as a float array. This is only\nfor temporary use. If used in any other fashion, the contents should be\ncopied by using the <b>p5.Vector.copy()</b> method to copy into your own\narray.</p>\n",
             "itemtype": "method",
             "name": "array",
@@ -14044,7 +13790,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1319,
+            "line": 780,
             "description": "<p>Equality check against a p5.Vector</p>\n",
             "itemtype": "method",
             "name": "equals",
@@ -14060,7 +13806,7 @@ module.exports={
             "submodule": "Math",
             "overloads": [
                 {
-                    "line": 1319,
+                    "line": 780,
                     "params": [
                         {
                             "name": "x",
@@ -14087,7 +13833,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 1349,
+                    "line": 810,
                     "params": [
                         {
                             "name": "value",
@@ -14104,7 +13850,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1374,
+            "line": 835,
             "description": "<p>Make a new 2D vector from an angle</p>\n",
             "itemtype": "method",
             "name": "fromAngle",
@@ -14112,7 +13858,7 @@ module.exports={
             "params": [
                 {
                     "name": "angle",
-                    "description": "<p>the desired angle, in radians</p>\n",
+                    "description": "<p>the desired angle</p>\n",
                     "type": "Number"
                 },
                 {
@@ -14135,7 +13881,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1426,
+            "line": 900,
             "description": "<p>Make a new 3D vector from a pair of ISO spherical angles</p>\n",
             "itemtype": "method",
             "name": "fromAngles",
@@ -14143,12 +13889,12 @@ module.exports={
             "params": [
                 {
                     "name": "theta",
-                    "description": "<p>the polar angle, in radians (zero is up)</p>\n",
+                    "description": "<p>the polar angle (zero is up)</p>\n",
                     "type": "Number"
                 },
                 {
                     "name": "phi",
-                    "description": "<p>the azimuthal angle, in radians\n                              (zero is out of the screen)</p>\n",
+                    "description": "<p>the azimuthal angle (zero is out of the screen)</p>\n",
                     "type": "Number"
                 },
                 {
@@ -14171,7 +13917,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1475,
+            "line": 963,
             "description": "<p>Make a new 2D unit vector from a random angle</p>\n",
             "itemtype": "method",
             "name": "random2D",
@@ -14181,7 +13927,7 @@ module.exports={
                 "type": "p5.Vector"
             },
             "example": [
-                "\n<div class=\"norender\">\n<code>\nvar v = p5.Vector.random2D();\n// May make v's attributes something like:\n// [0.61554617, -0.51195765, 0.0] or\n// [-0.4695841, -0.14366731, 0.0] or\n// [0.6091097, -0.22805278, 0.0]\nprint(v);\n</code>\n</div>\n\n<div>\n<code>\nfunction setup() {\n  frameRate(1);\n}\n\nfunction draw() {\n  background(240);\n\n  var v0 = createVector(50, 50);\n  var v1 = p5.Vector.random2D();\n  drawArrow(v0, v1.mult(50), 'black');\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  var arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nvar v = p5.Vector.random2D();\n// May make v's attributes something like:\n// [0.61554617, -0.51195765, 0.0] or\n// [-0.4695841, -0.14366731, 0.0] or\n// [0.6091097, -0.22805278, 0.0]\nprint(v);\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -14189,7 +13935,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1528,
+            "line": 997,
             "description": "<p>Make a new random 3D unit vector.</p>\n",
             "itemtype": "method",
             "name": "random3D",
@@ -14207,7 +13953,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1611,
+            "line": 1090,
             "description": "<p>Multiplies a vector by a scalar and returns a new vector.</p>\n",
             "class": "p5.Vector",
             "module": "Math",
@@ -14215,7 +13961,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1638,
+            "line": 1117,
             "description": "<p>Divides a vector by a scalar and returns a new vector.</p>\n",
             "class": "p5.Vector",
             "module": "Math",
@@ -14223,7 +13969,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1665,
+            "line": 1144,
             "description": "<p>Calculates the dot product of two vectors.</p>\n",
             "class": "p5.Vector",
             "module": "Math",
@@ -14231,7 +13977,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1679,
+            "line": 1158,
             "description": "<p>Calculates the cross product of two vectors.</p>\n",
             "class": "p5.Vector",
             "module": "Math",
@@ -14239,7 +13985,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1693,
+            "line": 1172,
             "description": "<p>Calculates the Euclidean distance between two points (considering a\npoint as a vector object).</p>\n",
             "class": "p5.Vector",
             "module": "Math",
@@ -14247,7 +13993,7 @@ module.exports={
         },
         {
             "file": "src/math/p5.Vector.js",
-            "line": 1708,
+            "line": 1187,
             "description": "<p>Linear interpolate a vector to another vector and return the result as a\nnew vector.</p>\n",
             "class": "p5.Vector",
             "module": "Math",
@@ -14361,7 +14107,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 20,
+            "line": 18,
             "description": "<p>The inverse of cos(), returns the arc cosine of a value. This function\nexpects the values in the range of -1 to 1 and values are returned in\nthe range 0 to PI (3.1415927).</p>\n",
             "itemtype": "method",
             "name": "acos",
@@ -14385,7 +14131,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 54,
+            "line": 56,
             "description": "<p>The inverse of sin(), returns the arc sine of a value. This function\nexpects the values in the range of -1 to 1 and values are returned\nin the range -PI/2 to PI/2.</p>\n",
             "itemtype": "method",
             "name": "asin",
@@ -14409,7 +14155,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 89,
+            "line": 95,
             "description": "<p>The inverse of tan(), returns the arc tangent of a value. This function\nexpects the values in the range of -Infinity to Infinity (exclusive) and\nvalues are returned in the range -PI/2 to PI/2.</p>\n",
             "itemtype": "method",
             "name": "atan",
@@ -14433,7 +14179,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 124,
+            "line": 134,
             "description": "<p>Calculates the angle (in radians) from a specified point to the coordinate\norigin as measured from the positive x-axis. Values are returned as a\nfloat in the range from PI to -PI. The atan2() function is most often used\nfor orienting geometry to the position of the cursor.\n<br><br>\nNote: The y-coordinate of the point is the first parameter, and the\nx-coordinate is the second parameter, due the the structure of calculating\nthe tangent.</p>\n",
             "itemtype": "method",
             "name": "atan2",
@@ -14463,7 +14209,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 160,
+            "line": 174,
             "description": "<p>Calculates the cosine of an angle. This function takes into account the\ncurrent angleMode. Values are returned in the range -1 to 1.</p>\n",
             "itemtype": "method",
             "name": "cos",
@@ -14488,7 +14234,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 188,
+            "line": 206,
             "description": "<p>Calculates the sine of an angle. This function takes into account the\ncurrent angleMode. Values are returned in the range -1 to 1.</p>\n",
             "itemtype": "method",
             "name": "sin",
@@ -14513,7 +14259,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 216,
+            "line": 238,
             "description": "<p>Calculates the tangent of an angle. This function takes into account\nthe current angleMode. Values are returned in the range -1 to 1.</p>\n",
             "itemtype": "method",
             "name": "tan",
@@ -14538,8 +14284,8 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 244,
-            "description": "<p>Converts a radian measurement to its corresponding value in degrees.\nRadians and degrees are two ways of measuring the same thing. There are\n360 degrees in a circle and 2*PI radians in a circle. For example,\n90° = PI/2 = 1.5707964. This function does not take into account the\ncurrent angleMode.</p>\n",
+            "line": 270,
+            "description": "<p>Converts a radian measurement to its corresponding value in degrees.\nRadians and degrees are two ways of measuring the same thing. There are\n360 degrees in a circle and 2*PI radians in a circle. For example,\n90° = PI/2 = 1.5707964.</p>\n",
             "itemtype": "method",
             "name": "degrees",
             "params": [
@@ -14562,8 +14308,8 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 271,
-            "description": "<p>Converts a degree measurement to its corresponding value in radians.\nRadians and degrees are two ways of measuring the same thing. There are\n360 degrees in a circle and 2*PI radians in a circle. For example,\n90° = PI/2 = 1.5707964. This function does not take into account the\ncurrent angleMode.</p>\n",
+            "line": 296,
+            "description": "<p>Converts a degree measurement to its corresponding value in radians.\nRadians and degrees are two ways of measuring the same thing. There are\n360 degrees in a circle and 2*PI radians in a circle. For example,\n90° = PI/2 = 1.5707964.</p>\n",
             "itemtype": "method",
             "name": "radians",
             "params": [
@@ -14586,7 +14332,7 @@ module.exports={
         },
         {
             "file": "src/math/trigonometry.js",
-            "line": 296,
+            "line": 320,
             "description": "<p>Sets the current mode of p5 to given mode. Default mode is RADIANS.</p>\n",
             "itemtype": "method",
             "name": "angleMode",
@@ -14649,7 +14395,7 @@ module.exports={
         },
         {
             "file": "src/typography/attributes.js",
-            "line": 60,
+            "line": 59,
             "description": "<p>Sets/gets the spacing, in pixels, between lines of text. This\nsetting will be used in all subsequent calls to the text() function.</p>\n",
             "itemtype": "method",
             "name": "textLeading",
@@ -14663,7 +14409,7 @@ module.exports={
             "submodule": "Attributes",
             "overloads": [
                 {
-                    "line": 60,
+                    "line": 59,
                     "params": [
                         {
                             "name": "leading",
@@ -14674,7 +14420,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 89,
+                    "line": 88,
                     "params": [],
                     "return": {
                         "description": "",
@@ -14685,7 +14431,7 @@ module.exports={
         },
         {
             "file": "src/typography/attributes.js",
-            "line": 98,
+            "line": 96,
             "description": "<p>Sets/gets the current font size. This size will be used in all subsequent\ncalls to the text() function. Font size is measured in pixels.</p>\n",
             "itemtype": "method",
             "name": "textSize",
@@ -14699,7 +14445,7 @@ module.exports={
             "submodule": "Attributes",
             "overloads": [
                 {
-                    "line": 98,
+                    "line": 96,
                     "params": [
                         {
                             "name": "theSize",
@@ -14710,7 +14456,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 121,
+                    "line": 119,
                     "params": [],
                     "return": {
                         "description": "",
@@ -14721,7 +14467,7 @@ module.exports={
         },
         {
             "file": "src/typography/attributes.js",
-            "line": 130,
+            "line": 127,
             "description": "<p>Sets/gets the style of the text for system fonts to NORMAL, ITALIC, or BOLD.\nNote: this may be is overridden by CSS styling. For non-system fonts\n(opentype, truetype, etc.) please load styled fonts instead.</p>\n",
             "itemtype": "method",
             "name": "textStyle",
@@ -14735,7 +14481,7 @@ module.exports={
             "submodule": "Attributes",
             "overloads": [
                 {
-                    "line": 130,
+                    "line": 127,
                     "params": [
                         {
                             "name": "theStyle",
@@ -14746,7 +14492,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 156,
+                    "line": 153,
                     "params": [],
                     "return": {
                         "description": "",
@@ -14757,7 +14503,7 @@ module.exports={
         },
         {
             "file": "src/typography/attributes.js",
-            "line": 165,
+            "line": 161,
             "description": "<p>Calculates and returns the width of any character or text string.</p>\n",
             "itemtype": "method",
             "name": "textWidth",
@@ -14782,7 +14528,7 @@ module.exports={
         },
         {
             "file": "src/typography/attributes.js",
-            "line": 200,
+            "line": 195,
             "description": "<p>Returns the ascent of the current font at its current size. The ascent\nrepresents the distance, in pixels, of the tallest character above\nthe baseline.</p>\n",
             "itemtype": "method",
             "name": "textAscent",
@@ -14799,7 +14545,7 @@ module.exports={
         },
         {
             "file": "src/typography/attributes.js",
-            "line": 229,
+            "line": 223,
             "description": "<p>Returns the descent of the current font at its current size. The descent\nrepresents the distance, in pixels, of the character with the longest\ndescender below the baseline.</p>\n",
             "itemtype": "method",
             "name": "textDescent",
@@ -14816,7 +14562,7 @@ module.exports={
         },
         {
             "file": "src/typography/attributes.js",
-            "line": 258,
+            "line": 251,
             "description": "<p>Helper function to measure ascent and descent.</p>\n",
             "class": "p5",
             "module": "Typography",
@@ -14861,15 +14607,15 @@ module.exports={
         },
         {
             "file": "src/typography/loading_displaying.js",
-            "line": 143,
+            "line": 142,
             "description": "<p>Draws text to the screen. Displays the information specified in the first\nparameter on the screen in the position specified by the additional\nparameters. A default font will be used unless a font is set with the\ntextFont() function and a default size will be used unless a font is set\nwith textSize(). Change the color of the text with the fill() function.\nChange the outline of the text with the stroke() and strokeWeight()\nfunctions.\n<br><br>\nThe text displays in relation to the textAlign() function, which gives the\noption to draw to the left, right, and center of the coordinates.\n<br><br>\nThe x2 and y2 parameters define a rectangular area to display within and\nmay only be used with string data. When these parameters are specified,\nthey are interpreted based on the current rectMode() setting. Text that\ndoes not fit completely within the rectangle specified will not be drawn\nto the screen.</p>\n",
             "itemtype": "method",
             "name": "text",
             "params": [
                 {
                     "name": "str",
-                    "description": "<p>the alphanumeric\n                                            symbols to be displayed</p>\n",
-                    "type": "String|Object|Array|Number|Boolean"
+                    "description": "<p>the alphanumeric symbols to be displayed</p>\n",
+                    "type": "String|Object|Array"
                 },
                 {
                     "name": "x",
@@ -14905,7 +14651,7 @@ module.exports={
         },
         {
             "file": "src/typography/loading_displaying.js",
-            "line": 202,
+            "line": 199,
             "description": "<p>Sets the current font that will be drawn with the text() function.</p>\n",
             "itemtype": "method",
             "name": "textFont",
@@ -14922,7 +14668,7 @@ module.exports={
             "submodule": "Loading & Displaying",
             "overloads": [
                 {
-                    "line": 202,
+                    "line": 199,
                     "params": [],
                     "return": {
                         "description": "the current font",
@@ -14930,7 +14676,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 245,
+                    "line": 242,
                     "params": [
                         {
                             "name": "font",
@@ -14950,7 +14696,7 @@ module.exports={
         },
         {
             "file": "src/typography/p5.Font.js",
-            "line": 31,
+            "line": 32,
             "description": "<p>Underlying opentype font implementation</p>\n",
             "itemtype": "property",
             "name": "font",
@@ -14960,7 +14706,7 @@ module.exports={
         },
         {
             "file": "src/typography/p5.Font.js",
-            "line": 43,
+            "line": 45,
             "description": "<p>Returns a tight bounding box for the given text string using this\nfont (currently only supports single lines)</p>\n",
             "itemtype": "method",
             "name": "textBounds",
@@ -15007,7 +14753,7 @@ module.exports={
         },
         {
             "file": "src/typography/p5.Font.js",
-            "line": 158,
+            "line": 160,
             "description": "<p>Computes an array of points following the path for specified text</p>\n",
             "itemtype": "method",
             "name": "textToPoints",
@@ -15056,8 +14802,6 @@ module.exports={
             "description": "<p>Adds a value to the end of an array. Extends the length of\nthe array by one. Maps to Array.push().</p>\n",
             "itemtype": "method",
             "name": "append",
-            "deprecated": true,
-            "deprecationMessage": "Use <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\">array.push(value)</a> instead.",
             "params": [
                 {
                     "name": "array",
@@ -15079,11 +14823,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 36,
+            "line": 35,
             "description": "<p>Copies an array (or part of an array) to another array. The src array is\ncopied to the dst array, beginning at the position specified by\nsrcPosition and into the position specified by dstPosition. The number of\nelements to copy is determined by length. Note that copying values\noverwrites existing values in the destination array. To append values\ninstead of overwriting them, use concat().\n<br><br>\nThe simplified version with only two arguments, arrayCopy(src, dst),\ncopies an entire array to another of the same size. It is equivalent to\narrayCopy(src, 0, dst, 0, src.length).\n<br><br>\nUsing this function is far more efficient for copying array data than\niterating through a for() loop and copying each element individually.</p>\n",
             "itemtype": "method",
             "name": "arrayCopy",
-            "deprecated": true,
             "example": [
                 "\n<div class='norender'><code>\nvar src = ['A', 'B', 'C'];\nvar dst = [1, 2, 3];\nvar srcPosition = 1;\nvar dstPosition = 0;\nvar length = 2;\n\nprint(src); // ['A', 'B', 'C']\nprint(dst); // [ 1 ,  2 ,  3 ]\n\narrayCopy(src, srcPosition, dst, dstPosition, length);\nprint(dst); // ['B', 'C', 3]\n</code></div>"
             ],
@@ -15092,7 +14835,7 @@ module.exports={
             "submodule": "Array Functions",
             "overloads": [
                 {
-                    "line": 36,
+                    "line": 35,
                     "params": [
                         {
                             "name": "src",
@@ -15122,7 +14865,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 74,
+                    "line": 72,
                     "params": [
                         {
                             "name": "src",
@@ -15146,12 +14889,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 113,
+            "line": 110,
             "description": "<p>Concatenates two arrays, maps to Array.concat(). Does not modify the\ninput arrays.</p>\n",
             "itemtype": "method",
             "name": "concat",
-            "deprecated": true,
-            "deprecationMessage": "Use <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat\">arr1.concat(arr2)</a> instead.",
             "params": [
                 {
                     "name": "a",
@@ -15177,12 +14918,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 144,
+            "line": 140,
             "description": "<p>Reverses the order of an array, maps to Array.reverse()</p>\n",
             "itemtype": "method",
             "name": "reverse",
-            "deprecated": true,
-            "deprecationMessage": "Use <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse\">array.reverse()</a> instead.",
             "params": [
                 {
                     "name": "list",
@@ -15199,12 +14938,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 165,
+            "line": 160,
             "description": "<p>Decreases an array by one element and returns the shortened array,\nmaps to Array.pop().</p>\n",
             "itemtype": "method",
             "name": "shorten",
-            "deprecated": true,
-            "deprecationMessage": "Use <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop\">array.pop()</a> instead.",
             "params": [
                 {
                     "name": "list",
@@ -15225,12 +14962,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 189,
+            "line": 183,
             "description": "<p>Randomizes the order of the elements of an array. Implements\n<a href='http://Bost.Ocks.org/mike/shuffle/' target=_blank>\nFisher-Yates Shuffle Algorithm</a>.</p>\n",
             "itemtype": "method",
             "name": "shuffle",
-            "deprecated": true,
-            "deprecationMessage": "See <a href=\"https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array\">shuffling an array with JS</a> instead.",
             "params": [
                 {
                     "name": "array",
@@ -15257,12 +14992,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 232,
+            "line": 225,
             "description": "<p>Sorts an array of numbers from smallest to largest, or puts an array of\nwords in alphabetical order. The original array is not modified; a\nre-ordered array is returned. The count parameter states the number of\nelements to sort. For example, if there are 12 elements in an array and\ncount is set to 5, only the first 5 elements in the array will be sorted.</p>\n",
             "itemtype": "method",
             "name": "sort",
-            "deprecated": true,
-            "deprecationMessage": "Use <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort\">array.sort()</a> instead.",
             "params": [
                 {
                     "name": "list",
@@ -15285,12 +15018,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 279,
+            "line": 271,
             "description": "<p>Inserts a value or an array of values into an existing array. The first\nparameter specifies the initial array to be modified, and the second\nparameter defines the data to be inserted. The third parameter is an index\nvalue which specifies the array position from which to insert data.\n(Remember that array index numbering starts at zero, so the first position\nis 0, the second position is 1, and so on.)</p>\n",
             "itemtype": "method",
             "name": "splice",
-            "deprecated": true,
-            "deprecationMessage": "Use <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice\">array.splice()</a> instead.",
             "params": [
                 {
                     "name": "list",
@@ -15317,12 +15048,10 @@ module.exports={
         },
         {
             "file": "src/utilities/array_functions.js",
-            "line": 313,
+            "line": 304,
             "description": "<p>Extracts an array of elements from an existing array. The list parameter\ndefines the array from which the elements will be copied, and the start\nand count parameters specify which elements to extract. If no count is\ngiven, elements will be extracted from the start to the end of the array.\nWhen specifying the start, remember that the first array element is 0.\nThis function does not change the source array.</p>\n",
             "itemtype": "method",
             "name": "subset",
-            "deprecated": true,
-            "deprecationMessage": "Use <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice\">array.slice()</a> instead.",
             "params": [
                 {
                     "name": "list",
@@ -15401,12 +15130,6 @@ module.exports={
                             "name": "n",
                             "description": "<p>value to parse</p>\n",
                             "type": "String|Boolean|Number"
-                        },
-                        {
-                            "name": "radix",
-                            "description": "<p>the radix to convert to (default: 10)</p>\n",
-                            "type": "Integer",
-                            "optional": true
                         }
                     ],
                     "return": {
@@ -15415,7 +15138,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 62,
+                    "line": 61,
                     "params": [
                         {
                             "name": "ns",
@@ -15432,7 +15155,7 @@ module.exports={
         },
         {
             "file": "src/utilities/conversion.js",
-            "line": 82,
+            "line": 81,
             "description": "<p>Converts a boolean, string or number to its string representation.\nWhen an array of values is passed in, then an array of strings of the same\nlength is returned.</p>\n",
             "itemtype": "method",
             "name": "str",
@@ -15456,7 +15179,7 @@ module.exports={
         },
         {
             "file": "src/utilities/conversion.js",
-            "line": 108,
+            "line": 107,
             "description": "<p>Converts a number or string to its boolean representation.\nFor a number, any non-zero value (positive or negative) evaluates to true,\nwhile zero evaluates to false. For a string, the value &quot;true&quot; evaluates to\ntrue, while any other value evaluates to false. When an array of number or\nstring values is passed in, then a array of booleans of the same length is\nreturned.</p>\n",
             "itemtype": "method",
             "name": "boolean",
@@ -15480,7 +15203,7 @@ module.exports={
         },
         {
             "file": "src/utilities/conversion.js",
-            "line": 140,
+            "line": 139,
             "description": "<p>Converts a number, string representation of a number, or boolean to its byte\nrepresentation. A byte can be only a whole number between -128 and 127, so\nwhen a value outside of this range is converted, it wraps around to the\ncorresponding byte representation. When an array of number, string or boolean\nvalues is passed in, then an array of bytes the same length is returned.</p>\n",
             "itemtype": "method",
             "name": "byte",
@@ -15496,7 +15219,7 @@ module.exports={
             "submodule": "Conversion",
             "overloads": [
                 {
-                    "line": 140,
+                    "line": 139,
                     "params": [
                         {
                             "name": "n",
@@ -15510,7 +15233,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 162,
+                    "line": 161,
                     "params": [
                         {
                             "name": "ns",
@@ -15527,7 +15250,7 @@ module.exports={
         },
         {
             "file": "src/utilities/conversion.js",
-            "line": 176,
+            "line": 175,
             "description": "<p>Converts a number or string to its corresponding single-character\nstring representation. If a string parameter is provided, it is first\nparsed as an integer and then translated into a single-character string.\nWhen an array of number or string values is passed in, then an array of\nsingle-character strings of the same length is returned.</p>\n",
             "itemtype": "method",
             "name": "char",
@@ -15543,7 +15266,7 @@ module.exports={
             "submodule": "Conversion",
             "overloads": [
                 {
-                    "line": 176,
+                    "line": 175,
                     "params": [
                         {
                             "name": "n",
@@ -15557,7 +15280,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 195,
+                    "line": 194,
                     "params": [
                         {
                             "name": "ns",
@@ -15574,7 +15297,7 @@ module.exports={
         },
         {
             "file": "src/utilities/conversion.js",
-            "line": 210,
+            "line": 209,
             "description": "<p>Converts a single-character string to its corresponding integer\nrepresentation. When an array of single-character string values is passed\nin, then an array of integers of the same length is returned.</p>\n",
             "itemtype": "method",
             "name": "unchar",
@@ -15590,7 +15313,7 @@ module.exports={
             "submodule": "Conversion",
             "overloads": [
                 {
-                    "line": 210,
+                    "line": 209,
                     "params": [
                         {
                             "name": "n",
@@ -15604,7 +15327,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 226,
+                    "line": 225,
                     "params": [
                         {
                             "name": "ns",
@@ -15621,7 +15344,7 @@ module.exports={
         },
         {
             "file": "src/utilities/conversion.js",
-            "line": 239,
+            "line": 238,
             "description": "<p>Converts a number to a string in its equivalent hexadecimal notation. If a\nsecond parameter is passed, it is used to set the number of characters to\ngenerate in the hexadecimal notation. When an array is passed in, an\narray of strings in hexadecimal notation of the same length is returned.</p>\n",
             "itemtype": "method",
             "name": "hex",
@@ -15637,7 +15360,7 @@ module.exports={
             "submodule": "Conversion",
             "overloads": [
                 {
-                    "line": 239,
+                    "line": 238,
                     "params": [
                         {
                             "name": "n",
@@ -15657,7 +15380,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 257,
+                    "line": 256,
                     "params": [
                         {
                             "name": "ns",
@@ -15680,7 +15403,7 @@ module.exports={
         },
         {
             "file": "src/utilities/conversion.js",
-            "line": 286,
+            "line": 285,
             "description": "<p>Converts a string representation of a hexadecimal number to its equivalent\ninteger value. When an array of strings in hexadecimal notation is passed\nin, an array of integers of the same length is returned.</p>\n",
             "itemtype": "method",
             "name": "unhex",
@@ -15696,7 +15419,7 @@ module.exports={
             "submodule": "Conversion",
             "overloads": [
                 {
-                    "line": 286,
+                    "line": 285,
                     "params": [
                         {
                             "name": "n",
@@ -15710,7 +15433,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 302,
+                    "line": 301,
                     "params": [
                         {
                             "name": "ns",
@@ -16397,14 +16120,14 @@ module.exports={
         },
         {
             "file": "src/webgl/camera.js",
-            "line": 161,
+            "line": 159,
             "description": "<p>Sets perspective camera. When called with no arguments, the defaults\nprovided are equivalent to\nperspective(PI/3.0, width/height, cameraZ/10.0, cameraZ<em>10.0)\nwhere cameraZ is ((height/2.0) / tan(PI</em>60.0/360.0));</p>\n",
             "itemtype": "method",
             "name": "perspective",
             "params": [
                 {
                     "name": "fovy",
-                    "description": "<p>camera frustum vertical field of view,\n                          from bottom to top of view, in angleMode units</p>\n",
+                    "description": "<p>camera frustum vertical field of view,\n                          from bottom to top of view, in degrees</p>\n",
                     "type": "Number",
                     "optional": true
                 },
@@ -16438,7 +16161,7 @@ module.exports={
         },
         {
             "file": "src/webgl/camera.js",
-            "line": 243,
+            "line": 239,
             "description": "<p>Setup ortho camera</p>\n",
             "itemtype": "method",
             "name": "ortho",
@@ -16495,10 +16218,6 @@ module.exports={
             "itemtype": "method",
             "name": "orbitControl",
             "chainable": 1,
-            "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(50);\n  // Orbit control allows the camera to orbit around a target.\n  orbitControl();\n  box(30, 50);\n}\n</code>\n</div>"
-            ],
-            "alt": "Camera orbits around box when mouse is hold-clicked & then moved.",
             "class": "p5",
             "module": "Lights, Camera"
         },
@@ -16551,17 +16270,6 @@ module.exports={
                             "name": "value",
                             "description": "<p>a color string</p>\n",
                             "type": "String"
-                        }
-                    ],
-                    "chainable": 1
-                },
-                {
-                    "line": 52,
-                    "params": [
-                        {
-                            "name": "gray",
-                            "description": "<p>a gray value</p>\n",
-                            "type": "Number"
                         },
                         {
                             "name": "alpha",
@@ -16573,7 +16281,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 59,
+                    "line": 53,
                     "params": [
                         {
                             "name": "values",
@@ -16584,7 +16292,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 66,
+                    "line": 60,
                     "params": [
                         {
                             "name": "color",
@@ -16598,7 +16306,7 @@ module.exports={
         },
         {
             "file": "src/webgl/light.js",
-            "line": 101,
+            "line": 93,
             "description": "<p>Creates a directional light with a color and a direction</p>\n",
             "itemtype": "method",
             "name": "directionalLight",
@@ -16612,7 +16320,7 @@ module.exports={
             "submodule": "Lights",
             "overloads": [
                 {
-                    "line": 101,
+                    "line": 93,
                     "params": [
                         {
                             "name": "v1",
@@ -16638,7 +16346,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 134,
+                    "line": 126,
                     "params": [
                         {
                             "name": "color",
@@ -16664,7 +16372,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 144,
+                    "line": 136,
                     "params": [
                         {
                             "name": "color",
@@ -16680,7 +16388,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 151,
+                    "line": 143,
                     "params": [
                         {
                             "name": "v1",
@@ -16719,7 +16427,7 @@ module.exports={
         },
         {
             "file": "src/webgl/light.js",
-            "line": 207,
+            "line": 197,
             "description": "<p>Creates a point light with a color and a light position</p>\n",
             "itemtype": "method",
             "name": "pointLight",
@@ -16733,7 +16441,7 @@ module.exports={
             "submodule": "Lights",
             "overloads": [
                 {
-                    "line": 207,
+                    "line": 197,
                     "params": [
                         {
                             "name": "v1",
@@ -16769,7 +16477,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 249,
+                    "line": 239,
                     "params": [
                         {
                             "name": "v1",
@@ -16795,7 +16503,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 258,
+                    "line": 248,
                     "params": [
                         {
                             "name": "color",
@@ -16821,7 +16529,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 268,
+                    "line": 258,
                     "params": [
                         {
                             "name": "color",
@@ -16917,7 +16625,7 @@ module.exports={
         },
         {
             "file": "src/webgl/loading.js",
-            "line": 106,
+            "line": 103,
             "description": "<p>Parse OBJ lines into model. For reference, this is what a simple model of a\nsquare might look like:</p>\n<p>v -0.5 -0.5 0.5\nv -0.5 -0.5 -0.5\nv -0.5 0.5 -0.5\nv -0.5 0.5 0.5</p>\n<p>f 4 3 2 1</p>\n",
             "class": "p5",
             "module": "Shape",
@@ -16925,7 +16633,7 @@ module.exports={
         },
         {
             "file": "src/webgl/loading.js",
-            "line": 215,
+            "line": 212,
             "description": "<p>Render a 3d model to the screen.</p>\n",
             "itemtype": "method",
             "name": "model",
@@ -16974,7 +16682,7 @@ module.exports={
         },
         {
             "file": "src/webgl/material.js",
-            "line": 57,
+            "line": 56,
             "itemtype": "method",
             "name": "createShader",
             "params": [
@@ -17003,7 +16711,7 @@ module.exports={
         },
         {
             "file": "src/webgl/material.js",
-            "line": 125,
+            "line": 122,
             "description": "<p>The shader() function lets the user provide a custom shader\nto fill in shapes in WEBGL mode. Users can create their\nown shaders by loading vertex and fragment shaders with\nloadShader().</p>\n",
             "itemtype": "method",
             "name": "shader",
@@ -17022,7 +16730,7 @@ module.exports={
         },
         {
             "file": "src/webgl/material.js",
-            "line": 150,
+            "line": 145,
             "description": "<p>Normal material for geometry. You can view all\npossible materials in this\n<a href=\"https://p5js.org/examples/3d-materials.html\">example</a>.</p>\n",
             "itemtype": "method",
             "name": "normalMaterial",
@@ -17037,7 +16745,7 @@ module.exports={
         },
         {
             "file": "src/webgl/material.js",
-            "line": 185,
+            "line": 178,
             "description": "<p>Texture for geometry.  You can view other possible materials in this\n<a href=\"https://p5js.org/examples/3d-materials.html\">example</a>.</p>\n",
             "itemtype": "method",
             "name": "texture",
@@ -17059,7 +16767,7 @@ module.exports={
         },
         {
             "file": "src/webgl/material.js",
-            "line": 275,
+            "line": 273,
             "description": "<p>Ambient material for geometry with a given color. You can view all\npossible materials in this\n<a href=\"https://p5js.org/examples/3d-materials.html\">example</a>.</p>\n",
             "itemtype": "method",
             "name": "ambientMaterial",
@@ -17073,7 +16781,7 @@ module.exports={
             "submodule": "Material",
             "overloads": [
                 {
-                    "line": 275,
+                    "line": 273,
                     "params": [
                         {
                             "name": "v1",
@@ -17102,7 +16810,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 306,
+                    "line": 304,
                     "params": [
                         {
                             "name": "color",
@@ -17116,7 +16824,7 @@ module.exports={
         },
         {
             "file": "src/webgl/material.js",
-            "line": 324,
+            "line": 320,
             "description": "<p>Specular material for geometry with a given color. You can view all\npossible materials in this\n<a href=\"https://p5js.org/examples/3d-materials.html\">example</a>.</p>\n",
             "itemtype": "method",
             "name": "specularMaterial",
@@ -17130,7 +16838,7 @@ module.exports={
             "submodule": "Material",
             "overloads": [
                 {
-                    "line": 324,
+                    "line": 320,
                     "params": [
                         {
                             "name": "v1",
@@ -17159,7 +16867,7 @@ module.exports={
                     "chainable": 1
                 },
                 {
-                    "line": 355,
+                    "line": 351,
                     "params": [
                         {
                             "name": "color",
@@ -17173,7 +16881,7 @@ module.exports={
         },
         {
             "file": "src/webgl/p5.Geometry.js",
-            "line": 52,
+            "line": 54,
             "itemtype": "method",
             "name": "computeFaces",
             "chainable": 1,
@@ -17182,7 +16890,7 @@ module.exports={
         },
         {
             "file": "src/webgl/p5.Geometry.js",
-            "line": 94,
+            "line": 87,
             "description": "<p>computes smooth normals per vertex as an average of each\nface.</p>\n",
             "itemtype": "method",
             "name": "computeNormals",
@@ -17192,7 +16900,7 @@ module.exports={
         },
         {
             "file": "src/webgl/p5.Geometry.js",
-            "line": 133,
+            "line": 116,
             "description": "<p>Averages the vertex normals. Used in curved\nsurfaces</p>\n",
             "itemtype": "method",
             "name": "averageNormals",
@@ -17202,7 +16910,7 @@ module.exports={
         },
         {
             "file": "src/webgl/p5.Geometry.js",
-            "line": 154,
+            "line": 137,
             "description": "<p>Averages pole normals.  Used in spherical primitives</p>\n",
             "itemtype": "method",
             "name": "averagePoleNormals",
@@ -17212,7 +16920,7 @@ module.exports={
         },
         {
             "file": "src/webgl/p5.Geometry.js",
-            "line": 247,
+            "line": 226,
             "description": "<p>Modifies all vertices to be centered within the range -100 to 100.</p>\n",
             "itemtype": "method",
             "name": "normalize",
@@ -17221,8 +16929,77 @@ module.exports={
             "module": "Lights, Camera"
         },
         {
+            "file": "src/webgl/p5.RendererGL.Immediate.js",
+            "line": 1,
+            "description": "<p>Welcome to RendererGL Immediate Mode.\nImmediate mode is used for drawing custom shapes\nfrom a set of vertices.  Immediate Mode is activated\nwhen you call beginShape() &amp; de-activated when you call endShape().\nImmediate mode is a style of programming borrowed\nfrom OpenGL&#39;s (now-deprecated) immediate mode.\nIt differs from p5.js&#39; default, Retained Mode, which caches\ngeometries and buffers on the CPU to reduce the number of webgl\ndraw calls. Retained mode is more efficient &amp; performative,\nhowever, Immediate Mode is useful for sketching quick\ngeometric ideas.</p>\n",
+            "class": "p5.RendererGL",
+            "module": "Lights, Camera"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.Immediate.js",
+            "line": 19,
+            "description": "<p>Begin shape drawing.  This is a helpful way of generating\ncustom shapes quickly.  However in WEBGL mode, application\nperformance will likely drop as a result of too many calls to\nbeginShape() / endShape().  As a high performance alternative,\nplease use p5.js geometry primitives.</p>\n",
+            "itemtype": "method",
+            "name": "beginShape",
+            "params": [
+                {
+                    "name": "mode",
+                    "description": "<p>webgl primitives mode.  beginShape supports the\n                      following modes:\n                      POINTS,LINES,LINE_STRIP,LINE_LOOP,TRIANGLES,\n                      TRIANGLE_STRIP,and TRIANGLE_FAN.</p>\n",
+                    "type": "Number"
+                }
+            ],
+            "chainable": 1,
+            "class": "p5.RendererGL",
+            "module": "Lights, Camera"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.Immediate.js",
+            "line": 61,
+            "description": "<p>adds a vertex to be drawn in a custom Shape.</p>\n",
+            "itemtype": "method",
+            "name": "vertex",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "<p>x-coordinate of vertex</p>\n",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "<p>y-coordinate of vertex</p>\n",
+                    "type": "Number"
+                },
+                {
+                    "name": "z",
+                    "description": "<p>z-coordinate of vertex</p>\n",
+                    "type": "Number"
+                }
+            ],
+            "chainable": 1,
+            "todo": [
+                "implement handling of p5.Vector args"
+            ],
+            "class": "p5.RendererGL",
+            "module": "Lights, Camera"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.Immediate.js",
+            "line": 104,
+            "description": "<p>End shape drawing and render vertices to screen.</p>\n",
+            "chainable": 1,
+            "class": "p5.RendererGL",
+            "module": "Lights, Camera"
+        },
+        {
             "file": "src/webgl/p5.RendererGL.js",
-            "line": 197,
+            "line": 79,
+            "description": "<p>model view, projection, &amp; normal\nmatrices</p>\n",
+            "class": "p5.RendererGL",
+            "module": "Lights, Camera"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 199,
             "description": "<p>Set attributes for the WebGL Drawing context.\nThis is a way of adjusting ways that the WebGL\nrenderer works to fine-tune the display and performance.\nThis should be put in setup().\nThe available attributes are:\n<br>\nalpha - indicates if the canvas contains an alpha buffer\ndefault is true\n<br><br>\ndepth - indicates whether the drawing buffer has a depth buffer\nof at least 16 bits - default is true\n<br><br>\nstencil - indicates whether the drawing buffer has a stencil buffer\nof at least 8 bits\n<br><br>\nantialias - indicates whether or not to perform anti-aliasing\ndefault is false\n<br><br>\npremultipliedAlpha - indicates that the page compositor will assume\nthe drawing buffer contains colors with pre-multiplied alpha\ndefault is false\n<br><br>\npreserveDrawingBuffer - if true the buffers will not be cleared and\nand will preserve their values until cleared or overwritten by author\n(note that p5 clears automatically on draw loop)\ndefault is true\n<br><br>\nperPixelLighting - if true, per-pixel lighting will be used in the\nlighting shader.\ndefault is false\n<br><br></p>\n",
             "itemtype": "method",
             "name": "setAttributes",
@@ -17235,7 +17012,7 @@ module.exports={
             "submodule": "Rendering",
             "overloads": [
                 {
-                    "line": 197,
+                    "line": 199,
                     "params": [
                         {
                             "name": "key",
@@ -17250,7 +17027,7 @@ module.exports={
                     ]
                 },
                 {
-                    "line": 330,
+                    "line": 332,
                     "params": [
                         {
                             "name": "obj",
@@ -17262,8 +17039,142 @@ module.exports={
             ]
         },
         {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 416,
+            "description": "<p>[background description]</p>\n",
+            "class": "p5.RendererGL",
+            "module": "Rendering",
+            "submodule": "Rendering"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 485,
+            "description": "<p>Basic stroke material for geometry with a given color</p>\n",
+            "itemtype": "method",
+            "name": "stroke",
+            "params": [
+                {
+                    "name": "v1",
+                    "description": "<p>gray value,\nred or hue value (depending on the current color mode),\nor color Array, or CSS color string</p>\n",
+                    "type": "Number|Number[]|String|p5.Color"
+                },
+                {
+                    "name": "v2",
+                    "description": "<p>green or saturation value</p>\n",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "v3",
+                    "description": "<p>blue or brightness value</p>\n",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "a",
+                    "description": "<p>opacity</p>\n",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(200, 200, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  stroke(240, 150, 150);\n  fill(100, 100, 240);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(75, 75, 75);\n}\n</code>\n</div>"
+            ],
+            "alt": "black canvas with purple cube with pink outline spinning",
+            "class": "p5.RendererGL",
+            "module": "Rendering",
+            "submodule": "Rendering"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 525,
+            "description": "<p>Change weight of stroke</p>\n",
+            "itemtype": "method",
+            "name": "strokeWeight",
+            "params": [
+                {
+                    "name": "stroke",
+                    "description": "<p>weight to be used for drawing</p>\n",
+                    "type": "Number"
+                }
+            ],
+            "example": [
+                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(200, 400, WEBGL);\n  setAttributes('antialias', true);\n}\n\nfunction draw() {\n  background(0);\n  noStroke();\n  translate(0, -100, 0);\n  stroke(240, 150, 150);\n  fill(100, 100, 240);\n  push();\n  strokeWeight(8);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  sphere(75);\n  pop();\n  push();\n  translate(0, 200, 0);\n  strokeWeight(1);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  sphere(75);\n  pop();\n}\n</code>\n</div>"
+            ],
+            "alt": "black canvas with two purple rotating spheres with pink\noutlines the sphere on top has much heavier outlines,",
+            "class": "p5.RendererGL",
+            "module": "Rendering",
+            "submodule": "Rendering"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 573,
+            "description": "<p>Returns an array of [R,G,B,A] values for any pixel or grabs a section of\nan image. If no parameters are specified, the entire image is returned.\nUse the x and y parameters to get the value of one pixel. Get a section of\nthe display window by specifying additional w and h parameters. When\ngetting an image, the x and y parameters define the coordinates for the\nupper-left corner of the image, regardless of the current imageMode().\n<br><br>\nIf the pixel requested is outside of the image window, [0,0,0,255] is\nreturned.\n<br><br>\nGetting the color of a single pixel with get(x, y) is easy, but not as fast\nas grabbing the data directly from pixels[]. The equivalent statement to\nget(x, y) is using pixels[] with pixel density d</p>\n",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "<p>x-coordinate of the pixel</p>\n",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "y",
+                    "description": "<p>y-coordinate of the pixel</p>\n",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "w",
+                    "description": "<p>width</p>\n",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "h",
+                    "description": "<p>height</p>\n",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "color of pixel at x,y in array format\n                                   [R, G, B, A] or p5.Image",
+                "type": "Number[]|Color|p5.Image"
+            },
+            "class": "p5.RendererGL",
+            "module": "Rendering",
+            "submodule": "Rendering"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 601,
+            "description": "<p>Loads the pixels data for this canvas into the pixels[] attribute.\nNote that updatePixels() and set() do not work.\nAny pixel manipulation must be done directly to the pixels[] array.</p>\n",
+            "itemtype": "method",
+            "name": "loadPixels",
+            "class": "p5.RendererGL",
+            "module": "Rendering",
+            "submodule": "Rendering"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 751,
+            "description": "<p>pushes a copy of the model view matrix onto the\nMV Matrix stack.</p>\n",
+            "class": "p5.RendererGL",
+            "module": "Rendering",
+            "submodule": "Rendering"
+        },
+        {
+            "file": "src/webgl/p5.RendererGL.js",
+            "line": 760,
+            "description": "<p>[pop description]</p>\n",
+            "class": "p5.RendererGL",
+            "module": "Rendering",
+            "submodule": "Rendering"
+        },
+        {
             "file": "src/webgl/p5.Shader.js",
-            "line": 270,
+            "line": 271,
             "description": "<p>Wrapper around gl.uniform functions.\nAs we store uniform info in the shader we can use that\nto do type checking on the supplied data and call\nthe appropriate function.</p>\n",
             "itemtype": "method",
             "name": "setUniform",
@@ -17285,8 +17196,38 @@ module.exports={
             "submodule": "Shaders"
         },
         {
+            "file": "src/webgl/p5.Texture.js",
+            "line": 123,
+            "description": "<p>Checks if the source data for this texture has changed (if it&#39;s\neasy to do so) and reuploads the texture if necessary. If it&#39;s not\npossible or to expensive to do a calculation to determine wheter or\nnot the data has occurred, this method simply re-uploads the texture.</p>\n",
+            "itemtype": "method",
+            "name": "update",
+            "class": "p5.Texture",
+            "module": "Lights, Camera",
+            "submodule": "Material"
+        },
+        {
+            "file": "src/webgl/p5.Texture.js",
+            "line": 232,
+            "description": "<p>Binds the texture to the appropriate GL target.</p>\n",
+            "itemtype": "method",
+            "name": "bindTexture",
+            "class": "p5.Texture",
+            "module": "Lights, Camera",
+            "submodule": "Material"
+        },
+        {
+            "file": "src/webgl/p5.Texture.js",
+            "line": 245,
+            "description": "<p>Unbinds the texture from the appropriate GL target.</p>\n",
+            "itemtype": "method",
+            "name": "unbindTexture",
+            "class": "p5.Texture",
+            "module": "Lights, Camera",
+            "submodule": "Material"
+        },
+        {
             "file": "src/webgl/primitives.js",
-            "line": 14,
+            "line": 13,
             "description": "<p>Draw a plane with given a width and height</p>\n",
             "itemtype": "method",
             "name": "plane",
@@ -17327,7 +17268,7 @@ module.exports={
         },
         {
             "file": "src/webgl/primitives.js",
-            "line": 96,
+            "line": 94,
             "description": "<p>Draw a box with given width, height and depth</p>\n",
             "itemtype": "method",
             "name": "box",
@@ -17373,7 +17314,7 @@ module.exports={
         },
         {
             "file": "src/webgl/primitives.js",
-            "line": 213,
+            "line": 208,
             "description": "<p>Draw a sphere with given radius</p>\n",
             "itemtype": "method",
             "name": "sphere",
@@ -17407,7 +17348,7 @@ module.exports={
         },
         {
             "file": "src/webgl/primitives.js",
-            "line": 391,
+            "line": 336,
             "description": "<p>Draw a cylinder with given radius and height</p>\n",
             "itemtype": "method",
             "name": "cylinder",
@@ -17426,32 +17367,20 @@ module.exports={
                 },
                 {
                     "name": "detailX",
-                    "description": "<p>number of segments,\n                              the more segments the smoother geometry\n                              default is 24</p>\n",
+                    "description": "<p>number of segments,\n                            the more segments the smoother geometry\n                            default is 24</p>\n",
                     "type": "Integer",
                     "optional": true
                 },
                 {
                     "name": "detailY",
-                    "description": "<p>number of segments in y-dimension,\n                              the more segments the smoother geometry\n                              default is 1</p>\n",
+                    "description": "<p>number of segments in y-dimension,\n                            the more segments the smoother geometry\n                            default is 16</p>\n",
                     "type": "Integer",
-                    "optional": true
-                },
-                {
-                    "name": "bottomCap",
-                    "description": "<p>whether to draw the bottom of the cylinder</p>\n",
-                    "type": "Boolean",
-                    "optional": true
-                },
-                {
-                    "name": "topCap",
-                    "description": "<p>whether to draw the top of the cylinder</p>\n",
-                    "type": "Boolean",
                     "optional": true
                 }
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n//draw a spinning cylinder with radius 20 and height 50\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cylinder(20, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n//draw a spinning cylinder with radius 200 and height 200\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cylinder(20, 50);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17459,7 +17388,7 @@ module.exports={
         },
         {
             "file": "src/webgl/primitives.js",
-            "line": 482,
+            "line": 401,
             "description": "<p>Draw a cone with given radius and height</p>\n",
             "itemtype": "method",
             "name": "cone",
@@ -17478,26 +17407,20 @@ module.exports={
                 },
                 {
                     "name": "detailX",
-                    "description": "<p>number of segments,\n                            the more segments the smoother geometry\n                            default is 24</p>\n",
+                    "description": "<p>number of segments,\n                                   the more segments the smoother geometry\n                                   default is 24</p>\n",
                     "type": "Integer",
                     "optional": true
                 },
                 {
                     "name": "detailY",
-                    "description": "<p>number of segments,\n                            the more segments the smoother geometry\n                            default is 1</p>\n",
+                    "description": "<p>number of segments,\n                                   the more segments the smoother geometry\n                                   default is 16</p>\n",
                     "type": "Integer",
-                    "optional": true
-                },
-                {
-                    "name": "cap",
-                    "description": "<p>whether to draw the base of the cone</p>\n",
-                    "type": "Boolean",
                     "optional": true
                 }
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n//draw a spinning cone with radius 40 and height 70\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cone(40, 70);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n//draw a spinning cone with radius 200 and height 200\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cone(40, 70);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17505,7 +17428,7 @@ module.exports={
         },
         {
             "file": "src/webgl/primitives.js",
-            "line": 553,
+            "line": 476,
             "description": "<p>Draw an ellipsoid with given radius</p>\n",
             "itemtype": "method",
             "name": "ellipsoid",
@@ -17551,7 +17474,7 @@ module.exports={
         },
         {
             "file": "src/webgl/primitives.js",
-            "line": 643,
+            "line": 565,
             "description": "<p>Draw a torus with given radius and tube radius</p>\n",
             "itemtype": "method",
             "name": "torus",
@@ -17603,17 +17526,17 @@ module.exports={
                 },
                 {
                     "name": "container",
-                    "description": "<p>id, p5.Element, or\n                                            HTML element to search within</p>\n",
-                    "type": "String|p5.Element|HTMLElement",
+                    "description": "<p>id, p5.Element, or HTML element to search within</p>\n",
+                    "type": "String",
                     "optional": true
                 }
             ],
             "return": {
                 "description": "p5.Element containing node found",
-                "type": "Object|p5.Element|null"
+                "type": "Object|p5.Element|Null"
             },
             "example": [
-                "\n<div ><code class='norender'>\nfunction setup() {\n  createCanvas(100, 100);\n  //translates canvas 50px down\n  select('canvas').position(100, 100);\n}\n</code></div>\n<div><code class='norender'>\n// these are all valid calls to select()\nvar a = select('#moo');\nvar b = select('#blah', '#myContainer');\nvar c, e;\nif (b) {\n  c = select('#foo', b);\n}\nvar d = document.getElementById('beep');\nif (d) {\n  e = select('p', d);\n}\n[a, b, c, d, e]; // unused\n</code></div>\n"
+                "\n<div ><code class='norender'>\nfunction setup() {\n  createCanvas(100, 100);\n  //translates canvas 50px down\n  select('canvas').position(100, 100);\n}\n</code></div>\n<div ><code class='norender'>\n// these are all valid calls to select()\nvar a = select('#moo');\nvar b = select('#blah', '#myContainer');\nvar c = select('#foo', b);\nvar d = document.getElementById('beep');\nvar e = select('p', d);\n[a, b, c, d, e]; // unused\n</code></div>\n"
             ],
             "class": "p5.dom",
             "module": "p5.dom",
@@ -17621,7 +17544,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 107,
+            "line": 101,
             "description": "<p>Searches the page for elements with the given class or tag name (using the &#39;.&#39; prefix\nto specify a class and no prefix for a tag) and returns them as p5.Elements\nin an array.\nThe DOM node itself can be accessed with .elt.\nReturns an empty array if none found.\nYou can also specify a container to search within.</p>\n",
             "itemtype": "method",
             "name": "selectAll",
@@ -17651,7 +17574,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 168,
+            "line": 162,
             "description": "<p>Helper function for select and selectAll</p>\n",
             "class": "p5.dom",
             "module": "p5.dom",
@@ -17659,7 +17582,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 184,
+            "line": 178,
             "description": "<p>Helper function for getElement and getElements.</p>\n",
             "class": "p5.dom",
             "module": "p5.dom",
@@ -17667,7 +17590,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 218,
+            "line": 212,
             "description": "<p>Removes all elements created by p5, except any canvas / graphics\nelements created by createCanvas or createGraphics.\nEvent handlers are removed, and element is removed from the DOM.</p>\n",
             "itemtype": "method",
             "name": "removeElements",
@@ -17680,7 +17603,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 245,
+            "line": 239,
             "description": "<p>Helpers for create methods.</p>\n",
             "class": "p5.dom",
             "module": "p5.dom",
@@ -17688,7 +17611,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 256,
+            "line": 250,
             "description": "<p>Creates a &lt;div&gt;&lt;/div&gt; element in the DOM with given inner HTML.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createDiv",
@@ -17713,7 +17636,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 270,
+            "line": 264,
             "description": "<p>Creates a &lt;p&gt;&lt;/p&gt; element in the DOM with given inner HTML. Used\nfor paragraph length text.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createP",
@@ -17738,7 +17661,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 285,
+            "line": 279,
             "description": "<p>Creates a &lt;span&gt;&lt;/span&gt; element in the DOM with given inner HTML.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createSpan",
@@ -17763,7 +17686,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 308,
+            "line": 302,
             "description": "<p>Creates an &lt;img&gt; element in the DOM with given src and\nalternate text.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createImg",
@@ -17799,7 +17722,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 351,
+            "line": 345,
             "description": "<p>Creates an &lt;a&gt;&lt;/a&gt; element in the DOM for including a hyperlink.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createA",
@@ -17834,14 +17757,14 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 376,
+            "line": 370,
             "class": "p5.dom",
             "module": "p5.dom",
             "submodule": "p5.dom"
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 378,
+            "line": 372,
             "description": "<p>Creates a slider &lt;input&gt;&lt;/input&gt; element in the DOM.\nUse .size() to set the display length of the slider.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createSlider",
@@ -17882,7 +17805,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 435,
+            "line": 429,
             "description": "<p>Creates a &lt;button&gt;&lt;/button&gt; element in the DOM.\nUse .size() to set the display size of the button.\nUse .mousePressed() to specify behavior on press.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createButton",
@@ -17912,7 +17835,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 471,
+            "line": 465,
             "description": "<p>Creates a checkbox &lt;input&gt;&lt;/input&gt; element in the DOM.\nCalling .checked() on a checkbox returns if it is checked or not</p>\n",
             "itemtype": "method",
             "name": "createCheckbox",
@@ -17943,7 +17866,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 539,
+            "line": 533,
             "description": "<p>Creates a dropdown menu &lt;select&gt;&lt;/select&gt; element in the DOM.\nIt also helps to assign select-box methods to p5.Element when selecting existing select box</p>\n",
             "itemtype": "method",
             "name": "createSelect",
@@ -17959,7 +17882,7 @@ module.exports={
             "submodule": "p5.dom",
             "overloads": [
                 {
-                    "line": 539,
+                    "line": 533,
                     "params": [
                         {
                             "name": "multiple",
@@ -17974,7 +17897,7 @@ module.exports={
                     }
                 },
                 {
-                    "line": 567,
+                    "line": 561,
                     "params": [
                         {
                             "name": "existing",
@@ -17991,7 +17914,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 643,
+            "line": 637,
             "description": "<p>Creates a radio button &lt;input&gt;&lt;/input&gt; element in the DOM.\nThe .option() method can be used to set options for the radio after it is\ncreated. The .value() method will return the currently selected option.</p>\n",
             "itemtype": "method",
             "name": "createRadio",
@@ -18016,7 +17939,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 781,
+            "line": 775,
             "description": "<p>Creates an &lt;input&gt;&lt;/input&gt; element in the DOM for text input.\nUse .size() to set the display length of the box.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createInput",
@@ -18047,7 +17970,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 811,
+            "line": 805,
             "description": "<p>Creates an &lt;input&gt;&lt;/input&gt; element in the DOM of type &#39;file&#39;.\nThis allows users to select local files for use in a sketch.</p>\n",
             "itemtype": "method",
             "name": "createFileInput",
@@ -18078,14 +18001,14 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 897,
+            "line": 891,
             "class": "p5.dom",
             "module": "p5.dom",
             "submodule": "p5.dom"
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 934,
+            "line": 928,
             "description": "<p>Creates an HTML5 &lt;video&gt; element in the DOM for simple playback\nof audio/video. Shown by default, can be hidden with .hide()\nand drawn into canvas using video(). Appends to the container\nnode if one is specified, otherwise appends to body. The first parameter\ncan be either a single string path to a video file, or an array of string\npaths to different formats of the same video. This is useful for ensuring\nthat your video can play across different browsers, as each supports\ndifferent formats. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>this\npage</a> for further information about supported formats.</p>\n",
             "itemtype": "method",
             "name": "createVideo",
@@ -18115,14 +18038,14 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 973,
+            "line": 967,
             "class": "p5.dom",
             "module": "p5.dom",
             "submodule": "p5.dom"
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 975,
+            "line": 969,
             "description": "<p>Creates a hidden HTML5 &lt;audio&gt; element in the DOM for simple audio\nplayback. Appends to the container node if one is specified,\notherwise appends to body. The first parameter\ncan be either a single string path to a audio file, or an array of string\npaths to different formats of the same audio. This is useful for ensuring\nthat your audio can play across different browsers, as each supports\ndifferent formats. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>this\npage for further information about supported formats</a>.</p>\n",
             "itemtype": "method",
             "name": "createAudio",
@@ -18153,15 +18076,15 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1013,
+            "line": 1007,
             "class": "p5.dom",
             "module": "p5.dom",
             "submodule": "p5.dom"
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1048,
-            "description": "<p>Creates a new HTML5 &lt;video&gt; element that contains the audio/video\nfeed from a webcam. The element is separate from the canvas and is\ndisplayed by default. The element can be hidden using .hide(). The feed\ncan be drawn onto the canvas using image().</p>\n<p>More specific properties of the feed can be passing in a Constraints object.\nSee the\n<a href='http://w3c.github.io/mediacapture-main/getusermedia.html#media-track-constraints'> W3C\nspec</a> for possible properties. Note that not all of these are supported\nby all browsers.</p>\n<p>Security note: A new browser security specification requires that getUserMedia,\nwhich is behind createCapture(), only works when you&#39;re running the code locally,\nor on HTTPS. Learn more <a href='http://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https'>here</a>\nand <a href='https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia'>here</a>.</p>",
+            "line": 1042,
+            "description": "<p>Creates a new &lt;video&gt; element that contains the audio/video feed\nfrom a webcam. This can be drawn onto the canvas using video().</p>\n<p>More specific properties of the feed can be passing in a Constraints object.\nSee the\n<a href='http://w3c.github.io/mediacapture-main/getusermedia.html#media-track-constraints'> W3C\nspec</a> for possible properties. Note that not all of these are supported\nby all browsers.</p>\n<p>Security note: A new browser security specification requires that getUserMedia,\nwhich is behind createCapture(), only works when you&#39;re running the code locally,\nor on HTTPS. Learn more <a href='http://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https'>here</a>\nand <a href='https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia'>here</a>.</p>",
             "itemtype": "method",
             "name": "createCapture",
             "params": [
@@ -18181,7 +18104,7 @@ module.exports={
                 "type": "Object|p5.Element"
             },
             "example": [
-                "\n<div class='norender notest'><code>\nvar capture;\n\nfunction setup() {\n  createCanvas(480, 480);\n  capture = createCapture(VIDEO);\n  capture.hide();\n}\n\nfunction draw() {\n  image(capture, 0, 0, width, width * capture.height / capture.width);\n  filter(INVERT);\n}\n</code></div>\n<div class='norender notest'><code>\nfunction setup() {\n  createCanvas(480, 120);\n  var constraints = {\n    video: {\n      mandatory: {\n        minWidth: 1280,\n        minHeight: 720\n      },\n      optional: [{ maxFrameRate: 10 }]\n    },\n    audio: true\n  };\n  createCapture(constraints, function(stream) {\n    console.log(stream);\n  });\n}\n</code></div>"
+                "\n<div class='norender'><code>\nvar capture;\n\nfunction setup() {\n  createCanvas(480, 120);\n  capture = createCapture(VIDEO);\n}\n\nfunction draw() {\n  image(capture, 0, 0, width, width * capture.height / capture.width);\n  filter(INVERT);\n}\n</code></div>\n<div class='norender'><code>\nfunction setup() {\n  createCanvas(480, 120);\n  var constraints = {\n    video: {\n      mandatory: {\n        minWidth: 1280,\n        minHeight: 720\n      },\n      optional: [{ maxFrameRate: 10 }]\n    },\n    audio: true\n  };\n  createCapture(constraints, function(stream) {\n    console.log(stream);\n  });\n}\n</code></div>"
             ],
             "class": "p5.dom",
             "module": "p5.dom",
@@ -18189,7 +18112,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1167,
+            "line": 1158,
             "description": "<p>Creates element with given tag in the DOM with given content.\nAppends to the container node if one is specified, otherwise\nappends to body.</p>\n",
             "itemtype": "method",
             "name": "createElement",
@@ -18219,7 +18142,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1193,
+            "line": 1184,
             "description": "<p>Adds specified class to the element.</p>\n",
             "itemtype": "method",
             "name": "addClass",
@@ -18243,7 +18166,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1220,
+            "line": 1211,
             "description": "<p>Removes specified class from the element.</p>\n",
             "itemtype": "method",
             "name": "removeClass",
@@ -18264,7 +18187,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1251,
+            "line": 1242,
             "description": "<p>Attaches the element  as a child to the parent specified.\n Accepts either a string ID, DOM node, or p5.Element.\n If no argument is specified, an array of children DOM nodes is returned.</p>\n",
             "itemtype": "method",
             "name": "child",
@@ -18281,7 +18204,7 @@ module.exports={
                 "type": "p5.Element"
             },
             "example": [
-                "\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n var div1 = createDiv('this is the child');\n div0.child(div1); // use p5.Element\n </code></div>\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n var div1 = createDiv('this is the child');\n div1.id('apples');\n div0.child('apples'); // use id\n </code></div>\n <div class='norender notest'><code>\n var div0 = createDiv('this is the parent');\n var elt = document.getElementById('myChildDiv');\n div0.child(elt); // use element from page\n </code></div>"
+                "\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n var div1 = createDiv('this is the child');\n div0.child(div1); // use p5.Element\n </code></div>\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n var div1 = createDiv('this is the child');\n div1.id('apples');\n div0.child('apples'); // use id\n </code></div>\n <div class='norender'><code>\n var div0 = createDiv('this is the parent');\n var elt = document.getElementById('myChildDiv');\n div0.child(elt); // use element from page\n </code></div>"
             ],
             "class": "p5.Element",
             "module": "p5.dom",
@@ -18289,7 +18212,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1295,
+            "line": 1286,
             "description": "<p>Centers a p5 Element either vertically, horizontally,\nor both, relative to its parent or according to\nthe body if the Element has no parent. If no argument is passed\nthe Element is aligned both vertically and horizontally.</p>\n",
             "itemtype": "method",
             "name": "center",
@@ -18314,7 +18237,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1348,
+            "line": 1339,
             "description": "<p>If an argument is given, sets the inner HTML of the element,\n replacing any existing html. If true is included as a second\n argument, html is appended instead of replacing existing html.\n If no arguments are given, returns\n the inner HTML of the element.</p>\n",
             "itemtype": "method",
             "name": "html",
@@ -18345,7 +18268,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1383,
+            "line": 1374,
             "description": "<p>Sets the position of the element relative to (0, 0) of the\n window. Essentially, sets position:absolute and left and top\n properties of style. If no arguments given returns the x and y position\n of the element in an object.</p>\n",
             "itemtype": "method",
             "name": "position",
@@ -18376,7 +18299,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1473,
+            "line": 1464,
             "description": "<p>Sets the given style (css) property (1st arg) of the element with the\ngiven value (2nd arg). If a single argument is given, .style()\nreturns the value of the given property; however, if the single argument\nis given in css syntax (&#39;text-align:center&#39;), .style() sets the css\nappropriatly. .style() also handles 2d and 3d css transforms. If\nthe 1st arg is &#39;rotate&#39;, &#39;translate&#39;, or &#39;position&#39;, the following arguments\naccept Numbers as values. (&#39;translate&#39;, 10, 100, 50);</p>\n",
             "itemtype": "method",
             "name": "style",
@@ -18418,7 +18341,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1570,
+            "line": 1561,
             "description": "<p>Adds a new attribute or changes the value of an existing attribute\n on the specified element. If no value is specified, returns the\n value of the given attribute, or null if attribute is not set.</p>\n",
             "itemtype": "method",
             "name": "attribute",
@@ -18448,7 +18371,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1610,
+            "line": 1601,
             "description": "<p>Removes an attribute on the specified element.</p>\n",
             "itemtype": "method",
             "name": "removeAttribute",
@@ -18472,7 +18395,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1655,
+            "line": 1646,
             "description": "<p>Either returns the value of the element if no arguments\ngiven, or sets the value of the element.</p>\n",
             "itemtype": "method",
             "name": "value",
@@ -18497,7 +18420,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1697,
+            "line": 1688,
             "description": "<p>Shows the current element. Essentially, setting display:block for the style.</p>\n",
             "itemtype": "method",
             "name": "show",
@@ -18514,7 +18437,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1715,
+            "line": 1706,
             "description": "<p>Hides the current element. Essentially, setting display:none for the style.</p>\n",
             "itemtype": "method",
             "name": "hide",
@@ -18531,7 +18454,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1731,
+            "line": 1722,
             "description": "<p>Sets the width and height of the element. AUTO can be used to\n only adjust one dimension. If no arguments given returns the width and height\n of the element in an object.</p>\n",
             "itemtype": "method",
             "name": "size",
@@ -18562,7 +18485,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1805,
+            "line": 1796,
             "description": "<p>Removes the element and deregisters all listeners.</p>\n",
             "itemtype": "method",
             "name": "remove",
@@ -18575,7 +18498,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1851,
+            "line": 1842,
             "description": "<p>Path to the media element source.</p>\n",
             "itemtype": "property",
             "name": "src",
@@ -18592,7 +18515,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1917,
+            "line": 1908,
             "description": "<p>Play an HTML5 media element.</p>\n",
             "itemtype": "method",
             "name": "play",
@@ -18609,7 +18532,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 1970,
+            "line": 1961,
             "description": "<p>Stops an HTML5 media element (sets current time to zero).</p>\n",
             "itemtype": "method",
             "name": "stop",
@@ -18626,7 +18549,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2034,
+            "line": 2025,
             "description": "<p>Pauses an HTML5 media element.</p>\n",
             "itemtype": "method",
             "name": "pause",
@@ -18643,7 +18566,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2096,
+            "line": 2087,
             "description": "<p>Set &#39;loop&#39; to true for an HTML5 media element, and starts playing.</p>\n",
             "itemtype": "method",
             "name": "loop",
@@ -18660,7 +18583,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2152,
+            "line": 2143,
             "description": "<p>Set &#39;loop&#39; to false for an HTML5 media element. Element will stop\nwhen it reaches the end.</p>\n",
             "itemtype": "method",
             "name": "noLoop",
@@ -18677,7 +18600,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2204,
+            "line": 2195,
             "description": "<p>Set HTML5 media element to autoplay or not.</p>\n",
             "itemtype": "method",
             "name": "autoplay",
@@ -18698,7 +18621,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2216,
+            "line": 2207,
             "description": "<p>Sets volume for this HTML5 media element. If no argument is given,\nreturns the current volume.</p>\n",
             "params": [
                 {
@@ -18723,7 +18646,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2298,
+            "line": 2289,
             "description": "<p>If no arguments are given, returns the current playback speed of the\nelement. The speed parameter sets the speed where 2.0 will play the\nelement twice as fast, 0.5 will play at half the speed, and -1 will play\nthe element in normal speed in reverse.(Note that not all browsers support\nbackward playback and even if they do, playback might not be smooth.)</p>\n",
             "itemtype": "method",
             "name": "speed",
@@ -18740,7 +18663,7 @@ module.exports={
                 "type": "Number|Object|p5.MediaElement"
             },
             "example": [
-                "\n<div class='norender notest'><code>\n//Clicking the canvas will loop\n//the audio sample until the user\n//clicks again to stop it\n\n//We will store the p5.MediaElement\n//object in here\nvar ele;\nvar button;\n\nfunction setup() {\n  createCanvas(710, 400);\n  //Here we create a p5.MediaElement object\n  //using the createAudio() function.\n  ele = createAudio('assets/beat.mp3');\n  ele.loop();\n  background(200);\n\n  button = createButton('2x speed');\n  button.position(100, 68);\n  button.mousePressed(twice_speed);\n\n  button = createButton('half speed');\n  button.position(200, 68);\n  button.mousePressed(half_speed);\n\n  button = createButton('reverse play');\n  button.position(300, 68);\n  button.mousePressed(reverse_speed);\n\n  button = createButton('STOP');\n  button.position(400, 68);\n  button.mousePressed(stop_song);\n\n  button = createButton('PLAY!');\n  button.position(500, 68);\n  button.mousePressed(play_speed);\n}\n\nfunction twice_speed() {\n  ele.speed(2);\n}\n\nfunction half_speed() {\n  ele.speed(0.5);\n}\n\nfunction reverse_speed() {\n  ele.speed(-1);\n}\n\nfunction stop_song() {\n  ele.stop();\n}\n\nfunction play_speed() {\n  ele.play();\n}\n</code></div>"
+                "\n<div class='norender'><code>\n//Clicking the canvas will loop\n//the audio sample until the user\n//clicks again to stop it\n\n//We will store the p5.MediaElement\n//object in here\nvar ele;\nvar button;\n\nfunction setup() {\n  createCanvas(710, 400);\n  //Here we create a p5.MediaElement object\n  //using the createAudio() function.\n  ele = createAudio('assets/beat.mp3');\n  ele.loop();\n  background(200);\n\n  button = createButton('2x speed');\n  button.position(100, 68);\n  button.mousePressed(twice_speed);\n\n  button = createButton('half speed');\n  button.position(200, 68);\n  button.mousePressed(half_speed);\n\n  button = createButton('reverse play');\n  button.position(300, 68);\n  button.mousePressed(reverse_speed);\n\n  button = createButton('STOP');\n  button.position(400, 68);\n  button.mousePressed(stop_song);\n\n  button = createButton('PLAY!');\n  button.position(500, 68);\n  button.mousePressed(play_speed);\n}\n\nfunction twice_speed() {\n  ele.speed(2);\n}\n\nfunction half_speed() {\n  ele.speed(0.5);\n}\n\nfunction reverse_speed() {\n  ele.speed(-1);\n}\n\nfunction stop_song() {\n  ele.stop();\n}\n\nfunction play_speed() {\n  ele.play();\n}\n</code></div>"
             ],
             "class": "p5.MediaElement",
             "module": "p5.dom",
@@ -18748,7 +18671,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2377,
+            "line": 2368,
             "description": "<p>If no arguments are given, returns the current time of the element.\nIf an argument is given the current time of the element is set to it.</p>\n",
             "itemtype": "method",
             "name": "time",
@@ -18773,7 +18696,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2432,
+            "line": 2423,
             "description": "<p>Returns the duration of the HTML5 media element.</p>\n",
             "itemtype": "method",
             "name": "duration",
@@ -18790,7 +18713,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2550,
+            "line": 2541,
             "description": "<p>Schedule an event to be called when the audio or video\nelement reaches the end. If the element is looping,\nthis will not be called. The element is passed in\nas the argument to the onended callback.</p>\n",
             "itemtype": "method",
             "name": "onended",
@@ -18814,14 +18737,14 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2581,
+            "line": 2572,
             "class": "p5.MediaElement",
             "module": "p5.dom",
             "submodule": "p5.dom"
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2583,
+            "line": 2574,
             "description": "<p>Send the audio output of this element to a specified audioNode or\np5.sound object. If no element is provided, connects to p5&#39;s master\noutput. That connection is established when this method is first called.\nAll connections are removed by the .disconnect() method.</p>\n<p>This method is meant to be used with the p5.sound.js addon library.</p>\n",
             "itemtype": "method",
             "name": "connect",
@@ -18838,7 +18761,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2632,
+            "line": 2623,
             "description": "<p>Disconnect all Web Audio routing, including to master output.\nThis is useful if you want to re-route the output through\naudio effects, for example.</p>\n",
             "itemtype": "method",
             "name": "disconnect",
@@ -18848,14 +18771,14 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2647,
+            "line": 2638,
             "class": "p5.MediaElement",
             "module": "p5.dom",
             "submodule": "p5.dom"
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2649,
+            "line": 2640,
             "description": "<p>Show the default MediaElement controls, as determined by the web browser.</p>\n",
             "itemtype": "method",
             "name": "showControls",
@@ -18868,7 +18791,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2680,
+            "line": 2671,
             "description": "<p>Hide the default mediaElement controls.</p>\n",
             "itemtype": "method",
             "name": "hideControls",
@@ -18881,14 +18804,14 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2709,
+            "line": 2700,
             "class": "p5.MediaElement",
             "module": "p5.dom",
             "submodule": "p5.dom"
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2720,
+            "line": 2711,
             "description": "<p>Schedule events to trigger every time a MediaElement\n(audio/video) reaches a playback cue point.</p>\n<p>Accepts a callback function, a time (in seconds) at which to trigger\nthe callback, and an optional parameter for the callback.</p>\n<p>Time will be passed as the first parameter to the callback function,\nand param will be the second parameter.</p>\n",
             "itemtype": "method",
             "name": "addCue",
@@ -18923,7 +18846,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2782,
+            "line": 2773,
             "description": "<p>Remove a callback based on its ID. The ID is returned by the\naddCue method.</p>\n",
             "itemtype": "method",
             "name": "removeCue",
@@ -18943,7 +18866,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2824,
+            "line": 2815,
             "description": "<p>Remove all of the callbacks that had originally been scheduled\nvia the addCue method.</p>\n",
             "itemtype": "method",
             "name": "clearCues",
@@ -18963,7 +18886,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2894,
+            "line": 2885,
             "description": "<p>Underlying File object. All normal File methods can be called on this.</p>\n",
             "itemtype": "property",
             "name": "file",
@@ -18973,7 +18896,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2906,
+            "line": 2897,
             "description": "<p>File type (image, text, etc.)</p>\n",
             "itemtype": "property",
             "name": "type",
@@ -18983,7 +18906,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2912,
+            "line": 2903,
             "description": "<p>File subtype (usually the file extension jpg, png, xml, etc.)</p>\n",
             "itemtype": "property",
             "name": "subtype",
@@ -18993,7 +18916,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2918,
+            "line": 2909,
             "description": "<p>File name</p>\n",
             "itemtype": "property",
             "name": "name",
@@ -19003,7 +18926,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2924,
+            "line": 2915,
             "description": "<p>File size</p>\n",
             "itemtype": "property",
             "name": "size",
@@ -19013,7 +18936,7 @@ module.exports={
         },
         {
             "file": "lib/addons/p5.dom.js",
-            "line": 2931,
+            "line": 2922,
             "description": "<p>URL string containing image data.</p>\n",
             "itemtype": "property",
             "name": "data",
@@ -20796,7 +20719,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar t1 = 0.1; // attack time in seconds\nvar l1 = 0.7; // attack level 0.0 to 1.0\nvar t2 = 0.3; // decay time in seconds\nvar l2 = 0.1; // decay level  0.0 to 1.0\nvar t3 = 0.2; // sustain time in seconds\nvar l3 = 0.2; // sustain level  0.0 to 1.0\n// release level defaults to zero\n\nvar env;\nvar triOsc;\n\nfunction setup() {\n  background(0);\n  noStroke();\n  fill(255);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Env(t1, l1, t2, l2, t3, l3);\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env); // give the env control of the triOsc's amp\n  triOsc.start();\n}\n\n// mouseClick triggers envelope if over canvas\nfunction mouseClicked() {\n  // is mouse over canvas?\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    env.play(triOsc);\n  }\n}\n</code></div>\n"
+                "\n<div><code>\nvar t1 = 0.1; // attack time in seconds\nvar l1 = 0.7; // attack level 0.0 to 1.0\nvar t2 = 0.3; // decay time in seconds\nvar l2 = 0.1; // decay level  0.0 to 1.0\nvar t3 = 0.2; // sustain time in seconds\nvar l3 = dL; // sustain level  0.0 to 1.0\n// release level defaults to zero\n\nvar env;\nvar triOsc;\n\nfunction setup() {\n  background(0);\n  noStroke();\n  fill(255);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Env(t1, l1, t2, l2, t3, l3);\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env); // give the env control of the triOsc's amp\n  triOsc.start();\n}\n\n// mouseClick triggers envelope if over canvas\nfunction mouseClicked() {\n  // is mouse over canvas?\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    env.play(triOsc);\n  }\n}\n</code></div>\n"
             ],
             "class": "p5.Env",
             "module": "p5.sound",
@@ -24010,51 +23933,51 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/creating_reading.js:319"
+            "line": " src/color/creating_reading.js:320"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/creating_reading.js:350"
+            "line": " src/color/creating_reading.js:351"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/creating_reading.js:387"
+            "line": " src/color/creating_reading.js:388"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/creating_reading.js:484"
+            "line": " src/color/creating_reading.js:485"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/creating_reading.js:514"
+            "line": " src/color/creating_reading.js:515"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/creating_reading.js:554"
+            "line": " src/color/creating_reading.js:555"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/p5.Color.js:52"
+            "line": " src/color/p5.Color.js:54"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/p5.Color.js:247"
+            "line": " src/color/p5.Color.js:83"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/p5.Color.js:274"
+            "line": " src/color/p5.Color.js:110"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/p5.Color.js:301"
+            "line": " src/color/p5.Color.js:137"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/p5.Color.js:328"
+            "line": " src/color/p5.Color.js:164"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/p5.Color.js:759"
+            "line": " src/color/p5.Color.js:595"
         },
         {
             "message": "unknown tag: alt",
@@ -24074,15 +23997,15 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/setting.js:501"
+            "line": " src/color/setting.js:495"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/setting.js:542"
+            "line": " src/color/setting.js:536"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/color/setting.js:582"
+            "line": " src/color/setting.js:576"
         },
         {
             "message": "unknown tag: alt",
@@ -24090,27 +24013,27 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/2d_primitives.js:133"
+            "line": " src/core/2d_primitives.js:134"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/2d_primitives.js:188"
+            "line": " src/core/2d_primitives.js:190"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/2d_primitives.js:244"
+            "line": " src/core/2d_primitives.js:246"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/2d_primitives.js:279"
+            "line": " src/core/2d_primitives.js:281"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/2d_primitives.js:333"
+            "line": " src/core/2d_primitives.js:335"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/2d_primitives.js:416"
+            "line": " src/core/2d_primitives.js:406"
         },
         {
             "message": "unknown tag: alt",
@@ -24166,15 +24089,15 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/core.js:90"
+            "line": " src/core/core.js:87"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/core.js:121"
+            "line": " src/core/core.js:118"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/core.js:407"
+            "line": " src/core/core.js:401"
         },
         {
             "message": "unknown tag: alt",
@@ -24186,27 +24109,27 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/curves.js:135"
+            "line": " src/core/curves.js:119"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/curves.js:190"
+            "line": " src/core/curves.js:174"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/curves.js:269"
+            "line": " src/core/curves.js:253"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/curves.js:360"
+            "line": " src/core/curves.js:344"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/curves.js:402"
+            "line": " src/core/curves.js:371"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/curves.js:497"
+            "line": " src/core/curves.js:466"
         },
         {
             "message": "unknown tag: alt",
@@ -24286,103 +24209,99 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:51"
+            "line": " src/core/p5.Element.js:53"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:116"
+            "line": " src/core/p5.Element.js:118"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:153"
+            "line": " src/core/p5.Element.js:155"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:188"
+            "line": " src/core/p5.Element.js:190"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:238"
+            "line": " src/core/p5.Element.js:240"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:287"
+            "line": " src/core/p5.Element.js:289"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:353"
+            "line": " src/core/p5.Element.js:355"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:406"
+            "line": " src/core/p5.Element.js:408"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:460"
+            "line": " src/core/p5.Element.js:462"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:519"
+            "line": " src/core/p5.Element.js:521"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:562"
+            "line": " src/core/p5.Element.js:564"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:629"
+            "line": " src/core/p5.Element.js:631"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:664"
+            "line": " src/core/p5.Element.js:666"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:706"
+            "line": " src/core/p5.Element.js:708"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:755"
+            "line": " src/core/p5.Element.js:757"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:796"
+            "line": " src/core/p5.Element.js:798"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:846"
+            "line": " src/core/p5.Element.js:848"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:884"
+            "line": " src/core/p5.Element.js:886"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Element.js:922"
+            "line": " src/core/p5.Element.js:924"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/p5.Graphics.js:65"
+            "line": " src/core/rendering.js:16"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:17"
+            "line": " src/core/rendering.js:116"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:119"
+            "line": " src/core/rendering.js:169"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:172"
+            "line": " src/core/rendering.js:192"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:195"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:234"
+            "line": " src/core/rendering.js:231"
         },
         {
             "message": "unknown tag: alt",
@@ -24398,51 +24317,51 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/structure.js:197"
+            "line": " src/core/structure.js:211"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/structure.js:271"
+            "line": " src/core/structure.js:282"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:13"
+            "line": " src/core/transform.js:14"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:135"
+            "line": " src/core/transform.js:136"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:161"
+            "line": " src/core/transform.js:162"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:201"
+            "line": " src/core/transform.js:208"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:231"
+            "line": " src/core/transform.js:240"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:261"
+            "line": " src/core/transform.js:272"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:291"
+            "line": " src/core/transform.js:304"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:366"
+            "line": " src/core/transform.js:379"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:405"
+            "line": " src/core/transform.js:421"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/transform.js:444"
+            "line": " src/core/transform.js:463"
         },
         {
             "message": "unknown tag: alt",
@@ -24454,39 +24373,27 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:270"
+            "line": " src/core/vertex.js:269"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:356"
+            "line": " src/core/vertex.js:335"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:407"
+            "line": " src/core/vertex.js:378"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:467"
+            "line": " src/core/vertex.js:438"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:553"
+            "line": " src/core/vertex.js:523"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:645"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:645"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:645"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/core/vertex.js:645"
+            "line": " src/core/vertex.js:601"
         },
         {
             "message": "unknown tag: alt",
@@ -24514,15 +24421,15 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/events/acceleration.js:374"
+            "line": " src/events/acceleration.js:376"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/events/acceleration.js:405"
+            "line": " src/events/acceleration.js:407"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/events/acceleration.js:464"
+            "line": " src/events/acceleration.js:466"
         },
         {
             "message": "unknown tag: alt",
@@ -24642,7 +24549,7 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/image.js:193"
+            "line": " src/image/image.js:178"
         },
         {
             "message": "unknown tag: alt",
@@ -24662,63 +24569,63 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/loading_displaying.js:396"
+            "line": " src/image/loading_displaying.js:391"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/loading_displaying.js:462"
+            "line": " src/image/loading_displaying.js:457"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:90"
+            "line": " src/image/p5.Image.js:91"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:117"
+            "line": " src/image/p5.Image.js:118"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:151"
+            "line": " src/image/p5.Image.js:152"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:230"
+            "line": " src/image/p5.Image.js:232"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:266"
+            "line": " src/image/p5.Image.js:268"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:314"
+            "line": " src/image/p5.Image.js:316"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:359"
+            "line": " src/image/p5.Image.js:361"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:397"
+            "line": " src/image/p5.Image.js:399"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:481"
+            "line": " src/image/p5.Image.js:483"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:561"
+            "line": " src/image/p5.Image.js:563"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:624"
+            "line": " src/image/p5.Image.js:626"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:660"
+            "line": " src/image/p5.Image.js:662"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/p5.Image.js:782"
+            "line": " src/image/p5.Image.js:784"
         },
         {
             "message": "unknown tag: alt",
@@ -24730,27 +24637,27 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/pixels.js:177"
+            "line": " src/image/pixels.js:176"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/pixels.js:236"
+            "line": " src/image/pixels.js:235"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/pixels.js:415"
+            "line": " src/image/pixels.js:413"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/pixels.js:491"
+            "line": " src/image/pixels.js:489"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/pixels.js:528"
+            "line": " src/image/pixels.js:525"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/pixels.js:602"
+            "line": " src/image/pixels.js:599"
         },
         {
             "message": "unknown tag: alt",
@@ -24758,131 +24665,91 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:170"
+            "line": " src/io/files.js:154"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:271"
+            "line": " src/io/files.js:253"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:603"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " src/io/files.js:704"
+            "line": " src/io/files.js:586"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:704"
+            "line": " src/io/files.js:1290"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:1457"
+            "line": " src/io/files.js:1341"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:1509"
+            "line": " src/io/files.js:1402"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:1571"
+            "line": " src/io/p5.Table.js:57"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:56"
+            "line": " src/io/p5.Table.js:120"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:119"
+            "line": " src/io/p5.Table.js:168"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:167"
+            "line": " src/io/p5.Table.js:214"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:213"
+            "line": " src/io/p5.Table.js:263"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:262"
+            "line": " src/io/p5.Table.js:328"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:327"
+            "line": " src/io/p5.Table.js:491"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:522"
+            "line": " src/io/p5.Table.js:544"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:575"
+            "line": " src/io/p5.Table.js:586"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:617"
+            "line": " src/io/p5.Table.js:746"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:878"
+            "line": " src/io/p5.Table.js:812"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:944"
+            "line": " src/io/p5.Table.js:861"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:994"
+            "line": " src/io/p5.Table.js:922"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:1040"
+            "line": " src/io/p5.Table.js:969"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:1085"
+            "line": " src/io/p5.Table.js:1014"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:1132"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:1177"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:1230"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.Table.js:1294"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.TableRow.js:42"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.TableRow.js:104"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.TableRow.js:148"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.TableRow.js:193"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.TableRow.js:241"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/io/p5.TableRow.js:297"
+            "line": " src/io/p5.Table.js:1063"
         },
         {
             "message": "unknown tag: alt",
@@ -24974,7 +24841,7 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/math/p5.Vector.js:12"
+            "line": " src/math/p5.Vector.js:13"
         },
         {
             "message": "unknown tag: alt",
@@ -24990,35 +24857,23 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/math/trigonometry.js:124"
+            "line": " src/math/trigonometry.js:134"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/math/trigonometry.js:160"
+            "line": " src/math/trigonometry.js:174"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/math/trigonometry.js:188"
+            "line": " src/math/trigonometry.js:206"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/math/trigonometry.js:216"
+            "line": " src/math/trigonometry.js:238"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/math/trigonometry.js:296"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " src/math/trigonometry.js:332"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " src/math/trigonometry.js:347"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " src/math/trigonometry.js:362"
+            "line": " src/math/trigonometry.js:320"
         },
         {
             "message": "unknown tag: alt",
@@ -25026,19 +24881,19 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/typography/attributes.js:60"
+            "line": " src/typography/attributes.js:59"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/typography/attributes.js:98"
+            "line": " src/typography/attributes.js:96"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/typography/attributes.js:130"
+            "line": " src/typography/attributes.js:127"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/typography/attributes.js:165"
+            "line": " src/typography/attributes.js:161"
         },
         {
             "message": "unknown tag: alt",
@@ -25046,15 +24901,15 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/typography/loading_displaying.js:143"
+            "line": " src/typography/loading_displaying.js:142"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/typography/loading_displaying.js:202"
+            "line": " src/typography/loading_displaying.js:199"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/typography/p5.Font.js:43"
+            "line": " src/typography/p5.Font.js:45"
         },
         {
             "message": "unknown tag: alt",
@@ -25126,15 +24981,11 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/camera.js:161"
+            "line": " src/webgl/camera.js:159"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/camera.js:243"
-        },
-        {
-            "message": "unknown tag: alt",
-            "line": " src/webgl/interaction.js:5"
+            "line": " src/webgl/camera.js:239"
         },
         {
             "message": "unknown tag: alt",
@@ -25142,11 +24993,11 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/light.js:101"
+            "line": " src/webgl/light.js:93"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/light.js:207"
+            "line": " src/webgl/light.js:197"
         },
         {
             "message": "unknown tag: alt",
@@ -25154,51 +25005,51 @@ module.exports={
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/loading.js:215"
+            "line": " src/webgl/loading.js:212"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/webgl/material.js:57"
+            "line": " src/webgl/material.js:56"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/material.js:57"
+            "line": " src/webgl/material.js:56"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/material.js:150"
+            "line": " src/webgl/material.js:145"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/material.js:185"
+            "line": " src/webgl/material.js:178"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/material.js:275"
+            "line": " src/webgl/material.js:273"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/material.js:324"
+            "line": " src/webgl/material.js:320"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/p5.RendererGL.js:197"
+            "line": " src/webgl/p5.RendererGL.js:199"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/p5.RendererGL.js:439"
+            "line": " src/webgl/p5.RendererGL.js:438"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/p5.RendererGL.js:486"
+            "line": " src/webgl/p5.RendererGL.js:485"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/p5.RendererGL.js:526"
+            "line": " src/webgl/p5.RendererGL.js:525"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/webgl/primitives.js:14"
+            "line": " src/webgl/primitives.js:13"
         },
         {
             "message": "replacing incorrect tag: params with param",
@@ -25217,7 +25068,7 @@ module.exports={
             "line": " lib/addons/p5.sound.js:9222"
         },
         {
-            "message": "Missing item type\nConversions adapted from <http://www.easyrgb.com/en/math.php>.\n\nIn these functions, hue is always in the range [0,1); all other components\nare in the range [0,1]. 'Brightness' and 'value' are used interchangeably.",
+            "message": "Missing item type\nConversions adapted from <http://www.easyrgb.com/math.html>.\n\nIn these functions, hue is always in the range [0,1); all other components\nare in the range [0,1]. 'Brightness' and 'value' are used interchangeably.",
             "line": " src/color/color_conversion.js:10"
         },
         {
@@ -25246,31 +25097,31 @@ module.exports={
         },
         {
             "message": "Missing item type\nHue is the same in HSB and HSL, but the maximum value may be different.\nThis function will return the HSB-normalized saturation when supplied with\nan HSB color object, but will default to the HSL-normalized saturation\notherwise.",
-            "line": " src/color/p5.Color.js:406"
+            "line": " src/color/p5.Color.js:242"
         },
         {
             "message": "Missing item type\nSaturation is scaled differently in HSB and HSL. This function will return\nthe HSB saturation when supplied with an HSB color object, but will default\nto the HSL saturation otherwise.",
-            "line": " src/color/p5.Color.js:437"
+            "line": " src/color/p5.Color.js:273"
         },
         {
             "message": "Missing item type\nCSS named colors.",
-            "line": " src/color/p5.Color.js:456"
+            "line": " src/color/p5.Color.js:292"
         },
         {
             "message": "Missing item type\nThese regular expressions are used to build up the patterns for matching\nviable CSS color strings: fragmenting the regexes in this way increases the\nlegibility and comprehensibility of the code.\n\nNote that RGB values of .9 are not parsed by IE, but are supported here for\ncolor string consistency.",
-            "line": " src/color/p5.Color.js:609"
+            "line": " src/color/p5.Color.js:445"
         },
         {
             "message": "Missing item type\nFull color string patterns. The capture groups are necessary.",
-            "line": " src/color/p5.Color.js:622"
+            "line": " src/color/p5.Color.js:458"
         },
         {
             "message": "Missing item type\nFor a number of different inputs, returns a color formatted as [r, g, b, a]\narrays, with each component normalized between 0 and 1.",
-            "line": " src/color/p5.Color.js:759"
+            "line": " src/color/p5.Color.js:595"
         },
         {
             "message": "Missing item type\nFor HSB and HSL, interpret the gray level as a brightness/lightness\nvalue (they are equivalent when chroma is zero). For RGB, normalize the\ngray level according to the blue maximum.",
-            "line": " src/color/p5.Color.js:976"
+            "line": " src/color/p5.Color.js:812"
         },
         {
             "message": "Missing item type",
@@ -25294,11 +25145,11 @@ module.exports={
         },
         {
             "message": "Missing item type\nValidates parameters\nparam  {String}               func    the name of the function\nparam  {Array}                args    user input arguments\n\nexample:\n var a;\n ellipse(10,10,a,5);\nconsole ouput:\n \"It looks like ellipse received an empty variable in spot #2.\"\n\nexample:\n ellipse(10,\"foo\",5,5);\nconsole output:\n \"ellipse was expecting a number for parameter #1,\n          received \"foo\" instead.\"",
-            "line": " src/core/error_helpers.js:405"
+            "line": " src/core/error_helpers.js:397"
         },
         {
             "message": "Missing item type\nPrints out all the colors in the color pallete with white text.\nFor color blindness testing.",
-            "line": " src/core/error_helpers.js:457"
+            "line": " src/core/error_helpers.js:449"
         },
         {
             "message": "Missing item type\n_globalInit\n\nTODO: ???\nif sketch is on window\nassume \"global\" mode\nand instantiate p5 automatically\notherwise do nothing",
@@ -25306,19 +25157,19 @@ module.exports={
         },
         {
             "message": "Missing item type\nHelper fxn for sharing pixel methods",
-            "line": " src/core/p5.Element.js:1057"
+            "line": " src/core/p5.Element.js:1059"
         },
         {
             "message": "Missing item type\nResize our canvas element.",
-            "line": " src/core/p5.Renderer.js:113"
+            "line": " src/core/p5.Renderer.js:63"
         },
         {
             "message": "Missing item type\nHelper fxn to check font type (system or otf)",
-            "line": " src/core/p5.Renderer.js:182"
+            "line": " src/core/p5.Renderer.js:132"
         },
         {
             "message": "Missing item type\nHelper fxn to measure ascent and descent.\nAdapted from http://stackoverflow.com/a/25355178",
-            "line": " src/core/p5.Renderer.js:235"
+            "line": " src/core/p5.Renderer.js:185"
         },
         {
             "message": "Missing item type\np5.Renderer2D\nThe 2D graphics canvas renderer class.\nextends p5.Renderer",
@@ -25326,7 +25177,7 @@ module.exports={
         },
         {
             "message": "Missing item type\nGenerate a cubic Bezier representing an arc on the unit circle of total\nangle `size` radians, beginning `start` radians above the x-axis. Up to\nfour of these curves are combined to make a full arc.\n\nSee www.joecridge.me/bezier.pdf for an explanation of the method.",
-            "line": " src/core/p5.Renderer2D.js:395"
+            "line": " src/core/p5.Renderer2D.js:404"
         },
         {
             "message": "Missing item type\nshim for Uint8ClampedArray.slice\n(allows arrayCopy to work with pixels[])\nwith thanks to http://halfpapstudios.com/blog/tag/html5-canvas/\nEnumerable set to false to protect for...in from\nUint8ClampedArray.prototype pollution.",
@@ -25334,23 +25185,23 @@ module.exports={
         },
         {
             "message": "Missing item type\nprivate helper function to handle the user passing objects in\nduring construction or calls to create()",
-            "line": " src/data/p5.TypedDict.js:198"
+            "line": " src/data/p5.TypedDict.js:187"
         },
         {
             "message": "Missing item type\nprivate helper function to ensure that the user passed in valid\nvalues for the Dictionary type",
-            "line": " src/data/p5.TypedDict.js:378"
+            "line": " src/data/p5.TypedDict.js:367"
         },
         {
             "message": "Missing item type\nprivate helper function to ensure that the user passed in valid\nvalues for the Dictionary type",
-            "line": " src/data/p5.TypedDict.js:423"
+            "line": " src/data/p5.TypedDict.js:414"
         },
         {
             "message": "Missing item type\nprivate helper function for finding lowest or highest value\nthe argument 'flip' is used to flip the comparison arrow\nfrom 'less than' to 'greater than'",
-            "line": " src/data/p5.TypedDict.js:540"
+            "line": " src/data/p5.TypedDict.js:531"
         },
         {
             "message": "Missing item type\nprivate helper function for finding lowest or highest key\nthe argument 'flip' is used to flip the comparison arrow\nfrom 'less than' to 'greater than'",
-            "line": " src/data/p5.TypedDict.js:605"
+            "line": " src/data/p5.TypedDict.js:596"
         },
         {
             "message": "Missing item type\n_updatePAccelerations updates the pAcceleration values",
@@ -25434,7 +25285,7 @@ module.exports={
         },
         {
             "message": "Missing item type\nApply the current tint color to the input image, return the resulting\ncanvas.",
-            "line": " src/image/loading_displaying.js:425"
+            "line": " src/image/loading_displaying.js:420"
         },
         {
             "message": "Missing item type\nThis module defines the p5.Image class and P5 methods for\ndrawing images to the main display canvas.",
@@ -25442,23 +25293,23 @@ module.exports={
         },
         {
             "message": "Missing item type\nHelper fxn for sharing pixel methods",
-            "line": " src/image/p5.Image.js:221"
+            "line": " src/image/p5.Image.js:223"
         },
         {
             "message": "Missing item type\nGenerate a blob of file data as a url to prepare for download.\nAccepts an array of data, a filename, and an extension (optional).\nThis is a private function because it does not do any formatting,\nbut it is used by saveStrings, saveJSON, saveTable etc.",
-            "line": " src/io/files.js:1697"
+            "line": " src/io/files.js:1527"
         },
         {
             "message": "Missing item type\nReturns a file extension, or another string\nif the provided parameter has no extension.",
-            "line": " src/io/files.js:1766"
+            "line": " src/io/files.js:1595"
         },
         {
             "message": "Missing item type\nReturns true if the browser is Safari, false if not.\nSafari makes trouble for downloading files.",
-            "line": " src/io/files.js:1799"
+            "line": " src/io/files.js:1628"
         },
         {
             "message": "Missing item type\nHelper function, a callback for download that deletes\nan invisible anchor element from the DOM once the file\nhas been automatically downloaded.",
-            "line": " src/io/files.js:1811"
+            "line": " src/io/files.js:1640"
         },
         {
             "message": "Missing item type\nTable Options\n<p>Generic class for handling tabular data, typically from a\nCSV, TSV, or other sort of spreadsheet file.</p>\n<p>CSV files are\n<a href=\"http://en.wikipedia.org/wiki/Comma-separated_values\">\ncomma separated values</a>, often with the data in quotes. TSV\nfiles use tabs as separators, and usually don't bother with the\nquotes.</p>\n<p>File names should end with .csv if they're comma separated.</p>\n<p>A rough \"spec\" for CSV can be found\n<a href=\"http://tools.ietf.org/html/rfc4180\">here</a>.</p>\n<p>To load files, use the loadTable method.</p>\n<p>To save tables to your computer, use the save method\n or the saveTable method.</p>\n\nPossible options include:\n<ul>\n<li>csv - parse the table as comma-separated values\n<li>tsv - parse the table as tab-separated values\n<li>header - this table has a header (title) row\n</ul>",
@@ -25466,63 +25317,63 @@ module.exports={
         },
         {
             "message": "Missing item type\nThis method is called while the parsing of XML (when loadXML() is\ncalled). The difference between this method and the setContent()\nmethod defined later is that this one is used to set the content\nwhen the node in question has more nodes under it and so on and\nnot directly text content. While in the other one is used when\nthe node in question directly has text inside it.",
-            "line": " src/io/p5.XML.js:801"
+            "line": " src/io/p5.XML.js:767"
         },
         {
             "message": "Missing item type\nThis method is called while the parsing of XML (when loadXML() is\ncalled). The XML node is passed and its attributes are stored in the\np5.XML's attribute Object.",
-            "line": " src/io/p5.XML.js:818"
+            "line": " src/io/p5.XML.js:784"
         },
         {
             "message": "Missing item type\nMultiplies a vector by a scalar and returns a new vector.",
-            "line": " src/math/p5.Vector.js:1611"
+            "line": " src/math/p5.Vector.js:1090"
         },
         {
             "message": "Missing item type\nDivides a vector by a scalar and returns a new vector.",
-            "line": " src/math/p5.Vector.js:1638"
+            "line": " src/math/p5.Vector.js:1117"
         },
         {
             "message": "Missing item type\nCalculates the dot product of two vectors.",
-            "line": " src/math/p5.Vector.js:1665"
+            "line": " src/math/p5.Vector.js:1144"
         },
         {
             "message": "Missing item type\nCalculates the cross product of two vectors.",
-            "line": " src/math/p5.Vector.js:1679"
+            "line": " src/math/p5.Vector.js:1158"
         },
         {
             "message": "Missing item type\nCalculates the Euclidean distance between two points (considering a\npoint as a vector object).",
-            "line": " src/math/p5.Vector.js:1693"
+            "line": " src/math/p5.Vector.js:1172"
         },
         {
             "message": "Missing item type\nLinear interpolate a vector to another vector and return the result as a\nnew vector.",
-            "line": " src/math/p5.Vector.js:1708"
+            "line": " src/math/p5.Vector.js:1187"
         },
         {
             "message": "Missing item type\nHelper function to measure ascent and descent.",
-            "line": " src/typography/attributes.js:258"
+            "line": " src/typography/attributes.js:251"
         },
         {
             "message": "Missing item type\nReturns the set of opentype glyphs for the supplied string.\n\nNote that there is not a strict one-to-one mapping between characters\nand glyphs, so the list of returned glyphs can be larger or smaller\n than the length of the given string.",
-            "line": " src/typography/p5.Font.js:257"
+            "line": " src/typography/p5.Font.js:259"
         },
         {
             "message": "Missing item type\nReturns an opentype path for the supplied string and position.",
-            "line": " src/typography/p5.Font.js:272"
+            "line": " src/typography/p5.Font.js:274"
         },
         {
             "message": "Missing item type\nParse OBJ lines into model. For reference, this is what a simple model of a\nsquare might look like:\n\nv -0.5 -0.5 0.5\nv -0.5 -0.5 -0.5\nv -0.5 0.5 -0.5\nv -0.5 0.5 0.5\n\nf 4 3 2 1",
-            "line": " src/webgl/loading.js:106"
+            "line": " src/webgl/loading.js:103"
         },
         {
             "message": "Missing item type",
-            "line": " src/webgl/material.js:373"
+            "line": " src/webgl/material.js:367"
         },
         {
             "message": "Missing item type\nCreate a 2D array for establishing stroke connections",
-            "line": " src/webgl/p5.Geometry.js:192"
+            "line": " src/webgl/p5.Geometry.js:175"
         },
         {
             "message": "Missing item type\nCreate 4 vertices for each stroke line, two at the beginning position\nand two at the end position. These vertices are displaced relative to\nthat line's normal on the GPU",
-            "line": " src/webgl/p5.Geometry.js:213"
+            "line": " src/webgl/p5.Geometry.js:195"
         },
         {
             "message": "Missing item type",
@@ -25530,7 +25381,7 @@ module.exports={
         },
         {
             "message": "Missing item type\nPRIVATE",
-            "line": " src/webgl/p5.Matrix.js:673"
+            "line": " src/webgl/p5.Matrix.js:682"
         },
         {
             "message": "Missing item type\nWelcome to RendererGL Immediate Mode.\nImmediate mode is used for drawing custom shapes\nfrom a set of vertices.  Immediate Mode is activated\nwhen you call beginShape() & de-activated when you call endShape().\nImmediate mode is a style of programming borrowed\nfrom OpenGL's (now-deprecated) immediate mode.\nIt differs from p5.js' default, Retained Mode, which caches\ngeometries and buffers on the CPU to reduce the number of webgl\ndraw calls. Retained mode is more efficient & performative,\nhowever, Immediate Mode is useful for sketching quick\ngeometric ideas.",
@@ -25538,7 +25389,7 @@ module.exports={
         },
         {
             "message": "Missing item type\nEnd shape drawing and render vertices to screen.",
-            "line": " src/webgl/p5.RendererGL.Immediate.js:106"
+            "line": " src/webgl/p5.RendererGL.Immediate.js:104"
         },
         {
             "message": "Missing item type\ninitializes buffer defaults. runs each time a new geometry is\nregistered",
@@ -25554,87 +25405,91 @@ module.exports={
         },
         {
             "message": "Missing item type\nmodel view, projection, & normal\nmatrices",
-            "line": " src/webgl/p5.RendererGL.js:77"
+            "line": " src/webgl/p5.RendererGL.js:79"
         },
         {
             "message": "Missing item type\n[background description]",
-            "line": " src/webgl/p5.RendererGL.js:417"
+            "line": " src/webgl/p5.RendererGL.js:416"
         },
         {
             "message": "Missing item type\n[resize description]",
-            "line": " src/webgl/p5.RendererGL.js:654"
+            "line": " src/webgl/p5.RendererGL.js:652"
         },
         {
             "message": "Missing item type\nclears color and depth buffers\nwith r,g,b,a",
-            "line": " src/webgl/p5.RendererGL.js:684"
+            "line": " src/webgl/p5.RendererGL.js:682"
         },
         {
             "message": "Missing item type\n[translate description]",
-            "line": " src/webgl/p5.RendererGL.js:702"
+            "line": " src/webgl/p5.RendererGL.js:696"
         },
         {
             "message": "Missing item type\nScales the Model View Matrix by a vector",
-            "line": " src/webgl/p5.RendererGL.js:721"
+            "line": " src/webgl/p5.RendererGL.js:715"
+        },
+        {
+            "message": "Missing item type\npushes a copy of the model view matrix onto the\nMV Matrix stack.",
+            "line": " src/webgl/p5.RendererGL.js:751"
+        },
+        {
+            "message": "Missing item type\n[pop description]",
+            "line": " src/webgl/p5.RendererGL.js:760"
         },
         {
             "message": "Missing item type\nturn a two dimensional array into one dimensional array",
-            "line": " src/webgl/p5.RendererGL.js:1001"
+            "line": " src/webgl/p5.RendererGL.js:991"
         },
         {
             "message": "Missing item type\nturn a p5.Vector Array into a one dimensional number array",
-            "line": " src/webgl/p5.RendererGL.js:1038"
-        },
-        {
-            "message": "Missing item type\nensures that p5 is using a 3d renderer. throws an error if not.",
-            "line": " src/webgl/p5.RendererGL.js:1054"
+            "line": " src/webgl/p5.RendererGL.js:1028"
         },
         {
             "message": "Missing item type",
-            "line": " src/webgl/primitives.js:257"
+            "line": " src/webgl/primitives.js:250"
         },
         {
             "message": "Missing item type\nDraw a line given two points",
-            "line": " src/webgl/primitives.js:1037"
+            "line": " src/webgl/primitives.js:938"
         },
         {
             "message": "Missing item type\nHelper function for select and selectAll",
-            "line": " lib/addons/p5.dom.js:168"
+            "line": " lib/addons/p5.dom.js:162"
         },
         {
             "message": "Missing item type\nHelper function for getElement and getElements.",
-            "line": " lib/addons/p5.dom.js:184"
+            "line": " lib/addons/p5.dom.js:178"
         },
         {
             "message": "Missing item type\nHelpers for create methods.",
-            "line": " lib/addons/p5.dom.js:245"
+            "line": " lib/addons/p5.dom.js:239"
         },
         {
             "message": "Missing item type",
-            "line": " lib/addons/p5.dom.js:376"
+            "line": " lib/addons/p5.dom.js:370"
         },
         {
             "message": "Missing item type",
-            "line": " lib/addons/p5.dom.js:897"
+            "line": " lib/addons/p5.dom.js:891"
         },
         {
             "message": "Missing item type",
-            "line": " lib/addons/p5.dom.js:973"
+            "line": " lib/addons/p5.dom.js:967"
         },
         {
             "message": "Missing item type",
-            "line": " lib/addons/p5.dom.js:1013"
+            "line": " lib/addons/p5.dom.js:1007"
         },
         {
             "message": "Missing item type",
-            "line": " lib/addons/p5.dom.js:2581"
+            "line": " lib/addons/p5.dom.js:2572"
         },
         {
             "message": "Missing item type",
-            "line": " lib/addons/p5.dom.js:2647"
+            "line": " lib/addons/p5.dom.js:2638"
         },
         {
             "message": "Missing item type",
-            "line": " lib/addons/p5.dom.js:2709"
+            "line": " lib/addons/p5.dom.js:2700"
         },
         {
             "message": "Missing item type\np5.sound\nhttps://p5js.org/reference/#/libraries/p5.sound\n\nFrom the Processing Foundation and contributors\nhttps://github.com/processing/p5.js-sound/graphs/contributors\n\nMIT License (MIT)\nhttps://github.com/processing/p5.js-sound/blob/master/LICENSE\n\nSome of the many audio libraries & resources that inspire p5.sound:\n - TONE.js (c) Yotam Mann. Licensed under The MIT License (MIT). https://github.com/TONEnoTONE/Tone.js\n - buzz.js (c) Jay Salvat. Licensed under The MIT License (MIT). http://buzz.jaysalvat.com/\n - Boris Smus Web Audio API book, 2013. Licensed under the Apache License http://www.apache.org/licenses/LICENSE-2.0\n - wavesurfer.js https://github.com/katspaugh/wavesurfer.js\n - Web Audio Components by Jordan Santell https://github.com/web-audio-components\n - Wilm Thoben's Sound library for Processing https://github.com/processing/processing/tree/master/java/libraries/sound\n\n Web Audio API: http://w3.org/TR/webaudio/",
@@ -42234,7 +42089,7 @@ _dereq_('./core/init.js');
 
 module.exports = p5;
 
-},{"./color/creating_reading":15,"./color/p5.Color":16,"./color/setting":17,"./core/2d_primitives":18,"./core/attributes":19,"./core/constants":21,"./core/core":22,"./core/curves":23,"./core/environment":24,"./core/init.js":26,"./core/p5.Element":27,"./core/p5.Graphics":28,"./core/p5.Renderer2D":30,"./core/rendering":31,"./core/structure":33,"./core/transform":34,"./core/vertex":35,"./data/p5.TypedDict":36,"./events/acceleration":37,"./events/keyboard":38,"./events/mouse":39,"./events/touch":40,"./image/image":42,"./image/loading_displaying":43,"./image/p5.Image":44,"./image/pixels":45,"./io/files":46,"./io/p5.Table":47,"./io/p5.TableRow":48,"./io/p5.XML":49,"./math/calculation":50,"./math/math":51,"./math/noise":52,"./math/p5.Vector":53,"./math/random":54,"./math/trigonometry":55,"./typography/attributes":56,"./typography/loading_displaying":57,"./typography/p5.Font":58,"./utilities/array_functions":59,"./utilities/conversion":60,"./utilities/string_functions":61,"./utilities/time_date":62,"./webgl/camera":63,"./webgl/interaction":64,"./webgl/light":65,"./webgl/loading":66,"./webgl/material":67,"./webgl/p5.Geometry":68,"./webgl/p5.Matrix":69,"./webgl/p5.RendererGL":72,"./webgl/p5.RendererGL.Immediate":70,"./webgl/p5.RendererGL.Retained":71,"./webgl/p5.Shader":73,"./webgl/primitives":75}],14:[function(_dereq_,module,exports){
+},{"./color/creating_reading":15,"./color/p5.Color":16,"./color/setting":17,"./core/2d_primitives":18,"./core/attributes":19,"./core/constants":21,"./core/core":22,"./core/curves":23,"./core/environment":24,"./core/init.js":26,"./core/p5.Element":27,"./core/p5.Graphics":28,"./core/p5.Renderer2D":30,"./core/rendering":31,"./core/structure":33,"./core/transform":34,"./core/vertex":35,"./data/p5.TypedDict":36,"./events/acceleration":37,"./events/keyboard":38,"./events/mouse":39,"./events/touch":40,"./image/image":42,"./image/loading_displaying":43,"./image/p5.Image":44,"./image/pixels":45,"./io/files":46,"./io/p5.Table":47,"./io/p5.TableRow":48,"./io/p5.XML":49,"./math/calculation":50,"./math/math":51,"./math/noise":52,"./math/p5.Vector":53,"./math/random":55,"./math/trigonometry":56,"./typography/attributes":57,"./typography/loading_displaying":58,"./typography/p5.Font":59,"./utilities/array_functions":60,"./utilities/conversion":61,"./utilities/string_functions":62,"./utilities/time_date":63,"./webgl/camera":64,"./webgl/interaction":65,"./webgl/light":66,"./webgl/loading":67,"./webgl/material":68,"./webgl/p5.Geometry":69,"./webgl/p5.Matrix":70,"./webgl/p5.RendererGL":73,"./webgl/p5.RendererGL.Immediate":71,"./webgl/p5.RendererGL.Retained":72,"./webgl/p5.Shader":74,"./webgl/primitives":76}],14:[function(_dereq_,module,exports){
 /**
  * @module Conversion
  * @submodule Color Conversion
@@ -42245,7 +42100,7 @@ module.exports = p5;
 'use strict';
 
 /**
- * Conversions adapted from <http://www.easyrgb.com/en/math.php>.
+ * Conversions adapted from <http://www.easyrgb.com/math.html>.
  *
  * In these functions, hue is always in the range [0,1); all other components
  * are in the range [0,1]. 'Brightness' and 'value' are used interchangeably.
@@ -42803,6 +42658,7 @@ p5.prototype.brightness = function(c) {
 /**
  * @method color
  * @param  {String}        value   a color string
+ * @param  {Number}        [alpha]
  * @return {p5.Color}
  */
 /**
@@ -43131,6 +42987,7 @@ var color_conversion = _dereq_('./color_conversion');
  * conversion that has already been performed.
  *
  * @class p5.Color
+ * @constructor
  */
 p5.Color = function(pInst, vals) {
   // Record color mode and maxes at time of construction.
@@ -43149,20 +43006,13 @@ p5.Color = function(pInst, vals) {
 
   // Expose closest screen color.
   this._calculateLevels();
+  this.name = 'p5.Color'; // for friendly debugger system
   return this;
 };
 
 /**
- * This function returns the color formatted as a string. This can be useful
- * for debugging, or for using p5.js with other libraries.
  * @method toString
- * @param {String} [format] How the color string will be formatted.
- * Leaving this empty formats the string as rgba(r, g, b, a).
- * '#rgb' '#rgba' '#rrggbb' and '#rrggbbaa' format as hexadecimal color codes.
- * 'rgb' 'hsb' and 'hsl' return the color formatted in the specified color mode.
- * 'rgba' 'hsba' and 'hsla' are the same as above but with alpha channels.
- * 'rgb%' 'hsb%' 'hsl%' 'rgba%' 'hsba%' and 'hsla%' format as percentages.
- * @return {String} the formatted string
+ * @return {String}
  * @example
  * <div>
  * <code>
@@ -43176,8 +43026,6 @@ p5.Color = function(pInst, vals) {
  *
  * function draw() {
  *   text(myColor.toString(), 10, 10);
- *   text(myColor.toString('#rrggbb'), 10, 95);
- *   text(myColor.toString('rgba%'), 10, 180);
  * }
  * </code>
  * </div>
@@ -43185,166 +43033,10 @@ p5.Color = function(pInst, vals) {
  * @alt
  * canvas with text representation of color
  */
-p5.Color.prototype.toString = function(format) {
-  if (!this.hsba) this.hsba = color_conversion._rgbaToHSBA(this._array);
-  if (!this.hsla) this.hsla = color_conversion._rgbaToHSLA(this._array);
-
+p5.Color.prototype.toString = function() {
   var a = this.levels;
-  var f = this._array;
-  var alpha = f[3]; // String representation uses normalized alpha
-
-  switch (format) {
-    case '#rrggbb':
-      return '#'.concat(
-        a[0] < 16 ? '0'.concat(a[0].toString(16)) : a[0].toString(16),
-        a[1] < 16 ? '0'.concat(a[1].toString(16)) : a[1].toString(16),
-        a[2] < 16 ? '0'.concat(a[2].toString(16)) : a[2].toString(16)
-      );
-
-    case '#rrggbbaa':
-      return '#'.concat(
-        a[0] < 16 ? '0'.concat(a[0].toString(16)) : a[0].toString(16),
-        a[1] < 16 ? '0'.concat(a[1].toString(16)) : a[1].toString(16),
-        a[2] < 16 ? '0'.concat(a[2].toString(16)) : a[2].toString(16),
-        a[3] < 16 ? '0'.concat(a[2].toString(16)) : a[3].toString(16)
-      );
-
-    case '#rgb':
-      return '#'.concat(
-        Math.round(f[0] * 15).toString(16),
-        Math.round(f[1] * 15).toString(16),
-        Math.round(f[2] * 15).toString(16)
-      );
-
-    case '#rgba':
-      return '#'.concat(
-        Math.round(f[0] * 15).toString(16),
-        Math.round(f[1] * 15).toString(16),
-        Math.round(f[2] * 15).toString(16),
-        Math.round(f[3] * 15).toString(16)
-      );
-
-    case 'rgb':
-      return 'rgb('.concat(a[0], ', ', a[1], ', ', a[2], ')');
-
-    case 'rgb%':
-      return 'rgb('.concat(
-        (100 * f[0]).toPrecision(3),
-        '%, ',
-        (100 * f[1]).toPrecision(3),
-        '%, ',
-        (100 * f[2]).toPrecision(3),
-        '%)'
-      );
-
-    case 'rgba%':
-      return 'rgba('.concat(
-        (100 * f[0]).toPrecision(3),
-        '%, ',
-        (100 * f[1]).toPrecision(3),
-        '%, ',
-        (100 * f[2]).toPrecision(3),
-        '%, ',
-        (100 * f[3]).toPrecision(3),
-        '%)'
-      );
-
-    case 'hsb':
-    case 'hsv':
-      return 'hsb('.concat(
-        this.hsba[0] * this.maxes[constants.HSB][0],
-        ', ',
-        this.hsba[1] * this.maxes[constants.HSB][1],
-        ', ',
-        this.hsba[2] * this.maxes[constants.HSB][2],
-        ')'
-      );
-
-    case 'hsb%':
-    case 'hsv%':
-      return 'hsb('.concat(
-        (100 * this.hsba[0]).toPrecision(3),
-        '%, ',
-        (100 * this.hsba[1]).toPrecision(3),
-        '%, ',
-        (100 * this.hsba[2]).toPrecision(3),
-        '%)'
-      );
-
-    case 'hsba':
-    case 'hsva':
-      return 'hsba('.concat(
-        this.hsba[0] * this.maxes[constants.HSB][0],
-        ', ',
-        this.hsba[1] * this.maxes[constants.HSB][1],
-        ', ',
-        this.hsba[2] * this.maxes[constants.HSB][2],
-        ', ',
-        alpha,
-        ')'
-      );
-
-    case 'hsba%':
-    case 'hsva%':
-      return 'hsba('.concat(
-        (100 * this.hsba[0]).toPrecision(3),
-        '%, ',
-        (100 * this.hsba[1]).toPrecision(3),
-        '%, ',
-        (100 * this.hsba[2]).toPrecision(3),
-        '%, ',
-        (100 * alpha).toPrecision(3),
-        '%)'
-      );
-
-    case 'hsl':
-      return 'hsl('.concat(
-        this.hsla[0] * this.maxes[constants.HSL][0],
-        ', ',
-        this.hsla[1] * this.maxes[constants.HSL][1],
-        ', ',
-        this.hsla[2] * this.maxes[constants.HSL][2],
-        ')'
-      );
-
-    case 'hsl%':
-      return 'hsl('.concat(
-        (100 * this.hsla[0]).toPrecision(3),
-        '%, ',
-        (100 * this.hsla[1]).toPrecision(3),
-        '%, ',
-        (100 * this.hsla[2]).toPrecision(3),
-        '%)'
-      );
-
-    case 'hsla':
-      return 'hsla('.concat(
-        this.hsla[0] * this.maxes[constants.HSL][0],
-        ', ',
-        this.hsla[1] * this.maxes[constants.HSL][1],
-        ', ',
-        this.hsla[2] * this.maxes[constants.HSL][2],
-        ', ',
-        alpha,
-        ')'
-      );
-
-    case 'hsla%':
-      return 'hsl('.concat(
-        (100 * this.hsla[0]).toPrecision(3),
-        '%, ',
-        (100 * this.hsla[1]).toPrecision(3),
-        '%, ',
-        (100 * this.hsla[2]).toPrecision(3),
-        '%, ',
-        (100 * alpha).toPrecision(3),
-        '%)'
-      );
-
-    case 'rgba':
-    default:
-      return 'rgba(' + a[0] + ',' + a[1] + ',' + a[2] + ',' + alpha + ')';
-  }
+  var alpha = this._array[3]; // String representation uses normalized alpha.
+  return 'rgba(' + a[0] + ',' + a[1] + ',' + a[2] + ',' + alpha + ')';
 };
 
 /**
@@ -44137,7 +43829,7 @@ _dereq_('./p5.Color');
  * <br><br>
  * A p5.Color object can also be provided to set the background color.
  * <br><br>
- * A p5.Image can also be provided to set the background image.
+ * A p5.Image can also be provided to set the background iamge.
  *
  * @method background
  * @param {p5.Color} color     any value created by the color() function
@@ -44577,12 +44269,6 @@ p5.prototype.colorMode = function(mode, max1, max2, max3, maxA) {
 /**
  * @method fill
  * @param  {String}        value   a color string
- * @chainable
- */
-
-/**
- * @method fill
- * @param  {Number}        gray   a gray value
  * @param  {Number}        [alpha]
  * @chainable
  */
@@ -44829,12 +44515,6 @@ p5.prototype.noStroke = function() {
 /**
  * @method stroke
  * @param  {String}        value   a color string
- * @chainable
- */
-
-/**
- * @method stroke
- * @param  {Number}        gray   a gray value
  * @param  {Number}        [alpha]
  * @chainable
  */
@@ -44946,9 +44626,10 @@ p5.prototype.arc = function(x, y, w, h, start, stop, mode) {
   if (!this._renderer._doStroke && !this._renderer._doFill) {
     return this;
   }
-
-  start = this._toRadians(start);
-  stop = this._toRadians(stop);
+  if (this._angleMode === constants.DEGREES) {
+    start = this.radians(start);
+    stop = this.radians(stop);
+  }
 
   // Make all angles positive...
   while (start < 0) {
@@ -45025,9 +44706,10 @@ p5.prototype.arc = function(x, y, w, h, start, stop, mode) {
  * @param  {Number} y
  * @param  {Number} w
  * @param  {Number} h
- * @param  {Integer} detail number of radial sectors to draw
+ * @param  {Integer} detailX number of segments in the x-direction
+ * @param  {Integer} [detailY] number of segments in the y-direction
  */
-p5.prototype.ellipse = function(x, y, w, h, detailX) {
+p5.prototype.ellipse = function(x, y, w, h, detailX, detailY) {
   p5._validateParameters('ellipse', arguments);
 
   // p5 supports negative width and heights for rects
@@ -45044,7 +44726,7 @@ p5.prototype.ellipse = function(x, y, w, h, detailX) {
 
   if (this._renderer._doStroke || this._renderer._doFill) {
     var vals = canvas.modeAdjust(x, y, w, h, this._renderer._ellipseMode);
-    this._renderer.ellipse([vals.x, vals.y, vals.w, vals.h, detailX]);
+    this._renderer.ellipse([vals.x, vals.y, vals.w, vals.h, detailX, detailY]);
   }
 
   return this;
@@ -45254,24 +44936,12 @@ p5.prototype.quad = function() {
  * @param  {Integer} [detailY] number of segments in the y-direction
  * @chainable
  */
-p5.prototype.rect = function() {
+p5.prototype.rect = function(x, y, w, h, detailX, detailY) {
   p5._validateParameters('rect', arguments);
 
   if (this._renderer._doStroke || this._renderer._doFill) {
-    var vals = canvas.modeAdjust(
-      arguments[0],
-      arguments[1],
-      arguments[2],
-      arguments[3],
-      this._renderer._rectMode
-    );
-    var args = [vals.x, vals.y, vals.w, vals.h];
-    // append the additional arguments (either cornder radii, or
-    // segment details) to the argument list
-    for (var i = 4; i < arguments.length; i++) {
-      args[i] = arguments[i];
-    }
-    this._renderer.rect(args);
+    var vals = canvas.modeAdjust(x, y, w, h, this._renderer._rectMode);
+    this._renderer.rect([vals.x, vals.y, vals.w, vals.h, detailX, detailY]);
   }
 
   return this;
@@ -46260,13 +45930,10 @@ var p5 = function(sketch, node, sync) {
 
   /**
    * Called directly before setup(), the preload() function is used to handle
-   * asynchronous loading of external files in a blocking way. If a preload 
-   * function is defined, setup() will wait until any load calls within have
-   * finished. Nothing besides load calls (loadImage, loadJSON, loadFont,
-   * loadStrings, etc.) should be inside preload function. If asynchronous
-   * loading is preferred, the load methods can instead be called in setup()
-   * or anywhere else with the use of a callback parameter.
-   * <br><br>
+   * asynchronous loading of external files. If a preload function is
+   * defined, setup() will wait until any load calls within have finished.
+   * Nothing besides load calls should be inside preload (loadImage,
+   * loadJSON, loadFont, loadStrings, etc).<br><br>
    * By default the text "loading..." will be displayed. To make your own
    * loading page, include an HTML element with id "p5_loading" in your
    * page. More information <a href="http://bit.ly/2kQ6Nio">here</a>.
@@ -46352,7 +46019,7 @@ var p5 = function(sketch, node, sync) {
    * <br><br>
    * It is important to note that the drawing coordinate system will be reset
    * at the beginning of each draw() call. If any transformations are performed
-   * within draw() (ex: scale, rotate, translate), their effects will be
+   * within draw() (ex: scale, rotate, translate, their effects will be
    * undone at the beginning of draw(), so transformations will not accumulate
    * over time. On the other hand, styling applied (ex: fill, stroke, etc) will
    * remain in effect.
@@ -46453,7 +46120,7 @@ var p5 = function(sketch, node, sync) {
     var userPreload = this.preload || window.preload; // look for "preload"
     if (userPreload) {
       // Setup loading screen
-      // Set loading screen into dom if not present
+      // Set loading scfeen into dom if not present
       // Otherwise displays and removes user provided loading screen
       var loadingScreen = document.getElementById(this._loadingScreenId);
       if (!loadingScreen) {
@@ -46471,10 +46138,7 @@ var p5 = function(sketch, node, sync) {
         var obj = this._preloadMethods[method];
         //it's p5, check if it's global or instance
         if (obj === p5.prototype || obj === p5) {
-          if (this._isGlobal) {
-            window[method] = this._wrapPreload(this, method);
-          }
-          obj = this;
+          obj = this._isGlobal ? window : this;
         }
         this._registeredPreloadMethods[method] = obj[method];
         obj[method] = this._wrapPreload(obj, method);
@@ -46642,12 +46306,6 @@ var p5 = function(sketch, node, sync) {
    *
    */
   this.remove = function() {
-    var loadingScreen = document.getElementById(this._loadingScreenId);
-    if (loadingScreen) {
-      loadingScreen.parentNode.removeChild(loadingScreen);
-      // Add 1 to preload counter to prevent the sketch ever executing setup()
-      this._incrementPreload();
-    }
     if (this._curElement) {
       // stop draw
       this._loop = false;
@@ -46678,27 +46336,28 @@ var p5 = function(sketch, node, sync) {
           f.call(self);
         }
       });
-    }
-    // remove window bound properties and methods
-    if (this._isGlobal) {
-      for (var p in p5.prototype) {
-        try {
-          delete window[p];
-        } catch (x) {
-          window[p] = undefined;
-        }
-      }
-      for (var p2 in this) {
-        if (this.hasOwnProperty(p2)) {
+
+      // remove window bound properties and methods
+      if (this._isGlobal) {
+        for (var p in p5.prototype) {
           try {
-            delete window[p2];
+            delete window[p];
           } catch (x) {
-            window[p2] = undefined;
+            window[p] = undefined;
+          }
+        }
+        for (var p2 in this) {
+          if (this.hasOwnProperty(p2)) {
+            try {
+              delete window[p2];
+            } catch (x) {
+              window[p2] = undefined;
+            }
           }
         }
       }
-      p5.instance = null;
     }
+    // window.p5 = undefined;
   }.bind(this);
 
   // call any registered init functions
@@ -46813,7 +46472,6 @@ p5.prototype._preloadMethods = {
   loadImage: p5.prototype,
   loadStrings: p5.prototype,
   loadXML: p5.prototype,
-  loadBytes: p5.prototype,
   loadShape: p5.prototype,
   loadTable: p5.prototype,
   loadFont: p5.prototype,
@@ -47017,36 +46675,20 @@ p5.prototype.bezier = function() {
  *
  * The default value is 20.
  *
- * This function is only useful when using the WEBGL renderer
- * as the default canvas renderer does not use this information.
- *
  * @method bezierDetail
  * @param {Number} detail resolution of the curves
  * @chainable
  * @example
- * <div modernizr='webgl'>
+ * <div>
  * <code>
- * function setup() {
- *   createCanvas(100, 100, WEBGL);
- *   noFill();
- *
- *   bezierDetail(5);
- * }
- *
- * function draw() {
- *   background(200);
- *
- *   // prettier-ignore
- *   bezier(-40, -40, 0,
- *           90, -40, 0,
- *          -90,  40, 0,
- *           40,  40, 0);
- * }
+ * background(204);
+ * bezierDetail(50);
+ * bezier(85, 20, 10, 10, 90, 90, 15, 80);
  * </code>
  * </div>
  *
  * @alt
- * stretched black s-shape with a low level of bezier detail
+ * stretched black s-shape with 7 5x5 ellipses and orange lines along the shape.
  *
  */
 p5.prototype.bezierDetail = function(d) {
@@ -47285,35 +46927,20 @@ p5.prototype.curve = function() {
  *
  * The default value is 20.
  *
- * This function is only useful when using the WEBGL renderer
- * as the default canvas renderer does not use this
- * information.
- *
  * @method curveDetail
  * @param {Number} resolution of the curves
  * @chainable
  * @example
- * <div modernizr='webgl'>
+ * <div>
  * <code>
- * function setup() {
- *   createCanvas(100, 100, WEBGL);
- *
- *   curveDetail(5);
- * }
- * function draw() {
- *   background(200);
- *
- *   // prettier-ignore
- *   curve( 250, 600, 0,
- *          -30,  40, 0,
- *           30,  30, 0,
- *         -250, 600, 0);
- * }
+ * background(204);
+ * curveDetail(20);
+ * curve(5, 26, 5, 26, 73, 24, 73, 61);
  * </code>
  * </div>
  *
  * @alt
- * white arch shape with a low level of curve detail.
+ * white arch shape in top-mid canvas.
  *
  */
 p5.prototype.curveDetail = function(d) {
@@ -47506,8 +47133,8 @@ var _windowPrint = window.print;
  * @alt
  * default grey canvas
  */
-p5.prototype.print = function() {
-  if (!arguments.length) {
+p5.prototype.print = function(args) {
+  if (typeof args === 'undefined') {
     _windowPrint();
   } else {
     console.log.apply(console, arguments);
@@ -48115,7 +47742,7 @@ p5.prototype.getURLPath = function() {
  * @method getURLParams
  * @return {Object} URL params
  * @example
- * <div class='norender notest'>
+ * <div class='norender'>
  * <code>
  * // Example: http://p5js.org?year=2014&month=May&day=15
  *
@@ -48318,7 +47945,7 @@ if (typeof IS_MINIFIED !== 'undefined') {
         overloads.push(queryResult[0].overloads[i].params);
       }
     } else {
-      overloads.push(queryResult[0].params || []);
+      overloads.push(queryResult[0].params);
     }
 
     var mapConstants = {};
@@ -48389,17 +48016,9 @@ if (typeof IS_MINIFIED !== 'undefined') {
             return { name: type, builtin: lowerType };
           }
 
-          // find type's prototype
+          // p5 class type
           var t = window;
-          var typeParts = type.split('.');
-
-          // special-case 'p5' since it may be non-global
-          if (typeParts[0] === 'p5') {
-            t = p5;
-            typeParts.shift();
-          }
-
-          typeParts.forEach(function(p) {
+          type.split('.').forEach(function(p) {
             t = t && t[p];
           });
           if (t) {
@@ -48816,6 +48435,7 @@ var p5 = _dereq_('./core');
  * or in the p5.dom library, createDiv, createImg, createInput, etc.
  *
  * @class p5.Element
+ * @constructor
  * @param {String} elt DOM node that is wrapped
  * @param {p5} [pInst] pointer to p5 instance
  */
@@ -48843,6 +48463,7 @@ p5.Element = function(elt, pInst) {
   this._events = {};
   this.width = this.elt.offsetWidth;
   this.height = this.elt.offsetHeight;
+  this.name = 'p5.Element'; // for friendly debugger system
 };
 
 /**
@@ -48860,7 +48481,7 @@ p5.Element = function(elt, pInst) {
  * @chainable
  *
  * @example
- * <div class="norender notest"><code>
+ * <div class="norender"><code>
  * // in the html file:
  * // &lt;div id="myContainer">&lt;/div>
  *
@@ -48879,7 +48500,7 @@ p5.Element = function(elt, pInst) {
  * var div1 = createDiv('this is the child');
  * div1.parent('apples'); // use id
  * </code></div>
- * <div class='norender notest'><code>
+ * <div class='norender'><code>
  * var elt = document.getElementById('myParentDiv');
  * var div1 = createDiv('this is the child');
  * div1.parent(elt); // use element from page
@@ -49881,6 +49502,7 @@ var constants = _dereq_('./constants');
  * extensive, but mirror the normal drawing API for p5.
  *
  * @class p5.Graphics
+ * @constructor
  * @extends p5.Element
  * @param {Number} w            width
  * @param {Number} h            height
@@ -49921,73 +49543,19 @@ p5.Graphics = function(w, h, renderer, pInst) {
 
   this._renderer.resize(w, h);
   this._renderer._applyDefaults();
+
+  this.name = 'p5.Graphics'; // for friendly debugger system
   return this;
 };
 
 p5.Graphics.prototype = Object.create(p5.Element.prototype);
 
 /**
- * Removes a Graphics object from the page and frees any resources
- * associated with it.
- *
  * @method remove
- *
- * @example
- * <div class='norender'><code>
- * var bg;
- * function setup() {
- *   bg = createCanvas(100, 100);
- *   bg.background(0);
- *   image(bg, 0, 0);
- *   bg.remove();
- * }
- * </code></div>
- *
- * <div><code>
- * var bg;
- * function setup() {
- *   pixelDensity(1);
- *   createCanvas(100, 100);
- *   stroke(255);
- *   fill(0);
- *
- *   // create and draw the background image
- *   bg = createGraphics(100, 100);
- *   bg.background(200);
- *   bg.ellipse(50, 50, 80, 80);
- * }
- * function draw() {
- *   var t = millis() / 1000;
- *   // draw the background
- *   if (bg) {
- *     image(bg, frameCount % 100, 0);
- *     image(bg, frameCount % 100 - 100, 0);
- *   }
- *   // draw the foreground
- *   var p = p5.Vector.fromAngle(t, 35).add(50, 50);
- *   ellipse(p.x, p.y, 30);
- * }
- * function mouseClicked() {
- *   // remove the background
- *   if (bg) {
- *     bg.remove();
- *     bg = null;
- *   }
- * }
- * </code></div>
- *
- * @alt
- * no image
- * a multi-colored circle moving back and forth over a scrolling background.
- *
  */
 p5.Graphics.prototype.remove = function() {
   if (this.elt.parentNode) {
     this.elt.parentNode.removeChild(this.elt);
-  }
-  var idx = this._pInst._elements.indexOf(this);
-  if (idx !== -1) {
-    this._pInst._elements.splice(idx, 1);
   }
   for (var elt_ev in this._events) {
     this.elt.removeEventListener(elt_ev, this._events[elt_ev]);
@@ -50022,6 +49590,7 @@ var constants = _dereq_('../core/constants');
  */
 p5.Renderer = function(elt, pInst, isMainCanvas) {
   p5.Element.call(this, elt, pInst);
+  this.name = 'p5.Renderer'; // for friendly debugger system
   this.canvas = elt;
   this._pInst = pInst;
   if (isMainCanvas) {
@@ -50057,57 +49626,6 @@ p5.Renderer = function(elt, pInst, isMainCanvas) {
 };
 
 p5.Renderer.prototype = Object.create(p5.Element.prototype);
-
-// the renderer should return a 'style' object that it wishes to
-// store on the push stack.
-p5.Renderer.prototype.push = function() {
-  return {
-    properties: {
-      _doStroke: this._doStroke,
-      _strokeSet: this._strokeSet,
-      _doFill: this._doFill,
-      _fillSet: this._fillSet,
-      _tint: this._tint,
-      _imageMode: this._imageMode,
-      _rectMode: this._rectMode,
-      _ellipseMode: this._ellipseMode,
-      _textFont: this._textFont,
-      _textLeading: this._textLeading,
-      _textSize: this._textSize,
-      _textStyle: this._textStyle
-    }
-  };
-};
-
-// this is implementation of Object.assign() which is unavailable in
-// IE11 and (non-Chrome) Android browsers.
-// The assign() method is used to copy the values of all enumerable
-// own properties from one or more source objects to a target object.
-// It will return the target object.
-function assign(to, firstSource) {
-  for (var i = 1; i < arguments.length; i++) {
-    var nextSource = arguments[i];
-    if (nextSource === undefined || nextSource === null) {
-      continue;
-    }
-
-    for (var nextKey in nextSource)
-      if (nextSource.hasOwnProperty(nextKey)) {
-        to[nextKey] = nextSource[nextKey];
-      }
-  }
-  return to;
-}
-
-// a pop() operation is in progress
-// the renderer is passed the 'style' object that it returned
-// from its push() method.
-p5.Renderer.prototype.pop = function(style) {
-  if (style.properties) {
-    // copy the style properties back into the renderer
-    assign(this, style.properties);
-  }
-};
 
 /**
  * Resize our canvas element.
@@ -50272,6 +49790,7 @@ var styleEmpty = 'rgba(0,0,0,0)';
 
 p5.Renderer2D = function(elt, pInst, isMainCanvas) {
   p5.Renderer.call(this, elt, pInst, isMainCanvas);
+  this.name = 'p5.Renderer2D'; // for friendly debugger system
   this.drawingContext = this.canvas.getContext('2d');
   this._pInst._setProperty('drawingContext', this.drawingContext);
   return this;
@@ -50323,10 +49842,7 @@ p5.Renderer2D.prototype.background = function() {
 };
 
 p5.Renderer2D.prototype.clear = function() {
-  this.drawingContext.save();
-  this.drawingContext.setTransform(1, 0, 0, 1, 0, 0);
   this.drawingContext.clearRect(0, 0, this.width, this.height);
-  this.drawingContext.restore();
 };
 
 p5.Renderer2D.prototype.fill = function() {
@@ -50543,30 +50059,38 @@ p5.Renderer2D.prototype.get = function(x, y, w, h) {
 };
 
 p5.Renderer2D.prototype.loadPixels = function() {
-  var ctx = this._pInst || this; // if called by p5.Image
-  var pd = ctx._pixelDensity;
+  var pd = this._pixelDensity || this._pInst._pixelDensity;
   var w = this.width * pd;
   var h = this.height * pd;
   var imageData = this.drawingContext.getImageData(0, 0, w, h);
   // @todo this should actually set pixels per object, so diff buffers can
   // have diff pixel arrays.
-  ctx._setProperty('imageData', imageData);
-  ctx._setProperty('pixels', imageData.data);
+  if (this._pInst) {
+    this._pInst._setProperty('imageData', imageData);
+    this._pInst._setProperty('pixels', imageData.data);
+  } else {
+    // if called by p5.Image
+    this._setProperty('imageData', imageData);
+    this._setProperty('pixels', imageData.data);
+  }
 };
 
 p5.Renderer2D.prototype.set = function(x, y, imgOrCol) {
   // round down to get integer numbers
   x = Math.floor(x);
   y = Math.floor(y);
-  var ctx = this._pInst || this;
   if (imgOrCol instanceof p5.Image) {
     this.drawingContext.save();
     this.drawingContext.setTransform(1, 0, 0, 1, 0, 0);
-    this.drawingContext.scale(ctx._pixelDensity, ctx._pixelDensity);
+    this.drawingContext.scale(
+      this._pInst._pixelDensity,
+      this._pInst._pixelDensity
+    );
     this.drawingContext.drawImage(imgOrCol.canvas, x, y);
-    this.loadPixels.call(ctx);
+    this.loadPixels.call(this._pInst);
     this.drawingContext.restore();
   } else {
+    var ctx = this._pInst || this;
     var r = 0,
       g = 0,
       b = 0,
@@ -50624,8 +50148,7 @@ p5.Renderer2D.prototype.set = function(x, y, imgOrCol) {
 };
 
 p5.Renderer2D.prototype.updatePixels = function(x, y, w, h) {
-  var ctx = this._pInst || this;
-  var pd = ctx._pixelDensity;
+  var pd = this._pixelDensity || this._pInst._pixelDensity;
   if (
     x === undefined &&
     y === undefined &&
@@ -50640,7 +50163,11 @@ p5.Renderer2D.prototype.updatePixels = function(x, y, w, h) {
   w *= pd;
   h *= pd;
 
-  this.drawingContext.putImageData(ctx.imageData, x, y, 0, 0, w, h);
+  if (this._pInst) {
+    this.drawingContext.putImageData(this._pInst.imageData, x, y, 0, 0, w, h);
+  } else {
+    this.drawingContext.putImageData(this.imageData, x, y, 0, 0, w, h);
+  }
 };
 
 //////////////////////////////////////////////
@@ -51364,8 +50891,8 @@ p5.Renderer2D.prototype.resetMatrix = function() {
   return this;
 };
 
-p5.Renderer2D.prototype.rotate = function(rad) {
-  this.drawingContext.rotate(rad);
+p5.Renderer2D.prototype.rotate = function(r) {
+  this.drawingContext.rotate(r);
 };
 
 p5.Renderer2D.prototype.scale = function(x, y) {
@@ -51373,22 +50900,25 @@ p5.Renderer2D.prototype.scale = function(x, y) {
   return this;
 };
 
-p5.Renderer2D.prototype.shearX = function(rad) {
-  this.drawingContext.transform(1, 0, Math.tan(rad), 1, 0, 0);
+p5.Renderer2D.prototype.shearX = function(angle) {
+  if (this._pInst._angleMode === constants.DEGREES) {
+    // undoing here, because it gets redone in tan()
+    angle = this._pInst.degrees(angle);
+  }
+  this.drawingContext.transform(1, 0, this._pInst.tan(angle), 1, 0, 0);
   return this;
 };
 
-p5.Renderer2D.prototype.shearY = function(rad) {
-  this.drawingContext.transform(1, Math.tan(rad), 0, 1, 0, 0);
+p5.Renderer2D.prototype.shearY = function(angle) {
+  if (this._pInst._angleMode === constants.DEGREES) {
+    // undoing here, because it gets redone in tan()
+    angle = this._pInst.degrees(angle);
+  }
+  this.drawingContext.transform(1, this._pInst.tan(angle), 0, 1, 0, 0);
   return this;
 };
 
 p5.Renderer2D.prototype.translate = function(x, y) {
-  // support passing a vector as the 1st parameter
-  if (x instanceof p5.Vector) {
-    y = x.y;
-    x = x.x;
-  }
   this.drawingContext.translate(x, y);
   return this;
 };
@@ -51420,9 +50950,7 @@ p5.Renderer2D.prototype.text = function(str, x, y, maxWidth, maxHeight) {
     return;
   }
 
-  if (typeof str === 'undefined') {
-    return;
-  } else if (typeof str !== 'string') {
+  if (typeof str !== 'string') {
     str = str.toString();
   }
 
@@ -51628,30 +51156,15 @@ p5.Renderer2D.prototype._applyTextProperties = function() {
 // STRUCTURE
 //////////////////////////////////////////////
 
-// a push() operation is in progress.
-// the renderer should return a 'style' object that it wishes to
-// store on the push stack.
-// derived renderers should call the base class' push() method
-// to fetch the base style object.
 p5.Renderer2D.prototype.push = function() {
   this.drawingContext.save();
-
-  // get the base renderer style
-  return p5.Renderer.prototype.push.apply(this);
 };
 
-// a pop() operation is in progress
-// the renderer is passed the 'style' object that it returned
-// from its push() method.
-// derived renderers should pass this object to their base
-// class' pop method
-p5.Renderer2D.prototype.pop = function(style) {
+p5.Renderer2D.prototype.pop = function() {
   this.drawingContext.restore();
   // Re-cache the fill / stroke state
   this._cachedFillStyle = this.drawingContext.fillStyle;
   this._cachedStrokeStyle = this.drawingContext.strokeStyle;
-
-  p5.Renderer.prototype.pop.call(this, style);
 };
 
 module.exports = p5.Renderer2D;
@@ -51671,7 +51184,6 @@ _dereq_('./p5.Graphics');
 _dereq_('./p5.Renderer2D');
 _dereq_('../webgl/p5.RendererGL');
 var defaultId = 'defaultCanvas0'; // this gets set again in createCanvas
-var defaultClass = 'p5Canvas';
 
 /**
  * Creates a canvas element in the document, and sets the dimensions of it
@@ -51692,7 +51204,7 @@ var defaultClass = 'p5Canvas';
  * @param  {Number} w width of the canvas
  * @param  {Number} h height of the canvas
  * @param  {Constant} [renderer] either P2D or WEBGL
- * @return {p5.Renderer}
+ * @return {HTMLCanvasElement} canvas generated
  * @example
  * <div>
  * <code>
@@ -51727,7 +51239,6 @@ p5.prototype.createCanvas = function(w, h, renderer) {
     }
     c = document.createElement('canvas');
     c.id = defaultId;
-    c.classList.add(defaultClass);
   } else {
     if (!this._defaultGraphicsCreated) {
       c = document.createElement('canvas');
@@ -51737,7 +51248,6 @@ p5.prototype.createCanvas = function(w, h, renderer) {
       }
       defaultId = 'defaultCanvas' + i;
       c.id = defaultId;
-      c.classList.add(defaultClass);
     } else {
       // resize the default canvas if new one is created
       c = this.canvas;
@@ -51896,12 +51406,12 @@ p5.prototype.createGraphics = function(w, h, renderer) {
  * with the ones of pixels already in the display window (B):
  * <ul>
  * <li><code>BLEND</code> - linear interpolation of colours: C =
- * A\*factor + B. This is the default blending mode.</li>
+ * A*factor + B. This is the default blending mode.</li>
  * <li><code>ADD</code> - sum of A and B</li>
  * <li><code>DARKEST</code> - only the darkest colour succeeds: C =
- * min(A\*factor, B).</li>
+ * min(A*factor, B).</li>
  * <li><code>LIGHTEST</code> - only the lightest colour succeeds: C =
- * max(A\*factor, B).</li>
+ * max(A*factor, B).</li>
  * <li><code>DIFFERENCE</code> - subtract colors from underlying image.</li>
  * <li><code>EXCLUSION</code> - similar to <code>DIFFERENCE</code>, but less
  * extreme.</li>
@@ -51982,7 +51492,7 @@ p5.prototype.blendMode = function(mode) {
 
 module.exports = p5;
 
-},{"../webgl/p5.RendererGL":72,"./constants":21,"./core":22,"./p5.Graphics":28,"./p5.Renderer2D":30}],32:[function(_dereq_,module,exports){
+},{"../webgl/p5.RendererGL":73,"./constants":21,"./core":22,"./p5.Graphics":28,"./p5.Renderer2D":30}],32:[function(_dereq_,module,exports){
 'use strict';
 
 // requestAnim shim layer by Paul Irish
@@ -52263,11 +51773,25 @@ function assign(dest, varArgs) {
  *
  */
 p5.prototype.push = function() {
+  this._renderer.push();
   this._styles.push({
     props: {
       _colorMode: this._colorMode
     },
-    renderer: this._renderer.push()
+    renderer: {
+      _doStroke: this._renderer._doStroke,
+      _strokeSet: this._renderer._strokeSet,
+      _doFill: this._renderer._doFill,
+      _fillSet: this._renderer._fillSet,
+      _tint: this._renderer._tint,
+      _imageMode: this._renderer._imageMode,
+      _rectMode: this._renderer._rectMode,
+      _ellipseMode: this._renderer._ellipseMode,
+      _textFont: this._renderer._textFont,
+      _textLeading: this._renderer._textLeading,
+      _textSize: this._renderer._textSize,
+      _textStyle: this._renderer._textStyle
+    }
   });
 };
 
@@ -52328,13 +51852,10 @@ p5.prototype.push = function() {
  *
  */
 p5.prototype.pop = function() {
-  var style = this._styles.pop();
-  if (style) {
-    this._renderer.pop(style.renderer);
-    assign(this, style.props);
-  } else {
-    console.warn('pop() was called without matching push()');
-  }
+  this._renderer.pop();
+  var lastS = this._styles.pop();
+  assign(this._renderer, lastS.renderer);
+  assign(this, lastS.props);
 };
 
 p5.prototype.pushStyle = function() {
@@ -52458,6 +51979,7 @@ module.exports = p5;
 'use strict';
 
 var p5 = _dereq_('./core');
+var constants = _dereq_('./constants');
 
 /**
  * Multiplies the current matrix by the one specified through the parameters.
@@ -52643,15 +52165,20 @@ p5.prototype.resetMatrix = function() {
  */
 p5.prototype.rotate = function(angle, axis) {
   p5._validateParameters('rotate', arguments);
-  this._renderer.rotate(this._toRadians(angle), axis);
+  var r;
+  if (this._angleMode === constants.DEGREES) {
+    r = this.radians(angle);
+  } else if (this._angleMode === constants.RADIANS) {
+    r = angle;
+  }
+  this._renderer.rotate(r, axis);
   return this;
 };
 
 /**
  * Rotates around X axis.
  * @method  rotateX
- * @param  {Number} angle the angle of rotation, specified in radians
- *                        or degrees, depending on current angleMode
+ * @param  {Number} rad angles in radians
  * @chainable
  * @example
  * <div modernizr='webgl'>
@@ -52670,18 +52197,20 @@ p5.prototype.rotate = function(angle, axis) {
  * @alt
  * 3d box rotating around the x axis.
  */
-p5.prototype.rotateX = function(angle) {
-  this._assert3d('rotateX');
+p5.prototype.rotateX = function(rad) {
   p5._validateParameters('rotateX', arguments);
-  this._renderer.rotateX(this._toRadians(angle));
+  if (this._renderer.isP3D) {
+    this._renderer.rotateX(rad);
+  } else {
+    throw 'not supported in p2d. Please use webgl mode';
+  }
   return this;
 };
 
 /**
  * Rotates around Y axis.
  * @method rotateY
- * @param  {Number} angle the angle of rotation, specified in radians
- *                        or degrees, depending on current angleMode
+ * @param  {Number} rad angles in radians
  * @chainable
  * @example
  * <div modernizr='webgl'>
@@ -52700,18 +52229,20 @@ p5.prototype.rotateX = function(angle) {
  * @alt
  * 3d box rotating around the y axis.
  */
-p5.prototype.rotateY = function(angle) {
-  this._assert3d('rotateY');
+p5.prototype.rotateY = function(rad) {
   p5._validateParameters('rotateY', arguments);
-  this._renderer.rotateY(this._toRadians(angle));
+  if (this._renderer.isP3D) {
+    this._renderer.rotateY(rad);
+  } else {
+    throw 'not supported in p2d. Please use webgl mode';
+  }
   return this;
 };
 
 /**
  * Rotates around Z axis. Webgl mode only.
  * @method rotateZ
- * @param  {Number} angle the angle of rotation, specified in radians
- *                        or degrees, depending on current angleMode
+ * @param  {Number} rad angles in radians
  * @chainable
  * @example
  * <div modernizr='webgl'>
@@ -52730,10 +52261,13 @@ p5.prototype.rotateY = function(angle) {
  * @alt
  * 3d box rotating around the z axis.
  */
-p5.prototype.rotateZ = function(angle) {
-  this._assert3d('rotateZ');
+p5.prototype.rotateZ = function(rad) {
   p5._validateParameters('rotateZ', arguments);
-  this._renderer.rotateZ(this._toRadians(angle));
+  if (this._renderer.isP3D) {
+    this._renderer.rotateZ(rad);
+  } else {
+    throw 'not supported in p2d. Please use webgl mode';
+  }
   return this;
 };
 
@@ -52847,7 +52381,10 @@ p5.prototype.scale = function(x, y, z) {
  */
 p5.prototype.shearX = function(angle) {
   p5._validateParameters('shearX', arguments);
-  this._renderer.shearX(this._toRadians(angle));
+  if (this._angleMode === constants.DEGREES) {
+    angle = this.radians(angle);
+  }
+  this._renderer.shearX(angle);
   return this;
 };
 
@@ -52886,7 +52423,10 @@ p5.prototype.shearX = function(angle) {
  */
 p5.prototype.shearY = function(angle) {
   p5._validateParameters('shearY', arguments);
-  this._renderer.shearY(this._toRadians(angle));
+  if (this._angleMode === constants.DEGREES) {
+    angle = this.radians(angle);
+  }
+  this._renderer.shearY(angle);
   return this;
 };
 
@@ -52925,29 +52465,10 @@ p5.prototype.shearY = function(angle) {
  * </code>
  * </div>
  *
-
- * <div>
- * <code>
- * function draw() {
- *   background(200);
- *   rectMode(CENTER);
- *   translate(width / 2, height / 2);
- *   translate(p5.Vector.fromAngle(millis() / 1000, 40));
- *   rect(0, 0, 20, 20);
- * }
- * </code>
- * </div>
- *
  * @alt
  * white 55x55 rect with black outline at center right.
  * 3 white 55x55 rects with black outlines at top-l, center-r and bottom-r.
- * a 20x20 white rect moving in a circle around the canvas
  *
- */
-/**
- * @method translate
- * @param  {p5.Vector} vector the vector to translate by
- * @chainable
  */
 p5.prototype.translate = function(x, y, z) {
   p5._validateParameters('translate', arguments);
@@ -52961,7 +52482,7 @@ p5.prototype.translate = function(x, y, z) {
 
 module.exports = p5;
 
-},{"./core":22}],35:[function(_dereq_,module,exports){
+},{"./constants":21,"./core":22}],35:[function(_dereq_,module,exports){
 /**
  * @module Shape
  * @submodule Vertex
@@ -53207,7 +52728,6 @@ p5.prototype.beginContour = function() {
  *
  */
 p5.prototype.beginShape = function(kind) {
-  p5._validateParameters('beginShape', arguments);
   if (this._renderer.isP3D) {
     this._renderer.beginShape.apply(this._renderer, arguments);
   } else {
@@ -53254,39 +52774,19 @@ p5.prototype.beginShape = function(kind) {
  * @example
  * <div>
  * <code>
- * strokeWeight(5);
- * point(30, 20);
- * point(80, 20);
- * point(80, 75);
- * point(30, 75);
- *
- * strokeWeight(1);
  * noFill();
  * beginShape();
  * vertex(30, 20);
- * bezierVertex(80, 20, 80, 75, 30, 75);
+ * bezierVertex(80, 0, 80, 75, 30, 75);
  * endShape();
  * </code>
  * </div>
  *
  * <div>
  * <code>
- * strokeWeight(5);
- * point(30, 20);
- * point(80, 20);
- * point(80, 75);
- * point(30, 75);
- *
- * stroke(244, 122, 158);
- * point(50, 80);
- * point(60, 25);
- * point(30, 20);
- *
- * stroke(0);
- * strokeWeight(1);
  * beginShape();
  * vertex(30, 20);
- * bezierVertex(80, 20, 80, 75, 30, 75);
+ * bezierVertex(80, 0, 80, 75, 30, 75);
  * bezierVertex(50, 80, 60, 25, 30, 20);
  * endShape();
  * </code>
@@ -53337,25 +52837,17 @@ p5.prototype.bezierVertex = function(x2, y2, x3, y3, x4, y4) {
  * @example
  * <div>
  * <code>
- * strokeWeight(5);
- * point(84, 91);
- * point(68, 19);
- * point(21, 17);
- * point(32, 91);
- * strokeWeight(1);
- *
  * noFill();
  * beginShape();
  * curveVertex(84, 91);
  * curveVertex(84, 91);
  * curveVertex(68, 19);
  * curveVertex(21, 17);
- * curveVertex(32, 91);
- * curveVertex(32, 91);
+ * curveVertex(32, 100);
+ * curveVertex(32, 100);
  * endShape();
  * </code>
  * </div>
- *
  *
  * @alt
  * Upside-down u-shape line, mid canvas. left point extends beyond canvas view.
@@ -53462,7 +52954,6 @@ p5.prototype.endContour = function() {
  *
  */
 p5.prototype.endShape = function(mode) {
-  p5._validateParameters('endShape', arguments);
   if (this._renderer.isP3D) {
     this._renderer.endShape(
       mode,
@@ -53532,13 +53023,8 @@ p5.prototype.endShape = function(mode) {
  * @example
  * <div>
  * <code>
- * strokeWeight(5);
- * point(20, 20);
- * point(80, 20);
- * point(50, 50);
- *
  * noFill();
- * strokeWeight(1);
+ * strokeWeight(4);
  * beginShape();
  * vertex(20, 20);
  * quadraticVertex(80, 20, 50, 50);
@@ -53548,17 +53034,8 @@ p5.prototype.endShape = function(mode) {
  *
  * <div>
  * <code>
- * strokeWeight(5);
- * point(20, 20);
- * point(80, 20);
- * point(50, 50);
- *
- * point(20, 80);
- * point(80, 80);
- * point(80, 60);
- *
  * noFill();
- * strokeWeight(1);
+ * strokeWeight(4);
  * beginShape();
  * vertex(20, 20);
  * quadraticVertex(80, 20, 50, 50);
@@ -53619,7 +53096,6 @@ p5.prototype.quadraticVertex = function(cx, cy, x3, y3) {
  * @example
  * <div>
  * <code>
- * strokeWeight(3);
  * beginShape(POINTS);
  * vertex(30, 20);
  * vertex(85, 20);
@@ -53631,66 +53107,6 @@ p5.prototype.quadraticVertex = function(cx, cy, x3, y3) {
  *
  * @alt
  * 4 black points in a square shape in middle-right of canvas.
- *
- * <div>
- * <code>
- * createCanvas(100, 100, WEBGL);
- * background(240, 240, 240);
- * fill(237, 34, 93);
- * noStroke();
- * beginShape();
- * vertex(0, 35);
- * vertex(35, 0);
- * vertex(0, -35);
- * vertex(-35, 0);
- * endShape();
- * </code>
- * </div>
- *
- * @alt
- * 4 points making a diamond shape
- *
- * <div>
- * <code>
- * createCanvas(100, 100, WEBGL);
- * background(240, 240, 240);
- * fill(237, 34, 93);
- * noStroke();
- * beginShape();
- * vertex(-10, 10);
- * vertex(0, 35);
- * vertex(10, 10);
- * vertex(35, 0);
- * vertex(10, -8);
- * vertex(0, -35);
- * vertex(-10, -8);
- * vertex(-35, 0);
- * endShape();
- * </code>
- * </div>
- *
- * @alt
- * 8 points making a star
- *
- * <div>
- * <code>
- * strokeWeight(3);
- * stroke(237, 34, 93);
- * beginShape(LINES);
- * vertex(10, 35);
- * vertex(90, 35);
- * vertex(10, 65);
- * vertex(90, 65);
- * vertex(35, 10);
- * vertex(35, 90);
- * vertex(65, 10);
- * vertex(65, 90);
- * endShape();
- * </code>
- * </div>
- *
- * @alt
- * 8 points making 4 lines
  *
  */
 /**
@@ -53755,7 +53171,7 @@ var p5 = _dereq_('../core/core');
  *
  * @method createStringDict
  * @for p5
- * @param {String} key
+ * @param {String|Object} key or object
  * @param {String} value
  * @return {p5.StringDict}
  *
@@ -53768,14 +53184,8 @@ var p5 = _dereq_('../core/core');
  * }
  * </code></div>
  */
-/**
- * @method createStringDict
- * @param {Object} object object
- * @return {p5.StringDict}
- */
 
 p5.prototype.createStringDict = function(key, value) {
-  p5._validateParameters('createStringDict', arguments);
   return new p5.StringDict(key, value);
 };
 
@@ -53786,7 +53196,7 @@ p5.prototype.createStringDict = function(key, value) {
  *
  * @method createNumberDict
  * @for p5
- * @param {Number} key
+ * @param {Number|Object} key or object
  * @param {Number} value
  * @return {p5.NumberDict}
  *
@@ -53794,19 +53204,13 @@ p5.prototype.createStringDict = function(key, value) {
  * <div class="norender">
  * <code>
  * function setup() {
- *   var myDictionary = createNumberDict(100, 42);
- *   print(myDictionary.hasKey(100)); // logs true to console
+ *   var myDictionary = createNumberDict('p5', 42);
+ *   print(myDictionary.hasKey('p5')); // logs true to console
  * }
  * </code></div>
  */
-/**
- * @method createNumberDict
- * @param {Object} object object
- * @return {p5.NumberDict}
- */
 
 p5.prototype.createNumberDict = function(key, value) {
-  p5._validateParameters('createNumberDict', arguments);
   return new p5.NumberDict(key, value);
 };
 
@@ -53816,6 +53220,7 @@ p5.prototype.createNumberDict = function(key, value) {
  * typed Dictionary objects inherit from this
  *
  * @class p5.TypedDict
+ * @constructor
  *
  */
 
@@ -54062,7 +53467,7 @@ p5.TypedDict.prototype.print = function() {
  * createButton('save')
  *   .position(10, 10)
  *   .mousePressed(function() {
- *     createStringDict({
+ *     createNumberDict({
  *       john: 1940,
       paul: 1942,
       george: 1943,
@@ -54095,7 +53500,7 @@ p5.TypedDict.prototype.saveTable = function(filename) {
  * createButton('save')
  *   .position(10, 10)
  *   .mousePressed(function() {
- *     createStringDict({
+ *     createNumberDict({
  *       john: 1940,
       paul: 1942,
       george: 1943,
@@ -54125,6 +53530,7 @@ p5.TypedDict.prototype._validate = function(value) {
  *
  *
  * @class p5.StringDict
+ * @constructor
  * @extends p5.TypedDict
  *
  */
@@ -54145,6 +53551,7 @@ p5.StringDict.prototype._validate = function(value) {
  *
  *
  * @class p5.NumberDict
+ * @constructor
  * @extends p5.TypedDict
  *
  */
@@ -54762,8 +54169,9 @@ var shake_threshold = 30;
  * @param {number} value The threshold value
  */
 p5.prototype.setMoveThreshold = function(val) {
-  p5._validateParameters('setMoveThreshold', arguments);
-  move_threshold = val;
+  if (typeof val === 'number') {
+    move_threshold = val;
+  }
 };
 
 /**
@@ -54774,8 +54182,9 @@ p5.prototype.setMoveThreshold = function(val) {
  * @param {number} value The threshold value
  */
 p5.prototype.setShakeThreshold = function(val) {
-  p5._validateParameters('setShakeThreshold', arguments);
-  shake_threshold = val;
+  if (typeof val === 'number') {
+    shake_threshold = val;
+  }
 };
 
 /**
@@ -57215,14 +56624,14 @@ p5.prototype.createImage = function(width, height) {
  *  @param  {String} [extension]      'jpg' or 'png'
  *
  *  @example
- * <div class='norender notest'><code>
+ * <div class='norender'><code>
  * function setup() {
  *   var c = createCanvas(100, 100);
  *   background(255, 0, 0);
  *   saveCanvas(c, 'myCanvas', 'jpg');
  * }
  * </code></div>
- * <div class='norender notest'><code>
+ * <div class='norender'><code>
  * // note that this example has the same result as above
  * // if no canvas is specified, defaults to main canvas
  * function setup() {
@@ -57232,7 +56641,6 @@ p5.prototype.createImage = function(width, height) {
  *
  *   // all of the following are valid
  *   saveCanvas(c, 'myCanvas', 'jpg');
- *   saveCanvas(c, 'myCanvas.jpg');
  *   saveCanvas(c, 'myCanvas');
  *   saveCanvas(c);
  *   saveCanvas('myCanvas', 'png');
@@ -57251,28 +56659,14 @@ p5.prototype.createImage = function(width, height) {
  *  @param  {String} [filename]
  *  @param  {String} [extension]
  */
-p5.prototype.saveCanvas = function() {
+p5.prototype.saveCanvas = function(cnv, filename, extension) {
   p5._validateParameters('saveCanvas', arguments);
-
-  // copy arguments to array
-  var args = [].slice.call(arguments);
-  var htmlCanvas, filename, extension;
-
-  if (arguments[0] instanceof HTMLCanvasElement) {
-    htmlCanvas = arguments[0];
-    args.shift();
-  } else if (arguments[0] instanceof p5.Element) {
-    htmlCanvas = arguments[0].elt;
-    args.shift();
-  } else {
-    htmlCanvas = this._curElement && this._curElement.elt;
-  }
-
-  if (args.length >= 1) {
-    filename = args[0];
-  }
-  if (args.length >= 2) {
-    extension = args[1];
+  if (cnv instanceof p5.Element) {
+    cnv = cnv.elt;
+  } else if (!(cnv instanceof HTMLCanvasElement)) {
+    filename = cnv;
+    extension = filename;
+    cnv = this._curElement && this._curElement.elt;
   }
 
   extension =
@@ -57292,7 +56686,7 @@ p5.prototype.saveCanvas = function() {
       break;
   }
 
-  htmlCanvas.toBlob(function(blob) {
+  cnv.toBlob(function(blob) {
     p5.prototype.downloadFile(blob, filename, extension);
   }, mimeType);
 };
@@ -57782,11 +57176,6 @@ p5.prototype.image = function(
 /**
  * @method tint
  * @param  {String}        value   a color string
- */
-
-/**
- * @method tint
- * @param  {Number}        gray   a gray value
  * @param  {Number}        [alpha]
  */
 
@@ -58036,6 +57425,7 @@ var Filters = _dereq_('./filters');
  *
  *
  * @class p5.Image
+ * @constructor
  * @param {Number} width
  * @param {Number} height
  */
@@ -58169,6 +57559,7 @@ p5.Image = function(width, height) {
    *
    */
   this.pixels = [];
+  this.name = 'p5.Image'; // for friendly debugger system
 };
 
 /**
@@ -58938,7 +58329,6 @@ p5.prototype.pixels = [];
  * @param  {Constant} blendMode
  */
 p5.prototype.blend = function() {
-  p5._validateParameters('blend', arguments);
   if (this._renderer) {
     this._renderer.blend.apply(this._renderer, arguments);
   } else {
@@ -59176,7 +58566,6 @@ p5.prototype.copy = function() {
  *
  */
 p5.prototype.filter = function(operation, value) {
-  p5._validateParameters('filter', arguments);
   if (this.canvas !== undefined) {
     Filters.apply(this.canvas, Filters[operation.toLowerCase()], value);
   } else {
@@ -59293,7 +58682,6 @@ p5.prototype.get = function(x, y, w, h) {
  *
  */
 p5.prototype.loadPixels = function() {
-  p5._validateParameters('loadPixels', arguments);
   this._renderer.loadPixels();
 };
 
@@ -59410,7 +58798,6 @@ p5.prototype.set = function(x, y, imgOrCol) {
  * two images of the rocky mountains. one on top, one on bottom of canvas.
  */
 p5.prototype.updatePixels = function(x, y, w, h) {
-  p5._validateParameters('updatePixels', arguments);
   // graceful fail - if loadPixels() or set() has not been called, pixel
   // array will be empty, ignore call to updatePixels()
   if (this.pixels.length === 0) {
@@ -59525,23 +58912,7 @@ _dereq_('../core/error_helpers');
  * 50x50 ellipse that changes from black to white depending on the current humidity
  *
  */
-/**
- * @method loadJSON
- * @param  {String}        path
- * @param  {String}        datatype
- * @param  {function}      [callback]
- * @param  {function}      [errorCallback]
- * @return {Object|Array}
- */
-/**
- * @method loadJSON
- * @param  {String}        path
- * @param  {function}      callback
- * @param  {function}      [errorCallback]
- * @return {Object|Array}
- */
 p5.prototype.loadJSON = function() {
-  p5._validateParameters('loadJSON', arguments);
   var path = arguments[0];
   var callback;
   var errorCallback;
@@ -59652,8 +59023,6 @@ p5.prototype.loadJSON = function() {
  *
  */
 p5.prototype.loadStrings = function() {
-  p5._validateParameters('loadStrings', arguments);
-
   var ret = [];
   var callback, errorCallback;
 
@@ -60001,12 +59370,13 @@ function makeObject(row, headers) {
   return ret;
 }
 
-function parseXML(two) {
+/*global parseXML */
+p5.prototype.parseXML = function(two) {
   var one = new p5.XML();
-  var children = two.childNodes;
-  if (children && children.length) {
-    for (var i = 0; i < children.length; i++) {
-      var node = parseXML(children[i]);
+  var i;
+  if (two.children.length) {
+    for (i = 0; i < two.children.length; i++) {
+      var node = parseXML(two.children[i]);
       one.addChild(node);
     }
     one.setName(two.nodeName);
@@ -60022,7 +59392,7 @@ function parseXML(two) {
     one._setAttributes(two);
     return one;
   }
-}
+};
 
 /**
  * Reads the contents of a file and creates an XML object with its values.
@@ -60126,67 +59496,14 @@ p5.prototype.loadXML = function() {
 };
 
 /**
- * @method loadBytes
- * @param {string}   file            name of the file or URL to load
- * @param {function} [callback]      function to be executed after loadBytes()
- *                                    completes
- * @param {function} [errorCallback] function to be executed if there
- *                                    is an error
- * @returns {Object} an object whose 'bytes' property will be the loaded buffer
- *
- * @example
- * <div class='norender'><code>
- * var data;
- *
- * function preload() {
- *   data = loadBytes('assets/mammals.xml');
- * }
- *
- * function setup() {
- *   for (var i = 0; i < 5; i++) {
- *     console.log(data.bytes[i].toString(16));
- *   }
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
- *
- */
-p5.prototype.loadBytes = function(file, callback, errorCallback) {
-  var ret = {};
-
-  var self = this;
-  this.httpDo(
-    file,
-    'GET',
-    'arrayBuffer',
-    function(arrayBuffer) {
-      ret.bytes = new Uint8Array(arrayBuffer);
-
-      if (typeof callback === 'function') {
-        callback(ret);
-      }
-
-      self._decrementPreload();
-    },
-    errorCallback
-  );
-  return ret;
-};
-
-/**
  * Method for executing an HTTP GET request. If data type is not specified,
  * p5 will try to guess based on the URL, defaulting to text. This is equivalent to
- * calling <code>httpDo(path, 'GET')</code>. The 'binary' datatype will return
- * a Blob object, and the 'arrayBuffer' datatype will return an ArrayBuffer
- * which can be used to initialize typed arrays (such as Uint8Array).
+ * calling <code>httpDo(path, 'GET')</code>.
  *
  * @method httpGet
  * @param  {String}        path       name of the file or url to load
- * @param  {String}        [datatype] "json", "jsonp", "binary", "arrayBuffer",
- *                                    "xml", or "text"
- * @param  {Object|Boolean} [data]    param data passed sent with request
+ * @param  {String}        [datatype] "json", "jsonp", "xml", or "text"
+ * @param  {Object}        [data]     param data passed sent with request
  * @param  {function}      [callback] function to be executed after
  *                                    httpGet() completes, data is passed in
  *                                    as first argument
@@ -60226,22 +59543,7 @@ p5.prototype.loadBytes = function(file, callback, errorCallback) {
  * }
  * </code></div>
  */
-/**
- * @method httpGet
- * @param  {String}        path
- * @param  {Object|Boolean} data
- * @param  {function}      [callback]
- * @param  {function}      [errorCallback]
- */
-/**
- * @method httpGet
- * @param  {String}        path
- * @param  {function}      callback
- * @param  {function}      [errorCallback]
- */
 p5.prototype.httpGet = function() {
-  p5._validateParameters('httpGet', arguments);
-
   var args = Array.prototype.slice.call(arguments);
   args.splice(1, 0, 'GET');
   p5.prototype.httpDo.apply(this, args);
@@ -60256,7 +59558,7 @@ p5.prototype.httpGet = function() {
  * @param  {String}        path       name of the file or url to load
  * @param  {String}        [datatype] "json", "jsonp", "xml", or "text".
  *                                    If omitted, httpPost() will guess.
- * @param  {Object|Boolean} [data]    param data passed sent with request
+ * @param  {Object}        [data]     param data passed sent with request
  * @param  {function}      [callback] function to be executed after
  *                                    httpPost() completes, data is passed in
  *                                    as first argument
@@ -60326,22 +59628,7 @@ p5.prototype.httpGet = function() {
  * </code></div>
  *
  */
-/**
- * @method httpPost
- * @param  {String}        path
- * @param  {Object|Boolean} data
- * @param  {function}      [callback]
- * @param  {function}      [errorCallback]
- */
-/**
- * @method httpPost
- * @param  {String}        path
- * @param  {function}      callback
- * @param  {function}      [errorCallback]
- */
 p5.prototype.httpPost = function() {
-  p5._validateParameters('httpPost', arguments);
-
   var args = Array.prototype.slice.call(arguments);
   args.splice(1, 0, 'POST');
   p5.prototype.httpDo.apply(this, args);
@@ -60415,6 +59702,7 @@ p5.prototype.httpPost = function() {
  * </code>
  * </div>
  */
+
 /**
  * @method httpDo
  * @param  {String}        path
@@ -60425,7 +59713,7 @@ p5.prototype.httpPost = function() {
  * @param  {function}      [errorCallback]
  */
 p5.prototype.httpDo = function() {
-  var type;
+  var type = '';
   var callback;
   var errorCallback;
   var request;
@@ -60442,18 +59730,29 @@ p5.prototype.httpDo = function() {
   }
   // The number of arguments minus callbacks
   var argsCount = arguments.length - cbCount;
-  var path = arguments[0];
   if (
     argsCount === 2 &&
-    typeof path === 'string' &&
+    typeof arguments[0] === 'string' &&
     typeof arguments[1] === 'object'
   ) {
     // Intended for more advanced use, pass in Request parameters directly
-    request = new Request(path, arguments[1]);
+    request = new Request(arguments[0], arguments[1]);
     callback = arguments[2];
     errorCallback = arguments[3];
+
+    // do some sort of smart type checking
+    if (type === '') {
+      if (request.url.indexOf('json') !== -1) {
+        type = 'json';
+      } else if (request.url.indexOf('xml') !== -1) {
+        type = 'xml';
+      } else {
+        type = 'text';
+      }
+    }
   } else {
     // Provided with arguments
+    var path = arguments[0];
     var method = 'GET';
     var data;
 
@@ -60465,8 +59764,6 @@ p5.prototype.httpDo = function() {
         } else if (
           a === 'json' ||
           a === 'jsonp' ||
-          a === 'binary' ||
-          a === 'arrayBuffer' ||
           a === 'xml' ||
           a === 'text'
         ) {
@@ -60493,6 +59790,16 @@ p5.prototype.httpDo = function() {
         }
       }
     }
+    // do some sort of smart type checking
+    if (type === '') {
+      if (path.indexOf('json') !== -1) {
+        type = 'json';
+      } else if (path.indexOf('xml') !== -1) {
+        type = 'xml';
+      } else {
+        type = 'text';
+      }
+    }
 
     request = new Request(path, {
       method: method,
@@ -60504,40 +59811,53 @@ p5.prototype.httpDo = function() {
     });
   }
 
-  // do some sort of smart type checking
-  if (!type) {
-    if (path.indexOf('json') !== -1) {
-      type = 'json';
-    } else if (path.indexOf('xml') !== -1) {
-      type = 'xml';
-    } else {
-      type = 'text';
-    }
-  }
-
-  (type === 'jsonp' ? fetchJsonp(path, jsonpOptions) : fetch(request))
-    .then(function(res) {
-      if (!res.ok) throw res;
-
-      switch (type) {
-        case 'json':
+  if (type === 'jsonp') {
+    fetchJsonp(arguments[0], jsonpOptions)
+      .then(function(res) {
+        if (res.ok) {
           return res.json();
-        case 'binary':
-          return res.blob();
-        case 'arrayBuffer':
-          return res.arrayBuffer();
-        case 'xml':
-          return res.text().then(function(text) {
-            var parser = new DOMParser();
-            var xml = parser.parseFromString(text, 'text/xml');
-            return parseXML(xml.documentElement);
-          });
-        default:
-          return res.text();
-      }
-    })
-    .then(callback || function() {})
-    .catch(errorCallback || console.error);
+        }
+        throw res;
+      })
+      .then(function(resp) {
+        callback(resp);
+      })
+      .catch(function(err) {
+        if (errorCallback) {
+          errorCallback(err);
+        } else {
+          throw err;
+        }
+      });
+  } else {
+    fetch(request)
+      .then(function(res) {
+        if (res.ok) {
+          if (type === 'json') {
+            return res.json();
+          } else {
+            return res.text();
+          }
+        }
+
+        throw res;
+      })
+      .then(function(resp) {
+        if (type === 'xml') {
+          var parser = new DOMParser();
+          resp = parser.parseFromString(resp, 'text/xml');
+          resp = parseXML(resp.documentElement);
+        }
+        callback(resp);
+      })
+      .catch(function(err, msg) {
+        if (errorCallback) {
+          errorCallback(err);
+        } else {
+          throw err;
+        }
+      });
+  }
 };
 
 /**
@@ -60567,7 +59887,7 @@ p5.prototype._pWriters = [];
  *       writer.print(i * i);
  *     }
  *     writer.close();
- *     writer.clear();
+ *     writer.flush();
  *   });
  * </code>
  * </div>
@@ -60580,7 +59900,7 @@ p5.prototype.createWriter = function(name, extension) {
       // if a p5.PrintWriter w/ this name already exists...
       // return p5.prototype._pWriters[i]; // return it w/ contents intact.
       // or, could return a new, empty one with a unique name:
-      newPW = new p5.PrintWriter(name + this.millis(), extension);
+      newPW = new p5.PrintWriter(name + window.millis(), extension);
       p5.prototype._pWriters.push(newPW);
       return newPW;
     }
@@ -60592,6 +59912,7 @@ p5.prototype.createWriter = function(name, extension) {
 
 /**
  *  @class p5.PrintWriter
+ *  @constructor
  *  @param  {String}     filename
  *  @param  {String}     [extension]
  */
@@ -60601,128 +59922,27 @@ p5.PrintWriter = function(filename, extension) {
   this.content = '';
   //Changed to write because it was being overloaded by function below.
   /**
-   * Writes data to the PrintWriter stream
    * @method write
-   * @param {Array} data all data to be written by the PrintWriter
-   * @example
-   * <div class="norender notest">
-   * <code>
-   * // creates a file called 'newFile.txt'
-   * var writer = createWriter('newFile.txt');
-   * // write 'Hello world!'' to the file
-   * writer.write(['Hello world!']);
-   * // close the PrintWriter and save the file
-   * writer.close();
-   * </code>
-   * </div>
-   * <div class='norender notest'>
-   * <code>
-   * // creates a file called 'newFile2.txt'
-   * var writer = createWriter('newFile2.txt');
-   * // write 'apples,bananas,123' to the file
-   * writer.write(['apples', 'bananas', 123]);
-   * // close the PrintWriter and save the file
-   * writer.close();
-   * </code>
-   * </div>
-   * <div class='norender notest'>
-   * <code>
-   * // creates a file called 'newFile3.txt'
-   * var writer = createWriter('newFile3.txt');
-   * // write 'My name is: Teddy' to the file
-   * writer.write('My name is:');
-   * writer.write(' Teddy');
-   * // close the PrintWriter and save the file
-   * writer.close();
-   * </code>
-   * </div>
+   * @param {Array} data
    */
   this.write = function(data) {
     this.content += data;
   };
   /**
-   * Writes data to the PrintWriter stream, and adds a new line at the end
    * @method print
-   * @param {Array} data all data to be printed by the PrintWriter
-   * @example
-   * <div class='norender notest'>
-   * <code>
-   * // creates a file called 'newFile.txt'
-   * var writer = createWriter('newFile.txt');
-   * // creates a file containing
-   * //  My name is:
-   * //  Teddy
-   * writer.print('My name is:');
-   * writer.print('Teddy');
-   * // close the PrintWriter and save the file
-   * writer.close();
-   * </code>
-   * </div>
-   * <div class='norender notest'>
-   * <code>
-   * var writer;
-   *
-   * function setup() {
-   *   createCanvas(400, 400);
-   *   // create a PrintWriter
-   *   writer = createWriter('newFile.txt');
-   * }
-   *
-   * function draw() {
-   *   // print all mouseX and mouseY coordinates to the stream
-   *   writer.print([mouseX, mouseY]);
-   * }
-   *
-   * function mouseClicked() {
-   *   // close the PrintWriter and save the file
-   *   writer.close();
-   * }
-   * </code>
-   * </div>
+   * @param {Array} data
    */
   this.print = function(data) {
     this.content += data + '\n';
   };
   /**
-   * Clears the data already written to the PrintWriter object
-   * @method clear
-   * @example
-   * <div class ="norender notest"><code>
-   * // create writer object
-   * var writer = createWriter('newFile.txt');
-   * writer.write(['clear me']);
-   * // clear writer object here
-   * writer.clear();
-   * // close writer
-   * writer.close();
-   * </code></div>
-   *
+   * @method flush
    */
-  this.clear = function() {
+  this.flush = function() {
     this.content = '';
   };
   /**
-   * Closes the PrintWriter
    * @method close
-   * @example
-   * <div class="norender notest">
-   * <code>
-   * // create a file called 'newFile.txt'
-   * var writer = createWriter('newFile.txt');
-   * // close the PrintWriter and save the file
-   * writer.close();
-   * </code>
-   * </div>
-   * <div class='norender notest'>
-   * <code>
-   * // create a file called 'newFile2.txt'
-   * var writer = createWriter('newFile2.txt');
-   * // write some data to the file
-   * writer.write([100, 101, 102]);
-   * // close the PrintWriter and save the file
-   * writer.close();
-   * </code>
-   * </div>
    */
   this.close = function() {
     // convert String to Array for the writeFile Blob
@@ -60736,7 +59956,7 @@ p5.PrintWriter = function(filename, extension) {
         p5.prototype._pWriters.splice(i, 1);
       }
     }
-    self.clear();
+    self.flush();
     self = {};
   };
 };
@@ -60917,7 +60137,6 @@ p5.prototype.save = function(object, _filename, _options) {
  *
  */
 p5.prototype.saveJSON = function(json, filename, opt) {
-  p5._validateParameters('saveJSON', arguments);
   var stringify;
   if (opt) {
     stringify = JSON.stringify(json);
@@ -60965,7 +60184,6 @@ p5.prototype.saveJSONArray = p5.prototype.saveJSON;
  *
  */
 p5.prototype.saveStrings = function(list, filename, extension) {
-  p5._validateParameters('saveStrings', arguments);
   var ext = extension || 'txt';
   var pWriter = this.createWriter(filename, ext);
   for (var i = 0; i < list.length; i++) {
@@ -60976,7 +60194,7 @@ p5.prototype.saveStrings = function(list, filename, extension) {
     }
   }
   pWriter.close();
-  pWriter.clear();
+  pWriter.flush();
 };
 
 // =======
@@ -61033,7 +60251,6 @@ function escapeHelper(content) {
  *
  */
 p5.prototype.saveTable = function(table, filename, options) {
-  p5._validateParameters('saveTable', arguments);
   var ext;
   if (options === undefined) {
     ext = filename.substring(filename.lastIndexOf('.') + 1, filename.length);
@@ -61113,9 +60330,9 @@ p5.prototype.saveTable = function(table, filename, options) {
     pWriter.print('</body>');
     pWriter.print('</html>');
   }
-  // close and clear the pWriter
+  // close and flush the pWriter
   pWriter.close();
-  pWriter.clear();
+  pWriter.flush();
 }; // end saveTable()
 
 /**
@@ -61147,7 +60364,6 @@ p5.prototype.writeFile = function(dataToDownload, filename, extension) {
  *  but it is used by saveStrings, saveJSON, saveTable etc.
  *
  *  @method downloadFile
- *  @private
  *  @param  {String|Blob} data    either an href generated by createObjectURL,
  *                                or a Blob object containing the data
  *  @param  {String} [filename]
@@ -61299,6 +60515,7 @@ p5.Table = function(rows) {
    *  @property rows {p5.TableRow[]}
    */
   this.rows = [];
+  this.name = 'p5.Table'; // for friendly debugger system
 };
 
 /**
@@ -61642,46 +60859,17 @@ p5.Table.prototype.findRows = function(value, column) {
 };
 
 /**
- * Finds the first row in the Table that matches the regular
- * expression provided, and returns a reference to that row.
- * Even if multiple rows are possible matches, only the first
- * matching row is returned. The column to search may be
- * specified by either its ID or title.
+ *  Finds the first row in the Table that matches the regular
+ *  expression provided, and returns a reference to that row.
+ *  Even if multiple rows are possible matches, only the first
+ *  matching row is returned. The column to search may be
+ *  specified by either its ID or title.
  *
- * @method  matchRow
- * @param  {String|RegExp} regexp The regular expression to match
- * @param  {String|Integer} column The column ID (number) or
- *                                  title (string)
- * @return {p5.TableRow}        TableRow object
- *
- * @example
- * <div class="norender">
- * <code>
- * // Given the CSV file "mammals.csv"
- * // in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   //Search using specified regex on a given column, return TableRow object
- *   var mammal = table.matchRow(new RegExp('ant'), 1);
- *   print(mammal.getString(1));
- *   //Output "Panthera pardus"
- * }
- * </code>
- * </div>
- *
+ *  @method  matchRow
+ *  @param  {String} regexp The regular expression to match
+ *  @param  {String|Integer} column The column ID (number) or
+ *                                   title (string)
+ *  @return {p5.TableRow}        TableRow object
  */
 p5.Table.prototype.matchRow = function(regexp, column) {
   if (typeof column === 'number') {
@@ -61701,53 +60889,50 @@ p5.Table.prototype.matchRow = function(regexp, column) {
 };
 
 /**
- * Finds the rows in the Table that match the regular expression provided,
- * and returns references to those rows. Returns an array, so for must be
- * used to iterate through all the rows, as shown in the example. The
- * column to search may be specified by either its ID or title.
+ *  Finds the rows in the Table that match the regular expression provided,
+ *  and returns references to those rows. Returns an array, so for must be
+ *  used to iterate through all the rows, as shown in the example. The
+ *  column to search may be specified by either its ID or title.
  *
- * @method  matchRows
- * @param  {String} regexp The regular expression to match
- * @param  {String|Integer} [column] The column ID (number) or
- *                                  title (string)
- * @return {p5.TableRow[]}          An Array of TableRow objects
- * @example
- * <div class="norender">
- * <code>
- * var table;
+ *  @method  matchRows
+ *  @param  {String} regexp The regular expression to match
+ *  @param  {String|Integer} [column] The column ID (number) or
+ *                                   title (string)
+ *  @return {p5.TableRow[]}          An Array of TableRow objects
+ *  @example
+ *  var table;
  *
- * function setup() {
- *   table = new p5.Table();
+ *  function setup() {
  *
- *   table.addColumn('name');
- *   table.addColumn('type');
+ *    table = new p5.Table();
  *
- *   var newRow = table.addRow();
- *   newRow.setString('name', 'Lion');
- *   newRow.setString('type', 'Mammal');
+ *    table.addColumn('name');
+ *    table.addColumn('type');
  *
- *   newRow = table.addRow();
- *   newRow.setString('name', 'Snake');
- *   newRow.setString('type', 'Reptile');
+ *    var newRow = table.addRow();
+ *    newRow.setString('name', 'Lion');
+ *    newRow.setString('type', 'Mammal');
  *
- *   newRow = table.addRow();
- *   newRow.setString('name', 'Mosquito');
- *   newRow.setString('type', 'Insect');
+ *    newRow = table.addRow();
+ *    newRow.setString('name', 'Snake');
+ *    newRow.setString('type', 'Reptile');
  *
- *   newRow = table.addRow();
- *   newRow.setString('name', 'Lizard');
- *   newRow.setString('type', 'Reptile');
+ *    newRow = table.addRow();
+ *    newRow.setString('name', 'Mosquito');
+ *    newRow.setString('type', 'Insect');
  *
- *   var rows = table.matchRows('R.*', 'type');
- *   for (var i = 0; i < rows.length; i++) {
- *     print(rows[i].getString('name') + ': ' + rows[i].getString('type'));
- *   }
- * }
- * // Sketch prints:
- * // Snake: Reptile
- * // Lizard: Reptile
- * </code>
- * </div>
+ *    newRow = table.addRow();
+ *    newRow.setString('name', 'Lizard');
+ *    newRow.setString('type', 'Reptile');
+ *
+ *    var rows = table.matchRows('R.*', 'type');
+ *    for (var i = 0; i < rows.length; i++) {
+ *      print(rows[i].getString('name') + ': ' + rows[i].getString('type'));
+ *    }
+ *  }
+ *  // Sketch prints:
+ *  // Snake: Reptile
+ *  // Lizard: Reptile
  */
 p5.Table.prototype.matchRows = function(regexp, column) {
   var ret = [];
@@ -61918,32 +61103,6 @@ p5.Table.prototype.addColumn = function(title) {
  *
  *  @method  getColumnCount
  *  @return {Integer} Number of columns in this table
- * @example
- * <div>
- * <code>
- * // given the cvs file "blobs.csv" in /assets directory
- * // ID, Name, Flavor, Shape, Color
- * // Blob1, Blobby, Sweet, Blob, Pink
- * // Blob2, Saddy, Savory, Blob, Blue
- *
- * var table;
- *
- * function preload() {
- *   table = loadTable('assets/blobs.csv');
- * }
- *
- * function setup() {
- *   createCanvas(200, 100);
- *   textAlign(CENTER);
- *   background(255);
- * }
- *
- * function draw() {
- *   var numOfColumn = table.getColumnCount();
- *   text('There are ' + numOfColumn + ' columns in the table.', 100, 50);
- * }
- * </code>
- * </div>
  */
 p5.Table.prototype.getColumnCount = function() {
   return this.columns.length;
@@ -61954,32 +61113,6 @@ p5.Table.prototype.getColumnCount = function() {
  *
  *  @method  getRowCount
  *  @return {Integer} Number of rows in this table
- * @example
- * <div>
- * <code>
- * // given the cvs file "blobs.csv" in /assets directory
- * //
- * // ID, Name, Flavor, Shape, Color
- * // Blob1, Blobby, Sweet, Blob, Pink
- * // Blob2, Saddy, Savory, Blob, Blue
- *
- * var table;
- *
- * function preload() {
- *   table = loadTable('assets/blobs.csv');
- * }
- *
- * function setup() {
- *   createCanvas(200, 100);
- *   textAlign(CENTER);
- *   background(255);
- * }
- *
- * function draw() {
- *   text('There are ' + table.getRowCount() + ' rows in the table.', 100, 50);
- * }
- * </code>
- * </div>
  */
 p5.Table.prototype.getRowCount = function() {
   return this.rows.length;
@@ -61996,31 +61129,6 @@ p5.Table.prototype.getRowCount = function() {
  *  @param  {String} chars  String listing characters to be removed
  *  @param  {String|Integer} [column] Column ID (number)
  *                                   or name (string)
- *
- * @example
- * <div class="norender"><code>
- * function setup() {
- *   var table = new p5.Table();
- *
- *   table.addColumn('name');
- *   table.addColumn('type');
- *
- *   var newRow = table.addRow();
- *   newRow.setString('name', '   $Lion  ,');
- *   newRow.setString('type', ',,,Mammal');
- *
- *   newRow = table.addRow();
- *   newRow.setString('name', '$Snake  ');
- *   newRow.setString('type', ',,,Reptile');
- *
- *   table.removeTokens(',$ ');
- *   print(table.getArray());
- * }
- *
- * // prints:
- * //  0  "Lion"   "Mamal"
- * //  1  "Snake"  "Reptile"
- * </code></div>
  */
 p5.Table.prototype.removeTokens = function(chars, column) {
   var escape = function(s) {
@@ -62068,30 +61176,6 @@ p5.Table.prototype.removeTokens = function(chars, column) {
  *  @method  trim
  *  @param  {String|Integer} [column] Column ID (number)
  *                                   or name (string)
- * @example
- * <div class="norender"><code>
- * function setup() {
- *   var table = new p5.Table();
- *
- *   table.addColumn('name');
- *   table.addColumn('type');
- *
- *   var newRow = table.addRow();
- *   newRow.setString('name', '   Lion  ,');
- *   newRow.setString('type', ' Mammal  ');
- *
- *   newRow = table.addRow();
- *   newRow.setString('name', '  Snake  ');
- *   newRow.setString('type', '  Reptile  ');
- *
- *   table.trim();
- *   print(table.getArray());
- * }
- *
- * // prints:
- * //  0  "Lion"   "Mamal"
- * //  1  "Snake"  "Reptile"
- * </code></div>
  */
 p5.Table.prototype.trim = function(column) {
   var regex = new RegExp(' ', 'g');
@@ -62195,7 +61279,6 @@ p5.Table.prototype.removeColumn = function(c) {
  * by either its ID or title.
  *
  * @method  set
- * @param {Integer} row row ID
  * @param {String|Integer} column column ID (Number)
  *                               or title (String)
  * @param {String|Number} value  value to assign
@@ -62295,36 +61378,6 @@ p5.Table.prototype.setNum = function(row, column, value) {
  * @param {String|Integer} column column ID (Number)
  *                               or title (String)
  * @param {String} value  value to assign
- * @example
- * <div class="norender"><code>
- * // Given the CSV file "mammals.csv" in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   //add a row
- *   var newRow = table.addRow();
- *   newRow.setString('id', table.getRowCount() - 1);
- *   newRow.setString('species', 'Canis Lupus');
- *   newRow.setString('name', 'Wolf');
- *
- *   print(table.getArray());
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
  */
 p5.Table.prototype.setString = function(row, column, value) {
   this.rows[row].setString(column, value);
@@ -62447,21 +61500,18 @@ p5.Table.prototype.getNum = function(row, column) {
  * var table;
  *
  * function preload() {
- *   // table is comma separated value "CSV"
- *   // and has specifiying header for column labels
+ *   //my table is comma separated value "csv"
+ *   //and has a header specifying the columns labels
  *   table = loadTable('assets/mammals.csv', 'csv', 'header');
  * }
  *
  * function setup() {
- *   print(table.getString(0, 0)); // 0
- *   print(table.getString(0, 1)); // Capra hircus
- *   print(table.getString(0, 2)); // Goat
- *   print(table.getString(1, 0)); // 1
- *   print(table.getString(1, 1)); // Panthera pardus
- *   print(table.getString(1, 2)); // Leopard
- *   print(table.getString(2, 0)); // 2
- *   print(table.getString(2, 1)); // Equus zebra
- *   print(table.getString(2, 2)); // Zebra
+ *   var tableArray = table.getArray();
+ *
+ *   //output each row as array
+ *   for (var i = 0; i < tableArray.length; i++) {
+ *     print(tableArray[i]);
+ *   }
  * }
  * </code>
  * </div>
@@ -62470,7 +61520,6 @@ p5.Table.prototype.getNum = function(row, column) {
  * no image displayed
  *
  */
-
 p5.Table.prototype.getString = function(row, column) {
   return this.rows[row].getString(column);
 };
@@ -62544,38 +61593,6 @@ p5.Table.prototype.getObject = function(headerColumn) {
  *
  * @method  getArray
  * @return {Array}
- *
- * @example
- * <div class="norender">
- * <code>
- * // Given the CSV file "mammals.csv"
- * // in the project's "assets" folder
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leoperd
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   // table is comma separated value "CSV"
- *   // and has specifiying header for column labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   var tableArray = table.getArray();
- *   for (var i = 0; i < tableArray.length; i++) {
- *     print(tableArray[i]);
- *   }
- * }
- * </code>
- * </div>
- *
- *@alt
- * no image displayed
- *
  */
 p5.Table.prototype.getArray = function() {
   var tableArray = [];
@@ -62627,6 +61644,7 @@ p5.TableRow = function(str, separator) {
   this.arr = arr;
   this.obj = obj;
   this.table = null;
+  this.name = 'p5.TableRow'; // for friendly debugger system
 };
 
 /**
@@ -62637,37 +61655,6 @@ p5.TableRow = function(str, separator) {
  *  @param {String|Integer} column Column ID (Number)
  *                                or Title (String)
  *  @param {String|Number} value  The value to be stored
- *
- * @example
- * <div class="norender"><code>
- * // Given the CSV file "mammals.csv" in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   var rows = table.getRows();
- *   for (var r = 0; r < rows.length; r++) {
- *     rows[r].set('name', 'Unicorn');
- *   }
- *
- *   //print the results
- *   print(table.getArray());
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
  */
 p5.TableRow.prototype.set = function(column, value) {
   // if typeof column is string, use .obj
@@ -62698,37 +61685,8 @@ p5.TableRow.prototype.set = function(column, value) {
  *  @method  setNum
  *  @param {String|Integer} column Column ID (Number)
  *                                or Title (String)
- *  @param {Number|String} value  The value to be stored
+ *  @param {Number} value  The value to be stored
  *                                as a Float
- * @example
- * <div class="norender"><code>
- * // Given the CSV file "mammals.csv" in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   var rows = table.getRows();
- *   for (var r = 0; r < rows.length; r++) {
- *     rows[r].setNum('id', r + 10);
- *   }
- *
- *   print(table.getArray());
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
  */
 p5.TableRow.prototype.setNum = function(column, value) {
   var floatVal = parseFloat(value);
@@ -62742,38 +61700,8 @@ p5.TableRow.prototype.setNum = function(column, value) {
  *  @method  setString
  *  @param {String|Integer} column Column ID (Number)
  *                                or Title (String)
- *  @param {String|Number|Boolean|Object} value  The value to be stored
+ *  @param {String} value  The value to be stored
  *                                as a String
- * @example
- * <div class="norender"><code>
- * // Given the CSV file "mammals.csv" in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   var rows = table.getRows();
- *   for (var r = 0; r < rows.length; r++) {
- *     var name = rows[r].getString('name');
- *     rows[r].setString('name', 'A ' + name + ' named George');
- *   }
- *
- *   print(table.getArray());
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
  */
 p5.TableRow.prototype.setString = function(column, value) {
   var stringVal = value.toString();
@@ -62788,37 +61716,6 @@ p5.TableRow.prototype.setString = function(column, value) {
  *  @param  {String|Integer} column columnName (string) or
  *                                   ID (number)
  *  @return {String|Number}
- *
- * @example
- * <div class="norender"><code>
- * // Given the CSV file "mammals.csv" in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   var names = [];
- *   var rows = table.getRows();
- *   for (var r = 0; r < rows.length; r++) {
- *     names.push(rows[r].get('name'));
- *   }
- *
- *   print(names);
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
  */
 p5.TableRow.prototype.get = function(column) {
   if (typeof column === 'string') {
@@ -62837,38 +61734,6 @@ p5.TableRow.prototype.get = function(column) {
  *  @param  {String|Integer} column columnName (string) or
  *                                   ID (number)
  *  @return {Number}  Float Floating point number
- * @example
- * <div class="norender"><code>
- * // Given the CSV file "mammals.csv" in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   var rows = table.getRows();
- *   var minId = Infinity;
- *   var maxId = -Infinity;
- *   for (var r = 0; r < rows.length; r++) {
- *     var id = rows[r].getNum('id');
- *     minId = min(minId, id);
- *     maxId = min(maxId, id);
- *   }
- *   print('minimum id = ' + minId + ', maximum id = ' + maxId);
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
  */
 p5.TableRow.prototype.getNum = function(column) {
   var ret;
@@ -62893,39 +61758,6 @@ p5.TableRow.prototype.getNum = function(column) {
  *  @param  {String|Integer} column columnName (string) or
  *                                   ID (number)
  *  @return {String}  String
- * @example
- * <div class="norender"><code>
- * // Given the CSV file "mammals.csv" in the project's "assets" folder:
- * //
- * // id,species,name
- * // 0,Capra hircus,Goat
- * // 1,Panthera pardus,Leopard
- * // 2,Equus zebra,Zebra
- *
- * var table;
- *
- * function preload() {
- *   //my table is comma separated value "csv"
- *   //and has a header specifying the columns labels
- *   table = loadTable('assets/mammals.csv', 'csv', 'header');
- * }
- *
- * function setup() {
- *   var rows = table.getRows();
- *   var longest = '';
- *   for (var r = 0; r < rows.length; r++) {
- *     var species = rows[r].getString('species');
- *     if (longest.length < species.length) {
- *       longest = species;
- *     }
- *   }
- *
- *   print('longest: ' + longest);
- * }
- * </code></div>
- *
- * @alt
- * no image displayed
  */
 p5.TableRow.prototype.getString = function(column) {
   if (typeof column === 'string') {
@@ -62999,6 +61831,7 @@ p5.XML = function() {
   this.children = [];
   this.parent = null;
   this.content = null; //done
+  this.name = 'p5.XML'; // for friendly debugger system
 };
 
 /**
@@ -63289,10 +62122,9 @@ p5.XML.prototype.getChildren = function(param) {
  */
 p5.XML.prototype.getChild = function(param) {
   if (typeof param === 'string') {
-    for (var i = 0; i < this.children.length; i++) {
-      var child = this.children[i];
-      if (child.name === param) return child;
-    }
+    return this.children.find(function(c) {
+      return c.name === param;
+    });
   } else {
     return this.children[param];
   }
@@ -63305,41 +62137,7 @@ p5.XML.prototype.getChild = function(param) {
  * A reference to the newly created child is returned as an p5.XML object.
  *
  * @method addChild
- * @param {p5.XML} node a p5.XML Object which will be the child to be added
- * @example
- * <div class='norender'><code>
- * // The following short XML file called "mammals.xml" is parsed
- * // in the code below.
- * //
- * // <?xml version="1.0"?>
- * // &lt;mammals&gt;
- * //   &lt;animal id="0" species="Capra hircus">Goat&lt;/animal&gt;
- * //   &lt;animal id="1" species="Panthera pardus">Leopard&lt;/animal&gt;
- * //   &lt;animal id="2" species="Equus zebra">Zebra&lt;/animal&gt;
- * // &lt;/mammals&gt;
- *
- * var xml;
- *
- * function preload() {
- *   xml = loadXML('assets/mammals.xml');
- * }
- *
- * function setup() {
- *   var child = new p5.XML();
- *   child.setAttribute('id', '3');
- *   child.setAttribute('species', 'Ornithorhynchus anatinus');
- *   child.setContent('Platypus');
- *   xml.addChild(child);
- *
- *   var animals = xml.getChildren('animal');
- *   print(animals[animals.length - 1].getContent());
- * }
- *
- * // Sketch prints:
- * // "Goat"
- * // "Leopard"
- * // "Zebra"
- * </code></div>
+ * @param {p5.XML} a p5.XML Object which will be the child to be added
  */
 p5.XML.prototype.addChild = function(node) {
   if (node instanceof p5.XML) {
@@ -63583,7 +62381,7 @@ p5.XML.prototype.getNum = function(name, defaultValue) {
  * @method getString
  * @param {String} name            the non-null full name of the attribute
  * @param {Number} [defaultValue]  the default value of the attribute
- * @return {String}
+ * @return {Number}
  * @example
  * <div class='norender'><code>
  * // The following short XML file called "mammals.xml" is parsed
@@ -63621,7 +62419,7 @@ p5.XML.prototype.getString = function(name, defaultValue) {
  *
  * @method setAttribute
  * @param {String} name            the full name of the attribute
- * @param {Number|String|Boolean} value  the value of the attribute
+ * @param {Number} value           the value of the attribute
  * @example
  * <div class='norender'><code>
  * // The following short XML file called "mammals.xml" is parsed
@@ -63762,13 +62560,10 @@ p5.XML.prototype._setCont = function(content) {
  *
  */
 p5.XML.prototype._setAttributes = function(node) {
-  var att = {};
-  var attributes = node.attributes;
-  if (attributes) {
-    for (var i = 0; i < attributes.length; i++) {
-      var attribute = attributes[i];
-      att[attribute.nodeName] = attribute.nodeValue;
-    }
+  var i,
+    att = {};
+  for (i = 0; i < node.attributes.length; i++) {
+    att[node.attributes[i].nodeName] = node.attributes[i].nodeValue;
   }
   this.attributes = att;
 };
@@ -64997,6 +63792,7 @@ module.exports = p5;
 'use strict';
 
 var p5 = _dereq_('../core/core');
+var polarGeometry = _dereq_('./polargeometry');
 var constants = _dereq_('../core/constants');
 
 /**
@@ -65019,6 +63815,7 @@ var constants = _dereq_('../core/constants');
  * "vector" math, which is made easy by the methods inside the p5.Vector class.
  *
  * @class p5.Vector
+ * @constructor
  * @param {Number} [x] x component of the vector
  * @param {Number} [y] y component of the vector
  * @param {Number} [z] z component of the vector
@@ -65069,6 +63866,7 @@ p5.Vector = function Vector() {
    * @property z {Number}
    */
   this.z = z;
+  this.name = 'p5.Vector'; // for friendly debugger system
 };
 
 /**
@@ -65083,36 +63881,6 @@ p5.Vector = function Vector() {
  * function setup() {
  *   var v = createVector(20, 30);
  *   print(String(v)); // prints "p5.Vector Object : [20, 30, 0]"
- * }
- * </code>
- * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 0);
- *   var v1 = createVector(mouseX, mouseY);
- *   drawArrow(v0, v1, 'black');
- *
- *   noStroke();
- *   text(v1.toString(), 10, 25, 90, 75);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
  * }
  * </code>
  * </div>
@@ -65139,43 +63907,6 @@ p5.Vector.prototype.toString = function p5VectorToString() {
  *   var v1 = createVector(0, 0, 0);
  *   var arr = [1, 2, 3];
  *   v1.set(arr); // Sets vector to [1, 2, 3]
- * }
- * </code>
- * </div>
- *
- * <div>
- * <code>
- * var v0, v1;
- * function setup() {
- *   createCanvas(100, 100);
- *
- *   v0 = createVector(0, 0);
- *   v1 = createVector(50, 50);
- * }
- *
- * function draw() {
- *   background(240);
- *
- *   drawArrow(v0, v1, 'black');
- *   v1.set(v1.x + random(-1, 1), v1.y + random(-1, 1));
- *
- *   noStroke();
- *   text('x: ' + round(v1.x) + ' y: ' + round(v1.y), 20, 90);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
  * }
  * </code>
  * </div>
@@ -65258,40 +63989,6 @@ p5.Vector.prototype.copy = function copy() {
  * print(v3);
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * // red vector + blue vector = purple vector
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 0);
- *   var v1 = createVector(mouseX, mouseY);
- *   drawArrow(v0, v1, 'red');
- *
- *   var v2 = createVector(-30, 20);
- *   drawArrow(v1, v2, 'blue');
- *
- *   var v3 = p5.Vector.add(v1, v2);
- *   drawArrow(v0, v3, 'purple');
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 /**
  * @method add
@@ -65348,40 +64045,6 @@ p5.Vector.prototype.add = function add(x, y, z) {
  * print(v3);
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * // red vector - blue vector = purple vector
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 0);
- *   var v1 = createVector(70, 50);
- *   drawArrow(v0, v1, 'red');
- *
- *   var v2 = createVector(mouseX, mouseY);
- *   drawArrow(v0, v2, 'blue');
- *
- *   var v3 = p5.Vector.sub(v1, v2);
- *   drawArrow(v2, v3, 'purple');
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 /**
  * @method sub
@@ -65433,40 +64096,6 @@ p5.Vector.prototype.sub = function sub(x, y, z) {
  * print(v2);
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(50, 50);
- *   var v1 = createVector(25, -25);
- *   drawArrow(v0, v1, 'red');
- *
- *   var num = map(mouseX, 0, width, -2, 2, true);
- *   var v2 = p5.Vector.mult(v1, num);
- *   drawArrow(v0, v2, 'blue');
- *
- *   noStroke();
- *   text('multiplied by ' + num.toFixed(2), 5, 90);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.mult = function mult(n) {
   if (!(typeof n === 'number' && isFinite(n))) {
@@ -65507,40 +64136,6 @@ p5.Vector.prototype.mult = function mult(n) {
  * print(v2);
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 100);
- *   var v1 = createVector(50, -50);
- *   drawArrow(v0, v1, 'red');
- *
- *   var num = map(mouseX, 0, width, 10, 0.5, true);
- *   var v2 = p5.Vector.div(v1, num);
- *   drawArrow(v0, v2, 'blue');
- *
- *   noStroke();
- *   text('divided by ' + num.toFixed(2), 10, 90);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.div = function div(n) {
   if (!(typeof n === 'number' && isFinite(n))) {
@@ -65567,35 +64162,6 @@ p5.Vector.prototype.div = function div(n) {
  * @method mag
  * @return {Number} magnitude of the vector
  * @example
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 0);
- *   var v1 = createVector(mouseX, mouseY);
- *   drawArrow(v0, v1, 'black');
- *
- *   noStroke();
- *   text('vector length: ' + v1.mag().toFixed(2), 10, 70, 90, 30);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  * <div class="norender">
  * <code>
  * var v = createVector(20.0, 30.0, 40.0);
@@ -65622,36 +64188,6 @@ p5.Vector.prototype.mag = function mag() {
  * // Static method
  * var v1 = createVector(6, 4, 2);
  * print(v1.magSq()); // Prints "56"
- * </code>
- * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 0);
- *   var v1 = createVector(mouseX, mouseY);
- *   drawArrow(v0, v1, 'black');
- *
- *   noStroke();
- *   text('vector length squared: ' + v1.magSq().toFixed(2), 10, 45, 90, 55);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
  * </code>
  * </div>
  */
@@ -65775,40 +64311,6 @@ p5.Vector.prototype.cross = function cross(v) {
  * print(distance);
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 0);
- *
- *   var v1 = createVector(70, 50);
- *   drawArrow(v0, v1, 'red');
- *
- *   var v2 = createVector(mouseX, mouseY);
- *   drawArrow(v0, v2, 'blue');
- *
- *   noStroke();
- *   text('distance between vectors: ' + v2.dist(v1).toFixed(2), 5, 50, 95, 50);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.dist = function dist(v) {
   return v
@@ -65832,45 +64334,9 @@ p5.Vector.prototype.dist = function dist(v) {
  * // [0.4454354, 0.8908708, 0.089087084]
  * </code>
  * </div>
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(50, 50);
- *   var v1 = createVector(mouseX - 50, mouseY - 50);
- *
- *   drawArrow(v0, v1, 'red');
- *   v1.normalize();
- *   drawArrow(v0, v1.mult(35), 'blue');
- *
- *   noFill();
- *   ellipse(50, 50, 35 * 2);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.normalize = function normalize() {
-  var len = this.mag();
-  // here we multiply by the reciprocal instead of calling 'div()'
-  // since div duplicates this zero check.
-  if (len !== 0) this.mult(1 / len);
-  return this;
+  return this.mag() === 0 ? this : this.div(this.mag());
 };
 
 /**
@@ -65888,37 +64354,6 @@ p5.Vector.prototype.normalize = function normalize() {
  * v.limit(5);
  * // v's components are set to
  * // [2.2271771, 4.4543543, 0.4454354]
- * </code>
- * </div>
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(50, 50);
- *   var v1 = createVector(mouseX - 50, mouseY - 50);
- *
- *   drawArrow(v0, v1, 'red');
- *   drawArrow(v0, v1.limit(35), 'blue');
- *
- *   noFill();
- *   ellipse(50, 50, 35 * 2);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
  * </code>
  * </div>
  */
@@ -65947,41 +64382,6 @@ p5.Vector.prototype.limit = function limit(max) {
  * // v's components are set to [6.0, 8.0, 0.0]
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(0, 0);
- *   var v1 = createVector(50, 50);
- *
- *   drawArrow(v0, v1, 'red');
- *
- *   var length = map(mouseX, 0, width, 0, 141, true);
- *   v1.setMag(length);
- *   drawArrow(v0, v1, 'blue');
- *
- *   noStroke();
- *   text('magnitude set to: ' + length.toFixed(2), 10, 70, 90, 30);
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.setMag = function setMag(n) {
   return this.normalize().mult(n);
@@ -66007,52 +64407,15 @@ p5.Vector.prototype.setMag = function setMag(n) {
  * }
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(50, 50);
- *   var v1 = createVector(mouseX - 50, mouseY - 50);
- *
- *   drawArrow(v0, v1, 'black');
- *
- *   var myHeading = v1.heading();
- *   noStroke();
- *   text(
- *     'vector heading: ' +
- *       myHeading.toFixed(2) +
- *       ' radians or ' +
- *       degrees(myHeading).toFixed(2) +
- *       ' degrees',
- *     10,
- *     50,
- *     90,
- *     50
- *   );
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.heading = function heading() {
   var h = Math.atan2(this.y, this.x);
-  if (this.p5) return this.p5._fromRadians(h);
+  if (this.p5) {
+    if (this.p5._angleMode === constants.RADIANS) {
+      return h;
+    }
+    return polarGeometry.radiansToDegrees(h);
+  }
   return h;
 };
 
@@ -66072,40 +64435,14 @@ p5.Vector.prototype.heading = function heading() {
  * // v's components are set to [-20.0, 9.999999, 0.0]
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * var angle = 0;
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(50, 50);
- *   var v1 = createVector(50, 0);
- *
- *   drawArrow(v0, v1.rotate(angle), 'black');
- *   angle += 0.01;
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.rotate = function rotate(a) {
   var newHeading = this.heading() + a;
-  if (this.p5) newHeading = this.p5._toRadians(newHeading);
+  if (this.p5) {
+    if (this.p5._angleMode === constants.DEGREES) {
+      newHeading = polarGeometry.degreesToRadians(newHeading);
+    }
+  }
   var mag = this.mag();
   this.x = Math.cos(newHeading) * mag;
   this.y = Math.sin(newHeading) * mag;
@@ -66128,50 +64465,6 @@ p5.Vector.prototype.rotate = function rotate(a) {
  * print(angle);
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * function draw() {
- *   background(240);
- *   var v0 = createVector(50, 50);
- *
- *   var v1 = createVector(50, 0);
- *   drawArrow(v0, v1, 'red');
- *
- *   var v2 = createVector(mouseX - 50, mouseY - 50);
- *   drawArrow(v0, v2, 'blue');
- *
- *   var angleBetween = v1.angleBetween(v2);
- *   noStroke();
- *   text(
- *     'angle between: ' +
- *       angleBetween.toFixed(2) +
- *       ' radians or ' +
- *       degrees(angleBetween).toFixed(2) +
- *       ' degrees',
- *     10,
- *     50,
- *     90,
- *     50
- *   );
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.prototype.angleBetween = function angleBetween(v) {
   var dotmagmag = this.dot(v) / (this.mag() * v.mag());
@@ -66181,7 +64474,11 @@ p5.Vector.prototype.angleBetween = function angleBetween(v) {
   //
   // Solution: we'll clamp the value to the -1,1 range
   var angle = Math.acos(Math.min(1, Math.max(-1, dotmagmag)));
-  if (this.p5) return this.p5._fromRadians(angle);
+  if (this.p5) {
+    if (this.p5._angleMode === constants.DEGREES) {
+      angle = polarGeometry.radiansToDegrees(angle);
+    }
+  }
   return angle;
 };
 
@@ -66214,47 +64511,6 @@ p5.Vector.prototype.angleBetween = function angleBetween(v) {
  * var v3 = p5.Vector.lerp(v1, v2, 0.5);
  * // v3 has components [50,50,0]
  * print(v3);
- * </code>
- * </div>
- *
- * <div>
- * <code>
- * var step = 0.01;
- * var amount = 0;
- *
- * function draw() {
- *   background(240);
- *   var v0 = createVector(0, 0);
- *
- *   var v1 = createVector(mouseX, mouseY);
- *   drawArrow(v0, v1, 'red');
- *
- *   var v2 = createVector(90, 90);
- *   drawArrow(v0, v2, 'blue');
- *
- *   if (amount > 1 || amount < 0) {
- *     step *= -1;
- *   }
- *   amount += step;
- *   var v3 = p5.Vector.lerp(v1, v2, amount);
- *
- *   drawArrow(v0, v3, 'purple');
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
  * </code>
  * </div>
  */
@@ -66366,7 +64622,7 @@ p5.Vector.prototype.equals = function equals(x, y, z) {
  *
  * @method fromAngle
  * @static
- * @param {Number}     angle the desired angle, in radians
+ * @param {Number}     angle the desired angle
  * @param {Number}     [length] the length of the new vector (defaults to 1)
  * @return {p5.Vector}       the new p5.Vector object
  * @example
@@ -66407,10 +64663,23 @@ p5.Vector.prototype.equals = function equals(x, y, z) {
  * </div>
  */
 p5.Vector.fromAngle = function fromAngle(angle, length) {
+  if (this.p5) {
+    if (this.p5._angleMode === constants.DEGREES) {
+      angle = polarGeometry.degreesToRadians(angle);
+    }
+  }
   if (typeof length === 'undefined') {
     length = 1;
   }
-  return new p5.Vector(length * Math.cos(angle), length * Math.sin(angle), 0);
+  if (this.p5) {
+    return new p5.Vector(this.p5, [
+      length * Math.cos(angle),
+      length * Math.sin(angle),
+      0
+    ]);
+  } else {
+    return new p5.Vector(length * Math.cos(angle), length * Math.sin(angle), 0);
+  }
 };
 
 /**
@@ -66418,11 +64687,10 @@ p5.Vector.fromAngle = function fromAngle(angle, length) {
  *
  * @method fromAngles
  * @static
- * @param {Number}     theta    the polar angle, in radians (zero is up)
- * @param {Number}     phi      the azimuthal angle, in radians
- *                               (zero is out of the screen)
+ * @param {Number}     theta the polar angle (zero is up)
+ * @param {Number}     phi the azimuthal angle (zero is out of the screen)
  * @param {Number}     [length] the length of the new vector (defaults to 1)
- * @return {p5.Vector}          the new p5.Vector object
+ * @return {p5.Vector}       the new p5.Vector object
  * @example
  * <div modernizr='webgl'>
  * <code>
@@ -66447,6 +64715,12 @@ p5.Vector.fromAngle = function fromAngle(angle, length) {
  * </div>
  */
 p5.Vector.fromAngles = function(theta, phi, length) {
+  if (this.p5) {
+    if (this.p5._angleMode === constants.DEGREES) {
+      theta = polarGeometry.degreesToRadians(theta);
+      phi = polarGeometry.degreesToRadians(phi);
+    }
+  }
   if (typeof length === 'undefined') {
     length = 1;
   }
@@ -66455,11 +64729,20 @@ p5.Vector.fromAngles = function(theta, phi, length) {
   var cosTheta = Math.cos(theta);
   var sinTheta = Math.sin(theta);
 
-  return new p5.Vector(
-    length * sinTheta * sinPhi,
-    -length * cosTheta,
-    length * sinTheta * cosPhi
-  );
+  if (this.p5) {
+    return new new p5.Vector(
+      this.p5,
+      length * sinTheta * sinPhi,
+      -length * cosTheta,
+      length * sinTheta * cosPhi
+    )();
+  } else {
+    return new p5.Vector(
+      length * sinTheta * sinPhi,
+      -length * cosTheta,
+      length * sinTheta * cosPhi
+    );
+  }
 };
 
 /**
@@ -66479,40 +64762,21 @@ p5.Vector.fromAngles = function(theta, phi, length) {
  * print(v);
  * </code>
  * </div>
- *
- * <div>
- * <code>
- * function setup() {
- *   frameRate(1);
- * }
- *
- * function draw() {
- *   background(240);
- *
- *   var v0 = createVector(50, 50);
- *   var v1 = p5.Vector.random2D();
- *   drawArrow(v0, v1.mult(50), 'black');
- * }
- *
- * // draw an arrow for a vector at a given base position
- * function drawArrow(base, vec, myColor) {
- *   push();
- *   stroke(myColor);
- *   strokeWeight(3);
- *   fill(myColor);
- *   translate(base.x, base.y);
- *   line(0, 0, vec.x, vec.y);
- *   rotate(vec.heading());
- *   var arrowSize = 7;
- *   translate(vec.mag() - arrowSize, 0);
- *   triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
- *   pop();
- * }
- * </code>
- * </div>
  */
 p5.Vector.random2D = function random2D() {
-  return this.fromAngle(Math.random() * constants.TWO_PI);
+  var angle;
+  // A lot of nonsense to determine if we know about a
+  // p5 sketch and whether we should make a random angle in degrees or radians
+  if (this.p5) {
+    if (this.p5._angleMode === constants.DEGREES) {
+      angle = this.p5.random(360);
+    } else {
+      angle = this.p5.random(constants.TWO_PI);
+    }
+  } else {
+    angle = Math.random() * constants.TWO_PI;
+  }
+  return this.fromAngle(angle);
 };
 
 /**
@@ -66534,11 +64798,21 @@ p5.Vector.random2D = function random2D() {
  * </div>
  */
 p5.Vector.random3D = function random3D() {
-  var angle = Math.random() * constants.TWO_PI;
-  var vz = Math.random() * 2 - 1;
+  var angle, vz;
+  // If we know about p5
+  if (this.p5) {
+    angle = this.p5.random(0, constants.TWO_PI);
+    vz = this.p5.random(-1, 1);
+  } else {
+    angle = Math.random() * constants.TWO_PI;
+    vz = Math.random() * 2 - 1;
+  }
   var vzBase = Math.sqrt(1 - vz * vz);
   var vx = vzBase * Math.cos(angle);
   var vy = vzBase * Math.sin(angle);
+  if (this.p5) {
+    return new p5.Vector(this.p5, [vx, vy, vz]);
+  }
   return new p5.Vector(vx, vy, vz);
 };
 
@@ -66741,7 +65015,20 @@ p5.Vector.mag = function mag(vecT) {
 
 module.exports = p5.Vector;
 
-},{"../core/constants":21,"../core/core":22}],54:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22,"./polargeometry":54}],54:[function(_dereq_,module,exports){
+'use strict';
+
+module.exports = {
+  degreesToRadians: function(x) {
+    return 2 * Math.PI * x / 360;
+  },
+
+  radiansToDegrees: function(x) {
+    return 360 * x / (2 * Math.PI);
+  }
+};
+
+},{}],55:[function(_dereq_,module,exports){
 /**
  * @module Math
  * @submodule Random
@@ -66987,24 +65274,22 @@ p5.prototype.randomGaussian = function(mean, sd) {
 
 module.exports = p5;
 
-},{"../core/core":22}],55:[function(_dereq_,module,exports){
+},{"../core/core":22}],56:[function(_dereq_,module,exports){
 /**
  * @module Math
  * @submodule Trigonometry
  * @for p5
  * @requires core
+ * @requires polargeometry
  * @requires constants
  */
 
 'use strict';
 
 var p5 = _dereq_('../core/core');
+var polarGeometry = _dereq_('./polargeometry');
 var constants = _dereq_('../core/constants');
 
-/*
- * all DEGREES/RADIANS conversion should be done in the p5 instance
- * if possible, using the p5._toRadians(), p5._fromRadians() methods.
- */
 p5.prototype._angleMode = constants.RADIANS;
 
 /**
@@ -67038,7 +65323,11 @@ p5.prototype._angleMode = constants.RADIANS;
  * </div>
  */
 p5.prototype.acos = function(ratio) {
-  return this._fromRadians(Math.acos(ratio));
+  if (this._angleMode === constants.RADIANS) {
+    return Math.acos(ratio);
+  } else {
+    return polarGeometry.radiansToDegrees(Math.acos(ratio));
+  }
 };
 
 /**
@@ -67073,7 +65362,11 @@ p5.prototype.acos = function(ratio) {
  *
  */
 p5.prototype.asin = function(ratio) {
-  return this._fromRadians(Math.asin(ratio));
+  if (this._angleMode === constants.RADIANS) {
+    return Math.asin(ratio);
+  } else {
+    return polarGeometry.radiansToDegrees(Math.asin(ratio));
+  }
 };
 
 /**
@@ -67108,7 +65401,11 @@ p5.prototype.asin = function(ratio) {
  *
  */
 p5.prototype.atan = function(ratio) {
-  return this._fromRadians(Math.atan(ratio));
+  if (this._angleMode === constants.RADIANS) {
+    return Math.atan(ratio);
+  } else {
+    return polarGeometry.radiansToDegrees(Math.atan(ratio));
+  }
 };
 
 /**
@@ -67144,7 +65441,11 @@ p5.prototype.atan = function(ratio) {
  *
  */
 p5.prototype.atan2 = function(y, x) {
-  return this._fromRadians(Math.atan2(y, x));
+  if (this._angleMode === constants.RADIANS) {
+    return Math.atan2(y, x);
+  } else {
+    return polarGeometry.radiansToDegrees(Math.atan2(y, x));
+  }
 };
 
 /**
@@ -67172,7 +65473,11 @@ p5.prototype.atan2 = function(y, x) {
  *
  */
 p5.prototype.cos = function(angle) {
-  return Math.cos(this._toRadians(angle));
+  if (this._angleMode === constants.RADIANS) {
+    return Math.cos(angle);
+  } else {
+    return Math.cos(this.radians(angle));
+  }
 };
 
 /**
@@ -67200,7 +65505,11 @@ p5.prototype.cos = function(angle) {
  *
  */
 p5.prototype.sin = function(angle) {
-  return Math.sin(this._toRadians(angle));
+  if (this._angleMode === constants.RADIANS) {
+    return Math.sin(angle);
+  } else {
+    return Math.sin(this.radians(angle));
+  }
 };
 
 /**
@@ -67228,15 +65537,18 @@ p5.prototype.sin = function(angle) {
  *
  */
 p5.prototype.tan = function(angle) {
-  return Math.tan(this._toRadians(angle));
+  if (this._angleMode === constants.RADIANS) {
+    return Math.tan(angle);
+  } else {
+    return Math.tan(this.radians(angle));
+  }
 };
 
 /**
  * Converts a radian measurement to its corresponding value in degrees.
  * Radians and degrees are two ways of measuring the same thing. There are
  * 360 degrees in a circle and 2*PI radians in a circle. For example,
- * 90° = PI/2 = 1.5707964. This function does not take into account the
- * current angleMode.
+ * 90° = PI/2 = 1.5707964.
  *
  * @method degrees
  * @param  {Number} radians the radians value to convert to degrees
@@ -67255,15 +65567,14 @@ p5.prototype.tan = function(angle) {
  *
  */
 p5.prototype.degrees = function(angle) {
-  return angle * constants.RAD_TO_DEG;
+  return polarGeometry.radiansToDegrees(angle);
 };
 
 /**
  * Converts a degree measurement to its corresponding value in radians.
  * Radians and degrees are two ways of measuring the same thing. There are
  * 360 degrees in a circle and 2*PI radians in a circle. For example,
- * 90° = PI/2 = 1.5707964. This function does not take into account the
- * current angleMode.
+ * 90° = PI/2 = 1.5707964.
  *
  * @method radians
  * @param  {Number} degrees the degree value to convert to radians
@@ -67280,7 +65591,7 @@ p5.prototype.degrees = function(angle) {
  * </div>
  */
 p5.prototype.radians = function(angle) {
-  return angle * constants.DEG_TO_RAD;
+  return polarGeometry.degreesToRadians(angle);
 };
 
 /**
@@ -67319,54 +65630,9 @@ p5.prototype.angleMode = function(mode) {
   }
 };
 
-/**
- * converts angles from the current angleMode to RADIANS
- *
- * @method _toRadians
- * @private
- * @param {Number} angle
- * @returns {Number}
- */
-p5.prototype._toRadians = function(angle) {
-  if (this._angleMode === constants.DEGREES) {
-    return angle * constants.DEG_TO_RAD;
-  }
-  return angle;
-};
-
-/**
- * converts angles from the current angleMode to DEGREES
- *
- * @method _toDegrees
- * @private
- * @param {Number} angle
- * @returns {Number}
- */
-p5.prototype._toDegrees = function(angle) {
-  if (this._angleMode === constants.RADIANS) {
-    return angle * constants.RAD_TO_DEG;
-  }
-  return angle;
-};
-
-/**
- * converts angles from RADIANS into the current angleMode
- *
- * @method _fromRadians
- * @private
- * @param {Number} angle
- * @returns {Number}
- */
-p5.prototype._fromRadians = function(angle) {
-  if (this._angleMode === constants.DEGREES) {
-    return angle * constants.RAD_TO_DEG;
-  }
-  return angle;
-};
-
 module.exports = p5;
 
-},{"../core/constants":21,"../core/core":22}],56:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22,"./polargeometry":54}],57:[function(_dereq_,module,exports){
 /**
  * @module Typography
  * @submodule Attributes
@@ -67422,7 +65688,6 @@ var p5 = _dereq_('../core/core');
  * @return {Object}
  */
 p5.prototype.textAlign = function(horizAlign, vertAlign) {
-  p5._validateParameters('textAlign', arguments);
   return this._renderer.textAlign.apply(this._renderer, arguments);
 };
 
@@ -67460,7 +65725,6 @@ p5.prototype.textAlign = function(horizAlign, vertAlign) {
  * @return {Number}
  */
 p5.prototype.textLeading = function(theLeading) {
-  p5._validateParameters('textLeading', arguments);
   return this._renderer.textLeading.apply(this._renderer, arguments);
 };
 
@@ -67492,7 +65756,6 @@ p5.prototype.textLeading = function(theLeading) {
  * @return {Number}
  */
 p5.prototype.textSize = function(theSize) {
-  p5._validateParameters('textSize', arguments);
   return this._renderer.textSize.apply(this._renderer, arguments);
 };
 
@@ -67527,7 +65790,6 @@ p5.prototype.textSize = function(theSize) {
  * @return {String}
  */
 p5.prototype.textStyle = function(theStyle) {
-  p5._validateParameters('textStyle', arguments);
   return this._renderer.textStyle.apply(this._renderer, arguments);
 };
 
@@ -67559,7 +65821,6 @@ p5.prototype.textStyle = function(theStyle) {
  *
  */
 p5.prototype.textWidth = function(theText) {
-  p5._validateParameters('textWidth', arguments);
   if (theText.length === 0) {
     return 0;
   }
@@ -67591,7 +65852,6 @@ p5.prototype.textWidth = function(theText) {
  * </div>
  */
 p5.prototype.textAscent = function() {
-  p5._validateParameters('textAscent', arguments);
   return this._renderer.textAscent();
 };
 
@@ -67620,7 +65880,6 @@ p5.prototype.textAscent = function() {
  * </div>
  */
 p5.prototype.textDescent = function() {
-  p5._validateParameters('textDescent', arguments);
   return this._renderer.textDescent();
 };
 
@@ -67633,7 +65892,7 @@ p5.prototype._updateTextMetrics = function() {
 
 module.exports = p5;
 
-},{"../core/core":22}],57:[function(_dereq_,module,exports){
+},{"../core/core":22}],58:[function(_dereq_,module,exports){
 /**
  * @module Typography
  * @submodule Loading & Displaying
@@ -67721,7 +65980,6 @@ _dereq_('../core/error_helpers');
  *
  */
 p5.prototype.loadFont = function(path, onSuccess, onError) {
-  p5._validateParameters('loadFont', arguments);
   var p5Font = new p5.Font(this);
 
   var self = this;
@@ -67795,8 +66053,7 @@ p5.prototype.loadFont = function(path, onSuccess, onError) {
  * to the screen.
  *
  * @method text
- * @param {String|Object|Array|Number|Boolean} str the alphanumeric
- *                                             symbols to be displayed
+ * @param {String|Object|Array} str the alphanumeric symbols to be displayed
  * @param {Number} x   x-coordinate of text
  * @param {Number} y   y-coordinate of text
  * @param {Number} [x2]  by default, the width of the text box,
@@ -67829,7 +66086,6 @@ p5.prototype.loadFont = function(path, onSuccess, onError) {
  *
  */
 p5.prototype.text = function(str, x, y, maxWidth, maxHeight) {
-  p5._validateParameters('text', arguments);
   return !(this._renderer._doFill || this._renderer._doStroke)
     ? this
     : this._renderer.text.apply(this._renderer, arguments);
@@ -67887,7 +66143,6 @@ p5.prototype.text = function(str, x, y, maxWidth, maxHeight) {
  * @chainable
  */
 p5.prototype.textFont = function(theFont, theSize) {
-  p5._validateParameters('textFont', arguments);
   if (arguments.length) {
     if (!theFont) {
       throw Error('null font passed to textFont');
@@ -67911,7 +66166,7 @@ p5.prototype.textFont = function(theFont, theSize) {
 
 module.exports = p5;
 
-},{"../core/constants":21,"../core/core":22,"../core/error_helpers":25,"opentype.js":10}],58:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22,"../core/error_helpers":25,"opentype.js":10}],59:[function(_dereq_,module,exports){
 /**
  * This module defines the p5.Font class and functions for
  * drawing text to the display canvas.
@@ -67935,6 +66190,7 @@ var constants = _dereq_('../core/constants');
 /**
  * Base class for font handling
  * @class p5.Font
+ * @constructor
  * @param {p5} [pInst] pointer to p5 instance
  */
 p5.Font = function(p) {
@@ -67947,6 +66203,7 @@ p5.Font = function(p) {
    * @property font
    */
   this.font = undefined;
+  this.name = 'p5.Font'; // for friendly debugger system
 };
 
 p5.Font.prototype.list = function() {
@@ -69152,7 +67409,7 @@ function cacheKey() {
 
 module.exports = p5;
 
-},{"../core/constants":21,"../core/core":22}],59:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22}],60:[function(_dereq_,module,exports){
 /**
  * @module Data
  * @submodule Array Functions
@@ -69169,7 +67426,6 @@ var p5 = _dereq_('../core/core');
  * the array by one. Maps to Array.push().
  *
  * @method append
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">array.push(value)</a> instead.
  * @param {Array} array Array to append
  * @param {any} value to be added to the Array
  * @example
@@ -69204,7 +67460,6 @@ p5.prototype.append = function(array, value) {
  * iterating through a for() loop and copying each element individually.
  *
  * @method arrayCopy
- * @deprecated
  * @param {Array}  src           the source Array
  * @param {Integer} srcPosition  starting position in the source Array
  * @param {Array}  dst           the destination Array
@@ -69228,7 +67483,6 @@ p5.prototype.append = function(array, value) {
  */
 /**
  * @method arrayCopy
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin">arr1.copyWithin(arr2)</a> instead.
  * @param {Array}  src
  * @param {Array}  dst
  * @param {Integer} [length]
@@ -69270,7 +67524,6 @@ p5.prototype.arrayCopy = function(src, srcPosition, dst, dstPosition, length) {
  * input arrays.
  *
  * @method concat
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">arr1.concat(arr2)</a> instead.
  * @param {Array} a first Array to concatenate
  * @param {Array} b second Array to concatenate
  * @return {Array} concatenated array
@@ -69300,7 +67553,6 @@ p5.prototype.concat = function(list0, list1) {
  * Reverses the order of an array, maps to Array.reverse()
  *
  * @method reverse
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">array.reverse()</a> instead.
  * @param {Array} list Array to reverse
  * @example
  * <div class='norender'><code>
@@ -69322,7 +67574,6 @@ p5.prototype.reverse = function(list) {
  * maps to Array.pop().
  *
  * @method shorten
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">array.pop()</a> instead.
  * @param  {Array} list Array to shorten
  * @return {Array} shortened Array
  * @example
@@ -69347,7 +67598,6 @@ p5.prototype.shorten = function(list) {
  * Fisher-Yates Shuffle Algorithm</a>.
  *
  * @method shuffle
- * @deprecated See <a href="https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array">shuffling an array with JS</a> instead.
  * @param  {Array}   array  Array to shuffle
  * @param  {Boolean} [bool] modify passed array
  * @return {Array}   shuffled Array
@@ -69392,7 +67642,6 @@ p5.prototype.shuffle = function(arr, bool) {
  * count is set to 5, only the first 5 elements in the array will be sorted.
  *
  * @method sort
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">array.sort()</a> instead.
  * @param {Array} list Array to sort
  * @param {Integer} [count] number of elements to sort, starting from 0
  *
@@ -69440,7 +67689,6 @@ p5.prototype.sort = function(list, count) {
  * is 0, the second position is 1, and so on.)
  *
  * @method splice
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">array.splice()</a> instead.
  * @param {Array}  list Array to splice into
  * @param {any}    value value to be spliced in
  * @param {Integer} position in the array from which to insert data
@@ -69474,7 +67722,6 @@ p5.prototype.splice = function(list, value, index) {
  * This function does not change the source array.
  *
  * @method subset
- * @deprecated Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">array.slice()</a> instead.
  * @param  {Array}  list    Array to extract from
  * @param  {Integer} start   position to begin
  * @param  {Integer} [count] number of values to extract
@@ -69503,7 +67750,7 @@ p5.prototype.subset = function(list, start, count) {
 
 module.exports = p5;
 
-},{"../core/core":22}],60:[function(_dereq_,module,exports){
+},{"../core/core":22}],61:[function(_dereq_,module,exports){
 /**
  * @module Data
  * @submodule Conversion
@@ -69552,7 +67799,6 @@ p5.prototype.float = function(str) {
  *
  * @method int
  * @param {String|Boolean|Number}       n value to parse
- * @param {Integer}       [radix] the radix to convert to (default: 10)
  * @return {Number}                     integer representation of value
  *
  * @example
@@ -69820,7 +68066,7 @@ p5.prototype.unhex = function(n) {
 
 module.exports = p5;
 
-},{"../core/core":22}],61:[function(_dereq_,module,exports){
+},{"../core/core":22}],62:[function(_dereq_,module,exports){
 /**
  * @module Data
  * @submodule String Functions
@@ -70382,7 +68628,7 @@ p5.prototype.trim = function(str) {
 
 module.exports = p5;
 
-},{"../core/core":22,"../core/error_helpers":25}],62:[function(_dereq_,module,exports){
+},{"../core/core":22,"../core/error_helpers":25}],63:[function(_dereq_,module,exports){
 /**
  * @module IO
  * @submodule Time & Date
@@ -70551,7 +68797,7 @@ p5.prototype.year = function() {
 
 module.exports = p5;
 
-},{"../core/core":22}],63:[function(_dereq_,module,exports){
+},{"../core/core":22}],64:[function(_dereq_,module,exports){
 /**
  * @module Lights, Camera
  * @submodule Camera
@@ -70601,8 +68847,6 @@ var p5 = _dereq_('../core/core');
  *
  */
 p5.prototype.camera = function() {
-  this._assert3d('camera');
-  p5._validateParameters('camera', arguments);
   this._renderer.camera.apply(this._renderer, arguments);
   return this;
 };
@@ -70719,7 +68963,7 @@ p5.RendererGL.prototype.camera = function(
  * where cameraZ is ((height/2.0) / tan(PI*60.0/360.0));
  * @method  perspective
  * @param  {Number} [fovy]   camera frustum vertical field of view,
- *                           from bottom to top of view, in angleMode units
+ *                           from bottom to top of view, in degrees
  * @param  {Number} [aspect] camera frustum aspect ratio
  * @param  {Number} [near]   frustum near plane length
  * @param  {Number} [far]    frustum far plane length
@@ -70755,8 +68999,6 @@ p5.RendererGL.prototype.camera = function(
  *
  */
 p5.prototype.perspective = function() {
-  this._assert3d('perspective');
-  p5._validateParameters('perspective', arguments);
   this._renderer.perspective.apply(this._renderer, arguments);
   return this;
 };
@@ -70775,12 +69017,12 @@ p5.RendererGL.prototype.perspective = function(fovy, aspect, near, far) {
     far = this.defaultCameraFar;
   }
 
-  this.cameraFOV = this._pInst._toRadians(fovy);
+  this.cameraFOV = fovy;
   this.cameraAspect = aspect;
   this.cameraNear = near;
   this.cameraFar = far;
 
-  this.uPMatrix = p5.Matrix.identity();
+  this.uPMatrix = p5.Matrix.identity(this.pInst);
 
   var f = 1.0 / Math.tan(this.cameraFOV / 2);
   var nf = 1.0 / (this.cameraNear - this.cameraFar);
@@ -70834,8 +69076,6 @@ p5.RendererGL.prototype.perspective = function(fovy, aspect, near, far) {
  *
  */
 p5.prototype.ortho = function() {
-  this._assert3d('ortho');
-  p5._validateParameters('ortho', arguments);
   this._renderer.ortho.apply(this._renderer, arguments);
   return this;
 };
@@ -70847,6 +69087,8 @@ p5.RendererGL.prototype.ortho = function(left, right, bottom, top, near, far) {
   if (top === undefined) top = +this.height / 2;
   if (near === undefined) near = 0;
   if (far === undefined) far = Math.max(this.width, this.height);
+  this.uPMatrix = p5.Matrix.identity(this._pInst);
+  //this.uPMatrix.ortho(left,right,bottom,top,near,far);
 
   var w = right - left;
   var h = top - bottom;
@@ -70873,7 +69115,7 @@ p5.RendererGL.prototype.ortho = function(left, right, bottom, top, near, far) {
 
 module.exports = p5;
 
-},{"../core/core":22}],64:[function(_dereq_,module,exports){
+},{"../core/core":22}],65:[function(_dereq_,module,exports){
 'use strict';
 
 var p5 = _dereq_('../core/core');
@@ -70882,31 +69124,10 @@ var p5 = _dereq_('../core/core');
  * @method orbitControl
  * @for p5
  * @chainable
- *
- * @example
- * <div>
- * <code>
- * function setup() {
- *   createCanvas(100, 100, WEBGL);
- * }
- *
- * function draw() {
- *   background(50);
- *   // Orbit control allows the camera to orbit around a target.
- *   orbitControl();
- *   box(30, 50);
- * }
- * </code>
- * </div>
- *
- * @alt
- * Camera orbits around box when mouse is hold-clicked & then moved.
  */
 //@TODO: implement full orbit controls including
 //pan, zoom, quaternion rotation, etc.
 p5.prototype.orbitControl = function() {
-  this._assert3d('orbitControl');
-  p5._validateParameters('orbitControl', arguments);
   if (this.mouseIsPressed) {
     this.rotateY((this.mouseX - this.width / 2) / (this.width / 2));
     this.rotateX((this.mouseY - this.height / 2) / (this.width / 2));
@@ -70916,7 +69137,7 @@ p5.prototype.orbitControl = function() {
 
 module.exports = p5;
 
-},{"../core/core":22}],65:[function(_dereq_,module,exports){
+},{"../core/core":22}],66:[function(_dereq_,module,exports){
 /**
  * @module Lights, Camera
  * @submodule Lights
@@ -70965,12 +69186,6 @@ var p5 = _dereq_('../core/core');
 /**
  * @method ambientLight
  * @param  {String}        value   a color string
- * @chainable
- */
-
-/**
- * @method ambientLight
- * @param  {Number}        gray   a gray value
  * @param  {Number}        [alpha]
  * @chainable
  */
@@ -70988,8 +69203,6 @@ var p5 = _dereq_('../core/core');
  * @chainable
  */
 p5.prototype.ambientLight = function(v1, v2, v3, a) {
-  this._assert3d('ambientLight');
-  p5._validateParameters('ambientLight', arguments);
   var color = this.color.apply(this, arguments);
 
   var shader = this._renderer._useLightShader();
@@ -71078,8 +69291,6 @@ p5.prototype.ambientLight = function(v1, v2, v3, a) {
  * @chainable
  */
 p5.prototype.directionalLight = function(v1, v2, v3, x, y, z) {
-  this._assert3d('directionalLight');
-  p5._validateParameters('directionalLight', arguments);
   var shader = this._renderer._useLightShader();
 
   //@TODO: check parameters number
@@ -71191,8 +69402,6 @@ p5.prototype.directionalLight = function(v1, v2, v3, x, y, z) {
  * @chainable
  */
 p5.prototype.pointLight = function(v1, v2, v3, x, y, z) {
-  this._assert3d('pointLight');
-  p5._validateParameters('pointLight', arguments);
   //@TODO: check parameters number
   var color = this._renderer._pInst.color.apply(this, [v1, v2, v3]);
 
@@ -71233,7 +69442,7 @@ p5.prototype.pointLight = function(v1, v2, v3, x, y, z) {
 
 module.exports = p5;
 
-},{"../core/core":22}],66:[function(_dereq_,module,exports){
+},{"../core/core":22}],67:[function(_dereq_,module,exports){
 /**
  * @module Shape
  * @submodule 3D Models
@@ -71302,7 +69511,6 @@ _dereq_('./p5.Geometry');
  * @return {p5.Geometry} the p5.Geometry object
  */
 p5.prototype.loadModel = function(path) {
-  p5._validateParameters('loadModel', arguments);
   var normalize;
   var successCallback;
   var failureCallback;
@@ -71318,7 +69526,6 @@ p5.prototype.loadModel = function(path) {
 
   var model = new p5.Geometry();
   model.gid = path + '|' + normalize;
-  var self = this;
   this.loadStrings(
     path,
     function(strings) {
@@ -71328,7 +69535,6 @@ p5.prototype.loadModel = function(path) {
         model.normalize();
       }
 
-      self._decrementPreload();
       if (typeof successCallback === 'function') {
         successCallback(model);
       }
@@ -71481,11 +69687,10 @@ function parseObj(model, lines) {
  *
  */
 p5.prototype.model = function(model) {
-  this._assert3d('model');
-  p5._validateParameters('model', arguments);
   if (model.vertices.length > 0) {
     if (!this._renderer.geometryInHash(model.gid)) {
-      model._makeTriangleEdges()._edgesToVertices();
+      model._makeTriangleEdges();
+      this._renderer._edgesToVertices(model);
       this._renderer.createBuffers(model.gid, model);
     }
 
@@ -71495,7 +69700,7 @@ p5.prototype.model = function(model) {
 
 module.exports = p5;
 
-},{"../core/core":22,"./p5.Geometry":68}],67:[function(_dereq_,module,exports){
+},{"../core/core":22,"./p5.Geometry":69}],68:[function(_dereq_,module,exports){
 /**
  * @module Lights, Camera
  * @submodule Material
@@ -71527,7 +69732,6 @@ _dereq_('./p5.Texture');
  * vertex and fragment shader files.
  */
 p5.prototype.loadShader = function(vertFilename, fragFilename) {
-  p5._validateParameters('loadShader', arguments);
   var loadedShader = new p5.Shader();
 
   var self = this;
@@ -71537,15 +69741,15 @@ p5.prototype.loadShader = function(vertFilename, fragFilename) {
   this.loadStrings(fragFilename, function(result) {
     loadedShader._fragSrc = result.join('\n');
     loadedFrag = true;
-    if (loadedVert) {
-      self._decrementPreload();
+    if (!loadedVert) {
+      self._incrementPreload();
     }
   });
   this.loadStrings(vertFilename, function(result) {
     loadedShader._vertSrc = result.join('\n');
     loadedVert = true;
-    if (loadedFrag) {
-      self._decrementPreload();
+    if (!loadedFrag) {
+      self._incrementPreload();
     }
   });
 
@@ -71615,8 +69819,6 @@ p5.prototype.loadShader = function(vertFilename, fragFilename) {
  * zooming Mandelbrot set. a colorful, infinitely detailed fractal.
  */
 p5.prototype.createShader = function(vertSrc, fragSrc) {
-  this._assert3d('createShader');
-  p5._validateParameters('createShader', arguments);
   return new p5.Shader(this._renderer, vertSrc, fragSrc);
 };
 
@@ -71632,8 +69834,6 @@ p5.prototype.createShader = function(vertSrc, fragSrc) {
  * shapes.
  */
 p5.prototype.shader = function(s) {
-  this._assert3d('shader');
-  p5._validateParameters('shader', arguments);
   if (s._renderer === undefined) {
     s._renderer = this._renderer;
   }
@@ -71671,8 +69871,6 @@ p5.prototype.shader = function(s) {
  *
  */
 p5.prototype.normalMaterial = function() {
-  this._assert3d('normalMaterial');
-  p5._validateParameters('normalMaterial', arguments);
   this._renderer.drawMode = constants.FILL;
   this._renderer.setFillShader(this._renderer._getNormalShader());
   this._renderer.curFillColor = [1, 1, 1, 1];
@@ -71759,8 +69957,13 @@ p5.prototype.normalMaterial = function() {
  *
  */
 p5.prototype.texture = function(tex) {
-  this._assert3d('texture');
-  p5._validateParameters('texture', arguments);
+  this._renderer.GL.depthMask(true);
+  this._renderer.GL.enable(this._renderer.GL.BLEND);
+  this._renderer.GL.blendFunc(
+    this._renderer.GL.SRC_ALPHA,
+    this._renderer.GL.ONE_MINUS_SRC_ALPHA
+  );
+
   this._renderer.drawMode = constants.TEXTURE;
   var shader = this._renderer._useLightShader();
   shader.setUniform('uSpecular', false);
@@ -71807,8 +70010,6 @@ p5.prototype.texture = function(tex) {
  * @chainable
  */
 p5.prototype.ambientMaterial = function(v1, v2, v3, a) {
-  this._assert3d('ambientMaterial');
-  p5._validateParameters('ambientMaterial', arguments);
   var color = p5.prototype.color.apply(this, arguments);
   this._renderer.curFillColor = color._array;
 
@@ -71856,8 +70057,6 @@ p5.prototype.ambientMaterial = function(v1, v2, v3, a) {
  * @chainable
  */
 p5.prototype.specularMaterial = function(v1, v2, v3, a) {
-  this._assert3d('specularMaterial');
-  p5._validateParameters('specularMaterial', arguments);
   var color = p5.prototype.color.apply(this, arguments);
   this._renderer.curFillColor = color._array;
 
@@ -71877,10 +70076,8 @@ p5.prototype.specularMaterial = function(v1, v2, v3, a) {
  */
 p5.RendererGL.prototype._applyColorBlend = function(colors) {
   var gl = this.GL;
-
-  var isTexture = this.drawMode === constants.TEXTURE;
-  if (isTexture || colors[colors.length - 1] < 1.0) {
-    gl.depthMask(isTexture);
+  if (colors[colors.length - 1] < 1.0) {
+    gl.depthMask(false);
     gl.enable(gl.BLEND);
     gl.blendEquation(gl.FUNC_ADD);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
@@ -71893,7 +70090,7 @@ p5.RendererGL.prototype._applyColorBlend = function(colors) {
 
 module.exports = p5;
 
-},{"../core/constants":21,"../core/core":22,"./p5.Texture":74}],68:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22,"./p5.Texture":75}],69:[function(_dereq_,module,exports){
 //some of the functions are adjusted from Three.js(http://threejs.org)
 
 'use strict';
@@ -71942,6 +70139,8 @@ p5.Geometry = function(detailX, detailY, callback) {
   if (callback instanceof Function) {
     callback.call(this);
   }
+  this.name = 'p5.Geometry'; // for friendly debugger system
+
   return this; // TODO: is this a constructor?
 };
 
@@ -71950,7 +70149,6 @@ p5.Geometry = function(detailX, detailY, callback) {
  * @chainable
  */
 p5.Geometry.prototype.computeFaces = function() {
-  this.faces.length = 0;
   var sliceCount = this.detailX + 1;
   var a, b, c, d;
   for (var i = 0; i < this.detailY; i++) {
@@ -71977,14 +70175,6 @@ p5.Geometry.prototype._getFaceNormal = function(faceId) {
   var n = p5.Vector.cross(ab, ac);
   var ln = p5.Vector.mag(n);
   var sinAlpha = ln / (p5.Vector.mag(ab) * p5.Vector.mag(ac));
-  if (sinAlpha === 0 || isNaN(sinAlpha)) {
-    console.warn(
-      'p5.Geometry.prototype._getFaceNormal:',
-      'face has colinear sides or a repeated vertex'
-    );
-    return n;
-  }
-  if (sinAlpha > 1) sinAlpha = 1; // handle float rounding error
   return n.mult(Math.asin(sinAlpha) / ln);
 };
 /**
@@ -71994,35 +70184,25 @@ p5.Geometry.prototype._getFaceNormal = function(faceId) {
  * @chainable
  */
 p5.Geometry.prototype.computeNormals = function() {
-  var vertexNormals = this.vertexNormals;
-  var vertices = this.vertices;
-  var faces = this.faces;
-  var iv;
-
-  // initialize the vertexNormals array with empty vectors
-  vertexNormals.length = 0;
-  for (iv = 0; iv < vertices.length; ++iv) {
-    vertexNormals.push(new p5.Vector());
-  }
-
-  // loop through all the faces adding its normal to the normal
-  // of each of its vertices
-  for (var f = 0; f < faces.length; ++f) {
-    var face = faces[f];
-    var faceNormal = this._getFaceNormal(f);
-
-    // all three vertices get the normal added
-    for (var fv = 0; fv < 3; ++fv) {
-      var vertexIndex = face[fv];
-      vertexNormals[vertexIndex].add(faceNormal);
+  var normals = [];
+  for (var v = 0; v < this.vertices.length; v++) {
+    var normal = new p5.Vector();
+    for (var i = 0; i < this.faces.length; i++) {
+      //if our face contains a given vertex
+      //calculate an average of the normals
+      //of the triangles adjacent to that vertex
+      if (
+        this.faces[i][0] === v ||
+        this.faces[i][1] === v ||
+        this.faces[i][2] === v
+      ) {
+        var faceNormal = normals[i] || (normals[i] = this._getFaceNormal(i));
+        normal = normal.add(faceNormal);
+      }
     }
+    normal = normal.normalize();
+    this.vertexNormals.push(normal);
   }
-
-  // normalize the normals
-  for (iv = 0; iv < vertices.length; ++iv) {
-    vertexNormals[iv].normalize();
-  }
-
   return this;
 };
 
@@ -72088,10 +70268,9 @@ p5.Geometry.prototype.averagePoleNormals = function() {
 /**
  * Create a 2D array for establishing stroke connections
  * @private
- * @chainable
+ * @return {p5.Geometry}
  */
 p5.Geometry.prototype._makeTriangleEdges = function() {
-  this.edges.length = 0;
   if (Array.isArray(this.strokeIndices)) {
     for (var i = 0, max = this.strokeIndices.length; i < max; i++) {
       this.edges.push(this.strokeIndices[i]);
@@ -72111,15 +70290,13 @@ p5.Geometry.prototype._makeTriangleEdges = function() {
  * and two at the end position. These vertices are displaced relative to
  * that line's normal on the GPU
  * @private
- * @chainable
+ * @return {p5.Geometry}
  */
-p5.Geometry.prototype._edgesToVertices = function() {
-  this.lineVertices.length = 0;
-  this.lineNormals.length = 0;
-
-  for (var i = 0; i < this.edges.length; i++) {
-    var begin = this.vertices[this.edges[i][0]];
-    var end = this.vertices[this.edges[i][1]];
+p5.RendererGL.prototype._edgesToVertices = function(geom) {
+  geom.lineVertices = [];
+  for (var i = 0; i < geom.edges.length; i++) {
+    var begin = geom.vertices[geom.edges[i][0]];
+    var end = geom.vertices[geom.edges[i][1]];
     var dir = end
       .copy()
       .sub(begin)
@@ -72134,10 +70311,9 @@ p5.Geometry.prototype._edgesToVertices = function() {
     // in opposite directions
     dirAdd.push(1);
     dirSub.push(-1);
-    this.lineNormals.push(dirAdd, dirSub, dirAdd, dirAdd, dirSub, dirSub);
-    this.lineVertices.push(a, b, c, c, b, d);
+    geom.lineNormals.push(dirAdd, dirSub, dirAdd, dirAdd, dirSub, dirSub);
+    geom.lineVertices.push(a, b, c, c, b, d);
   }
-  return this;
 };
 
 /**
@@ -72175,7 +70351,7 @@ p5.Geometry.prototype.normalize = function() {
 
 module.exports = p5.Geometry;
 
-},{"../core/core":22}],69:[function(_dereq_,module,exports){
+},{"../core/core":22}],70:[function(_dereq_,module,exports){
 /**
  * @requires constants
  * @todo see methods below needing further implementation.
@@ -72188,6 +70364,8 @@ module.exports = p5.Geometry;
 'use strict';
 
 var p5 = _dereq_('../core/core');
+var polarGeometry = _dereq_('../math/polargeometry');
+var constants = _dereq_('../core/constants');
 
 var GLMAT_ARRAY_TYPE = Array;
 var isMatrixArray = function(x) {
@@ -72230,6 +70408,8 @@ p5.Matrix = function() {
       ? args[0]
       : new GLMAT_ARRAY_TYPE([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]);
   }
+
+  this.name = 'p5.Matrix'; // for friendly debugger system
   return this;
 };
 
@@ -72689,8 +70869,13 @@ p5.Matrix.prototype.scale = function(x, y, z) {
  * inspired by Toji's gl-matrix lib, mat4 rotation
  */
 p5.Matrix.prototype.rotate = function(a, x, y, z) {
-  var _a = this.p5 ? this.p5._toRadians(a) : a;
+  var _a, len;
 
+  if (this.p5 && this.p5._angleMode === constants.DEGREES) {
+    _a = polarGeometry.degreesToRadians(a);
+  } else {
+    _a = a;
+  }
   if (x instanceof p5.Vector) {
     // x is a vector, extract the components from it.
     y = x.y;
@@ -72703,7 +70888,7 @@ p5.Matrix.prototype.rotate = function(a, x, y, z) {
     x = x[0]; //must be last
   }
 
-  var len = Math.sqrt(x * x + y * y + z * z);
+  len = Math.sqrt(x * x + y * y + z * z);
   x *= 1 / len;
   y *= 1 / len;
   z *= 1 / len;
@@ -72896,7 +71081,7 @@ p5.Matrix.prototype.ortho = function(left, right, bottom, top, near, far) {
 
 module.exports = p5.Matrix;
 
-},{"../core/core":22}],70:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22,"../math/polargeometry":54}],71:[function(_dereq_,module,exports){
 /**
  * Welcome to RendererGL Immediate Mode.
  * Immediate mode is used for drawing custom shapes
@@ -72921,7 +71106,6 @@ var constants = _dereq_('../core/constants');
  * performance will likely drop as a result of too many calls to
  * beginShape() / endShape().  As a high performance alternative,
  * please use p5.js geometry primitives.
- * @private
  * @method beginShape
  * @param  {Number} mode webgl primitives mode.  beginShape supports the
  *                       following modes:
@@ -72960,7 +71144,6 @@ p5.RendererGL.prototype.beginShape = function(mode) {
 };
 /**
  * adds a vertex to be drawn in a custom Shape.
- * @private
  * @method vertex
  * @param  {Number} x x-coordinate of vertex
  * @param  {Number} y y-coordinate of vertex
@@ -73027,7 +71210,7 @@ p5.RendererGL.prototype.endShape = function(
       ]);
     }
 
-    p5.Geometry.prototype._edgesToVertices.call(this.immediateMode);
+    this._edgesToVertices(this.immediateMode);
     this._drawStrokeImmediateMode();
   }
   if (this._doFill) {
@@ -73223,7 +71406,7 @@ p5.RendererGL.prototype._drawStrokeImmediateMode = function() {
 
 module.exports = p5.RendererGL;
 
-},{"../core/constants":21,"../core/core":22}],71:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22}],72:[function(_dereq_,module,exports){
 //Retained Mode. The default mode for rendering 3D primitives
 //in WEBGL.
 'use strict';
@@ -73562,7 +71745,7 @@ p5.RendererGL.prototype._drawElements = function(drawMode, gId) {
 
 module.exports = p5.RendererGL;
 
-},{"../core/core":22}],72:[function(_dereq_,module,exports){
+},{"../core/core":22}],73:[function(_dereq_,module,exports){
 'use strict';
 
 var p5 = _dereq_('../core/core');
@@ -73571,6 +71754,9 @@ _dereq_('./p5.Shader');
 _dereq_('../core/p5.Renderer');
 _dereq_('./p5.Matrix');
 
+
+var uMVMatrixStack = [];
+var cameraMatrixStack = [];
 
 var defaultShaders = {
   immediateVert: "attribute vec3 aPosition;\nattribute vec4 aVertexColor;\n\nuniform mat4 uModelViewMatrix;\nuniform mat4 uProjectionMatrix;\nuniform float uResolution;\nuniform float uPointSize;\n\nvarying vec4 vColor;\nvoid main(void) {\n  vec4 positionVec4 = vec4(aPosition, 1.0);\n  gl_Position = uProjectionMatrix * uModelViewMatrix * positionVec4;\n  vColor = aVertexColor;\n  gl_PointSize = uPointSize;\n}\n",
@@ -73589,7 +71775,6 @@ var defaultShaders = {
 
 /**
  * 3D graphics class
- * @private
  * @class p5.RendererGL
  * @constructor
  * @extends p5.Renderer
@@ -73646,7 +71831,7 @@ p5.RendererGL = function(elt, pInst, isMainCanvas, attr) {
   this.cameraZ = this.defaultCameraZ;
   this.cameraNear = this.defaultCameraNear;
   this.cameraFar = this.defaultCameraFar;
-  this.cameraMatrix = new p5.Matrix();
+  this.cameraMatrix = new p5.Matrix(pInst);
   this.camera(); // set default camera matrices
 
   //Geometry & Material hashes
@@ -73677,6 +71862,8 @@ p5.RendererGL = function(elt, pInst, isMainCanvas, attr) {
   this.stroke(0, 0, 0);
   // array of textures created in this gl context via this.getTexture(src)
   this.textures = [];
+  this.name = 'p5.RendererGL'; // for friendly debugger system
+
   return this;
 };
 
@@ -73727,13 +71914,11 @@ p5.RendererGL.prototype._resetContext = function(attr, options, callback) {
     document.body.appendChild(c);
   }
   this._pInst.canvas = c;
-
   var renderer = new p5.RendererGL(this._pInst.canvas, this._pInst, true, attr);
   this._pInst._setProperty('_renderer', renderer);
   renderer.resize(w, h);
   renderer._applyDefaults();
   this._pInst._elements.push(renderer);
-
   if (typeof callback === 'function') {
     //setTimeout with 0 forces the task to the back of the queue, this ensures that
     //we finish switching out the renderer
@@ -73887,7 +72072,6 @@ p5.RendererGL.prototype._resetContext = function(attr, options, callback) {
  */
 
 p5.prototype.setAttributes = function(key, value) {
-  this._assert3d('setAttributes');
   //@todo_FES
   var attr;
   if (typeof value !== 'undefined') {
@@ -73896,9 +72080,7 @@ p5.prototype.setAttributes = function(key, value) {
   } else if (key instanceof Object) {
     attr = key;
   }
-  this.push();
   this._renderer._resetContext(attr);
-  this.pop();
 };
 
 /**
@@ -74139,7 +72321,7 @@ p5.RendererGL.prototype.strokeWeight = function(w) {
  * as grabbing the data directly from pixels[]. The equivalent statement to
  * get(x, y) is using pixels[] with pixel density d
  *
- * @private
+ *
  * @method get
  * @param  {Number}               [x] x-coordinate of the pixel
  * @param  {Number}               [y] y-coordinate of the pixel
@@ -74157,7 +72339,6 @@ p5.RendererGL.prototype.get = function(x, y, w, h) {
  * Note that updatePixels() and set() do not work.
  * Any pixel manipulation must be done directly to the pixels[] array.
  *
- * @private
  * @method loadPixels
  *
  */
@@ -74244,11 +72425,7 @@ p5.RendererGL.prototype.resize = function(w, h) {
  * @param {Number} a normalized alpha val.
  */
 p5.RendererGL.prototype.clear = function() {
-  var _r = arguments[0] || 0;
-  var _g = arguments[1] || 0;
-  var _b = arguments[2] || 0;
-  var _a = arguments[3] || 0;
-  this.GL.clearColor(_r, _g, _b, _a);
+  this.GL.clearColor(arguments[0], arguments[1], arguments[2], arguments[3]);
   this.GL.clear(this.GL.COLOR_BUFFER_BIT | this.GL.DEPTH_BUFFER_BIT);
 };
 
@@ -74307,17 +72484,27 @@ p5.RendererGL.prototype.rotateZ = function(rad) {
   return this;
 };
 
+/**
+ * pushes a copy of the model view matrix onto the
+ * MV Matrix stack.
+ */
 p5.RendererGL.prototype.push = function() {
-  // get the base renderer style
-  var style = p5.Renderer.prototype.push.apply(this);
+  uMVMatrixStack.push(this.uMVMatrix.copy());
+  cameraMatrixStack.push(this.cameraMatrix.copy());
+};
 
-  // add webgl-specific style properties
-  var properties = style.properties;
-
-  properties.uMVMatrix = this.uMVMatrix.copy();
-  properties.cameraMatrix = this.cameraMatrix.copy();
-
-  return style;
+/**
+ * [pop description]
+ */
+p5.RendererGL.prototype.pop = function() {
+  if (uMVMatrixStack.length === 0) {
+    throw new Error('Invalid popMatrix!');
+  }
+  this.uMVMatrix = uMVMatrixStack.pop();
+  if (cameraMatrixStack.length === 0) {
+    throw new Error('Invalid popMatrix!');
+  }
+  this.cameraMatrix = cameraMatrixStack.pop();
 };
 
 p5.RendererGL.prototype.resetMatrix = function() {
@@ -74534,20 +72721,6 @@ p5.RendererGL.prototype._bindBuffer = function(
   }
 };
 
-//////////////////////////
-//// SMOOTHING
-/////////////////////////
-// @TODO:
-p5.RendererGL.prototype.smooth = function() {
-  //@TODO finish implementation
-  console.log('smoothing not yet implemented in webgl');
-};
-
-p5.RendererGL.prototype.noSmooth = function() {
-  //@TODO finish implementation
-  console.log('smoothing not yet implemented in webgl');
-};
-
 ///////////////////////////////
 //// UTILITY FUNCTIONS
 //////////////////////////////
@@ -74604,22 +72777,9 @@ p5.RendererGL.prototype._vToNArray = function(arr) {
   );
 };
 
-/**
- * ensures that p5 is using a 3d renderer. throws an error if not.
- */
-p5.prototype._assert3d = function(name) {
-  if (!this._renderer.isP3D)
-    throw new Error(
-      name +
-        "() is only supported in WEBGL mode. If you'd like to use 3D graphics" +
-        ' and WebGL, see  https://p5js.org/examples/form-3d-primitives.html' +
-        ' for more information.'
-    );
-};
-
 module.exports = p5.RendererGL;
 
-},{"../core/constants":21,"../core/core":22,"../core/p5.Renderer":29,"./p5.Matrix":69,"./p5.Shader":73}],73:[function(_dereq_,module,exports){
+},{"../core/constants":21,"../core/core":22,"../core/p5.Renderer":29,"./p5.Matrix":70,"./p5.Shader":74}],74:[function(_dereq_,module,exports){
 /**
  * This module defines the p5.Shader class
  * @module Lights, Camera
@@ -74635,6 +72795,7 @@ var p5 = _dereq_('../core/core');
 /**
  * Shader class for WEBGL Mode
  * @class p5.Shader
+ * @constructor
  * @param {p5.RendererGL} renderer an instance of p5.RendererGL that
  * will provide the GL context for this new p5.Shader
  * @param {String} vertSrc source code for the vertex shader (as a string)
@@ -74929,14 +73090,14 @@ p5.Shader.prototype.setUniform = function(uniformName, data) {
       break;
     case gl.INT:
       if (uniform.size > 1) {
-        data.length && gl.uniform1iv(location, data);
+        gl.uniform1iv(location, data);
       } else {
         gl.uniform1i(location, data);
       }
       break;
     case gl.FLOAT:
       if (uniform.size > 1) {
-        data.length && gl.uniform1fv(location, data);
+        gl.uniform1fv(location, data);
       } else {
         gl.uniform1f(location, data);
       }
@@ -74949,21 +73110,21 @@ p5.Shader.prototype.setUniform = function(uniformName, data) {
       break;
     case gl.FLOAT_VEC2:
       if (uniform.size > 1) {
-        data.length && gl.uniform2fv(location, data);
+        gl.uniform2fv(location, data);
       } else {
         gl.uniform2f(location, data[0], data[1]);
       }
       break;
     case gl.FLOAT_VEC3:
       if (uniform.size > 1) {
-        data.length && gl.uniform3fv(location, data);
+        gl.uniform3fv(location, data);
       } else {
         gl.uniform3f(location, data[0], data[1], data[2]);
       }
       break;
     case gl.FLOAT_VEC4:
       if (uniform.size > 1) {
-        data.length && gl.uniform4fv(location, data);
+        gl.uniform4fv(location, data);
       } else {
         gl.uniform4f(location, data[0], data[1], data[2], data[3]);
       }
@@ -75045,7 +73206,7 @@ p5.Shader.prototype.enableAttrib = function(
 
 module.exports = p5.Shader;
 
-},{"../core/core":22}],74:[function(_dereq_,module,exports){
+},{"../core/core":22}],75:[function(_dereq_,module,exports){
 /**
  * This module defines the p5.Texture class
  * @module Lights, Camera
@@ -75060,8 +73221,8 @@ var p5 = _dereq_('../core/core');
 
 /**
  * Texture class for WEBGL Mode
- * @private
  * @class p5.Texture
+ * @constructor
  * @param {p5.RendererGL} renderer an instance of p5.RendererGL that
  * will provide the GL context for this new p5.Texture
  * @param {p5.Image|p5.Graphics|p5.Element|p5.MediaElement} [obj] the
@@ -75302,7 +73463,7 @@ p5.Texture.prototype.unbindTexture = function() {
 
 module.exports = p5.Texture;
 
-},{"../core/core":22}],75:[function(_dereq_,module,exports){
+},{"../core/core":22}],76:[function(_dereq_,module,exports){
 /**
  * @module Shape
  * @submodule 3D Primitives
@@ -75315,7 +73476,6 @@ module.exports = p5.Texture;
 
 var p5 = _dereq_('../core/core');
 _dereq_('./p5.Geometry');
-
 /**
  * Draw a plane with given a width and height
  * @method plane
@@ -75351,8 +73511,6 @@ _dereq_('./p5.Geometry');
  * rotating view of a multi-colored cylinder with concave sides.
  */
 p5.prototype.plane = function(width, height, detailX, detailY) {
-  this._assert3d('plane');
-  p5._validateParameters('plane', arguments);
   if (typeof width === 'undefined') {
     width = 50;
   }
@@ -75378,14 +73536,15 @@ p5.prototype.plane = function(width, height, detailX, detailY) {
           u = j / this.detailX;
           p = new p5.Vector(u - 0.5, v - 0.5, 0);
           this.vertices.push(p);
-          this.uvs.push(u, v);
+          this.uvs.push([u, v]);
         }
       }
     };
     var planeGeom = new p5.Geometry(detailX, detailY, _plane);
     planeGeom.computeFaces().computeNormals();
     if (detailX <= 1 && detailY <= 1) {
-      planeGeom._makeTriangleEdges()._edgesToVertices();
+      planeGeom._makeTriangleEdges();
+      this._renderer._edgesToVertices(planeGeom);
     } else {
       console.log(
         'Cannot draw stroke on plane objects with more' +
@@ -75427,8 +73586,6 @@ p5.prototype.plane = function(width, height, detailX, detailY) {
  * </div>
  */
 p5.prototype.box = function(width, height, depth, detailX, detailY) {
-  this._assert3d('box');
-  p5._validateParameters('box', arguments);
   if (typeof width === 'undefined') {
     width = 50;
   }
@@ -75439,13 +73596,11 @@ p5.prototype.box = function(width, height, depth, detailX, detailY) {
     depth = height;
   }
 
-  var perPixelLighting =
-    this._renderer.attributes && this._renderer.attributes.perPixelLighting;
   if (typeof detailX === 'undefined') {
-    detailX = perPixelLighting ? 1 : 4;
+    detailX = 4;
   }
   if (typeof detailY === 'undefined') {
-    detailY = perPixelLighting ? 1 : 4;
+    detailY = 4;
   }
 
   var gId = 'box|' + detailX + '|' + detailY;
@@ -75489,7 +73644,7 @@ p5.prototype.box = function(width, height, depth, detailX, detailY) {
             ((d & 4) / 2 - 1) / 2
           );
           this.vertices.push(octant);
-          this.uvs.push(j & 1, (j & 2) / 2);
+          this.uvs.push([j & 1, (j & 2) / 2]);
         }
         this.faces.push([v, v + 1, v + 2]);
         this.faces.push([v + 2, v + 1, v + 3]);
@@ -75498,7 +73653,8 @@ p5.prototype.box = function(width, height, depth, detailX, detailY) {
     var boxGeom = new p5.Geometry(detailX, detailY, _box);
     boxGeom.computeNormals();
     if (detailX <= 4 && detailY <= 4) {
-      boxGeom._makeTriangleEdges()._edgesToVertices();
+      boxGeom._makeTriangleEdges();
+      this._renderer._edgesToVertices(boxGeom);
     } else {
       console.log(
         'Cannot draw stroke on box objects with more' +
@@ -75542,8 +73698,6 @@ p5.prototype.box = function(width, height, depth, detailX, detailY) {
  * </div>
  */
 p5.prototype.sphere = function(radius, detailX, detailY) {
-  this._assert3d('sphere');
-  p5._validateParameters('sphere', arguments);
   if (typeof radius === 'undefined') {
     radius = 50;
   }
@@ -75561,10 +73715,7 @@ p5.prototype.sphere = function(radius, detailX, detailY) {
 
 /**
  * @private
- * Helper function for creating both cones and cyllinders
- * Will only generate well-defined geometry when bottomRadius, height > 0
- * and topRadius >= 0
- * If topRadius == 0, topCap should be false
+ * helper function for creating both cones and cyllinders
  */
 var _truncatedCone = function(
   bottomRadius,
@@ -75572,55 +73723,48 @@ var _truncatedCone = function(
   height,
   detailX,
   detailY,
-  bottomCap,
-  topCap
+  topCap,
+  bottomCap
 ) {
-  bottomRadius = bottomRadius <= 0 ? 1 : bottomRadius;
-  topRadius = topRadius < 0 ? 0 : topRadius;
-  height = height <= 0 ? bottomRadius : height;
   detailX = detailX < 3 ? 3 : detailX;
   detailY = detailY < 1 ? 1 : detailY;
+  topCap = topCap === undefined ? true : topCap;
   bottomCap = bottomCap === undefined ? true : bottomCap;
-  topCap = topCap === undefined ? topRadius !== 0 : topCap;
-  var start = bottomCap ? -2 : 0;
-  var end = detailY + (topCap ? 2 : 0);
-  var vertsOnLayer = {};
-  //ensure constant slant for interior vertex normals
+  var extra = (topCap ? 2 : 0) + (bottomCap ? 2 : 0);
+  var vertsAroundEdge = detailX + 1;
+
+  // ensure constant slant
   var slant = Math.atan2(bottomRadius - topRadius, height);
-  var yy, ii, jj, nextii, nextjj;
+  var start = topCap ? -2 : 0;
+  var end = detailY + (bottomCap ? 2 : 0);
+  var yy, ii;
   for (yy = start; yy <= end; ++yy) {
     var v = yy / detailY;
     var y = height * v;
     var ringRadius;
     if (yy < 0) {
-      //for the bottomCap edge
       y = 0;
-      v = 0;
+      v = 1;
       ringRadius = bottomRadius;
     } else if (yy > detailY) {
-      //for the topCap edge
       y = height;
       v = 1;
       ringRadius = topRadius;
     } else {
-      //for the middle
-      ringRadius = bottomRadius + (topRadius - bottomRadius) * v;
+      ringRadius = bottomRadius + (topRadius - bottomRadius) * (yy / detailY);
     }
     if (yy === -2 || yy === detailY + 2) {
-      //center of bottom or top caps
       ringRadius = 0;
+      v = 0;
     }
-
-    y -= height / 2; //shift coordiate origin to the center of object
-    vertsOnLayer[yy] = ringRadius === 0 ? 1 : detailX;
-    for (ii = 0; ii < vertsOnLayer[yy]; ++ii) {
-      var u = ii / detailX;
+    y -= height / 2;
+    for (ii = 0; ii < vertsAroundEdge; ++ii) {
       //VERTICES
       this.vertices.push(
         new p5.Vector(
-          Math.sin(u * 2 * Math.PI) * ringRadius,
+          Math.sin(ii * Math.PI * 2 / detailX) * ringRadius,
           y,
-          Math.cos(u * 2 * Math.PI) * ringRadius
+          Math.cos(ii * Math.PI * 2 / detailX) * ringRadius
         )
       );
       //VERTEX NORMALS
@@ -75628,66 +73772,28 @@ var _truncatedCone = function(
         new p5.Vector(
           yy < 0 || yy > detailY
             ? 0
-            : Math.sin(u * 2 * Math.PI) * Math.cos(slant),
+            : Math.sin(ii * Math.PI * 2 / detailX) * Math.cos(slant),
           yy < 0 ? -1 : yy > detailY ? 1 : Math.sin(slant),
           yy < 0 || yy > detailY
             ? 0
-            : Math.cos(u * 2 * Math.PI) * Math.cos(slant)
+            : Math.cos(ii * Math.PI * 2 / detailX) * Math.cos(slant)
         )
       );
       //UVs
-      this.uvs.push(u, v);
+      this.uvs.push([ii / detailX, v]);
     }
   }
-
-  var startIndex = 0;
-  if (bottomCap) {
-    for (jj = 0; jj < vertsOnLayer[-1]; ++jj) {
-      nextjj = (jj + 1) % vertsOnLayer[-1];
+  for (yy = 0; yy < detailY + extra; ++yy) {
+    for (ii = 0; ii < detailX; ++ii) {
       this.faces.push([
-        startIndex,
-        startIndex + 1 + nextjj,
-        startIndex + 1 + jj
+        vertsAroundEdge * (yy + 0) + 0 + ii,
+        vertsAroundEdge * (yy + 0) + 1 + ii,
+        vertsAroundEdge * (yy + 1) + 1 + ii
       ]);
-    }
-    startIndex += vertsOnLayer[-2] + vertsOnLayer[-1];
-  }
-  for (yy = 0; yy < detailY; ++yy) {
-    for (ii = 0; ii < vertsOnLayer[yy]; ++ii) {
-      if (vertsOnLayer[yy + 1] === 1) {
-        //top layer
-        nextii = (ii + 1) % vertsOnLayer[yy];
-        this.faces.push([
-          startIndex + ii,
-          startIndex + nextii,
-          startIndex + vertsOnLayer[yy]
-        ]);
-      } else {
-        //other side faces
-        //should have vertsOnLayer[yy] === vertsOnLayer[yy + 1]
-        nextii = (ii + 1) % vertsOnLayer[yy];
-        this.faces.push([
-          startIndex + ii,
-          startIndex + nextii,
-          startIndex + vertsOnLayer[yy] + nextii
-        ]);
-        this.faces.push([
-          startIndex + ii,
-          startIndex + vertsOnLayer[yy] + nextii,
-          startIndex + vertsOnLayer[yy] + ii
-        ]);
-      }
-    }
-    startIndex += vertsOnLayer[yy];
-  }
-  if (topCap) {
-    startIndex += vertsOnLayer[detailY];
-    for (ii = 0; ii < vertsOnLayer[detailY + 1]; ++ii) {
-      nextii = (ii + 1) % vertsOnLayer[detailY + 1];
       this.faces.push([
-        startIndex + ii,
-        startIndex + nextii,
-        startIndex + vertsOnLayer[detailY + 1]
+        vertsAroundEdge * (yy + 0) + 0 + ii,
+        vertsAroundEdge * (yy + 1) + 1 + ii,
+        vertsAroundEdge * (yy + 1) + 0 + ii
       ]);
     }
   }
@@ -75695,22 +73801,20 @@ var _truncatedCone = function(
 
 /**
  * Draw a cylinder with given radius and height
- * @method cylinder
- * @param  {Number}  [radius]    radius of the surface
- * @param  {Number}  [height]    height of the cylinder
- * @param  {Integer} [detailX]   number of segments,
- *                               the more segments the smoother geometry
- *                               default is 24
- * @param  {Integer} [detailY]   number of segments in y-dimension,
- *                               the more segments the smoother geometry
- *                               default is 1
- * @param  {Boolean} [bottomCap] whether to draw the bottom of the cylinder
- * @param  {Boolean} [topCap]    whether to draw the top of the cylinder
+ * @method  cylinder
+ * @param  {Number} [radius]   radius of the surface
+ * @param  {Number} [height]   height of the cylinder
+ * @param  {Integer} [detailX] number of segments,
+ *                             the more segments the smoother geometry
+ *                             default is 24
+ * @param {Integer} [detailY]  number of segments in y-dimension,
+ *                             the more segments the smoother geometry
+ *                             default is 16
  * @chainable
  * @example
  * <div>
  * <code>
- * //draw a spinning cylinder with radius 20 and height 50
+ * //draw a spinning cylinder with radius 200 and height 200
  * function setup() {
  *   createCanvas(100, 100, WEBGL);
  * }
@@ -75724,16 +73828,7 @@ var _truncatedCone = function(
  * </code>
  * </div>
  */
-p5.prototype.cylinder = function(
-  radius,
-  height,
-  detailX,
-  detailY,
-  bottomCap,
-  topCap
-) {
-  this._assert3d('cylinder');
-  p5._validateParameters('cylinder', arguments);
+p5.prototype.cylinder = function(radius, height, detailX, detailY) {
   if (typeof radius === 'undefined') {
     radius = 50;
   }
@@ -75744,32 +73839,17 @@ p5.prototype.cylinder = function(
     detailX = 24;
   }
   if (typeof detailY === 'undefined') {
-    detailY = 1;
-  }
-  if (typeof topCap === 'undefined') {
-    topCap = true;
-  }
-  if (typeof bottomCap === 'undefined') {
-    bottomCap = true;
+    detailY = 16;
   }
 
-  var gId =
-    'cylinder|' + detailX + '|' + detailY + '|' + bottomCap + '|' + topCap;
+  var gId = 'cylinder|' + detailX + '|' + detailY;
   if (!this._renderer.geometryInHash(gId)) {
     var cylinderGeom = new p5.Geometry(detailX, detailY);
-    _truncatedCone.call(
-      cylinderGeom,
-      1,
-      1,
-      1,
-      detailX,
-      detailY,
-      bottomCap,
-      topCap
-    );
+    _truncatedCone.call(cylinderGeom, 1, 1, 1, detailX, detailY, true, true);
     cylinderGeom.computeNormals();
     if (detailX <= 24 && detailY <= 16) {
-      cylinderGeom._makeTriangleEdges()._edgesToVertices();
+      cylinderGeom._makeTriangleEdges();
+      this._renderer._edgesToVertices(cylinderGeom);
     } else {
       console.log(
         'Cannot draw stroke on cylinder objects with more' +
@@ -75779,7 +73859,7 @@ p5.prototype.cylinder = function(
     this._renderer.createBuffers(gId, cylinderGeom);
   }
 
-  this._renderer.drawBuffersScaled(gId, radius, height, radius);
+  this._renderer.drawBuffersScaled(gId, radius, radius, height);
 
   return this;
 };
@@ -75787,20 +73867,19 @@ p5.prototype.cylinder = function(
 /**
  * Draw a cone with given radius and height
  * @method cone
- * @param  {Number}  [radius]  radius of the bottom surface
- * @param  {Number}  [height]  height of the cone
- * @param  {Integer} [detailX] number of segments,
- *                             the more segments the smoother geometry
- *                             default is 24
- * @param  {Integer} [detailY] number of segments,
- *                             the more segments the smoother geometry
- *                             default is 1
- * @param  {Boolean} [cap]     whether to draw the base of the cone
+ * @param  {Number} [radius]          radius of the bottom surface
+ * @param  {Number} [height]          height of the cone
+ * @param  {Integer} [detailX]        number of segments,
+ *                                    the more segments the smoother geometry
+ *                                    default is 24
+ * @param  {Integer} [detailY]        number of segments,
+ *                                    the more segments the smoother geometry
+ *                                    default is 16
  * @chainable
  * @example
  * <div>
  * <code>
- * //draw a spinning cone with radius 40 and height 70
+ * //draw a spinning cone with radius 200 and height 200
  * function setup() {
  *   createCanvas(100, 100, WEBGL);
  * }
@@ -75814,9 +73893,7 @@ p5.prototype.cylinder = function(
  * </code>
  * </div>
  */
-p5.prototype.cone = function(radius, height, detailX, detailY, cap) {
-  this._assert3d('cone');
-  p5._validateParameters('cone', arguments);
+p5.prototype.cone = function(radius, height, detailX, detailY) {
   if (typeof radius === 'undefined') {
     radius = 50;
   }
@@ -75827,20 +73904,27 @@ p5.prototype.cone = function(radius, height, detailX, detailY, cap) {
     detailX = 24;
   }
   if (typeof detailY === 'undefined') {
-    detailY = 1;
-  }
-  if (typeof cap === 'undefined') {
-    cap = true;
+    detailY = 16;
   }
 
-  var gId = 'cone|' + detailX + '|' + detailY + '|' + cap;
+  var gId = 'cone|' + radius + '|' + height + '|' + detailX + '|' + detailY;
   if (!this._renderer.geometryInHash(gId)) {
     var coneGeom = new p5.Geometry(detailX, detailY);
-    _truncatedCone.call(coneGeom, 1, 0, 1, detailX, detailY, cap, false);
+    _truncatedCone.call(
+      coneGeom,
+      radius,
+      0, //top radius 0
+      height,
+      detailX,
+      detailY,
+      true,
+      true
+    );
     //for cones we need to average Normals
     coneGeom.computeNormals();
     if (detailX <= 24 && detailY <= 16) {
-      coneGeom._makeTriangleEdges()._edgesToVertices();
+      coneGeom._makeTriangleEdges();
+      this._renderer._edgesToVertices(coneGeom);
     } else {
       console.log(
         'Cannot draw stroke on cone objects with more' +
@@ -75850,7 +73934,7 @@ p5.prototype.cone = function(radius, height, detailX, detailY, cap) {
     this._renderer.createBuffers(gId, coneGeom);
   }
 
-  this._renderer.drawBuffersScaled(gId, radius, height, radius);
+  this._renderer.drawBuffers(gId);
 
   return this;
 };
@@ -75886,8 +73970,6 @@ p5.prototype.cone = function(radius, height, detailX, detailY, cap) {
  * </div>
  */
 p5.prototype.ellipsoid = function(radiusX, radiusY, radiusZ, detailX, detailY) {
-  this._assert3d('ellipsoid');
-  p5._validateParameters('ellipsoid', arguments);
   if (typeof radiusX === 'undefined') {
     radiusX = 50;
   }
@@ -75923,14 +74005,15 @@ p5.prototype.ellipsoid = function(radiusX, radiusY, radiusZ, detailX, detailY) {
           var p = new p5.Vector(cosPhi * sinTheta, sinPhi, cosPhi * cosTheta);
           this.vertices.push(p);
           this.vertexNormals.push(p);
-          this.uvs.push(u, v);
+          this.uvs.push([u, v]);
         }
       }
     };
     var ellipsoidGeom = new p5.Geometry(detailX, detailY, _ellipsoid);
     ellipsoidGeom.computeFaces();
     if (detailX <= 24 && detailY <= 24) {
-      ellipsoidGeom._makeTriangleEdges()._edgesToVertices();
+      ellipsoidGeom._makeTriangleEdges();
+      this._renderer._edgesToVertices(ellipsoidGeom);
     } else {
       console.log(
         'Cannot draw stroke on ellipsoids with more' +
@@ -75975,8 +74058,6 @@ p5.prototype.ellipsoid = function(radiusX, radiusY, radiusZ, detailX, detailY) {
  * </div>
  */
 p5.prototype.torus = function(radius, tubeRadius, detailX, detailY) {
-  this._assert3d('torus');
-  p5._validateParameters('torus', arguments);
   if (typeof radius === 'undefined') {
     radius = 50;
   } else if (!radius) {
@@ -76020,14 +74101,15 @@ p5.prototype.torus = function(radius, tubeRadius, detailX, detailY) {
 
           this.vertices.push(p);
           this.vertexNormals.push(n);
-          this.uvs.push(u, v);
+          this.uvs.push([u, v]);
         }
       }
     };
     var torusGeom = new p5.Geometry(detailX, detailY, _torus);
     torusGeom.computeFaces();
     if (detailX <= 24 && detailY <= 16) {
-      torusGeom._makeTriangleEdges()._edgesToVertices();
+      torusGeom._makeTriangleEdges();
+      this._renderer._edgesToVertices(torusGeom);
     } else {
       console.log(
         'Cannot draw strokes on torus object with more' +
@@ -76069,10 +74151,11 @@ p5.RendererGL.prototype.triangle = function(args) {
       this.strokeIndices = [[0, 1], [1, 2], [2, 0]];
       this.vertices = vertices;
       this.faces = [[0, 1, 2]];
-      this.uvs = [0, 0, 0, 1, 1, 1];
+      this.uvs = [[0, 0], [0, 1], [1, 1]];
     };
     var triGeom = new p5.Geometry(1, 1, _triangle);
-    triGeom._makeTriangleEdges()._edgesToVertices();
+    triGeom._makeTriangleEdges();
+    this._edgesToVertices(triGeom);
     triGeom.computeNormals();
     this.createBuffers(gId, triGeom);
   }
@@ -76117,7 +74200,7 @@ p5.RendererGL.prototype.ellipse = function(args) {
       this.vertices.push(new p5.Vector(0.5, 0.5, 0));
       this.uvs.push([0.5, 0.5]);
 
-      for (var i = 0; i < this.detailX; i++) {
+      for (var i = 0; i <= this.detailX; i++) {
         var u = i / this.detailX;
         var theta = 2 * Math.PI * u;
 
@@ -76125,7 +74208,7 @@ p5.RendererGL.prototype.ellipse = function(args) {
         var _y = 0.5 + Math.sin(theta) / 2;
 
         this.vertices.push(new p5.Vector(_x, _y, 0));
-        this.uvs.push(_x, _y);
+        this.uvs.push([_x, _y]);
 
         this.faces.push([0, (i + 1) % this.detailX + 1, i + 1]);
       }
@@ -76133,7 +74216,8 @@ p5.RendererGL.prototype.ellipse = function(args) {
     var ellipseGeom = new p5.Geometry(detailX, 1, _ellipse);
     ellipseGeom.computeNormals();
     if (detailX <= 50) {
-      ellipseGeom._makeTriangleEdges()._edgesToVertices();
+      ellipseGeom._makeTriangleEdges();
+      this._edgesToVertices(ellipseGeom);
     } else {
       console.log('Cannot stroke ellipse with more than 50 detailX');
     }
@@ -76159,13 +74243,12 @@ p5.RendererGL.prototype.ellipse = function(args) {
 };
 
 p5.RendererGL.prototype.rect = function(args) {
-  var perPixelLighting = this.attributes.perPixelLighting;
   var x = args[0];
   var y = args[1];
   var width = args[2];
   var height = args[3];
-  var detailX = args[4] || (perPixelLighting ? 1 : 24);
-  var detailY = args[5] || (perPixelLighting ? 1 : 16);
+  var detailX = args[4] || 24;
+  var detailY = args[5] || 16;
   var gId = 'rect|' + detailX + '|' + detailY;
   if (!this.geometryInHash(gId)) {
     var _rect = function() {
@@ -76175,7 +74258,7 @@ p5.RendererGL.prototype.rect = function(args) {
           var u = j / this.detailX;
           var p = new p5.Vector(u, v, 0);
           this.vertices.push(p);
-          this.uvs.push(u, v);
+          this.uvs.push([u, v]);
         }
       }
     };
@@ -76183,8 +74266,8 @@ p5.RendererGL.prototype.rect = function(args) {
     rectGeom
       .computeFaces()
       .computeNormals()
-      ._makeTriangleEdges()
-      ._edgesToVertices();
+      ._makeTriangleEdges();
+    this._edgesToVertices(rectGeom);
     this.createBuffers(gId, rectGeom);
   }
 
@@ -76228,14 +74311,12 @@ p5.RendererGL.prototype.quad = function(x1, y1, x2, y2, x3, y3, x4, y4) {
       this.vertices.push(new p5.Vector(x2, y2, 0));
       this.vertices.push(new p5.Vector(x3, y3, 0));
       this.vertices.push(new p5.Vector(x4, y4, 0));
-      this.uvs.push(0, 0, 1, 0, 1, 1, 0, 1);
+      this.uvs.push([0, 0], [1, 0], [1, 1], [0, 1]);
       this.strokeIndices = [[0, 1], [1, 2], [2, 3], [3, 0]];
     };
     var quadGeom = new p5.Geometry(2, 2, _quad);
-    quadGeom
-      .computeNormals()
-      ._makeTriangleEdges()
-      ._edgesToVertices();
+    quadGeom.computeNormals()._makeTriangleEdges();
+    this._edgesToVertices(quadGeom);
     quadGeom.faces = [[0, 1, 2], [2, 3, 0]];
     this.createBuffers(gId, quadGeom);
   }
@@ -76249,27 +74330,17 @@ p5.RendererGL.prototype.quad = function(x1, y1, x2, y2, x3, y3, x4, y4) {
 p5.RendererGL.prototype.bezier = function(
   x1,
   y1,
-  z1, // x2
-  x2, // y2
-  y2, // x3
-  z2, // y3
-  x3, // x4
-  y3, // y4
+  z1,
+  x2,
+  y2,
+  z2,
+  x3,
+  y3,
   z3,
   x4,
   y4,
   z4
 ) {
-  if (arguments.length === 8) {
-    x4 = x3;
-    y4 = y3;
-    x3 = y2;
-    y3 = x2;
-    x2 = z1;
-    y2 = x2;
-    z1 = z2 = z3 = z4 = 0;
-  }
-
   var bezierDetail = this._pInst._bezierDetail || 20; //value of Bezier detail
   this.beginShape();
   for (var i = 0; i <= bezierDetail; i++) {
@@ -76291,26 +74362,17 @@ p5.RendererGL.prototype.bezier = function(
 p5.RendererGL.prototype.curve = function(
   x1,
   y1,
-  z1, // x2
-  x2, // y2
-  y2, // x3
-  z2, // y3
-  x3, // x4
-  y3, // y4
+  z1,
+  x2,
+  y2,
+  z2,
+  x3,
+  y3,
   z3,
   x4,
   y4,
   z4
 ) {
-  if (arguments.length === 8) {
-    x4 = x3;
-    y4 = y3;
-    x3 = y2;
-    y3 = x2;
-    x2 = z1;
-    y2 = x2;
-    z1 = z2 = z3 = z4 = 0;
-  }
   var curveDetail = this._pInst._curveDetail;
   this.beginShape();
   for (var i = 0; i <= curveDetail; i++) {
@@ -76385,5 +74447,5 @@ p5.RendererGL.prototype.line = function() {
 
 module.exports = p5;
 
-},{"../core/core":22,"./p5.Geometry":68}]},{},[13])(13)
+},{"../core/core":22,"./p5.Geometry":69}]},{},[13])(13)
 });
