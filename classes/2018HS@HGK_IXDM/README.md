@@ -46,6 +46,19 @@ __Tutorials__
 
 ### Final Exhibition 17.12.2018
 
+
+
+# UTILS
+
+## BASH COMMANDS
+
+```bash
+$you traceroute thewebsiteyouwanttotrace.com
+# this tracks down all the nodes you will pas through while reaching the website
+```
+
+
+
 ## Readings
 
 * E-flux Journal #07 - Boris Groys - Self-Design and Aesthetic Responsibility [DE](http://whtsnxt.net/060), [EN](http://www.e-flux.com/journal/07/61386/self-design-and-aesthetic-responsibility/)
