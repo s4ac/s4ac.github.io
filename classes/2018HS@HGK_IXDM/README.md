@@ -44,7 +44,7 @@ __Tutorials__
 
 ### 15.10 Hello Device Motion!
 
-### 22.10 / 29.10 Hello Private Network!
+### 22.10 / 29.10 Hello NodeJS and data collection!
 
 ### Final Exhibition 17.12.2018
 
