@@ -46,13 +46,17 @@ __Tutorials__
 
 ### 22.10 / 29.10 Hello NodeJS and data collection!
 
+__Inputs:__
+
+* [clickclickclick.click](https://clickclickclick.click/#757954110d9b5b0b650722a9a0469640)
+
 ### Final Exhibition 17.12.2018
 
 
 
-# UTILS
+## UTILS
 
-## BASH COMMANDS
+### BASH COMMANDS
 
 ```bash
 $you traceroute thewebsiteyouwanttotrace.com
