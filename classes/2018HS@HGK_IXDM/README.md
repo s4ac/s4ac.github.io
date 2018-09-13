@@ -59,7 +59,7 @@ __Tutorials__
 __Inputs:__
 
 * [clickclickclick.click](https://clickclickclick.click/#757954110d9b5b0b650722a9a0469640)
-* Full Stack web application client 💻  ↔️ 💻 server ➡️ ☁️ database
+* [Full Stack web application](https://www.youtube.com/watch?v=JnEH9tYLxLk) client 💻  ↔️ 💻 server ➡️ ☁️ database
 
 ### Final Exhibition 17.12.2018
 
