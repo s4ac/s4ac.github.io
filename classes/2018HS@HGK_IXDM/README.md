@@ -25,6 +25,15 @@ __Inputs__
 * [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
 * [How I'm fighting bias in algorithms](https://www.ted.com/talks/joy_buolamwini_how_i_m_fighting_bias_in_algorithms/up-next) by Joy Boulamwini
 
+__dependencies__
+
+* [openframworks](https://openframeworks.cc/download/)
+  1. download [xcode](https://developer.apple.com/download/)
+  2. in terminal type `xcode-select --install`
+* [FaceOsc](https://github.com/kylemcdonald/ofxFaceTracker/releases)
+  * connecting it to [processing](https://processing.org/): [FaceOsc-Templates](https://github.com/CreativeInquiry/FaceOSC-Templates)
+  * or to [p5.js](https://p5js.org/): [p5js-osc](https://github.com/genekogan/p5js-osc) [test it first]
+
 ### 01.10 / 08.10 Hello p5.js!
 
 This second part of the course will be concentrated in developing the basic skills of coding using [p5.js](https://p5js.org/). This JavaScript library builds on [Processing](https://processing.org/) a coding framework for generative design.
@@ -34,6 +43,7 @@ JavaScript is the most used scripting language for the web. By learning this too
 __Dependencies a.k.a. what you need to download__ 
 
 * [Visual Studio Code](https://code.visualstudio.com/)
+  * add extensions: live-server
 * [MAMP](https://www.mamp.info/de/downloads/) (the free version)
 
 
@@ -44,7 +54,7 @@ __Tutorials__
 
 ### 15.10 Hello Device Motion!
 
-### 22.10 / 29.10 Hello Private Network!
+### 22.10 / 29.10 Hello Node.js!
 
 ### Final Exhibition 17.12.2018
 
