@@ -69,10 +69,50 @@ my-website
       |--/p5.js
       |--/other-libraries-you-may-need.js
 ```
+
+__index.html:__
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>my-website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load the styling -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <!-- load the js files -->
+    <script src="js/libraries/p5.js"></script>
+    <script src="js/sketch.js"></script>
+</head>
+<body>
+    <div id="p5Sketch">
+    <!-- we leave it empty -->
+    </div>
+</body>
+</html>
+```
+
+__style.css:__
+
+```css
+#p5Sketch{
+    position: fixed;
+    width: /* you define it! */;
+    height: /* you define it! */;
+    /* i usually do full screen */
+}
+```
+
+__sketch.js:__
+
 ```javascript
+let cnv;
 function setup(){
     // setting up the sketch before to start drawing
-    canvasSize(400, 400)
+    cnv = createCanvas(400, 400); // or (innerWidth, innerHeight) [full screen]
+    cnv.parent('p5Sketch');
 }
 
 function draw(){
@@ -97,6 +137,12 @@ function draw(){
     }else{
         // do something else
     }
+}
+
+/* VERY IMPORTANT FEATURE TO RESIZE THE CANVAS*/
+
+function windowResized(){
+    resizeCanvas(innerWidth, innerHeight);
 }
 ```
 
