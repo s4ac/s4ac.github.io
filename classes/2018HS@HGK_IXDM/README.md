@@ -31,7 +31,7 @@ __dependencies__
   1. download [xcode](https://developer.apple.com/download/)
   2. in terminal type `xcode-select --install`
 * [FaceOsc](https://github.com/kylemcdonald/ofxFaceTracker/releases)
-  * connecting it to [processing](https://processing.org/): [FaceOsc-Templates](https://github.com/CreativeInquiry/FaceOSC-Templates)
+  * connecting it to [processing](https://processing.org/): [FaceOsc-Templates](https://github.com/CreativeInquiry/FaceOSC-Templates) 
   * or to [p5.js](https://p5js.org/): [p5js-osc](https://github.com/genekogan/p5js-osc) [test it first]
 
 ### 01.10 / 08.10 Hello p5.js!
@@ -51,6 +51,63 @@ __Dependencies a.k.a. what you need to download__
 __Tutorials__
 
 * [Introduction to p5.js](https://www.youtube.com/watch?v=8j0UDiN7my4&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) by Daniel Shiffman
+
+
+
+__01.10:__
+
+In this first lesson I will introduce p5.js and how to use it to draw on HTML5 canvas
+
+```javascript
+function setup(){
+    // setting up the sketch before to start drawing
+    canvasSize(400, 400)
+}
+
+function draw(){
+    // here the drawing happens
+    // drawing a rectangle
+    rect(x, y, width, height);
+    // drawing circle
+    ellipse(x, y, width, height);
+    // drawing a free form defining the single vertices
+    beginShape();
+    vertex(x, y); // you can add as many vertices as you like
+    endShape(x, y);
+    
+    // loops!
+    for(start, end, increment){
+        // repeat something
+    }
+    
+    // if statement
+    if(statement == true){
+        // do something
+    }else{
+        // do something else
+    }
+}
+```
+
+
+
+__08.10:__
+
+In this lesson we will look at interaction between DOM elements and javascript
+
+```javascript
+let element = document.getElementById('id-name')
+element.addEventListener('onclick', doSomething);
+
+function doSomething(){
+    // something happens
+}
+
+```
+
+
+
+ 
 
 ### 15.10 Hello Device Motion!
 
