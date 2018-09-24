@@ -58,6 +58,17 @@ __01.10:__
 
 In this first lesson I will introduce p5.js and how to use it to draw on HTML5 canvas
 
+__THE FOLDER 📂 STRUCTURE:__
+```
+my-website
+|--/index.html
+|--/style.css
+|--/js
+   |--/sketch.js
+   |--/libraries
+      |--/p5.js
+      |--/other-libraries-you-may-need.js
+```
 ```javascript
 function setup(){
     // setting up the sketch before to start drawing
@@ -110,6 +121,52 @@ function doSomething(){
  
 
 ### 15.10 Hello Device Motion!
+
+```javascript
+/* CODE BY [TED DAVIS] */
+
+/* PREFS */
+ let easing = 0.5; // set between 0 - 1
+
+ /* VARS */
+ let rx, ry, rz, sx, sy, sz;
+ rx = ry = rz = sx = sy = sz = 0;
+
+ /* ONDEVICEMOTION */
+ // https://developer.mozilla.org/en-US/docs/Web/Events/devicemotion
+ window.ondevicemotion = event => {
+     /* RAW VALUES */
+     rx = event.accelerationIncludingGravity.x;
+     ry = event.accelerationIncludingGravity.y;
+     rz = event.accelerationIncludingGravity.z;
+
+     /* SMOOTHED VALUES */
+     sx = smoothVal(rx, sx);
+     sy = smoothVal(ry, sy);
+     sz = smoothVal(rz, sz);
+ };
+
+ /* VALUE MAPPING */
+ function mapVal(value, istart, istop, ostart, ostop) {
+     return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+ }
+
+ /* VALUE SMOOTHING */
+ function smoothVal(inputVal, outputVal) {
+     let tarVal = inputVal;
+     let calcVal = tarVal - outputVal;
+     outputVal += calcVal * easing;
+     return outputVal;
+ }
+```
+
+
+
+ [What about light sensors?](https://developer.mozilla.org/en-US/docs/Web/API/DeviceLightEvent/Using_light_sensors#Browser_compatibility)
+
+[...and vibration?](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)
+
+[...and geo location?](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)
 
 ### 22.10 / 29.10 Hello NodeJS and data collection!
 
