@@ -45,7 +45,7 @@ __Dependencies a.k.a. what you need to download__
 
 __Mac Users:__
 
-* [Visual Studio Code](https://code.visualstudio.com/)
+* [Visual Studio Code](https://code.visualstudio.com/) Mac && Windows!
   * add extensions: live-server
 * [MAMP](https://www.mamp.info/de/downloads/) (the free version)
 
