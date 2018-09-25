@@ -105,9 +105,27 @@ To open the console:
 
 `console.log(message || object || anything else)` will be your best friend.
 
- 
+ERROR EXAMPLES
+
+```pseudocode
+sketch.js:8 Uncaught ReferenceError: color is not defined at sketch.js:8
+// this means that there is an error in line 8 of the file sketch.js
+
+Uncaught Error: [object Arguments]is not a valid color representation.
+    at d.Color._parseInputs (p5.min.js:7)
+    at new d.Color (p5.min.js:6)
+    at e.d.color (p5.min.js:6)
+    at d.Renderer2D.background (p5.min.js:8)
+    at e.d.background (p5.min.js:7)
+    at setup (sketch.js:15) // <== here is our error in line 15 of sketch.js
+    at e.<anonymous> (p5.min.js:7)
+    at e.<anonymous> (p5.min.js:7)
+    at new e (p5.min.js:7)
+    at e (p5.min.js:7)
+```
 
 __THE FOLDER 📂 STRUCTURE:__
+
 ```
 my-website
 |--/index.html
@@ -288,6 +306,9 @@ __Dependencies:__
 __Inputs:__
 
 * [clickclickclick.click](https://clickclickclick.click/#757954110d9b5b0b650722a9a0469640)
+* [puckey.studio](https://puckey.studio/)
+  * [do not touch](http://donottouch.org/)
+  * [pointer pointer](https://pointerpointer.com/)
 * [Full Stack web application](https://www.youtube.com/watch?v=JnEH9tYLxLk) client 💻  ↔️ 💻 server ➡️ ☁️ database
 * [WebSockets and p5.js](https://www.youtube.com/watch?v=bjULmG8fqc8)
 
