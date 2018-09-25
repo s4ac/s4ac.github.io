@@ -27,7 +27,7 @@ __Inputs__
 
 __dependencies__
 
-* [openframworks](https://openframeworks.cc/download/)
+* [openframeworks](https://openframeworks.cc/download/)
   1. download [xcode](https://developer.apple.com/download/)
   2. in terminal type `xcode-select --install`
 * [FaceOsc](https://github.com/kylemcdonald/ofxFaceTracker/releases)
