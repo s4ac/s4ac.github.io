@@ -66,6 +66,46 @@ __01.10:__
 
 In this first lesson I will introduce p5.js and how to use it to draw on HTML5 canvas
 
+__GETTING HELP__ ⛑
+
+To get any help while learning programming the best resource is the internet.
+
+You can usually find help by typing the programming language you need help for and than adding the problem you are trying to solve (_type the following in google_)
+
+> javascript how to get the text content of a div
+
+__[Answer](https://stackoverflow.com/questions/8647216/get-content-of-a-div-using-javascript)__
+
+__DEBUGGING__ 🐞
+
+> _1) On average, a developer creates 70 bugs per 1000 lines of code_
+>
+> _2) 15 bugs per 1,000 lines of code find their way to the customers_
+>
+> _3) Fixing a bug takes 30 times longer than writing a line of code_
+>
+> _4) 75% of a developer’s time is spent on debugging (1500 hours a year!)_
+
+WELCOME TO PROGRAMMING!
+
+Luckily there is a nice console on every browser that helps us debug our code.
+
+To open the console:
+
+* in Chrome: `cmd + alt + j` for windows `ctrl + shift + j`
+* in Firefox: `cmd + alt + k` for windows `ctrl + shift + k`
+* in Safari: safari is an ass 🍑. 
+  1. open safari
+  2. go to preferences `cmd + ,`
+  3. go to advanced
+  4. at the bottom of the menu check [x] the "Show Develop menu in menu bar"
+  5. now you can type `cmd + c` to show the console
+* in Edge press `F12` or right-click and select "Inspect Element"
+
+`console.log(message || object || anything else)` will be your best friend.
+
+ 
+
 __THE FOLDER 📂 STRUCTURE:__
 ```
 my-website
@@ -168,9 +208,23 @@ function doSomething(){
     // something happens
 }
 
+// get id ov hoovered element in webpage
+// thanks to stackoverflow
+let lastID = null;
+
+let handleMouseover = function (e) {
+    var target = e.target || e.srcElement;
+    lastID = target.id;
+};
+
+if (document.addEventListener) {
+    document.addEventListener('mouseover', handleMouseover, false);
+}
+else {
+    document.attachEvent('onmouseover', handleMouseover);
+}
+
 ```
-
-
 
  
 
@@ -224,10 +278,17 @@ function doSomething(){
 
 ### 22.10 / 29.10 Hello NodeJS and data collection!
 
+__Dependencies:__
+
+* [node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com/) `$ npm install express --save`
+* [Socket.io](https://socket.io/) `$ npm install socket.io --save` [Server side] and [client side](https://github.com/socketio/socket.io-client) [download the whole package, the library sits in the dist folder 📁] or with [CDN](https://cdnjs.com/libraries/socket.io) `https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js` 
+
 __Inputs:__
 
 * [clickclickclick.click](https://clickclickclick.click/#757954110d9b5b0b650722a9a0469640)
 * [Full Stack web application](https://www.youtube.com/watch?v=JnEH9tYLxLk) client 💻  ↔️ 💻 server ➡️ ☁️ database
+* [WebSockets and p5.js](https://www.youtube.com/watch?v=bjULmG8fqc8)
 
 ### Final Exhibition 17.12.2018
 
