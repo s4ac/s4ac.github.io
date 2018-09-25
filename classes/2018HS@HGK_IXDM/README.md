@@ -19,17 +19,18 @@
 
 In this first class we will look at computer vision software and how it is used for facial recognition. How can we fool such algorithms in a way that they can't recognize faces anymore? We will look at the examples of [Adam Harvey ](https://ahprojects.com/) and his [CV Dazzle](https://cvdazzle.com/) and we will test the limits of such algorithm by trying different makeup techniques. _On the other hand we will also try to fool the algorithm by drawing faces by hand (to be decided yet)_.
 
-__Inputs__
+__Inputs/Links__
 
 * [Why Stanford Researchers Tried to Create a ‘Gaydar’ Machine](https://www.nytimes.com/2017/10/09/science/stanford-sexual-orientation-study.html)
 * [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
 * [How I'm fighting bias in algorithms](https://www.ted.com/talks/joy_buolamwini_how_i_m_fighting_bias_in_algorithms/up-next) by Joy Boulamwini
+* [Manifesto on Algorithmic Humanitarism](https://www.opendemocracy.net/dan-mcquillan/manifesto-on-algorithmic-humanitarianism) by Dan Macquillan
 
-__dependencies__
+__Dependencies__
 
 * [openframeworks](https://openframeworks.cc/download/)
-  1. download [xcode](https://developer.apple.com/download/)
-  2. in terminal type `xcode-select --install`
+  First download [xcode](https://developer.apple.com/download/)
+  Then in terminal type `xcode-select --install`
 * [FaceOsc](https://github.com/kylemcdonald/ofxFaceTracker/releases)
   * connecting it to [processing](https://processing.org/): [FaceOsc-Templates](https://github.com/CreativeInquiry/FaceOSC-Templates) 
   * or to [p5.js](https://p5js.org/): [p5js-osc](https://github.com/genekogan/p5js-osc) [test it first]
