@@ -29,8 +29,8 @@ __Inputs/Links__
 __Dependencies__
 
 * [openframeworks](https://openframeworks.cc/download/)
-  First download [xcode](https://developer.apple.com/download/)
-  Then in terminal type `xcode-select --install`
+  - First download [xcode](https://developer.apple.com/download/)
+  - Then in terminal type `xcode-select --install`
 * [FaceOsc](https://github.com/kylemcdonald/ofxFaceTracker/releases)
   * connecting it to [processing](https://processing.org/): [FaceOsc-Templates](https://github.com/CreativeInquiry/FaceOSC-Templates) 
   * or to [p5.js](https://p5js.org/): [p5js-osc](https://github.com/genekogan/p5js-osc) [test it first]
