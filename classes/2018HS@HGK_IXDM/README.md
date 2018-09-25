@@ -98,7 +98,8 @@ To open the console:
   1. open safari
   2. go to preferences `cmd + ,`
   3. go to advanced
-  4. at the bottom of the menu check [x] the "Show Develop menu in menu bar"
+  4. at the bottom of the menu check 
+     * [x] "Show Develop menu in menu bar"
   5. now you can type `cmd + c` to show the console
 * in Edge press `F12` or right-click and select "Inspect Element"
 
