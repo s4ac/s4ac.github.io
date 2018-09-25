@@ -42,9 +42,16 @@ JavaScript is the most used scripting language for the web. By learning this too
 
 __Dependencies a.k.a. what you need to download__ 
 
+__Mac Users:__
+
 * [Visual Studio Code](https://code.visualstudio.com/)
   * add extensions: live-server
 * [MAMP](https://www.mamp.info/de/downloads/) (the free version)
+
+__Windows users:__
+
+* [XAMPP](https://www.apachefriends.org/download.html) 
+* [Babun](http://babun.github.io/) Terminal for windows
 
 
 
