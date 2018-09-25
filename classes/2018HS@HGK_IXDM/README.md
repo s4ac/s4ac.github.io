@@ -4,7 +4,7 @@
 
 > _Indeed, design—including self-design—is primarily a mechanism for inducing suspicion. The contemporary world of total design is often described as a world of total seduction from which the __unpleasantness of reality has disappeared.__ But I would argue, rather, that the world of total design is a world of total suspicion, a world of latent danger lurking behind designed surfaces. The main goal of self-design then becomes one of neutralizing the suspicion of a possible spectator, of creating the sincerity effect that provokes trust in the spectator’s soul. In today’s world, the production of sincerity and trust has become everyone’s occupation—and yet it was, and still is, the main occupation of art throughout the whole history of modernity: the modern artist has always positioned himself or herself as the only honest person in a world of hypocrisy and corruption._ 
 >
-> (Boris Groys - Self-Design and Aesthetic Responsibility)
+> [Boris Groys - Self-Design and Aesthetic Responsibility](https://www.e-flux.com/journal/07/61386/self-design-and-aesthetic-responsibility/)
 
 
 
