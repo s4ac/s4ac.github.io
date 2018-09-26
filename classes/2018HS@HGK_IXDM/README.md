@@ -269,7 +269,7 @@ let myObj = {
 let json = JSON.stringify(myObj);
 ```
 
-execute functions at a specific interval
+[execute functions at a specific interval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
 
 ```javascript
 setInterval(functionToExecute, 1000); // the second attribute defines the interval in milliseconds => 1000 = 1 second || 60 * 1000 = 1 minute etc. 
@@ -284,7 +284,7 @@ function functionToExecute(){
 
 ### 15.10 Hello Device Data!
 
-[User data]()
+__[User data](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2018HS%40HGK_IXDM/00_user_info/js/sketch.js)__
 
 __Device motion__
 
