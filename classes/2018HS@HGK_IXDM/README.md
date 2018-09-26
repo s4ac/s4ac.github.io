@@ -76,6 +76,8 @@ You can usually find help by typing the programming language you need help for a
 
 __[Answer](https://stackoverflow.com/questions/8647216/get-content-of-a-div-using-javascript)__
 
+Really helpful are the MDN [[mozilla foundation](https://developer.mozilla.org/en-US/)] references for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and [css](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
 __DEBUGGING__ 🐞
 
 > _1) On average, a developer creates 70 bugs per 1000 lines of code_
@@ -267,9 +269,24 @@ let myObj = {
 let json = JSON.stringify(myObj);
 ```
 
+execute functions at a specific interval
+
+```javascript
+setInterval(functionToExecute, 1000); // the second attribute defines the interval in milliseconds => 1000 = 1 second || 60 * 1000 = 1 minute etc. 
+
+function functionToExecute(){
+    // some actions to be executed
+    // for example sending data to the server
+}
+```
 
 
-### 15.10 Hello Device Motion!
+
+### 15.10 Hello Device Data!
+
+[User data]()
+
+__Device motion__
 
 ```javascript
 /* CODE BY [TED DAVIS] */
