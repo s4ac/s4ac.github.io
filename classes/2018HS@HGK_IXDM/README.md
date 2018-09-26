@@ -165,7 +165,7 @@ __style.css:__
 
 ```css
 #p5Sketch{
-    position: fixed;
+    position: fixed; /* or relative or whatever you decide */
     width: /* you define it! */;
     height: /* you define it! */;
     /* i usually do full screen */
@@ -179,7 +179,7 @@ let cnv;
 function setup(){
     // setting up the sketch before to start drawing
     cnv = createCanvas(400, 400); // or (innerWidth, innerHeight) [full screen]
-    cnv.parent('p5Sketch');
+    cnv.parent('p5Sketch');// here we tell p5 in wich div should the sketch be placed
 }
 
 function draw(){
@@ -295,13 +295,15 @@ else {
 
 [...and geo location?](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)
 
+[...and the battery?](https://developer.mozilla.org/en-US/search?q=battery) [here](https://github.com/pstadler/battery.js) a library for this...
+
 ### 22.10 / 29.10 Hello NodeJS and data collection!
 
 __Dependencies:__
 
 * [node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/) `$ npm install express --save`
-* [Socket.io](https://socket.io/) `$ npm install socket.io --save` [Server side] and [client side](https://github.com/socketio/socket.io-client) [download the whole package, the library sits in the dist folder 📁] or with [CDN](https://cdnjs.com/libraries/socket.io) `https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js` 
+* [Socket.io](https://socket.io/) `$ npm install socket.io --save` [Server side] and [client side](https://github.com/socketio/socket.io-client) [download the whole package, the library sits in the __dist__ folder 📁] or with [CDN](https://cdnjs.com/libraries/socket.io) `https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js` 
 
 __Inputs:__
 
