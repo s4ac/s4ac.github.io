@@ -219,7 +219,9 @@ function windowResized(){
 
 __08.10:__
 
-In this lesson we will look at interaction between DOM elements and javascript
+__[What is the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)__
+
+In this lesson we will look at interaction between DOM elements and javascript, [here](https://developer.mozilla.org/en-US/docs/Web/Events) a complete list of the many event listener you can attach to DOM elements
 
 ```javascript
 let element = document.getElementById('id-name')
@@ -283,6 +285,10 @@ function functionToExecute(){
 
 
 ### 15.10 Hello Device Data!
+
+__input:__
+
+[Mobile Websites Can Tap Into Your Phone's Sensors Without Asking](https://www.wired.com/story/mobile-websites-can-tap-into-your-phones-sensors-without-asking/?mbid=social_fb)
 
 __User data__
 
@@ -411,6 +417,19 @@ __Inputs:__
   * [pointer pointer](https://pointerpointer.com/)
 * [Full Stack web application](https://www.youtube.com/watch?v=JnEH9tYLxLk) client 💻  ↔️ 💻 server ➡️ ☁️ database
 * [WebSockets and p5.js](https://www.youtube.com/watch?v=bjULmG8fqc8)
+
+__Initialize a node.js project__
+
+_(the following commands need to be done in the terminal)_ 🖥 ⌨️
+
+```bash
+$ cd path/to/folder
+$ npm init
+	# fill out all the requested data if you don't know the answer let it empty
+	entry point: (index.js) index.js # very important!!!
+```
+
+
 
 ### Final Exhibition 17.12.2018
 
