@@ -271,6 +271,41 @@ myArray.push(45);
 // you can fill it with strings or objects and more...
 ```
 
+__EXERCISE:__
+
+Build two button in `HTML`
+
+```html
+<button id="trigger">
+    TRIGGER
+</button>
+<button id="release">
+    RELEASE
+</button>
+<!-- you can additionally style the buttons in the css file -->
+```
+
+Then attach event listener to the buttons
+
+```javascript
+const trigger = document.getElementById('trigger');
+trigger.attachEventListener('mouseover', triggerFunction);
+triggerFunction(){
+    // execute some stuff
+    // maybe collecting mouse data
+}
+
+const release = document.getElementById('release');
+release.attachEventListener('mouseover', releaseFunction);
+releaseFunction(){
+    // visualize the collected data    
+}
+```
+
+
+
+
+__BONUS:__
 
 [execute functions at a specific interval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
 
