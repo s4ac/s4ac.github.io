@@ -1,31 +1,39 @@
 let cnv;
+let money = [];
 function setup() {
     cnv = createCanvas(innerWidth, innerHeight);
     cnv.parent('p5Sketch');
+    for (let i = 0; i < 100; i++) {
+        money.push(new Money('💸'));
+    }
 }
 
 function draw() {
     background(255);
+    for (const m of money) {
+        
+    m.show();
+    m.update();
+    }
 }
 
-function windowResized(){
+function windowResized() {
     resizeCanvas(innerWidth, innerHeight);
 }
-
 /**
  * HERE WE ADD EVENT LISTENERS
  */
 
 // document.getElementById('my-image').addEventListener('mousemove', generateMessage);
 
-function generateMessage(event){
+function generateMessage(event) {
     console.log(event);
     console.log('event fired')
 }
 
 document.getElementById('my-form').addEventListener('keyup', whatIsTyping)
 
-function whatIsTyping(event){
+function whatIsTyping(event) {
     console.log(event.key);
 }
 
