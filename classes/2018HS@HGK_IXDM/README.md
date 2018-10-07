@@ -249,16 +249,6 @@ else {
 
 ```
 
- Arrays?
-
-```javascript
-let myArray = [];
-myArray = [1, 45, 66, 3, 67, 30];
-myArray.push(45);
-// myArray: [1, 45, 66, 3, 67, 30, 45]
-// you can fill it with strings or objects and more...
-```
-
 Objects?
 
 ```javascript
@@ -270,6 +260,17 @@ let myObj = {
 // let's turn it into a readable JSON file
 let json = JSON.stringify(myObj);
 ```
+
+ Arrays?
+
+```javascript
+let myArray = [];
+myArray = [1, 45, 66, 3, 67, 30];
+myArray.push(45);
+// myArray: [1, 45, 66, 3, 67, 30, 45]
+// you can fill it with strings or objects and more...
+```
+
 
 [execute functions at a specific interval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
 
