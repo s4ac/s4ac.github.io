@@ -473,6 +473,22 @@ $ npm init
 
 ## UTILS
 
+### Node.js
+
+```javascript
+const exec = require('child_process').exec;
+
+exec("Bash command", function(err, stdout, stderr) {
+  if (err) {
+    console.log(err);
+  }
+  console.log(stdout);
+});
+// the bash command could be a python script for example
+```
+
+
+
 ### BASH COMMANDS
 
 ```bash
