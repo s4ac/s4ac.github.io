@@ -1,0 +1,40 @@
+button{
+    padding: 1.5em;
+    border-radius: 30px; 
+    border: solid 3px #00f;
+    background-color: #fff;
+}
+button:hover{
+    border-radius: 0px; 
+    font-style: italic;
+}
+
+.container{
+    position: fixed;
+    /* background-color: blueviolet; */
+    width: 65%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#p5Sketch{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+#trigger, #release{
+    position: fixed;
+}
+
+#trigger{
+    left: 0px;
+}
+
+#release{
+    right: 0px;
+}
