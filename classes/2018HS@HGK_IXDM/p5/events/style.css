@@ -1,0 +1,39 @@
+button{
+    padding: 1em;
+    background-color:rgb(255, 255, 255);
+    border: solid 3px #00f;
+    border-radius: 50px;
+}
+
+button:hover{
+    border-radius: 0px;
+}
+
+#p5Sketch{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+#trigger{
+    position: fixed;
+    left: 0px;
+}
+
+#release{
+    position: fixed;
+    right: 0px;
+}
+
+.container{
+    background-color: brown;
+    position: fixed;
+    width: 65%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
