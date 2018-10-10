@@ -324,7 +324,9 @@ function functionToExecute(){
 
 __input:__
 
-[Mobile Websites Can Tap Into Your Phone's Sensors Without Asking](https://www.wired.com/story/mobile-websites-can-tap-into-your-phones-sensors-without-asking/?mbid=social_fb)
+* [Mobile Websites Can Tap Into Your Phone's Sensors Without Asking](https://www.wired.com/story/mobile-websites-can-tap-into-your-phones-sensors-without-asking/?mbid=social_fb)
+* [The Dark Side of 'Replay Sessions' That Record Your Every Move Online](https://www.wired.com/story/the-dark-side-of-replay-sessions-that-record-your-every-move-online/)
+* [Keystroke Dynamics](https://en.wikipedia.org/wiki/Keystroke_dynamics)
 
 __User data__
 
