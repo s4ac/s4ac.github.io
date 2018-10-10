@@ -325,8 +325,21 @@ function functionToExecute(){
 __input:__
 
 * [Mobile Websites Can Tap Into Your Phone's Sensors Without Asking](https://www.wired.com/story/mobile-websites-can-tap-into-your-phones-sensors-without-asking/?mbid=social_fb)
+
 * [The Dark Side of 'Replay Sessions' That Record Your Every Move Online](https://www.wired.com/story/the-dark-side-of-replay-sessions-that-record-your-every-move-online/)
-* [Keystroke Dynamics](https://en.wikipedia.org/wiki/Keystroke_dynamics)
+
+* [Keystroke Dynamics](https://en.wikipedia.org/wiki/Keystroke_dynamics) (wiki), here a [paper](http://www.ise.bgu.ac.il/faculty/liorr/idth.pdf) 📝 about the topic
+
+  >there are two types of biometrics physiological and behavioral:
+  >
+  >__physiological:__ physical measurement of human body like fingerprints, face geometry etc.
+  >__behavioral__: relate to specific human behaviors while performing a task, signature writing, voice keystroke and mouse dynamics etc.
+  >
+  >__keystroke dynamics__
+  >Keystroke dynamics can be captured via several different features extracted from the typing rhythm of the user including: latency between consecutive keystrokes, flight time, dwell time, based on the key down/press/up events, overall typing speed, frequency of errors (use of backspace) and control keys (use of left/right shift).
+  >
+  >__mouse dynamics__
+  >The study defines four different mouse actions as follows: mouse movement, drag and drop, point and click and silence. Several different features were defined, such as the interpolation between the movement speed and the traveled distance, which estimates the average speed a user will travel for a certain distance. In addition, several histograms were used to capture different working statistics of the user such as the average travelling speed in eight direction zones or the relative occurrence of each one action. 
 
 __User data__
 
