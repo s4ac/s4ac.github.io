@@ -1,0 +1,27 @@
+Data-tinder: score of mouse or keyboard to match
+[
+	cleo
+	finn
+	
+]
+
+data-analyse: look at interaction between user and machine with event listeners
+
+data-critic: collecting data and what do they mean
+
+data-drawing: ✍️ make a path to follow with the phone
+[
+	flo
+	martino
+	vaidehi
+	michelle
+]
+
+face-detection: CV
+[
+	refael
+	tim
+	yana
+	sarah
+	timo
+]👨‍👩‍👧‍👦

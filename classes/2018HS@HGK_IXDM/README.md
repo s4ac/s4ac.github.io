@@ -478,13 +478,27 @@ $ cd path/to/folder
 $ npm init
 	# fill out all the requested data if you don't know the answer let it empty
 	entry point: (index.js) index.js # very important!!!
+# installing node packages
+$ npm install package-name --save
 ```
 
 
 
 ### Final Exhibition 17.12.2018
 
+__Data–Tinder:__ matching based on your device data 👨‍👩‍👧‍👦: [_cleo, finn_]
 
+__Data-Drawing:__ make a path to follow with the phone 👨‍👩‍👧‍👦: [_flo, martino, vaidehi, michelle_]
+
+__Face-Detection:__ CV 👨‍👩‍👧‍👦: [_refael, tim, yana, sarah, timo_]
+
+__dependencies:__
+
+[Mongo DB](https://www.mongodb.com/) or [Firebase](https://shiffman.net/a2z/firebase/) [a tutorial...]
+
+[Vector math](https://p5js.org/reference/#/p5.Vector/dist), you can use vector math to compute the distance between the data of different users, and the user with shorter distance might have higher affinity
+
+[Open CV for Node.js](https://github.com/justadudewhohacks/opencv4nodejs) or [Faced](https://github.com/gordalina/faced#readme) [...seems to have a build error]
 
 ## UTILS
 

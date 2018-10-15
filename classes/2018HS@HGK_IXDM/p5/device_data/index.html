@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="js/libraries/p5.min.js"></script>
+    <script src="js/libraries/p5.dom.min.js"></script>
+</head>
+
+<body>
+    <div id="p5Sketch" style="z-index:-1;"></div>
+    <!-- <h1>ROTATION</h1> -->
+    <!-- <h2>x-axis: <span id="x-axis"></span></h2>
+    <h2>y-axis: <span id="y-axis"></span></h2>
+    <h2>z-axis: <span id="z-axis"></span></h2> -->
+    <script>
+        let cnv;
+        function setup() {
+            cnv = createCanvas(innerWidth, innerHeight);
+            cnv.parent('p5Sketch');
+        }
+        let x = 0;
+        let y = 0;
+        function draw() {
+            background(0, 255, 255);
+            // document.getElementById('x-axis').innerHTML = sx;
+            // document.getElementById('y-axis').innerHTML = sy;
+            // document.getElementById('z-axis').innerHTML = sz;
+            // let x = map(sx, -9, 9, 0, width);
+            // let y = map(sy, -9, 9, 0, height);
+            x += sx;
+            y += sy;
+            ellipse(sx * 100, sy * 100, 200);
+        }
+
+        function windowResized() {
+            resizeCanvas(innerWidth, innerHeight);
+        }
+
+        /* CODE BY [TED DAVIS] */
+
+        /* PREFS */
+        let easing = 0.5; // set between 0 - 1
+
+        /* VARS */
+        let rx, ry, rz, sx, sy, sz;
+        rx = ry = rz = sx = sy = sz = 0;
+
+        /* ONDEVICEMOTION */
+        // https://developer.mozilla.org/en-US/docs/Web/Events/devicemotion
+        window.ondevicemotion = event => {
+            /* RAW VALUES */
+            rx = event.accelerationIncludingGravity.x;
+            ry = event.accelerationIncludingGravity.y;
+            rz = event.accelerationIncludingGravity.z;
+
+            /* SMOOTHED VALUES */
+            sx = smoothVal(rx, sx);
+            sy = smoothVal(ry, sy);
+            sz = smoothVal(rz, sz);
+        };
+
+        /* VALUE MAPPING */
+        function mapVal(value, istart, istop, ostart, ostop) {
+            return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+        }
+
+        /* VALUE SMOOTHING */
+        function smoothVal(inputVal, outputVal) {
+            let tarVal = inputVal;
+            let calcVal = tarVal - outputVal;
+            outputVal += calcVal * easing;
+            return outputVal;
+        }
+
+    </script>
+</body>
+
+</html>
