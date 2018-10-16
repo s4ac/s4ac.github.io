@@ -496,9 +496,9 @@ __dependencies:__
 
 [Mongo DB](https://www.mongodb.com/) or [Firebase](https://shiffman.net/a2z/firebase/) [a tutorial...]
 
-[Vector math](https://p5js.org/reference/#/p5.Vector/dist), you can use vector math to compute the distance between the data of different users, and the user with shorter distance might have higher affinity
+[Vector math](https://p5js.org/reference/#/p5.Vector/dist), you can use vector math to compute the distance between the data of different users. Than calculate the user with shorter distance.
 
-[Open CV for Node.js](https://github.com/justadudewhohacks/opencv4nodejs) or [Faced](https://github.com/gordalina/faced#readme) [...seems to have a build error]
+[Open CV for Node.js](https://github.com/justadudewhohacks/opencv4nodejs) [you need [CMAKE](https://cmake.org/download/)], [Faced](https://github.com/gordalina/faced#readme) [...seems to have a build error] or [face-api.js](https://github.com/justadudewhohacks/face-api.js)
 
 ## UTILS
 
