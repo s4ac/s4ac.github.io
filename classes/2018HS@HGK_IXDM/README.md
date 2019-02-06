@@ -486,7 +486,7 @@ $ npm install package-name --save
 
 ### Final Exhibition 17.12.2018
 
-__Data–Tinder:__ matching based on your device data 👨‍👩‍👧‍👦: [_cleo, finn_]
+__Data–Tinder:__ matching based on your device data 👨‍👩‍👧‍👦: [_cleo, finn_, _alex_]
 
 __Data-Drawing:__ make a path to follow with the phone 👨‍👩‍👧‍👦: [_flo, martino, vaidehi, michelle_]
 
