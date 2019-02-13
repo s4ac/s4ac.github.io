@@ -20,7 +20,9 @@
 
 ## WEEK 5, 6 && 7 
 
-### micro publication
+### Let's bake a manifesto: micro publication
+
+Entanglement of own practices and social media platforms
 
 Data viz / code snippets thoughts and reflections
 
@@ -31,7 +33,7 @@ Data viz / code snippets thoughts and reflections
 * __maps__ 🗺
   * [polymaps](http://polymaps.org/)
   * [kartograph](http://kartograph.org/)
-  * [OpenLayers](http://kartograph.org/)
+  * [OpenLayers](https://openlayers.org/)
 * __graphs__
   * [JavaScript InfoVis Toolkit](http://philogb.github.io/jit/)
   * [gephi](https://gephi.org/)

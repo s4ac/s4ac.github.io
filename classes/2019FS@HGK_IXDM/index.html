@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>🕵️‍♀️IP-tracing🕵️‍♂️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../js/libraries/v5.3.0-dist/ol.css">
+    <script src="../../js/libraries/jquery-3.3.1.min.js"></script>
+    <script src="../../js/libraries/v5.3.0-dist/ol.js"></script>
+</head>
+
+<body>
+    <div class="input-box">
+        <input type="text" name="ip-adress" id="ip-input">
+        <div id="submit" onclick="search_ip(this)">SUBMIT</div>
+    </div>
+    <div class="result-container"></div>
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+        const coordinates = [];
+        const start_loc = [7.6126609, 47.5329876];
+        coordinates.push(start_loc);
+        // coordinates.push([7.6058453, 47.5373626])
+        // make the map
+        const view = new ol.View({
+            center: ol.proj.fromLonLat(start_loc),
+            zoom: 5
+        });
+        const map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            view: view
+        });
+
+        draw_path(coordinates);
+
+        function draw_path(coordinates) {
+            const path = new ol.Feature({
+                geometry: new ol.geom.LineString(coordinates)
+            });
+            transform_geometry(path);
+
+            const stroke = new ol.style.Stroke({
+                color: [0, 255, 0, 1],
+                width: 2
+            });
+
+            const style = new ol.style.Style({
+                stroke: stroke
+            });
+
+            const vector_layer = new ol.layer.Vector({
+                source: new ol.source.Vector({
+                    features: [path]
+                })
+            })
+
+            vector_layer.setStyle(style);
+            map.addLayer(vector_layer);
+        }
+
+
+        function transform_geometry(element) {
+            let current_projection = new ol.proj.Projection({ code: "EPSG:4326" });//"EPSG:3857""EPSG:4326"
+            // let new_projection = new ol.proj.Projection({ code: "EPSG:900913" });
+            var new_projection = map.getView().getProjection();
+            element.getGeometry().transform(current_projection, new_projection);
+        }
+
+        /* VALUE MAPPING */
+        function mapVal(value, istart, istop, ostart, ostop) {
+            return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+        }
+
+        // get ip adresses
+        function search_ip(el) {
+            const ip = el.parentNode.firstElementChild
+            console.log(ip.value)
+            // search ip
+            if (ip.value !== '') {
+                const URL = 'https://ipapi.co/' + ip.value + '/json/'
+                $.getJSON(URL, data => {
+                    console.log(data);
+                    let html_txt = '';
+                    const des_span = '<span class="result-des">';
+                    const obj_span = '<span class="result-obj">';
+                    const close_span = '</span>'
+                    const separator = ': ';
+                    const br = '<br>'
+                    Object.keys(data).forEach(key => {
+                        html_txt += des_span + key + close_span + separator + obj_span + data[key] + close_span + br;
+                    });
+                    const result = document.createElement('div');
+                    result.setAttribute('class', 'result');
+                    result.innerHTML = html_txt;
+                    document.querySelector('div.result-container').appendChild(result);
+                    let curr_loc = start_loc;
+                    if (data.longitude === null || data.latitude === null) {
+                        console.log('load geocoding');
+                        const geo_URL = 'http://api.geonames.org/searchJSON?name=' + data.city + '&maxRows=1&username=yyyaaannnooo'
+                        $.getJSON(geo_URL, data => {
+                            console.log(data);
+                            const result = data.geonames[0]
+                            // translate thee cordinate for latitude
+                            const mapped_lat = 90 + parseFloat(result.lat);
+                            curr_loc = [result.lng, mapped_lat.toString()];
+                            coordinates.push(curr_loc);
+                            draw_path(coordinates);
+                            const center = ol.proj.fromLonLat(curr_loc);
+                            view.animate({
+                                center: center,
+                                duration: 2000
+                            });
+                        })
+                    } else {
+                        curr_loc = [data.longitude, data.latitude];//157.240.35.179 singapore
+                        coordinates.push(curr_loc);
+                        draw_path(coordinates);
+                        const center = ol.proj.fromLonLat(curr_loc);
+                        view.animate({
+                            center: center,
+                            duration: 2000
+                        });
+                    }
+                })
+            }
+            ip.value = '';
+        }
+    </script>
+</body>
+
+</html>
