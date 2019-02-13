@@ -10,7 +10,7 @@
 
 ## WEEK 2 - 25.feb.2019
 
-### google
+### internet infrastructure: google, amazon
 
 * download google data [here](https://support.google.com/accounts/answer/3024190?hl=en)
 
