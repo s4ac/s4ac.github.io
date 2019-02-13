@@ -89,29 +89,40 @@
                 const URL = 'https://ipapi.co/' + ip.value + '/json/'
                 $.getJSON(URL, data => {
                     console.log(data);
-                    let html_txt = '';
-                    const des_span = '<span class="result-des">';
-                    const obj_span = '<span class="result-obj">';
-                    const close_span = '</span>'
-                    const separator = ': ';
-                    const br = '<br>'
-                    Object.keys(data).forEach(key => {
-                        html_txt += des_span + key + close_span + separator + obj_span + data[key] + close_span + br;
-                    });
-                    const result = document.createElement('div');
-                    result.setAttribute('class', 'result');
-                    result.innerHTML = html_txt;
-                    document.querySelector('div.result-container').appendChild(result);
-                    let curr_loc = start_loc;
-                    if (data.longitude === null || data.latitude === null) {
-                        console.log('load geocoding');
-                        const geo_URL = 'http://api.geonames.org/searchJSON?name=' + data.city + '&maxRows=1&username=yyyaaannnooo'
-                        $.getJSON(geo_URL, data => {
-                            console.log(data);
-                            const result = data.geonames[0]
-                            // translate thee cordinate for latitude
-                            const mapped_lat = 90 + parseFloat(result.lat);
-                            curr_loc = [result.lng, mapped_lat.toString()];
+                    if (!data.reserved) {
+                        let html_txt = '';
+                        const des_span = '<span class="result-des">';
+                        const obj_span = '<span class="result-obj">';
+                        const close_span = '</span>'
+                        const separator = ': ';
+                        const br = '<br>'
+                        Object.keys(data).forEach(key => {
+                            html_txt += des_span + key + close_span + separator + obj_span + data[key] + close_span + br;
+                        });
+                        const result = document.createElement('div');
+                        result.setAttribute('class', 'result');
+                        result.innerHTML = html_txt;
+                        document.querySelector('div.result-container').appendChild(result);
+                        let curr_loc = start_loc;
+                        if (data.longitude === null || data.latitude === null) {
+                            console.log('load geocoding');
+                            const geo_URL = 'http://api.geonames.org/searchJSON?name=' + data.city + '&maxRows=1&username=yyyaaannnooo'
+                            $.getJSON(geo_URL, data => {
+                                console.log(data);
+                                const result = data.geonames[0]
+                                // translate thee cordinate for latitude
+                                const mapped_lat = 90 + parseFloat(result.lat);
+                                curr_loc = [result.lng, mapped_lat.toString()];
+                                coordinates.push(curr_loc);
+                                draw_path(coordinates);
+                                const center = ol.proj.fromLonLat(curr_loc);
+                                view.animate({
+                                    center: center,
+                                    duration: 2000
+                                });
+                            })
+                        } else {
+                            curr_loc = [data.longitude, data.latitude];//157.240.35.179 singapore
                             coordinates.push(curr_loc);
                             draw_path(coordinates);
                             const center = ol.proj.fromLonLat(curr_loc);
@@ -119,16 +130,8 @@
                                 center: center,
                                 duration: 2000
                             });
-                        })
-                    } else {
-                        curr_loc = [data.longitude, data.latitude];//157.240.35.179 singapore
-                        coordinates.push(curr_loc);
-                        draw_path(coordinates);
-                        const center = ol.proj.fromLonLat(curr_loc);
-                        view.animate({
-                            center: center,
-                            duration: 2000
-                        });
+                        }
+                        //end of if
                     }
                 })
             }
