@@ -17,6 +17,8 @@
 
 who owns what? Using traceroute and IP geolocation to understand how data flows on the internet. We will use diferent tools to visualize this flows: 
 
+* [online tool](https://s4ac.github.io/classes/2019FS@HGK_IXDM/) (to use combine with traceroute see 👀 below ⤵️)
+
 * [Open street map](https://www.openstreetmap.org/#map=8/46.825/8.224)
 * [google earth](https://www.google.com/earth/) && [desktop](https://www.google.com/earth/versions/)
 
