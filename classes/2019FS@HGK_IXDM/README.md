@@ -60,7 +60,7 @@ Data viz / code snippets thoughts and reflections
   * [gephi](https://gephi.org/)
   * [visjs](http://visjs.org/network_examples.html)
   * [D3](https://d3js.org/)
-* API 
+* __API__ 
   * [ipapi.co](https://ipapi.co/api/?java#introduction)
 
 
