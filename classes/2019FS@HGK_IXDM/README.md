@@ -16,10 +16,23 @@
 
 ### internet infrastructure: google, amazon
 
-who owns what? Using traceroute and IP geolocation to understand how data flows on the internet. We will use diferent tools to visualize this flows: 
+who owns what? Using traceroute and IP geolocation to understand how data flows on the internet. We will use diferent tools to visualize this flows 
+
+* ```bash
+  traceroute facebook.com
+  traceroute amazon.com
+  traceroute google.com
+  traceroute alibaba.com #try .cn
+  # experiment with geographic domains like .co.jp | .ch | .cn
+  # http://www.chinawhisper.com/top-10-most-popular-websites-in-china/
+  ```
 
 * [online tool](https://s4ac.github.io/classes/2019FS@HGK_IXDM/) (to use combine with traceroute see 👀 below ⤵️)
+
+* [Submarine cable map](https://www.submarinecablemap.com/)
+
 * [Open street map](https://www.openstreetmap.org/#map=8/46.825/8.224)
+
 * [google earth](https://www.google.com/earth/) && [desktop](https://www.google.com/earth/versions/)
 
 ## WEEK 3 && 4 - 4.mar.2019 && 18.mar.2019
@@ -47,6 +60,8 @@ Data viz / code snippets thoughts and reflections
   * [gephi](https://gephi.org/)
   * [visjs](http://visjs.org/network_examples.html)
   * [D3](https://d3js.org/)
+* API 
+  * [ipapi.co](https://ipapi.co/api/?java#introduction)
 
 
 

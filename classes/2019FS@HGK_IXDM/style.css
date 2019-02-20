@@ -16,10 +16,11 @@ body{
     color: #0f0;
     text-align: center;
 }
-#submit{
+#submit, #download{
     cursor: pointer;
+    color: #0f0;
 }
-#submit:hover{
+#submit:hover, #download:hover{
     text-decoration: underline;
     font-style: italic;
 }

@@ -17,6 +17,7 @@
     <div class="input-box">
         <input type="text" name="ip-adress" id="ip-input">
         <div id="submit" onclick="search_ip(this)">SUBMIT</div>
+        <a id="download" download="" href="">DOWNLOAD DATA</a>
     </div>
     <div class="result-container"></div>
     <div id="map" class="map"></div>
@@ -80,6 +81,18 @@
             return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
         }
 
+        function set_data_download() {
+            const json = JSON.stringify(geo_data);
+            const blob = new Blob([json], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.getElementById('download');
+            a.download = "backup.json";
+            a.href = url;
+        }
+
+
+        const geo_data = [];
         // get ip adresses
         function search_ip(el) {
             const ip = el.parentNode.firstElementChild
@@ -89,6 +102,8 @@
                 const URL = 'https://ipapi.co/' + ip.value + '/json/'
                 $.getJSON(URL, data => {
                     console.log(data);
+                    geo_data.push(data);
+                    set_data_download();
                     if (!data.reserved) {
                         let html_txt = '';
                         const des_span = '<span class="result-des">';
