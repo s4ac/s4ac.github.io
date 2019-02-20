@@ -29,7 +29,7 @@ who owns what? Using traceroute and IP geolocation to understand how data flows 
 
 * [online tool](https://s4ac.github.io/classes/2019FS@HGK_IXDM/) (to use combine with traceroute see 👀 below ⤵️)
 
-* [Submarine cable map](https://www.submarinecablemap.com/)
+* [Submarine cable map](https://www.submarinecablemap.com/) && [Internet Exchange Map](https://www.internetexchangemap.com/)
 
 * [Open street map](https://www.openstreetmap.org/#map=8/46.825/8.224)
 
