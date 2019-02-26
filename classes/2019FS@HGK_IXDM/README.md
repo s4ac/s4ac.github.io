@@ -35,11 +35,110 @@ who owns what? Using traceroute and IP geolocation to understand how data flows 
 
 * [google earth](https://www.google.com/earth/) && [desktop](https://www.google.com/earth/versions/)
 
-## WEEK 3 && 4 - 4.mar.2019 && 18.mar.2019
+## WEEK 3 - 4.mar.2019
 
-### let's bake a cookie 🍪
+### Let's bake a cookie 1 🍪
 
-## WEEK 5 && 6
+* intro to html
+
+* ```html
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>🍪SWEEEET COOKIE!🍪</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+  </head>
+      <body>
+      </body>
+  </html>
+  ```
+
+* …and css
+
+* ```css
+  body{
+      padding: 0px;
+      margin: 0px;
+  }
+  .cookie-box {
+      position: fixed;
+      width: 100%;
+      height: auto;
+  }
+  
+  .editable{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      width: 33%;
+      height: 33vh;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bolder;
+      background-color: #00f;
+      color: #0f0;
+      hyphens: auto;
+      word-break: break-all;
+      overflow-y: scroll;
+  }
+  ```
+
+* deep into javascript
+
+* ```javascript
+  function set_cookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + d.toUTCString();
+      const write_to_cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      document.cookie = write_to_cookie;
+  }
+  
+  function get_cookie(cname) {
+      const name = cname + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
+  
+  function check_cookie() {
+      let user = get_cookie("cookies");
+      if (user != "") {
+          draw_cookies(); // <= we still need to write this function
+      } else {
+          user = prompt("how many cookies have you eaten in your life?", "10000 or more?");
+          if (user != "" && user != null) {
+              set_cookie("cookies", user, 365);
+              draw_cookies();
+          }
+      }
+      set_text(); // <= same here
+  }
+  ```
+
+  
+
+##  WEEK 4 – 18.mar.2019
+
+### Lets's bake a cookie 2 🍪
+
+* `<iframe>`
+
+## WEEK 5 && 6 && 7
 
 ### Let's bake a manifesto: micro publication
 
