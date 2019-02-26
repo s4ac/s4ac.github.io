@@ -1,0 +1,28 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.cookie-box {
+    position: fixed;
+    width: 100%;
+    height: auto;
+}
+
+.editable{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    width: 33%;
+    height: 33vh;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    background-color: #00f;
+    color: #0f0;
+    hyphens: auto;
+    word-break: break-all;
+    overflow-y: scroll;
+}

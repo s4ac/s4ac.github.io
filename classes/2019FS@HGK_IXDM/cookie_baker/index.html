@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>🍪SWEEEET COOKIE!🍪</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+
+<body onload="check_cookie()">
+    <div class="cookie-box" id="cookie-box">
+
+    </div>
+    <div class="editable" id="text-area" contenteditable="true">
+        WRITE SOMETHING HERE 📝
+    </div>
+
+    <script>
+        function set_cookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            const write_to_cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            document.cookie = write_to_cookie;
+        }
+
+        function get_cookie(cname) {
+            const name = cname + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function check_cookie() {
+            let user = get_cookie("cookies");
+            if (user != "") {
+                // alert("Welcome again " + user);
+                draw_cookies();
+            } else {
+                user = prompt("how many cookies have you eaten in your life?", "10000 or more?");
+                console.log(user)
+                if (user != "" && user != null) {
+                    set_cookie("cookies", user, 365);
+                    draw_cookies();
+                }
+            }
+            set_text();
+        }
+        
+        let cookie_writer;
+        function draw_cookies() {
+            console.log(get_cookie('cookies'))
+            const cookies = parseFloat(get_cookie('cookies'));
+            let idx = 0;
+            cookie_writer = setInterval(() => {
+                const cookie_box = document.getElementById('cookie-box');
+                cookie_box.innerText += '🍪'
+                idx++;
+                // console.log(cookies);
+                if (idx >= cookies) clearInterval(cookie_writer);
+            }, 25);
+
+        }
+
+        function set_text() {
+            console.log(get_cookie('user_text'));
+            text_area.innerText = get_cookie('user_text');
+        }
+        const text_area = document.getElementById('text-area')
+        text_area.addEventListener('keyup', event => {
+            set_cookie('user_text', text_area.innerText, 365);
+        });
+
+        function get_parent_url() {
+            var isInIframe = (parent !== window),
+                parentUrl = null;
+
+            if (isInIframe) {
+                parentUrl = document.referrer;
+            }
+
+            return parentUrl;
+        }
+
+        console.log(get_parent_url())
+
+        let curr_div = document.createElement('div')
+        let prev_div = curr_div
+        window.onmousemove = event => {
+            const x = event.clientX;
+            const y = event.clientY;
+            console.log(parent)
+            const elt = document.elementFromPoint(x, y);
+            if (curr_div.innerText !== prev_div.innerText) {
+                prev_div = curr_div
+                console.log(curr_div);
+            }
+            curr_div = elt;
+        }
+    </script>
+</body>
+
+</html>
