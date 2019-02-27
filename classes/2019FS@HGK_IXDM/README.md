@@ -39,6 +39,8 @@ who owns what? Using traceroute and IP geolocation to understand how data flows 
 
 ### Let's bake a cookie 1 🍪
 
+[Follow the Cookie Trail – Computerphile 1](https://www.youtube.com/watch?v=LHSSY8QNvew) and [2](https://www.youtube.com/watch?v=_d0G6FZ_kR4)
+
 ```
 ##### website folder structure #####
 my-amazing-website
@@ -195,7 +197,7 @@ my-amazing-website
   }
  ```
 
-  
+  …should we stop here or could we also analyze the network with an extension and inject different information? [web-request](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)
 
 ## WEEK 5 && 6 && 7
 
