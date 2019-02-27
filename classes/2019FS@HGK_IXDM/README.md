@@ -18,14 +18,14 @@
 
 who owns what? Using traceroute and IP geolocation to understand how data flows on the internet. We will use diferent tools to visualize this flows 
 
-* ```bash
+ ```bash
   traceroute facebook.com
   traceroute amazon.com
   traceroute google.com
   traceroute alibaba.com #try .cn
   # experiment with geographic domains like .co.jp | .ch | .cn
   # http://www.chinawhisper.com/top-10-most-popular-websites-in-china/
-  ```
+ ```
 
 * [online tool](https://s4ac.github.io/classes/2019FS@HGK_IXDM/) (to use combine with traceroute see 👀 below ⤵️)
 
@@ -58,7 +58,7 @@ my-amazing-website
 
 * intro to html
 
-* ```html
+ ```html
   <!DOCTYPE html>
   <html>
   <head>
@@ -71,11 +71,11 @@ my-amazing-website
       <body>
       </body>
   </html>
-  ```
+ ```
 
 * …and css
 
-* ```css
+ ```css
   body{
       padding: 0px;
       margin: 0px;
@@ -104,11 +104,11 @@ my-amazing-website
       word-break: break-all;
       overflow-y: scroll;
   }
-  ```
+ ```
 
 * deep into javascript cookies 🍪🍪🍪🍪🍪🍪🍪🍪
 
-* ```javascript
+ ```javascript
   function set_cookie(cname, cvalue, exdays) {
       const d = new Date();
       d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -145,7 +145,7 @@ my-amazing-website
       }
       set_text(); // <= same here
   }
-  ```
+ ```
 
   * never forget your [parent](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent)
 
@@ -168,7 +168,7 @@ my-amazing-website
 
 * what is in the manifest.json
 
-* ```json
+ ```json
   {
     "description": "looking for cookies being updated",
     "manifest_version": 2,
@@ -193,7 +193,7 @@ my-amazing-website
       }
     ]
   }
-  ```
+ ```
 
   
 
