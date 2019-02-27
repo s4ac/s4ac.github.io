@@ -56,7 +56,7 @@
             }
             set_text();
         }
-        
+
         let cookie_writer;
         function draw_cookies() {
             console.log(get_cookie('cookies'))
@@ -99,11 +99,11 @@
         window.onmousemove = event => {
             const x = event.clientX;
             const y = event.clientY;
-            console.log(parent)
+            // console.log(parent)
             const elt = document.elementFromPoint(x, y);
             if (curr_div.innerText !== prev_div.innerText) {
                 prev_div = curr_div
-                console.log(curr_div);
+                // console.log(curr_div);
             }
             curr_div = elt;
         }

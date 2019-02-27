@@ -39,6 +39,23 @@ who owns what? Using traceroute and IP geolocation to understand how data flows 
 
 ### Let's bake a cookie 1 🍪
 
+```
+##### website folder structure #####
+my-amazing-website
+├── js
+│   ├── libraries
+│   │   ├── p5.dom.min.js
+│   │   ├── p5.min.js
+│   │   ├── p5.pre-min.js
+│   │   └── p5.sound.min.js
+│   ├── sketch.js
+|   └── script.js
+├── index.html
+└── style.css
+```
+
+
+
 * intro to html
 
 * ```html
@@ -89,7 +106,7 @@ who owns what? Using traceroute and IP geolocation to understand how data flows 
   }
   ```
 
-* deep into javascript
+* deep into javascript cookies 🍪🍪🍪🍪🍪🍪🍪🍪
 
 * ```javascript
   function set_cookie(cname, cvalue, exdays) {
@@ -130,13 +147,55 @@ who owns what? Using traceroute and IP geolocation to understand how data flows 
   }
   ```
 
-  
+  * never forget your [parent](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent)
 
 ##  WEEK 4 – 18.mar.2019
 
 ### Lets's bake a cookie 2 🍪
 
-* `<iframe>`
+* `<iframe>` let's make a like button
+
+* [Web-extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons) `about:debugging` and actually [debugging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Debugging) || change notification style to `alerts`
+
+  ```
+  web-extension folder structure
+  my-amazing-web-extension
+  ├── icons
+  │   └── cookie-48.png
+  ├── background.js
+  └── manifest.json
+  ```
+
+* what is in the manifest.json
+
+* ```json
+  {
+    "description": "looking for cookies being updated",
+    "manifest_version": 2,
+    "name": "rotten-cookies",
+    "version": "1.0",
+  
+    "permissions": [
+      "notifications",
+      "tabs",
+      "cookies",
+      "<all_urls>"
+    ],
+  
+    "background": {
+      "scripts": ["background.js"]
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  ```
+
+  
 
 ## WEEK 5 && 6 && 7
 
