@@ -27,7 +27,7 @@ who owns what? Using traceroute and IP geolocation to understand how data flows 
   # http://www.chinawhisper.com/top-10-most-popular-websites-in-china/
  ```
 
-* [online tool](https://s4ac.github.io/classes/2019FS@HGK_IXDM/) (to use combine with traceroute see 👀 below ⤵️)
+* [online tool](https://s4ac.github.io/classes/2019FS@HGK_IXDM/tracerouting/) (to use combine with traceroute see 👀 below ⤵️)
 
 * [Submarine cable map](https://www.submarinecablemap.com/) && [Internet Exchange Map](https://www.internetexchangemap.com/)
 
