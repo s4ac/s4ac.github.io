@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>👍🏻</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .like-btn {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            font-size: 5rem;
+            transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+        }
+
+        .like-btn:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="like-btn" onclick="like()">👍🏻<span id="like-counter" style="font-size:1rem;"></span>
+    </div>
+    <script>
+        const LIKES = 'likes';
+        const URL = 'url';
+        let likes = parseInt(get_cookie(LIKES));
+        set_like_counter()
+        console.log(likes);
+        const parent_url = get_parent_url(); // we look ponly at referrer
+        console.log(parent_url);
+        set_url_cookie(URL, parent_url, 365)
+        function like() {
+
+            if (isNaN(likes)) {
+                likes = 1;
+                //write the likes
+                set_cookie(LIKES, likes, 365);
+            } else {
+                likes++;
+                set_cookie(LIKES, likes, 365);
+            }
+            console.log(likes);
+
+            set_like_counter()
+        }
+
+
+        function set_like_counter() {
+            document.getElementById('like-counter').innerText = likes;
+        }
+
+        function set_cookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            const write_to_cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            document.cookie = write_to_cookie;
+        }
+
+        function set_url_cookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            let urls = get_cookie(URL);
+            if (urls === '') urls = url;
+            else urls = urls + ', ' + cvalue;
+            const write_to_cookie = cname + "=" + urls + ";" + expires + ";path=/";
+            console.log(write_to_cookie);
+            document.cookie = write_to_cookie;
+        }
+
+        function get_cookie(cname) {
+            const name = cname + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function check_cookie() {
+            let user = get_cookie("cookies");
+            if (user != "") {
+                // alert("Welcome again " + user);
+                // draw_cookies();
+            } else {
+                user = prompt("how many cookies have you eaten in your life?", "10000 or more?");
+                console.log(user)
+                if (user != "" && user != null) {
+                    set_cookie("cookies", user, 365);
+                    // draw_cookies();
+                }
+            }
+            // set_text();
+        }
+
+        function get_parent_url() {
+            var isInIframe = (parent !== window),
+                parentUrl = null;
+
+            if (isInIframe) {
+                parentUrl = document.referrer;
+            } else {
+                parentUrl = window.location.href;
+            }
+            console.log(parentUrl);
+            return parentUrl;
+        }
+    </script>
+</body>
+
+</html>

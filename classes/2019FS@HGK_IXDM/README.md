@@ -197,6 +197,30 @@ my-amazing-website
   }
  ```
 
+* Background.js
+
+  ```javascript
+  console.log('hello 🖖🏻');
+  
+  browser.cookies.onChanged.addListener(
+      function(cookie_info){
+          console.log(cookie_info);
+          const notification_title = `Cookie 🍪 from ${cookie_info.cookie.domain} has changed!`;
+          const notification_text = `The new value of ${cookie_info.cookie.name}\nhas canged to\n${cookie_info.cookie.value}`;
+          console.log(notification_title, notification_text);
+          
+          browser.notifications.create({
+              "type": "basic",
+              "iconUrl": browser.extension.getURL("icons/link-48.png"),
+              "title": notification_title,
+              "message": notification_text
+            });
+      }
+  );
+  ```
+
+  
+
   …should we stop here or could we also analyze the network with an extension and inject different information? [web-request](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)
 
 ## WEEK 5 && 6 && 7

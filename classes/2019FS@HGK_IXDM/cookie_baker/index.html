@@ -87,6 +87,8 @@
 
             if (isInIframe) {
                 parentUrl = document.referrer;
+            }else{
+                parentUrl = window.location.href;
             }
 
             return parentUrl;
