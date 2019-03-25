@@ -171,52 +171,52 @@ my-amazing-website
 * what is in the manifest.json
 
  ```json
-  {
-    "description": "looking for cookies being updated",
-    "manifest_version": 2,
-    "name": "rotten-cookies",
-    "version": "1.0",
-  
-    "permissions": [
-      "notifications",
-      "tabs",
-      "cookies",
-      "<all_urls>"
-    ],
-  
-    "background": {
-      "scripts": ["background.js"]
-    },
-  
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ]
-  }
+{
+  "description": "looking for cookies being updated",
+  "manifest_version": 2,
+  "name": "rotten-cookies",
+  "version": "1.0",
+
+  "permissions": [
+    "notifications",
+    "tabs",
+    "cookies",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
  ```
 
 * Background.js
 
   ```javascript
-  console.log('hello 🖖🏻');
+  console.log('🍪rotten-cookie🍪');
   
-  browser.cookies.onChanged.addListener(
-      function(cookie_info){
-          console.log(cookie_info);
-          const notification_title = `Cookie 🍪 from ${cookie_info.cookie.domain} has changed!`;
-          const notification_text = `The new value of ${cookie_info.cookie.name}\nhas canged to\n${cookie_info.cookie.value}`;
-          console.log(notification_title, notification_text);
-          
-          browser.notifications.create({
-              "type": "basic",
-              "iconUrl": browser.extension.getURL("icons/link-48.png"),
-              "title": notification_title,
-              "message": notification_text
-            });
-      }
-  );
+  browser.cookies.onChanged.addListener(function (changeInfo) {
+    console.log('Cookie changed: ' +
+      '\n * Cookie: ', changeInfo.cookie,
+      '\n * Cause: ' + changeInfo.cause +
+      '\n * Removed: ' + changeInfo.removed);
+    const notification_title = `Cookie 🍪 from ${changeInfo.cookie.domain} has changed!`;
+    const notification_text = `The new value of ${changeInfo.cookie.name}\nhas canged to\n${changeInfo.cookie.value}`;
+  
+    browser.notifications.create({
+      "type": "basic",
+      "iconUrl": "icons/link-48.png",
+      "title": notification_title,
+      "message": notification_text
+    });
+  });
   ```
 
   
