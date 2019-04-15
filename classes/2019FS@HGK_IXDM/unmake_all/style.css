@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:500|Space+Mono');
+* {
+    box-sizing: border-box;
+}
+/* custom scrollbars */
+
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); */
+    background-color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0f0;
+    /* border: 2px solid #555555; */
+}
+html {
+    font-size: 100%;
+    font-family: 'Fira Sans', sans-serif;
+    /* font-family: 'Fira Mono', monospace; */
+    scrollbar-color: #0f0 #000;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 5000px;
+    height: 5000px;
+    background-color: #000;
+    color: #0f0;
+}
+
+#menu {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    z-index: 9999999;
+}
+
+.footer-title {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.nav-el {
+    /* float: left; */
+    /* grid-area: a; */
+    text-align: center;
+    padding: 1rem;
+}
+
+.nav-el:hover {
+    cursor: pointer;
+    background-color: #00f;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+#performance, #tracerouting-1, #tracerouting-2, #tracerouting-3, #comic, #mouse-tracing {
+    border-radius: 5px;
+    -webkit-animation: mymove 7.5s infinite;
+    /* Safari 4.0 - 8.0 */
+    -moz-animation: mymove 7.5s infinite;
+    /* Safari 4.0 - 8.0 */
+    -o-animation: mymove 7.5s infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: mymove 7.5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes mymove {
+    50% {
+        box-shadow: 0px 0px 300px -70px #0f0;
+    }
+}
+
+@-moz-keyframes mymove {
+    50% {
+        box-shadow: 0px 0px 300px -70px #0f0;
+    }
+}
+
+@-o-keyframes mymove {
+    50% {
+        box-shadow: 0px 0px 300px -70px #0f0;
+    }
+}
+
+@keyframes mymove {
+    50% {
+        box-shadow: 0px 0px 300px -70px #0f0;
+    }
+}
+
+#performance, #tracerouting-1, #tracerouting-2, #tracerouting-3, #comic {
+    position: absolute;
+    overflow-y: scroll;
+}
+
+.map {
+    height: calc(100% - 170px);
+    width: auto;
+}
+
+/* #legend {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 15px;
+}
+
+#legend p {
+    font-family: 'Space Mono', monospace;
+    font-weight: 900;
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+} */
+
+#tracerouting-1 {
+    overflow-y: hidden;
+}
+
+#tracerouting-2 {
+    overflow-y: hidden;
+}
+
+#comic {
+    overflow-y: hidden;
+}
+
+.img-container {
+    width: 90%;
+    height: calc(100% - 50px);
+    display: block;
+    margin: 0px auto;
+    overflow-y: scroll;
+}
+
+.img-container img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+}
+
+#mouse-tracing {
+    position: absolute;
+}
+
+#comic {
+    text-align: center;
+}
+
+/* #comic img {
+    height: 85%;
+    width: auto;
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px repeat(2, 1fr);
+    grid-template-areas: "title title title" "media media desc" "media media desc";
+}
+
+.title {
+    position: relative;
+    grid-area: title;
+    display: grid;
+    width: 100%;
+    height: 50px;
+    grid-template-columns: minmax(0, max-content) 1fr;
+}
+
+.student, .project {
+    padding: 0 7px 0 7px;
+    border-bottom: solid 2px #0f0;
+}
+
+.project {
+    border-left: solid 2px #0f0;
+}
+
+.description {
+    grid-area: desc;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 7px
+}
+
+#legend.description {
+    overflow-y: hidden;
+}
+
+.description p {
+    /* font-family: Helvetica, sans-serif; */
+}
+
+.description h1 {
+    font-family: 'Space Mono', monospace;
+    word-break: break-all;
+}
+
+pre {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+}
+
+.media-container {
+    grid-area: media;
+    width: 100%;
+    height: 100%;
+}
+
+.video {
+    width: 90%;
+    height: 100%;
+    margin: 0px auto;
+    display: block;
+}
+
+@media only screen and (max-width: 899px) {
+    html {
+        font-size: 75%;
+    }
+    body {
+        width: initial;
+        height: initial;
+    }
+    #container {
+        width: 100%;
+        height: 100%;
+    }
+    #performance, #tracerouting-1, #tracerouting-2, #tracerouting-3, #comic, #mouse-tracing {
+        position: relative;
+        margin: 60px auto;
+    }
+    .grid {
+        display: grid;
+        grid-template-rows: 30px repeat(2, 1fr);
+    }
+    /* div#tracerouting-1.grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30px repeat(2, 1fr);
+        grid-template-areas: "title title title" "media media desc" "media media desc";
+    } */
+    #legend.description {
+        overflow-y: scroll;
+    }
+    .description {
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+    }
+    .title {
+        height: 29px;
+    }
+    #legend p {
+        font-family: 'Space Mono', monospace;
+        font-weight: 900;
+        text-align: center;
+        background-color: #fff;
+        padding: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 899px) and (orientation:portrait) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px 60% calc(40% - 30px);
+        grid-template-areas: "title" "media" "desc";
+    }
+    /* div#map.media-container{
+        width: 100%;
+        height: 100%;
+    } */
+}

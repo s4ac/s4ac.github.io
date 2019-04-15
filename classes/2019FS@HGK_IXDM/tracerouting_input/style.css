@@ -1,0 +1,16 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #0f0;
+    background-color: #000;
+    scrollbar-color: #0f0 #000;
+}
+
+.map{
+    background-color: aqua;
+    position: fixed;
+    right: 0px;
+    height: calc(100vh - 75px);
+    width: 100%
+}
