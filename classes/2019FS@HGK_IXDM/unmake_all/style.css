@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:500|Space+Mono');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Space+Mono');
 * {
     box-sizing: border-box;
 }
@@ -20,7 +20,7 @@
 }
 html {
     font-size: 100%;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Source Code Pro', sans-serif;
     /* font-family: 'Fira Mono', monospace; */
     scrollbar-color: #0f0 #000;
 }
@@ -57,11 +57,15 @@ body {
     /* grid-area: a; */
     text-align: center;
     padding: 1rem;
+    font-weight: lighter;
 }
 
 .nav-el:hover {
     cursor: pointer;
     background-color: #00f;
+}
+.nav-el:hover::before {
+    content: ">> "
 }
 
 #container {
@@ -71,39 +75,7 @@ body {
 
 #performance, #tracerouting-1, #tracerouting-2, #tracerouting-3, #comic, #mouse-tracing {
     border-radius: 5px;
-    -webkit-animation: mymove 7.5s infinite;
-    /* Safari 4.0 - 8.0 */
-    -moz-animation: mymove 7.5s infinite;
-    /* Safari 4.0 - 8.0 */
-    -o-animation: mymove 7.5s infinite;
-    /* Safari 4.0 - 8.0 */
-    animation: mymove 7.5s infinite;
-}
-
-/* Safari 4.0 - 8.0 */
-
-@-webkit-keyframes mymove {
-    50% {
-        box-shadow: 0px 0px 300px -70px #0f0;
-    }
-}
-
-@-moz-keyframes mymove {
-    50% {
-        box-shadow: 0px 0px 300px -70px #0f0;
-    }
-}
-
-@-o-keyframes mymove {
-    50% {
-        box-shadow: 0px 0px 300px -70px #0f0;
-    }
-}
-
-@keyframes mymove {
-    50% {
-        box-shadow: 0px 0px 300px -70px #0f0;
-    }
+    box-shadow: 0px 0px 1500px -50px #0f0;
 }
 
 #performance, #tracerouting-1, #tracerouting-2, #tracerouting-3, #comic {
@@ -124,7 +96,7 @@ body {
 }
 
 #legend p {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Source Code Pro', monospace;
     font-weight: 900;
     text-align: center;
     background-color: #fff;
@@ -153,7 +125,7 @@ body {
 
 .img-container img {
     width: 100%;
-    max-width: 900px;
+    max-width: 700px;
     height: auto;
 }
 
@@ -212,12 +184,12 @@ body {
 }
 
 .description h1 {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Source Code Pro', monospace;
     word-break: break-all;
 }
 
 pre {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Source Code Pro', monospace;
     font-size: 0.85rem;
 }
 
@@ -272,7 +244,7 @@ pre {
         height: 29px;
     }
     #legend p {
-        font-family: 'Space Mono', monospace;
+        font-family: 'Source Code Pro', monospace;
         font-weight: 900;
         text-align: center;
         background-color: #fff;
