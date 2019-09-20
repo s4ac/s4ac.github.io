@@ -2,75 +2,98 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>SFAC</title>
-	<script src="js/libraries/jquery-3.3.1.min.js"></script>
-	<script src="js/libraries/jquery.lettering-0.6.1.min.js"></script>
-	<script src="js/libraries/p5.js"></script>
-	<script src="js/libraries/p5.dom.js"></script>
-	<script src="js/libraries/p5.sound.js"></script>
-	<script src="js/BG/sketch.js"></script>
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Source+Code+Pro" rel="stylesheet">
+  <title>SFAC</title>
+  <script src="js/libraries/jquery-3.3.1.min.js"></script>
+  <script src="js/libraries/jquery.lettering-0.6.1.min.js"></script>
+  <script src="js/libraries/p5.js"></script>
+  <script src="js/libraries/p5.dom.js"></script>
+  <script src="js/libraries/p5.sound.js"></script>
+  <!-- <script src="js/BG/sketch.js"></script> -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-	<div class="left">
-		<div id="backgroundTitle">
-			<h1>School
-				<br>for
-				<br>Algorithmic
-				<br>Composition</h1>
-		</div>
-	</div>
-	<div class="right">
-		<p>
-			<h2>Web Visual Poetry Workshop with Gyroscope</h2>
-		</p>
-		<p>
-			25.08.2018
-			<a href="https://muda.co/stream/webpoetry.php">@MuDA</a>, Pfingstweidstrasse 101, Zürich
-		</p>
-		<p>
-			Teh full program can be found <a href="https://github.com/s4ac/s4ac.github.io/tree/master/workshops/20180825_MuDA_Web_Visual_Poetry">here</a>.
-		</p>
-		<p>
-			<h2>
-				<strike>Bonjour Code</strike>
-			</h2>
-		</p>
-		<p>
-			<strike>From march 19th to may 5th free
-				<a href="https://p5js.org/">p5.js</a> classes @
-				<a href="http://bonjourbaby.ch/">Bonjour Baby</a>
-			</strike>
-		</p>
-		<p>
-			<strike>The full program can be found
-				<a href="https://github.com/s4ac/s4ac.github.io/tree/master/classes/bounjour_code">here</a>. Registragion can be done
-				<a href="https://goo.gl/forms/5WbXsmGgxPSAHImR2">here</a>.</strike>
-		</p>
-		<p>
-			<h2>
-				<strike>Web Visual Poetry Workshop</strike>
-			</h2>
-		</p>
-		<p>
-			<strike>23.03.2018
-				<a href="https://www.gelegenheiten-berlin.de/">@Gelegenheiten</a>, Weserstraße 50, 12045, Berlin</strike>
-		</p>
-		<p>
-			<strike>The program of the workshop can be found
-				<a href="https://github.com/s4ac/s4ac.github.io/tree/master/workshops/20180323_Berlin_Web_Visual_Poetry">here</a>.</strike>
-		</p>
+  <div class="container">
+    <div class="title big" style="width: 85%;">
+      School
+      for
+      Algorithmic
+      Composition<span class="blink">_</span>
+    </div>
+    <div class="feed">
+      <ul><li>
+          <div class="title small">
+            12.11.2019 - 17.12.2019 <br> Tuesdays 17:00 => 19:00<br>IT lab
+          </div>
+          <div class="content">
+            <p>
+              2 hours introduction classes for web based application with <a href="https://p5js.org/">p5.js</a> and vanilla javascript <a href="https://ixdm.ch" target="_blank" rel="noopener noreferrer">@Critical Media Lab</a>
 
-		<a href="./monocell.html" style="display: none;">monoCell</a>
-	</div>
-	<!-- <div class="container">
+            </p>
+            <p>
+              The full program can be found
+              <a href="">here</a>.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="title small">25.08.2018 <br> Web Visual Poetry Workshop with Gyroscope</div>
+          <div class="content">
+            <p>
+              <a href="https://muda.co/stream/webpoetry.php">@MuDA</a>, Pfingstweidstrasse 101, Zürich
+            </p>
+            <p>
+              The full program can be found <a
+                href="https://github.com/s4ac/s4ac.github.io/tree/master/workshops/20180825_MuDA_Web_Visual_Poetry">here</a>.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="title small">
+            19.03.2018 - 05.05.2018<br>Bonjour Code
+          </div>
+          <div class="content">
+            <p>
+              From march 19th to may 5th free
+              <a href="https://p5js.org/">p5.js</a> classes <a href="http://bonjourbaby.ch/">@Bonjour Baby</a>
+
+            </p>
+            <p>
+              The full program can be found
+              <a href="https://github.com/s4ac/s4ac.github.io/tree/master/classes/bounjour_code">here</a>.
+              Registragion can be done
+              <a href="https://goo.gl/forms/5WbXsmGgxPSAHImR2">here</a>.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="title small">
+              23.03.2018 <br> Web Visual Poetry Workshop
+          </div>
+          <div class="content">
+            <p>
+                <a href="https://www.gelegenheiten-berlin.de/">@Gelegenheiten</a>, Weserstraße 50, 12045,
+                Berlin
+            </p>
+            <p>
+              The program of the workshop can be found
+                <a
+                  href="https://github.com/s4ac/s4ac.github.io/tree/master/workshops/20180323_Berlin_Web_Visual_Poetry">here</a>.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <a href="./monocell.html" style="display: none;">monoCell</a>
+  </div>
+  <!-- <div class="container">
 		<script src="js/monoCell/sketch.js"></script>
 		<script src="js/monoCell/monoCell.js"></script>
 		<script src="js/monoCell/molecule.js"></script>
