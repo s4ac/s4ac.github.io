@@ -7,11 +7,11 @@
 To make short historical analysis of the relationship between labour, autonomy and technology, through the practice of cooking. The class will start from the early concept of division of labour, described by Lorraine Daston, and will end with new forms of labour that emerged from the advent of computation. Each class will be divided into two sections: in the first half reading and critique of a text, and in the second half a practical exercise that enact some of contents already discussed in the text. The class will provide historical references and examples on how labour and technology are entangled, and how discoveries from different scientific fields have shaped the way workers are “managed” to obtain the objective of total efficiency.
 
 ## Topics
-[] Division of Labour
+* [ ] Division of Labour
 
-[] Taylorism && Digital Taylorism and Nudge Management (critic to that theory)
+* [ ] Taylorism && Digital Taylorism and Nudge Management (critic to that theory)
 
-[] Automation && Heteromation (examples of the gig economy from amazon mechanical turk, to uber eats and facebook censors in the philippines)
+* [ ] Automation && Heteromation (examples of the gig economy from amazon mechanical turk, to uber eats and facebook censors in the philippines)
 
 ## Sessions
 ### Cooking and Manual Labour | age of bodies
@@ -19,12 +19,12 @@ To make short historical analysis of the relationship between labour, autonomy a
 Can we see intelligence when applying the rules of division of labour to a simple dish of pasta?
 
 ### 17.2
-* __Text:__ [Lorraine Daston – Calculation and Division of Labour]()
+* __Text:__ [Lorraine Daston – Calculation and Division of Labour](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Daston%20-%20Calculation%20and%20the%20Division%20of%20Labor.pdf)
 
 * __Activity:__ handmade “Cavatelli” with bought tomato sauce [students here should analyze the production of pasta by measuring the movements in making the pasta] making own 100gr of pasta
 
 ### 24.2
-* __Text:__ [Lorraine Daston – Calculation and Division of Labour]()
+* __Text:__ [Lorraine Daston – Calculation and Division of Labour](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Daston%20-%20Calculation%20and%20the%20Division%20of%20Labor.pdf)
 
 * __Activity:__
 Handmade “Cavatelli” with bought tomato sauce [an improved version of the process designed according to the measurements of the first class]
