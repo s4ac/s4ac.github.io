@@ -19,12 +19,12 @@ To make short historical analysis of the relationship between labour, autonomy a
 Can we see intelligence when applying the rules of division of labour to a simple dish of pasta?
 
 ### 17.2
-* __Text:__ Lorraine Daston – Calculation and Division of Labour
+* __Text:__ [Lorraine Daston – Calculation and Division of Labour]()
 
 * __Activity:__ handmade “Cavatelli” with bought tomato sauce [students here should analyze the production of pasta by measuring the movements in making the pasta] making own 100gr of pasta
 
 ### 24.2
-* __Text:__ Lorraine Daston – Calculation and Division of Labour
+* __Text:__ [Lorraine Daston – Calculation and Division of Labour]()
 
 * __Activity:__
 Handmade “Cavatelli” with bought tomato sauce [an improved version of the process designed according to the measurements of the first class]
@@ -34,7 +34,7 @@ First groups formations to accelerate production
 -------------------------------------------
 Maybe in this class the student are tasked to engineer machines that increase productivity, we could ask the metal/wood workshop than to produce such tools? Or we could ask the student to build tools out of the material from the kitchen.
 ### 9.3
-* __Text:__ Marx Fragment on Machines, http://thenewobjectivity.com/pdf/marx.pdf 
+* __Text:__ [Marx - Fragment on Machines](http://thenewobjectivity.com/pdf/marx.pdf) 
 
 * __Activity:__ Pasta | Introduction of “machinic” utensils
 
@@ -50,11 +50,11 @@ In this last part there should be a reflection between food and gig economy and 
 Ocean test for behavioral analysis [???]
 
 ### 23.3
-* __Text:__ Ekbia – Heteromation
+* __Text:__ [Ekbia – Heteromation]()
 
 * __Activity:__
 
 ### 30.3
-* __Text:__ McKenzie Wark
+* __Text:__ [McKenzie Wark]()
 
 * __Activity:__
