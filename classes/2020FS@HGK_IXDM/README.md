@@ -50,7 +50,7 @@ In this last part there should be a reflection between food and gig economy and 
 Ocean test for behavioral analysis [???]
 
 ### 23.3
-* __Text:__ [Ekbia – Heteromation]()
+* __Text:__ [Ekbia – Heteromation](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Ekbia%20-%20Heteromation.pdf)
 
 * __Activity:__
 
