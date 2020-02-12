@@ -7,54 +7,74 @@
 To make short historical analysis of the relationship between labour, autonomy and technology, through the practice of cooking. The class will start from the early concept of division of labour, described by Lorraine Daston, and will end with new forms of labour that emerged from the advent of computation. Each class will be divided into two sections: in the first half reading and critique of a text, and in the second half a practical exercise that enact some of contents already discussed in the text. The class will provide historical references and examples on how labour and technology are entangled, and how discoveries from different scientific fields have shaped the way workers are “managed” to obtain the objective of total efficiency.
 
 ## Topics
+
 * [ ] Division of Labour
 
 * [ ] Taylorism && Digital Taylorism and Nudge Management (critic to that theory)
 
 * [ ] Automation && Heteromation (examples of the gig economy from amazon mechanical turk, to uber eats and facebook censors in the philippines)
 
-## Sessions
-### Cooking and Manual Labour | age of bodies
+## __Sessions__
+
+## Cooking and Manual Labour | age of bodies
+
 -------------------------------------------
+> How many of you have been working for a company? How many of you were extremely happy of that experience that they did not wanted to leave the company? How many of you thought "how can this job be better for me"?
+
 Can we see intelligence when applying the rules of division of labour to a simple dish of pasta?
 
+`Which parts of the body do we need to produce a plate of pasta? How can I re-arrange bodies in way that making pasta becomes more efficient? How does this in turn reflect on the worker?`
+
 ### 17.2
+
 * __Text:__ [Lorraine Daston – Calculation and Division of Labour](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Daston%20-%20Calculation%20and%20the%20Division%20of%20Labor.pdf)
 
 * __Activity:__ handmade “Cavatelli” with bought tomato sauce [students here should analyze the production of pasta by measuring the movements in making the pasta] making own 100gr of pasta
 
 ### 24.2
+
 * __Text:__ [Lorraine Daston – Calculation and Division of Labour](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Daston%20-%20Calculation%20and%20the%20Division%20of%20Labor.pdf)
 
 * __Activity:__
 Handmade “Cavatelli” with bought tomato sauce [an improved version of the process designed according to the measurements of the first class]
 First groups formations to accelerate production
 
-### Food and Technology / Machines | age of machines
+## Cooking and Technology | age of machines
+
 -------------------------------------------
 Maybe in this class the student are tasked to engineer machines that increase productivity, we could ask the metal/wood workshop than to produce such tools? Or we could ask the student to build tools out of the material from the kitchen.
+
+`In this session we will question the relationship between technology, in the form of machines, and work. How can machines increase productivity? How does this reflect in turn to the worker? How does it reflect on the company? And what about consumism? Here we should reflect on growth and how machines anable the cavatelli company to grow in a conglomerate that produces more than only pasta with tomato sauce. What could the same machine that produces pasta produce? maybe some sweets? And therefore how do we build a machine that is general enough to produce more than pasta? What to do with the overproduction?`
+
 ### 9.3
-* __Text:__ [Marx - Fragment on Machines](http://thenewobjectivity.com/pdf/marx.pdf) 
+
+* __Text:__ [Marx - Fragment on Machines](http://thenewobjectivity.com/pdf/marx.pdf)
 
 * __Activity:__ Pasta | Introduction of “machinic” utensils
 
 ### 16.3
-* __Text:__ 
 
-* __Activity:__ 
--------------------------------------------
-### Food and Automation/Heteromation | age of information
+* __Text:__
+
+* __Activity:__
+
+## Cooking and Automation/Heteromation | age of information
+
 -------------------------------------------
 In this last part there should be a reflection between food and gig economy and how algorithmic platforms like deliveroo or uber eats exploit labour force, while at the same time aggregating information about their users and workers.
+
+[in this part the students won't make pasta anymore, here they should reflect on how information may in turn transform this dish of pasta in any other commodity linked to food: it could perhaps become pre-cooked dish, or a fitness abo]
 
 Ocean test for behavioral analysis [???]
 
 ### 23.3
+
 * __Text:__ [Ekbia – Heteromation](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Ekbia%20-%20Heteromation.pdf)
 
 * __Activity:__
 
 ### 30.3
+
 * __Text:__ [McKenzie Wark]()
 
 * __Activity:__
