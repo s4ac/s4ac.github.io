@@ -1,4 +1,5 @@
 # Let’s Cook Capitalism | Techno-Politics of Automation
+
 > Let’s Cook Capitalism is a six-times three-hours course about the political economy and techno-politics of optimization and exploitation by automation in our age of digital neoliberalism. In the course you will learn basic insights about the techno-politics of automation and digital exploitation through a mixture of self-experiments and reading exercises. We will practically inquire how body movements and gestures were measured for optimization by cooking a delicious (vegetarian) pasta meal together. Therefore the course takes place in our FoodCultureLab.
 
 > The first topic will be so-called Taylorism from the 1910s. By a video analysis of our cooking we will try to improve the algorithm – our pasta recipe – of the meal. By doing that we will not only learn a bit about programming and coding, but also about the political economy of programmed processes and automation, especially their relationship with labour (physical, but also cognitive work). In the next sessions we will continuously try to optimize our cooking (by looking at distributed processing and aspects of modern logistics), but also read and discuss important critical theories, which allow us to reflect our addiction and dependence to programmed technology and give us hints on how we could change that.
@@ -16,24 +17,23 @@ To make short historical analysis of the relationship between labour, autonomy a
 
 ## __Sessions__
 
+> How many of you have been working? How many of you were extremely happy of that experience that they did not wanted to leave the job? How many of you thought "how can this job be better for me"?
+
 ## Cooking and Manual Labour | age of bodies
 
 -------------------------------------------
-> How many of you have been working for a company? How many of you were extremely happy of that experience that they did not wanted to leave the company? How many of you thought "how can this job be better for me"?
-
-Can we see intelligence when applying the rules of division of labour to a simple dish of pasta?
 
 `Which parts of the body do we need to produce a plate of pasta? How can I re-arrange bodies in way that making pasta becomes more efficient? How does this in turn reflect on the worker?`
 
 ### 17.2
 
-* __Text:__ [Lorraine Daston – Calculation and Division of Labour](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Daston%20-%20Calculation%20and%20the%20Division%20of%20Labor.pdf)
+* __Text:__ [Lorraine Daston – Calculation and Division of Labour]()
 
 * __Activity:__ handmade “Cavatelli” with bought tomato sauce [students here should analyze the production of pasta by measuring the movements in making the pasta] making own 100gr of pasta
 
 ### 24.2
 
-* __Text:__ [Lorraine Daston – Calculation and Division of Labour](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Daston%20-%20Calculation%20and%20the%20Division%20of%20Labor.pdf)
+* __Text:__ [Lorraine Daston – Calculation and Division of Labour]()
 
 * __Activity:__
 Handmade “Cavatelli” with bought tomato sauce [an improved version of the process designed according to the measurements of the first class]
@@ -69,7 +69,7 @@ Ocean test for behavioral analysis [???]
 
 ### 23.3
 
-* __Text:__ [Ekbia – Heteromation](https://github.com/s4ac/s4ac.github.io/blob/master/classes/2020FS%40HGK_IXDM/readings/Ekbia%20-%20Heteromation.pdf)
+* __Text:__ [Ekbia – Heteromation]()
 
 * __Activity:__
 
