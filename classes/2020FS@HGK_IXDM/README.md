@@ -19,6 +19,14 @@ To make short historical analysis of the relationship between labour, autonomy a
 
 > How many of you have been working? How many of you were extremely happy of that experience that they did not wanted to leave the job? How many of you thought "how can this job be better for me"?
 
+```bash
+# RECIPE CAVATELLI:
+- 50gr semola
+- 50gr wheat flour
+- 50gr water
+- 1 table spoon olive oil
+```
+
 ## Cooking and Manual Labour | age of bodies
 
 -------------------------------------------
