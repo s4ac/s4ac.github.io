@@ -13,11 +13,9 @@ To make short historical analysis of the relationship between labour, autonomy a
 
 * [ ] Taylorism && Digital Taylorism and Nudge Management (critic to that theory)
 
-* [ ] Automation && Heteromation (examples of the gig economy from amazon mechanical turk, to uber eats and facebook censors in the philippines)
+* [ ] Automation && Heteromation (examples of the gig economy from amazon mechanical turk to uber eats)
 
 ## __Sessions__
-
-> How many of you have been working? How many of you were extremely happy of that experience that they did not wanted to leave the job? How many of you thought "how can this job be better for me"?
 
 ```bash
 # RECIPE CAVATELLI:
@@ -55,33 +53,29 @@ Maybe in this class the student are tasked to engineer machines that increase pr
 
 ### 9.3
 
-* __Text:__ [Marx - Fragment on Machines](http://thenewobjectivity.com/pdf/marx.pdf)
-
-* __Activity:__ Pasta | Introduction of “machinic” utensils
+* __Activity:__ Development of algorithm for pasta manufacture | Video recording for analysis
 
 ### 16.3
 
-* __Text:__
+* __Text:__ 🦠🦠🦠🦠🦠🦠🦠
 
-* __Activity:__
+* __Activity:__ 🧼🧼🧼🧼🧼🧼🧼
 
 ## Cooking and Automation/Heteromation | age of information
 
 -------------------------------------------
-In this last part there should be a reflection between food and gig economy and how algorithmic platforms like deliveroo or uber eats exploit labour force, while at the same time aggregating information about their users and workers.
+~~In this last part there should be a reflection between food and gig economy and how algorithmic platforms like deliveroo or uber eats exploit labour force, while at the same time aggregating information about their users and workers.~~
 
-[in this part the students won't make pasta anymore, here they should reflect on how information may in turn transform this dish of pasta in any other commodity linked to food: it could perhaps become pre-cooked dish, or a fitness abo]
-
-Ocean test for behavioral analysis [???]
+Rescheduling due to pandemic. 
 
 ### 23.3
 
-* __Text:__ [Ekbia – Heteromation]()
+* __Text:__ [Wendling – Karl Marx on Technology and Alienation]() , [Simondon – On the Mode of existence of Technical Objects]()
 
-* __Activity:__
+* __Activity:__ Analysis of the video recording of the pasta manufacture from previous lesson on March 9th | Prepraring 3 questions on the given texts
 
 ### 30.3
 
-* __Text:__ [McKenzie Wark]()
+* __Text:__ [Wendling – Karl Marx on Technology and Alienation]() , [Simondon – On the Mode of existence of Technical Objects]()
 
-* __Activity:__
+* __Activity:__ Group activity answering the questions from previous lesson | feedback from students
