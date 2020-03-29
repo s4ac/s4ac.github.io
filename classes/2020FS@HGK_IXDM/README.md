@@ -42,7 +42,7 @@ To make short historical analysis of the relationship between labour, autonomy a
 * __Text:__ [Lorraine Daston – Calculation and Division of Labour]()
 
 * __Activity:__
-Handmade “Cavatelli” with bought tomato sauce. In this class we will re-think the production of past according to the principles of division of labour. What are the main components in the production of pasta? | First groups formations to accelerate production and developing tha algorithm for cavatelli production
+Handmade “Cavatelli” with bought tomato sauce. In this class we will re-think the production of pasta according to the principles of division of labour. What are the main components in the production of pasta? | First groups formations to accelerate production and developing the __algorithm__ for cavatelli production
 
 ## Cooking and Technology | age of machines
 
